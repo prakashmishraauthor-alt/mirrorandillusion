@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daily Reflection | Mirror & Illusion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #020617, #0f172a);
+    color: #ffffff;
+}
+
+/* NAVBAR / LOGO */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: rgba(15,23,42,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.header p {
+    font-size: 13px;
+    color: #cbd896;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+/* CARD BASE */
+.card {
+    aspect-ratio: 1/1;
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    transition: 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* PREMIUM COLORS */
+.card1 { background: #1f2937; }   /* charcoal */
+.card2 { background: #031b0d; }   /* dark green */
+.card3 { background: #3f2a1d; }   /* dark brown */
+.card4 { background: #061438; }   /* deep blue */
+
+/* HOVER / TAP */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card:active {
+    transform: scale(0.96);
+}
+
+/* TEXT */
+.emoji {
+    font-size: 30px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #cfd4cb;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 40px;
+}
+
+.footer a {
+    color: #22c55e;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+/* =========================================
+   JOURNAL BRAND
+========================================= */
+
+.journal-brand{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.journal-brand a{
+  text-decoration:none;
+
+  font-family:'Source Serif Pro', serif;
+  font-size:32px;
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  color:#111;
+
+  transition:0.3s ease;
+}
+
+.journal-brand a:hover{
+  color:#b11226;
+}
+
+/* =========================
+   JOURNAL SECTION
+========================= */
+
+.journal-section{
+
+    padding:120px 7%;
+
+    background:#f8f8f8;
+
+    overflow:hidden;
+
+}
+
+.journal-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+}
+
+/* LEFT SIDE */
+
+.journal-content{
+
+    width:50%;
+
+}
+
+.journal-tag{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:#111;
+
+    color:#fff;
+
+    border-radius:40px;
+
+    font-size:0.85rem;
+
+    letter-spacing:2px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.journal-content h2{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    color:#111;
+
+    margin-bottom:25px;
+
+    font-family:'Playfair Display', serif;
+
+}
+
+.journal-content h2 span{
+
+    color:#c59b6d;
+
+}
+
+.journal-content p{
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    color:#555;
+
+    margin-bottom:35px;
+
+    max-width:600px;
+
+}
+
+/* FEATURES */
+
+.journal-features{
+
+    list-style:none;
+
+    margin-bottom:40px;
+
+}
+
+.journal-features li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    color:#222;
+
+    font-weight:500;
+
+}
+
+.journal-features i{
+
+    color:#c59b6d;
+
+}
+
+/* BUTTON */
+
+.journal-btn{
+
+    display:inline-block;
+
+    padding:18px 40px;
+
+    background:#111;
+
+    color:#fff;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    transition:0.4s;
+
+}
+
+.journal-btn:hover{
+
+    background:#c59b6d;
+
+    transform:translateY(-4px);
+
+}
+
+/* RIGHT SIDE */
+
+.journal-image{
+
+    width:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.journal-image img{
+
+    width:100%;
+
+    max-width:650px;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .journal-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .journal-content{
+
+        width:100%;
+
+    }
+
+    .journal-image{
+
+        width:100%;
+
+        margin-top:40px;
+
+    }
+
+    .journal-content p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .journal-features{
+
+        display:inline-block;
+
+        text-align:left;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .journal-section{
+
+        padding:90px 6%;
+
+    }
+
+    .journal-content h2{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .journal-content h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .journal-btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+    <!-- TOP BRAND -->
+<div class="journal-brand">
+  <a href="index.html">
+    Mirror & Illusion
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo-container">
+        <img src="images/logo.png" class="logo-img">
+        <div class="logo-text">Mirror & Illusion</div>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+<h1>🧠 Daily Reflection</h1>
+<p>Your own daily journal. Strengthen your inner system.</p>
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+<!-- GRATITUDE -->
+<a href="gratitude.html" class="card card1">
+<div class="emoji">🙏</div>
+<div>
+<div class="title">Gratitude journal</div>
+<div class="desc">Train your mind to notice what’s working</div>
+</div>
+</a>
+
+<!-- WINS -->
+<a href="daily-wins.html" class="card card2">
+<div class="emoji">🏆</div>
+<div>
+<div class="title">Daily Wins</div>
+<div class="desc">Reinforce progress through small victories</div>
+</div>
+</a>
+
+<!-- FORGIVENESS -->
+<a href="forgiveness.html" class="card card3">
+<div class="emoji">🔓</div>
+<div>
+<div class="title">Forgiveness journal</div>
+<div class="desc">Release mental weight and stress</div>
+</div>
+</a>
+
+<!-- COMPASSION -->
+<a href="compassion-journal.html" class="card card4">
+<div class="emoji">❤️</div>
+<div>
+<div class="title">Compassion Journal</div>
+<div class="desc">Respond with awareness and balance</div>
+</div>
+</a>
+
+</div>
+
+</div>
+
+<section class="journal-section">
+
+    <div class="journal-container">
+
+        <!-- LEFT -->
+        <div class="journal-content">
+
+            <span class="journal-tag">
+                NOW AVAILABLE
+            </span>
+
+            <h2>
+                The Reflection
+                <span>Collection</span>
+            </h2>
+
+            <p>
+                A premium collection of guided journals designed to cultivate
+                gratitude, compassion, healing and conscious living.
+            </p>
+
+            <ul class="journal-features">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Premium Hardcover Design
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Guided Reflection Prompts
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Elegant Minimal Aesthetic
+                </li>
+
+            </ul>
+
+            <a href="journals.html" class="journal-btn">
+                ORDER THE COLLECTION
+            </a>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="journal-image">
+
+            <img src="images/journal-collection.png" alt="Journal Collection">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+© 2026 Mirror & Illusion <br>
+Build awareness. Reset your system.
+</div>
+
+</body>
+</html>
