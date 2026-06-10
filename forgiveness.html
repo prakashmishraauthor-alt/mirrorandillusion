@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forgiveness Journal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   BASE
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:#f8fafc;
+  color:#111;
+}
+
+/* =========================================
+   SECTION BACKGROUND
+========================================= */
+
+.forgiveness-section{
+  min-height:100vh;
+  padding:90px 20px;
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(191,219,254,0.40),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(167,243,208,0.22),
+    transparent 30%),
+
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef6ff 25%,
+      #f4fbff 50%,
+      #f0fdf9 75%,
+      #f9fffc 100%
+    );
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* SOFT GLOW EFFECTS */
+
+.forgiveness-section::before{
+  content:'';
+  position:absolute;
+  width:520px;
+  height:520px;
+  background:rgba(147,197,253,0.18);
+  border-radius:50%;
+  top:-180px;
+  left:-120px;
+  filter:blur(90px);
+}
+
+.forgiveness-section::after{
+  content:'';
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:rgba(110,231,183,0.12);
+  border-radius:50%;
+  bottom:-160px;
+  right:-120px;
+  filter:blur(90px);
+}
+
+/* =========================================
+   MAIN BOX
+========================================= */
+
+.forgiveness-box{
+  position:relative;
+  z-index:2;
+
+  max-width:920px;
+  margin:auto;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.96),
+      rgba(248,252,255,0.94)
+    );
+
+  backdrop-filter:blur(10px);
+
+  padding:60px;
+  border-radius:32px;
+
+  border:1px solid rgba(255,255,255,0.8);
+
+  box-shadow:
+    0 25px 60px rgba(59,130,246,0.10),
+    0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.forgiveness-box h2{
+  text-align:center;
+  font-family:'Source Serif Pro', serif;
+  font-size:52px;
+  color:#2563eb;
+  margin-bottom:15px;
+}
+
+.journal-subtitle{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 50px;
+
+  font-size:18px;
+  line-height:1.9;
+  color:#555;
+}
+
+/* =========================================
+   JOURNAL BLOCKS
+========================================= */
+
+.journal-block{
+  margin-bottom:30px;
+}
+
+.journal-block label{
+  display:block;
+  margin-bottom:14px;
+
+  font-size:17px;
+  font-weight:600;
+  color:#222;
+}
+
+.journal-block textarea{
+  width:100%;
+  min-height:140px;
+
+  padding:20px;
+
+  border-radius:18px;
+  border:2px solid #dbeafe;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f8fbff
+    );
+
+  resize:vertical;
+
+  font-size:15px;
+  line-height:1.8;
+  font-family:'Inter', sans-serif;
+
+  transition:all 0.3s ease;
+}
+
+.journal-block textarea:focus{
+  outline:none;
+
+  border-color:#2563eb;
+
+  box-shadow:
+    0 0 0 5px rgba(37,99,235,0.10);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.journal-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:45px;
+}
+
+.journal-buttons button{
+  flex:1;
+
+  padding:18px;
+
+  border:none;
+  border-radius:16px;
+
+  font-size:16px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:all 0.3s ease;
+}
+
+/* SAVE BUTTON */
+
+.save-btn{
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d4ed8
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 15px 35px rgba(37,99,235,0.28);
+}
+
+.save-btn:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 20px 40px rgba(37,99,235,0.35);
+}
+
+/* CLEAR BUTTON */
+
+.clear-btn{
+  background:#e2e8f0;
+  color:#333;
+}
+
+.clear-btn:hover{
+  background:#cbd5e1;
+  transform:translateY(-2px);
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+#journal-status{
+  text-align:center;
+  margin-top:30px;
+
+  font-weight:600;
+  font-size:16px;
+  color:#16a34a;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .forgiveness-box{
+    padding:40px 25px;
+  }
+
+  .forgiveness-box h2{
+    font-size:38px;
+  }
+
+  .journal-subtitle{
+    font-size:16px;
+  }
+
+  .journal-buttons{
+    flex-direction:column;
+  }
+
+}
+/* RETURN BUTTON */
+
+.return-home{
+  text-align:center;
+  margin-top:50px;
+}
+
+.return-home a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:16px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b11226,
+      #8f0d1d
+    );
+
+  color:#fff;
+  text-decoration:none;
+
+  font-weight:700;
+  font-size:15px;
+
+  border-radius:14px;
+
+  box-shadow:
+    0 12px 30px rgba(177,18,38,0.25);
+
+  transition:all 0.3s ease;
+}
+
+.return-home a:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 18px 40px rgba(177,18,38,0.35);
+}
+/* =========================================
+   JOURNAL BRAND
+========================================= */
+
+.journal-brand{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.journal-brand a{
+  text-decoration:none;
+
+  font-family:'Source Serif Pro', serif;
+  font-size:32px;
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  color:#111;
+
+  transition:0.3s ease;
+}
+
+.journal-brand a:hover{
+  color:#b11226;
+}
+
+</style>
+</head>
+
+<body>
+<!-- TOP BRAND -->
+<div class="journal-brand">
+  <a href="index.html">
+    Mirror & Illusion
+  </a>
+</div>
+<!-- =========================================
+     FORGIVENESS JOURNAL
+========================================= -->
+
+<section class="forgiveness-section">
+
+  <div class="forgiveness-box">
+
+    <h2>🤍 Forgiveness Journal</h2>
+
+    <p class="journal-subtitle">
+      Release emotional weight, process pain gently,
+      and create space for peace, healing, and freedom.
+    </p>
+
+    <!-- QUESTION 1 -->
+    <div class="journal-block">
+      <label>
+        What hurt or situation are you holding onto?
+      </label>
+
+      <textarea
+        id="hurt"
+        placeholder="Write honestly without judgment..."></textarea>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="journal-block">
+      <label>
+        How has this affected your emotions or wellbeing?
+      </label>
+
+      <textarea
+        id="effect"
+        placeholder="Describe your feelings and experiences..."></textarea>
+    </div>
+
+    <!-- QUESTION 3 -->
+    <div class="journal-block">
+      <label>
+        What would healing from this feel like?
+      </label>
+
+      <textarea
+        id="healing"
+        placeholder="Imagine emotional freedom and peace..."></textarea>
+    </div>
+
+    <!-- QUESTION 4 -->
+    <div class="journal-block">
+      <label>
+        Is there anything you need to forgive yourself for?
+      </label>
+
+      <textarea
+        id="selfForgive"
+        placeholder="Write gently and compassionately..."></textarea>
+    </div>
+
+    <!-- QUESTION 5 -->
+    <div class="journal-block">
+      <label>
+        What lesson or strength has this experience given you?
+      </label>
+
+      <textarea
+        id="lesson"
+        placeholder="Reflect on growth and wisdom..."></textarea>
+    </div>
+
+    <!-- QUESTION 6 -->
+    <div class="journal-block">
+      <label>
+        What are you ready to let go of today?
+      </label>
+
+      <textarea
+        id="release"
+        placeholder="Write what you wish to release..."></textarea>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="journal-buttons">
+
+      <button class="save-btn" onclick="saveJournal()">
+        Save Reflection
+      </button>
+
+      <button class="clear-btn" onclick="clearJournal()">
+        Clear Journal
+      </button>
+
+    </div>
+
+    <!-- STATUS -->
+    <p id="journal-status"></p>
+
+  </div>
+
+</section>
+
+<script>
+
+/* =========================================
+   SAVE JOURNAL
+========================================= */
+
+function saveJournal(){
+
+  const hurt =
+    document.getElementById('hurt').value;
+
+  const effect =
+    document.getElementById('effect').value;
+
+  const healing =
+    document.getElementById('healing').value;
+
+  const selfForgive =
+    document.getElementById('selfForgive').value;
+
+  const lesson =
+    document.getElementById('lesson').value;
+
+  const release =
+    document.getElementById('release').value;
+
+  const journalData = {
+    hurt,
+    effect,
+    healing,
+    selfForgive,
+    lesson,
+    release,
+    date: new Date().toLocaleString()
+  };
+
+  localStorage.setItem(
+    'forgivenessJournal',
+    JSON.stringify(journalData)
+  );
+
+  document.getElementById('journal-status').innerHTML =
+    "Reflection saved successfully 🤍";
+}
+
+/* =========================================
+   CLEAR JOURNAL
+========================================= */
+
+function clearJournal(){
+
+  document.getElementById('hurt').value = '';
+  document.getElementById('effect').value = '';
+  document.getElementById('healing').value = '';
+  document.getElementById('selfForgive').value = '';
+  document.getElementById('lesson').value = '';
+  document.getElementById('release').value = '';
+
+  document.getElementById('journal-status').innerHTML =
+    "Journal cleared";
+}
+
+/* =========================================
+   LOAD SAVED DATA
+========================================= */
+
+window.onload = function(){
+
+  const saved =
+    localStorage.getItem('forgivenessJournal');
+
+  if(saved){
+
+    const data = JSON.parse(saved);
+
+    document.getElementById('hurt').value =
+      data.hurt || '';
+
+    document.getElementById('effect').value =
+      data.effect || '';
+
+    document.getElementById('healing').value =
+      data.healing || '';
+
+    document.getElementById('selfForgive').value =
+      data.selfForgive || '';
+
+    document.getElementById('lesson').value =
+      data.lesson || '';
+
+    document.getElementById('release').value =
+      data.release || '';
+  }
+
+}
+
+</script>
+<!-- RETURN BUTTON -->
+<div class="return-home">
+  <a href="daily-reflection-hub.html">
+    ← Return to Daily Reflection Hub
+  </a>
+</div>
+
+</body>
+</html>
