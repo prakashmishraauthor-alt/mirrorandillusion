@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Midday Fatigue Solution | Biological Reset System</title>
+<meta name="description" content="Fix midday fatigue using a biological reset system. Diagnose your energy and sleep with our interactive tools.">
+
+<style>
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0f1c;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #020617, #0f172a);
+}
+
+.hero h1 {
+    color: #00ffd5;
+    font-size: 34px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+/* BLOG */
+.blog {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.blog h2 {
+    color: #38bdf8;
+    margin-top: 30px;
+}
+
+.blog h3 {
+    color: #facc15;
+    margin-top: 20px;
+}
+
+/* TOOL */
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #111827;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+/* TOGGLE */
+.toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #1f2937;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* QUESTIONS */
+.question {
+    margin-bottom: 15px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    background: #020617;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+/* BUTTON */
+.action-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #00ffd5;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* RESULT */
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #020617;
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+}
+
+.score {
+    font-size: 26px;
+    color: #00ffd5;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.cta button {
+    padding: 12px 25px;
+    background: #00ffd5;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<h1>⚡ Fix Your Midday Fatigue</h1>
+<p>Identify the root cause of your energy crash and reset your biology instantly.</p>
+</section>
+
+<!-- BLOG CONTENT -->
+<section class="blog">
+
+<h2>Why Midday Fatigue Happens</h2>
+<p>
+Midday fatigue is not laziness — it's a biological signal. Your energy dips due to glucose crashes, dopamine overload, circadian rhythm drops, and mental fatigue.
+</p>
+
+<ul>
+<li>Blood sugar imbalance</li>
+<li>Excess screen stimulation</li>
+<li>Natural circadian dip</li>
+<li>Continuous cognitive load</li>
+</ul>
+
+<h2>Types of Fatigue</h2>
+
+<h3>Glucose Crash</h3>
+<p>Occurs due to poor meal timing and high sugar intake.</p>
+
+<h3>Dopamine Burnout</h3>
+<p>Too much stimulation reduces motivation and focus.</p>
+
+<h3>Neural Overload</h3>
+<p>Long work hours without breaks overload your brain.</p>
+
+<h2>Quick Reset Solutions</h2>
+
+<h3>5-Min Reset</h3>
+<ul>
+<li>Hydrate</li>
+<li>Deep breathing</li>
+<li>Step away from screen</li>
+</ul>
+
+<h3>15-Min Reset</h3>
+<ul>
+<li>Short walk</li>
+<li>Healthy snack</li>
+<li>Stretch</li>
+</ul>
+
+<h3>30-Min Reset</h3>
+<ul>
+<li>Power nap</li>
+<li>No phone</li>
+<li>Focused restart</li>
+</ul>
+
+</section>
+
+<!-- TOOL -->
+<div class="container">
+
+<h2 style="text-align:center; color:#00ffd5;">🧬 Run Your Biological Scan</h2>
+
+<div class="toggle">
+<button onclick="showTool('energy')">⚡ Energy</button>
+<button onclick="showTool('sleep')">🌙 Sleep</button>
+</div>
+
+<!-- ENERGY -->
+<div id="energyTool">
+
+<div class="question">
+<label>Sleep duration</label>
+<select id="e_sleep">
+<option value="0">Less than 5 hrs</option>
+<option value="10">5–6 hrs</option>
+<option value="20">6–7 hrs</option>
+<option value="30">7–8 hrs</option>
+</select>
+</div>
+
+<div class="question">
+<label>Screen before sleep</label>
+<select id="e_screen">
+<option value="0">More than 2 hrs</option>
+<option value="10">1–2 hrs</option>
+<option value="20">Less than 1 hr</option>
+</select>
+</div>
+
+<div class="question">
+<label>Last meal</label>
+<select id="e_food">
+<option value="0">5+ hrs ago</option>
+<option value="10">3–5 hrs</option>
+<option value="20">Within 2 hrs</option>
+</select>
+</div>
+
+<div class="question">
+<label>Movement</label>
+<select id="e_move">
+<option value="0">None</option>
+<option value="10">Light</option>
+<option value="20">Active</option>
+</select>
+</div>
+
+<div class="question">
+<label>Stress</label>
+<select id="e_stress">
+<option value="0">High</option>
+<option value="10">Moderate</option>
+<option value="20">Low</option>
+</select>
+</div>
+
+<button class="action-btn" onclick="calculateEnergy()">Check Energy</button>
+
+</div>
+
+<!-- SLEEP -->
+<div id="sleepTool" style="display:none;">
+
+<div class="question">
+<label>Sleep duration</label>
+<select id="s_hours">
+<option value="0">Less than 5 hrs</option>
+<option value="10">5–6 hrs</option>
+<option value="20">6–7 hrs</option>
+<option value="30">7–8 hrs</option>
+</select>
+</div>
+
+<div class="question">
+<label>Screen usage</label>
+<select id="s_screen">
+<option value="0">Heavy</option>
+<option value="10">Moderate</option>
+<option value="20">Minimal</option>
+</select>
+</div>
+
+<div class="question">
+<label>Schedule</label>
+<select id="s_schedule">
+<option value="0">Irregular</option>
+<option value="10">Somewhat</option>
+<option value="20">Consistent</option>
+</select>
+</div>
+
+<div class="question">
+<label>Night wakeups</label>
+<select id="s_wake">
+<option value="0">Frequent</option>
+<option value="10">Occasional</option>
+<option value="20">Rare</option>
+</select>
+</div>
+
+<div class="question">
+<label>Morning feeling</label>
+<select id="s_fresh">
+<option value="0">Tired</option>
+<option value="10">Okay</option>
+<option value="20">Fresh</option>
+</select>
+</div>
+
+<button class="action-btn" onclick="calculateSleep()">Check Sleep</button>
+
+</div>
+
+<!-- RESULT -->
+<div class="result" id="resultBox">
+<div class="score" id="score"></div>
+<p id="type"></p>
+<p id="solution"></p>
+</div>
+
+</div>
+
+<!-- CTA -->
+<section class="cta">
+<h2>Get Your Full Reset System</h2>
+<p>Download the 7-Day Biological Reset Plan</p>
+<button>Download Now</button>
+</section>
+
+<div class="cta-box">
+  <h3>Get Your Full Reset Plan</h3>
+  <p>Receive a personalized 7-day biological reset system.</p>
+
+   <form id="planForm" action="https://formspree.io/f/xzdjnzbn" method="POST">
+    
+    <input type="email" name="email" placeholder="Enter your email" required>
+
+    <button type="submit">Get My Plan</button>
+
+</form>
+
+<script>
+document.getElementById("planForm").addEventListener("submit", function(e){
+
+e.preventDefault(); // stop default form
+
+let form = this;
+let data = new FormData(form);
+
+// send data to Formspree
+fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+}).then(response => {
+
+    if(response.ok){
+        // ✅ REDIRECT MANUALLY
+        window.location.href = "sleep-plan.html";
+    } else {
+        alert("Something went wrong. Try again.");
+    }
+
+});
+});
+</script>
+</div>
+
+<script>
+
+function showTool(tool){
+document.getElementById("energyTool").style.display = tool === "energy" ? "block" : "none";
+document.getElementById("sleepTool").style.display = tool === "sleep" ? "block" : "none";
+document.getElementById("resultBox").style.display = "none";
+}
+
+function calculateEnergy(){
+let total =
++e_sleep.value + +e_screen.value + +e_food.value + +e_move.value + +e_stress.value;
+showResult(total, "energy");
+}
+
+function calculateSleep(){
+let total =
++s_hours.value + +s_screen.value + +s_schedule.value + +s_wake.value + +s_fresh.value;
+showResult(total, "sleep");
+}
+
+function showResult(scoreVal, mode){
+
+let type = "";
+let solution = "";
+
+if(mode==="energy"){
+if(scoreVal<30){type="Severe Burnout";solution="Rest + hydrate";}
+else if(scoreVal<60){type="Energy Crash";solution="Eat + sunlight";}
+else if(scoreVal<80){type="Mild Fatigue";solution="Stretch";}
+else{type="Optimal Energy";solution="Maintain";}
+}
+
+if(mode==="sleep"){
+if(scoreVal<30){type="Severe Sleep Debt";solution="Fix schedule";}
+else if(scoreVal<60){type="Poor Sleep";solution="Reduce screen";}
+else if(scoreVal<80){type="Moderate Sleep";solution="Improve routine";}
+else{type="Optimal Sleep";solution="Maintain";}
+}
+
+resultBox.style.display="block";
+score.innerText="Score: "+scoreVal+"/100";
+document.getElementById("type").innerText=type;
+document.getElementById("solution").innerText=solution;
+
+}
+
+</script>
+
+</body>
+</html>
