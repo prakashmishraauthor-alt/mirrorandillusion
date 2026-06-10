@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gratitude Journal | Mirror & Illusion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #5c4b1f;
+    color: #f0eaea;
+}
+
+.page {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 62px;
+}
+
+.date {
+    font-size: 13px;
+    color: #fcf9f9;
+}
+
+.streak {
+    text-align: center;
+    margin: 10px 0 20px;
+    font-size: 22px;
+    color: #d6e154;
+}
+
+.paper {
+    background: #423b2d;
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 14px rgba(233, 225, 225, 0.08);
+}
+
+.paper h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px dashed #d6c7a1;
+    background: transparent;
+    padding: 8px;
+    margin-top: 6px;
+    outline: none;
+
+    color: #ffffff;   /* 👈 THIS MAKES TEXT WHITE */
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #a16207;
+    color: white;
+    margin-top: 10px;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #fff3cd;
+    text-align: center;
+}
+
+.memory {
+    margin-top: 25px;
+}
+
+.memory-item {
+    background: #fffaf0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+/* =========================================
+   JOURNAL BRAND
+========================================= */
+
+.journal-brand{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.journal-brand a{
+  text-decoration:none;
+
+  font-family:'Source Serif Pro', serif;
+  font-size:32px;
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  color:#111;
+
+  transition:0.3s ease;
+}
+
+.journal-brand a:hover{
+  color:#b11226;
+}
+
+</style>
+</head>
+
+<body>
+<!-- TOP BRAND -->
+<div class="journal-brand">
+  <a href="index.html">
+    Mirror & Illusion
+  </a>
+</div>
+<div class="page">
+
+<div class="header">
+<h1>My Gratitude Diary</h1>
+<div class="date" id="date"></div>
+</div>
+
+<div class="streak" id="streak"></div>
+
+<div class="paper">
+<h3>🙏 Today I feel grateful for...</h3>
+<textarea id="g1"></textarea>
+<textarea id="g2"></textarea>
+<textarea id="g3"></textarea>
+</div>
+
+<div class="paper">
+<h3>💭 How do I feel?</h3>
+<textarea id="feeling"></textarea>
+</div>
+
+<div class="paper">
+<h3>🏆 What have I already achieved?</h3>
+<textarea id="achieve"></textarea>
+</div>
+
+<div class="paper">
+<h3>🌙 Tomorrow I will...</h3>
+<textarea id="intent"></textarea>
+</div>
+
+<button onclick="saveEntry()">Close Today’s Page</button>
+
+<div id="result" class="result"></div>
+
+<div class="memory" id="memory"></div>
+
+<div id="insightBox" class="paper"></div>
+
+</div>
+
+<script>
+
+// DATE
+let today = new Date().toDateString();
+document.getElementById("date").innerText = today;
+
+// INPUT REFERENCES
+const g1 = document.getElementById("g1");
+const g2 = document.getElementById("g2");
+const g3 = document.getElementById("g3");
+const feeling = document.getElementById("feeling");
+
+// SHOW STREAK (without increasing)
+function showStreak() {
+let streak = localStorage.getItem("streak") || 0;
+document.getElementById("streak").innerText = "🔥 Streak: " + streak + " days";
+}
+
+// UPDATE STREAK ONLY WHEN USER SAVES
+function updateStreak() {
+
+let lastDate = localStorage.getItem("lastDate");
+let streak = parseInt(localStorage.getItem("streak")) || 0;
+
+let todayDate = new Date();
+let yesterday = new Date();
+yesterday.setDate(todayDate.getDate() - 1);
+
+if(lastDate === today){
+    return;
+}
+else if(lastDate === yesterday.toDateString()){
+    streak++;
+}
+else{
+    streak = 1;
+}
+
+localStorage.setItem("streak", streak);
+localStorage.setItem("lastDate", today);
+
+}
+
+// SAVE ENTRY
+function saveEntry() {
+
+updateStreak();
+
+let entry = {
+date: today,
+g1: g1.value,
+g2: g2.value,
+g3: g3.value,
+feeling: feeling.value
+};
+
+let logs = JSON.parse(localStorage.getItem("journal")) || [];
+
+logs.unshift(entry);
+
+localStorage.setItem("journal", JSON.stringify(logs));
+
+document.getElementById("result").innerHTML =
+"<h3>☀️ Entry Saved</h3><p>You showed up for yourself today.</p>";
+
+showStreak();
+loadMemory();
+generateInsights();
+}
+
+// LOAD MEMORY
+function loadMemory() {
+
+let logs = JSON.parse(localStorage.getItem("journal")) || [];
+
+let html = "<h3>📖 Previous Entries</h3>";
+
+logs.slice(0,5).forEach(e => {
+html += `<div class="memory-item">
+<strong>${e.date}</strong><br>${e.g1 || ""}
+</div>`;
+});
+
+document.getElementById("memory").innerHTML = html;
+}
+
+// INSIGHT ENGINE
+function generateInsights() {
+
+let logs = JSON.parse(localStorage.getItem("journal")) || [];
+
+if(logs.length < 3){
+document.getElementById("insightBox").innerHTML =
+"<h3>📊 Weekly Insight</h3><p>Write for a few days to unlock insights.</p>";
+return;
+}
+
+let week = logs.slice(0,7);
+
+let consistency = week.length;
+
+let totalDepth = 0;
+
+week.forEach(e => {
+let count = 0;
+if(e.g1) count++;
+if(e.g2) count++;
+if(e.g3) count++;
+if(e.feeling) count++;
+totalDepth += count;
+});
+
+let avgDepth = (totalDepth / week.length).toFixed(1);
+
+let trend = avgDepth >= 3
+? "📈 Your reflection depth is strong and improving."
+: avgDepth >= 2
+? "🌤️ You're becoming more aware."
+: "⚠️ Try to reflect deeper.";
+
+let consistencyMsg = consistency >= 6
+? "🔥 Excellent consistency."
+: consistency >= 4
+? "👍 Good consistency."
+: "⚠️ Be more consistent.";
+
+document.getElementById("insightBox").innerHTML = `
+<h3>📊 Weekly Insight</h3>
+<p>${consistencyMsg}</p>
+<p>🧠 Avg Depth: ${avgDepth}/4</p>
+<p>${trend}</p>
+`;
+
+}
+
+// INIT
+showStreak();
+loadMemory();
+generateInsights();
+
+</script>
+
+</body>
+</html>
