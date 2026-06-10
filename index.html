@@ -1208,6 +1208,54 @@ a{
 
 }
 
+.card-link{
+    text-decoration:none;
+}
+
+.featured-card{
+    background:#111111;
+    border:1px solid rgba(200,155,99,.25);
+    border-radius:20px;
+    padding:50px;
+    transition:.4s;
+}
+
+.featured-card:hover{
+    transform:translateY(-6px);
+    border-color:#c89b63;
+}
+
+.card-category{
+    color:#c89b63;
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.featured-card-content h3{
+    font-family:'Cormorant Garamond', serif;
+    color:#f5f0e8;
+    font-size:42px;
+    font-weight:500;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.featured-card-content p{
+    color:#d8d2c7;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.featured-card-content span{
+    color:#c89b63;
+    font-size:15px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
 </style>
 </head>
 
@@ -1501,28 +1549,36 @@ a{
 
   <div class="featured-articles">
 
-    <!-- CARD 1 -->
+   <!-- CARD 1 -->
 
-    <a href="memory-brain.html">
+<a href="overthinking.html" class="card-link">
 
-      <div class="featured-card">
-
-        <img src="brain-memory.png">
+    <div class="featured-card">
 
         <div class="featured-card-content">
 
-          <h3>
-            Your Brain Has Vast Memory Than You Think
-          </h3>
+            <div class="card-category">
+                INNER AWARENESS
+            </div>
 
-          <p>
-            Discover how memory, focus, and learning can be strengthened
-            using science-backed approaches.
-          </p>
+            <h3>
+                Overthinking:<br>
+                When the Mind Refuses to Rest
+            </h3>
 
-          <span>Read Guide →</span>
+            <p>
+                Most people think overthinking is a problem of the mind.
+                But often, it is a problem of unfinished emotions waiting
+                to be understood.
+            </p>
+
+            <span>Read Reflection →</span>
 
         </div>
+
+    </div>
+
+</a>
 
       </div>
 
