@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your brain can remember far more than you think</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#f5f5f5;
+  color:#111;
+}
+
+.page{
+  max-width:1100px;
+  margin:auto;
+  background:#fff;
+}
+
+.container{
+  max-width:720px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 20px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.logo{font-weight:600;}
+
+.menu-icon{
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:260px;
+  height:100%;
+  background:#fff;
+  padding:20px;
+  transition:0.3s;
+  z-index:1500;
+}
+
+.mobile-menu.active{right:0;}
+
+.mobile-menu a{
+  display:block;
+  padding:12px 0;
+  text-decoration:none;
+  color:#111;
+  border-bottom:1px solid #eee;
+}
+
+/* FLOATING SHARE */
+.floating-share{
+  position:fixed;
+  left:20px;
+  top:40%;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.floating-share a{
+  background:#fff;
+  border:1px solid #ddd;
+  padding:8px;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  cursor:pointer;
+}
+
+/* ARTICLE */
+.category{
+  margin-top:20px;
+  font-size:13px;
+  color:#666;
+}
+
+h1{
+  font-family:'Source Serif Pro', serif;
+  font-size:38px;
+  margin:20px 0;
+}
+
+.meta{
+  font-size:13px;
+  color:#777;
+}
+
+.hero-img{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  border-radius:10px;
+  margin:20px 0;
+}
+
+.content p{
+  font-size:18px;
+  line-height:1.9;
+  margin-bottom:22px;
+}
+
+.subhead{
+  font-family:'Source Serif Pro';
+  font-size:24px;
+  margin-top:30px;
+}
+
+/* SHARE SECTION */
+.share-section{
+  border-top:1px solid #e5e5e5;
+  border-bottom:1px solid #e5e5e5;
+  margin:20px 0;
+}
+
+.share-row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+}
+
+.icons a{
+  margin-left:10px;
+  cursor:pointer;
+}
+
+/* RELATED */
+.related{margin-top:40px;}
+
+.related-item{
+  display:flex;
+  gap:12px;
+}
+
+.related-item img{
+  width:90px;
+  height:70px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* INTEREST */
+.interest{margin:40px 0;}
+
+.interest-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  background:#b11226;
+  color:#fff;
+  padding:12px;
+  border-radius:6px;
+}
+
+.interest-img{
+  width:90px;
+  height:70px;
+  object-fit:cover;
+}
+
+.interest-content p{
+  margin:0;
+  font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid #eee;
+  font-size:13px;
+  color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .floating-share{display:none;}
+}
+
+@media(min-width:768px){
+  .menu-icon{display:none;}
+  .mobile-menu{display:none;}
+}
+
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 20px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+/* LOGO */
+.logo{
+  font-weight:600;
+  font-size:18px;
+}
+
+/* DESKTOP NAV */
+.nav-links{
+  display:flex;
+  gap:24px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+  font-weight:500;
+  position:relative;
+}
+
+/* SUBTLE HOVER (Harvard style) */
+.nav-links a:hover{
+  color:#b11226;
+}
+
+/* HAMBURGER */
+.menu-icon{
+  font-size:22px;
+  cursor:pointer;
+  display:none;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:260px;
+  height:100%;
+  background:#fff;
+
+  display:flex;
+  flex-direction:column;
+  padding:20px;
+
+  transition:0.3s ease;
+  z-index:1500;
+}
+
+.mobile-menu.active{
+  right:0;
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+  font-size:20px;
+  align-self:flex-end;
+  margin-bottom:20px;
+  cursor:pointer;
+}
+
+/* MOBILE LINKS */
+.mobile-menu a{
+  text-decoration:none;
+  color:#111;
+  padding:14px 0;
+  border-bottom:1px solid #eee;
+  font-size:16px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu-icon{
+    display:block;
+  }
+}
+
+.related {
+    margin-top: 40px;
+}
+
+.related h2 {
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.related-card {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: 0.3s ease;
+    display: block;
+}
+
+/* IMAGE */
+.related-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* HOVER EFFECT */
+.related-card:hover {
+    transform: translateY(-5px);
+    background: #334155;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.interest {
+    margin-top: 50px;
+}
+
+.interest h2 {
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.interest-card {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: 0.3s ease;
+    display: block;
+}
+
+/* IMAGE */
+.interest-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.interest-content {
+    padding: 15px;
+}
+
+.interest-content h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.interest-content p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* HOVER */
+.interest-card:hover {
+    transform: translateY(-5px);
+    background: #334155;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .interest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+
+  <!-- LOGO -->
+  <div class="logo">Mirror & Illusion</div>
+
+  <!-- DESKTOP NAV -->
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="tools/happiness-index/tools.html">Tools</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <!-- HAMBURGER -->
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+</div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+
+  <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="tools/happiness-index/tools.html">Tools</a>
+  <a href="about.html">About</a>
+
+</div>
+
+<!-- FLOATING SHARE -->
+<div class="floating-share">
+  <a onclick="shareFacebook()">📘</a>
+  <a onclick="shareTwitter()">✖️</a>
+  <a onclick="shareEmail()">✉️</a>
+</div>
+
+<div class="container">
+
+<div class="category">wellbeing</div>
+
+<h1> Overthinking: Science, Effects & How to Break the Trap</h1>
+
+<div class="card">
+<p>
+Overthinking is not just “thinking too much.” It is a loop of rumination and worry where the mind keeps replaying past events or imagining future problems. Research in psychology shows this pattern affects both brain function and physical health.
+</p>
+</div>
+
+<div class="card">
+<h2 class="section-title">🔬 The Science of Overthinking</h2>
+
+<h3>1. Brain Default Mode Activation</h3>
+<p>
+When the mind is idle, the Default Mode Network (DMN) becomes active. Studies show this network is linked to self-referential thinking and rumination (Raichle et al., 2001).
+</p>
+
+<h3>2. Increased Stress Hormones</h3>
+<p>
+Overthinking raises cortisol levels, the body's primary stress hormone (Zoccola & Dickerson, 2012). Chronic elevation leads to fatigue, poor immunity, and sleep issues.
+</p>
+
+<h3>3. Mental Health Impact</h3>
+<p>
+Persistent rumination is strongly associated with depression (Nolen-Hoeksema, 2000) and anxiety disorders (Watkins, 2008).
+</p>
+
+<h3>4. Decision-Making Decline</h3>
+<p>
+Too many thoughts create analysis paralysis, reducing decision quality and increasing regret (Iyengar & Lepper, 2000).
+</p>
+
+<h3>5. Sleep Disruption</h3>
+<p>
+Pre-sleep rumination keeps the brain active, contributing to insomnia (Harvey, 2002).
+</p>
+</div>
+
+<div class="card">
+<h2 class="section-title"> Effects of Overthinking</h2>
+<ul>
+<li>Mental fatigue and burnout</li>
+<li>Low confidence and self-doubt</li>
+<li>Procrastination and missed opportunities</li>
+<li>Physical stress symptoms</li>
+<li>Reduced productivity and focus</li>
+</ul>
+</div>
+
+<div class="card">
+<h2 class="section-title"> How to Break the Overthinking Trap</h2>
+
+<h3>1. Label Your Thoughts</h3>
+<p>
+From Acceptance and Commitment Therapy (ACT): say “I am having the thought that…” to create distance from thoughts (Hayes et al., 2006).
+</p>
+
+<h3>2. 5-Minute Action Rule</h3>
+<p>
+Take one small action within 5 minutes. Behavioral activation research shows action reduces rumination (Jacobson et al., 1996).
+</p>
+
+<h3>3. Schedule Worry Time</h3>
+<p>
+Allocate 15 minutes daily for worrying. This method reduces anxiety significantly (Borkovec et al., 1983).
+</p>
+
+<h3>4. Mindfulness Practice</h3>
+<p>
+Mindfulness meditation reduces overactivity in the DMN and improves emotional control (Brewer et al., 2011).
+</p>
+
+<h3>5. Write Instead of Think</h3>
+<p>
+Expressive writing helps organize thoughts and reduce mental load (Pennebaker, 1997).
+</p>
+
+<h3>6. Limit Decisions</h3>
+<p>
+Use simple rules like “decide in 10 minutes” to avoid over-analysis (Gigerenzer, 2007).
+</p>
+
+<h3>7. Move Your Body</h3>
+<p>
+Physical activity reduces stress and improves mental clarity (Ratey, 2008).
+</p>
+
+</div>
+
+<div class="card">
+<h2 class="section-title"> Daily Anti-Overthinking Routine</h2>
+<ul>
+<li>Morning: 5 minutes breathing</li>
+<li>Day: Take immediate small actions</li>
+<li>Evening: Journaling</li>
+<li>Night: No phone + slow breathing</li>
+</ul>
+</div>
+
+<div class="card">
+<h2 class="section-title"> Final Insight</h2>
+<p class="highlight">
+Overthinking feels like control, but it is often avoidance. Progress begins when you act despite uncertainty.
+</p>
+</div>
+
+</div>
+
+</body>
+</html>
+
+<!-- SHARE -->
+<div class="share-section">
+
+<div class="share-row">
+<span>SHARE</span>
+<div class="icons">
+<a onclick="shareFacebook()">📘</a>
+<a onclick="shareTwitter()">✖️</a>
+<a onclick="shareEmail()">✉️</a>
+<a onclick="copyLink()">📋</a>
+</div>
+</div>
+
+<div class="share-row">
+<span>PRINT THIS PAGE</span>
+<div class="icons">
+<a onclick="window.print()">🖨️</a>
+</div>
+</div>
+
+</div>
+
+
+<!-- RELATED -->
+<div class="related">
+    <h2>Related Articles</h2>
+
+    <div class="related-grid">
+
+        <!-- Card 1 -->
+        <a href="purpose.html" class="related-card">
+            <img src="images/lp1.png" alt="Find Your Purpose">
+            <div class="card-content">
+                <h3>Find Your Purpose</h3>
+                <p>Align your life direction</p>
+            </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="eye.html" class="related-card">
+            <img src="images/eye-management.png" alt="Eye Management">
+            <div class="card-content">
+                <h3>Eye Management</h3>
+                <p>Protect and improve your vision</p>
+            </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="eye.html" class="related-card">
+            <img src="images/cateract.png" alt="eye Memory">
+            <div class="card-content">
+                <h3>Reversal of cataract</h3>
+                <p>New hope in the horizon</p>
+            </div>
+        </a>
+
+    </div>
+</div>
+</div>
+
+<!-- INTEREST -->
+<div class="interest">
+    <h2>You may be interested in…</h2>
+
+    <div class="interest-grid">
+
+        <!-- Card 1 -->
+<a href="memory-brain.html" class="interest-card">
+    <img src="tools/happiness-index/brain-memory.png" class="interest-img" alt="Brain Reset">
+    <div class="interest-content">
+        <h3>The power of brain</h3>
+        <p>Your brain can remember far more than you think</p>
+    </div>
+</a>
+
+<!-- Card 2 -->
+<a href="tools/happiness-index/why-you-feel-sleepy.html" class="interest-card">
+    <img src="images/sleepy.png" class="interest-img" alt="Sleep Reset">
+    <div class="interest-content">
+        <h3>Why you feel sleepy</h3>
+        <p>Improve deep sleep and recovery.</p>
+    </div>
+</a>
+
+<!-- Card 3 -->
+<a href="tools/happiness-index/energy-plan.html" class="interest-card">
+    <img src="images/energy-reset.png" class="interest-img" alt="Energy Reset">
+    <div class="interest-content">
+        <h3>Energy Reset</h3>
+        <p>Boost your daily energy naturally.</p>
+    </div>
+</a>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">© 2026 Mirror & Illusion</div>
+
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+
+function shareFacebook(){
+  let url = encodeURIComponent(window.location.href);
+  window.open("https://www.facebook.com/sharer/sharer.php?u=" + url);
+}
+
+function shareTwitter(){
+  let url = encodeURIComponent(window.location.href);
+  let text = encodeURIComponent(document.title);
+  window.open("https://twitter.com/intent/tweet?url=" + url + "&text=" + text);
+}
+
+function shareEmail(){
+  let subject = document.title;
+  let body = window.location.href;
+  window.location.href = "mailto:?subject=" + subject + "&body=" + body;
+}
+
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href);
+  alert("Link copied!");
+}
+</script>
+
+</body>
+</html>
