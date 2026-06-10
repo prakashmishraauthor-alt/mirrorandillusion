@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog | Mirror & Illusion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root{
+  --primary-red:#b11226;
+  --dark-red:#8f0d1d;
+  --text-dark:#111111;
+  --text-light:#666666;
+  --bg:#fafafa;
+  --white:#ffffff;
+  --border:#ececec;
+  --soft-pink:#fff4f6;
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text-dark);
+  line-height:1.7;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.wrapper{
+  max-width:1400px;
+  margin:auto;
+  background:#fff;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:999;
+
+  background:rgba(255,255,255,0.92);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(0,0,0,0.06);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 28px;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:-0.5px;
+}
+
+/* NAV */
+
+.nav-menu{
+  display:flex;
+  align-items:center;
+  gap:34px;
+
+  list-style:none;
+}
+
+.nav-menu a{
+  color:#222;
+  font-size:15px;
+  font-weight:600;
+
+  transition:0.3s ease;
+}
+
+.nav-menu a:hover{
+  color:var(--primary-red);
+}
+
+/* HAMBURGER */
+
+.hamburger{
+  display:none;
+
+  flex-direction:column;
+  gap:5px;
+
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:28px;
+  height:3px;
+
+  background:#111;
+  border-radius:4px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.blog-hero{
+  position:relative;
+
+  min-height:560px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.55)
+    ),
+    url('images/blog-hero.jpg') center/cover no-repeat;
+}
+
+.blog-hero-content{
+  position:relative;
+  z-index:2;
+
+  max-width:900px;
+
+  text-align:center;
+
+  padding:40px 20px;
+}
+
+.hero-tag{
+  display:inline-block;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.12);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1px;
+
+  margin-bottom:28px;
+
+  backdrop-filter:blur(10px);
+}
+
+.blog-hero h1{
+  font-family:'Source Serif Pro',serif;
+  font-size:72px;
+  line-height:1.08;
+
+  color:#fff;
+
+  margin-bottom:24px;
+}
+
+.blog-hero p{
+  max-width:760px;
+
+  margin:auto;
+
+  color:rgba(255,255,255,0.88);
+
+  font-size:20px;
+  line-height:1.9;
+}
+
+/* =========================================
+   FEATURED SECTION
+========================================= */
+
+.section{
+  padding:100px 24px;
+}
+
+.section-header{
+  text-align:center;
+
+  max-width:800px;
+
+  margin:0 auto 70px;
+}
+
+.section-header h2{
+  font-family:'Source Serif Pro',serif;
+  font-size:52px;
+
+  margin-bottom:18px;
+}
+
+.section-header p{
+  color:#666;
+  font-size:18px;
+  line-height:1.9;
+}
+
+/* =========================================
+   FEATURED MAIN ARTICLE
+========================================= */
+
+.main-featured{
+  max-width:1250px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+
+  background:#fff;
+
+  border-radius:34px;
+
+  overflow:hidden;
+
+  border:1px solid var(--border);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.08);
+}
+
+.main-featured-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.main-featured-content{
+  padding:70px 60px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.featured-label{
+  display:inline-block;
+
+  padding:8px 14px;
+
+  background:#fff1f3;
+
+  border-radius:999px;
+
+  color:var(--primary-red);
+
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+
+  margin-bottom:26px;
+}
+
+.main-featured-content h2{
+  font-family:'Source Serif Pro',serif;
+  font-size:48px;
+  line-height:1.15;
+
+  margin-bottom:22px;
+}
+
+.main-featured-content p{
+  font-size:18px;
+  color:#666;
+  line-height:1.9;
+
+  margin-bottom:34px;
+}
+
+.main-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:fit-content;
+
+  padding:18px 34px;
+
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-red),
+      var(--dark-red)
+    );
+
+  color:#fff;
+
+  font-weight:700;
+  font-size:15px;
+
+  transition:0.35s ease;
+
+  box-shadow:
+    0 18px 40px rgba(177,18,38,0.24);
+}
+
+.main-btn:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 25px 50px rgba(177,18,38,0.32);
+}
+
+/* =========================================
+   BLOG GRID
+========================================= */
+
+.blog-grid{
+  max-width:1300px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+  gap:34px;
+}
+
+.blog-card{
+  background:#fff;
+
+  border-radius:26px;
+
+  overflow:hidden;
+
+  border:1px solid var(--border);
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.06);
+
+  transition:0.35s ease;
+}
+
+.blog-card:hover{
+  transform:translateY(-10px);
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.12);
+}
+
+.blog-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.blog-card-content{
+  padding:32px;
+}
+
+.blog-card-content h3{
+  font-family:'Source Serif Pro',serif;
+  font-size:30px;
+
+  margin-bottom:16px;
+
+  line-height:1.2;
+}
+
+.blog-card-content p{
+  color:#666;
+  font-size:16px;
+  line-height:1.9;
+
+  margin-bottom:24px;
+}
+
+.read-link{
+  color:var(--primary-red);
+  font-weight:700;
+  font-size:15px;
+}
+
+/* =========================================
+   FEATURED GUIDE CARDS
+========================================= */
+
+.featured-guides{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+
+  max-width:1300px;
+  margin:auto;
+}
+
+.guide-card{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+
+  background:#fff;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  border:1px solid var(--border);
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.06);
+
+  transition:0.35s ease;
+}
+
+.guide-card:hover{
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 30px 70px rgba(177,18,38,0.14);
+}
+
+.guide-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.guide-content{
+  padding:60px 50px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.guide-content h3{
+  font-family:'Source Serif Pro',serif;
+  font-size:42px;
+  line-height:1.15;
+
+  margin-bottom:18px;
+}
+
+.guide-content p{
+  color:#666;
+  font-size:17px;
+  line-height:1.9;
+
+  margin-bottom:28px;
+}
+
+/* =========================================
+   TOOLS PANEL
+========================================= */
+
+.tools-section{
+  padding:100px 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff7f8 0%,
+      #ffffff 100%
+    );
+}
+
+.tools-grid{
+  max-width:1250px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+  gap:30px;
+}
+
+.tool-card{
+  background:#fff;
+
+  padding:40px 34px;
+
+  border-radius:28px;
+
+  border:1px solid #f1d9de;
+
+  transition:0.35s ease;
+
+  box-shadow:
+    0 15px 40px rgba(177,18,38,0.08);
+}
+
+.tool-card:hover{
+  transform:translateY(-8px);
+}
+
+.tool-icon{
+  width:72px;
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:22px;
+
+  background:#fff1f3;
+
+  font-size:34px;
+
+  margin-bottom:24px;
+}
+
+.tool-card h3{
+  font-family:'Source Serif Pro',serif;
+  font-size:30px;
+
+  margin-bottom:16px;
+}
+
+.tool-card p{
+  color:#666;
+  margin-bottom:24px;
+}
+
+/* =========================================
+   SUBSCRIBE
+========================================= */
+
+.subscribe-section{
+  padding:110px 24px;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.84),
+      rgba(255,255,255,0.84)
+    ),
+    url('images/pink-marble.jpg') center/cover no-repeat;
+}
+
+.subscribe-box{
+  max-width:900px;
+  margin:auto;
+
+  background:rgba(255,255,255,0.92);
+
+  padding:70px 60px;
+
+  border-radius:34px;
+
+  text-align:center;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.08);
+
+  border:1px solid rgba(177,18,38,0.12);
+}
+
+.subscribe-box h2{
+  font-family:'Source Serif Pro',serif;
+  font-size:52px;
+
+  margin-bottom:20px;
+}
+
+.subscribe-box p{
+  color:#666;
+  font-size:18px;
+  line-height:1.9;
+
+  margin-bottom:40px;
+}
+
+.subscribe-form{
+  display:flex;
+  gap:18px;
+}
+
+.subscribe-form input{
+  flex:1;
+
+  padding:20px 24px;
+
+  border-radius:16px;
+
+  border:2px solid #f1d1d7;
+
+  font-size:16px;
+
+  outline:none;
+}
+
+.subscribe-form input:focus{
+  border-color:var(--primary-red);
+}
+
+.subscribe-form button{
+  padding:20px 36px;
+
+  border:none;
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-red),
+      var(--dark-red)
+    );
+
+  color:#fff;
+
+  font-size:15px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+}
+
+.subscribe-form button:hover{
+  transform:translateY(-4px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer{
+  padding:40px 20px;
+
+  text-align:center;
+
+  border-top:1px solid #eee;
+
+  color:#777;
+  font-size:14px;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:900px){
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-menu{
+    position:absolute;
+
+    top:80px;
+    left:-100%;
+
+    width:100%;
+
+    background:#fff;
+
+    flex-direction:column;
+
+    padding:40px 0;
+
+    transition:0.35s ease;
+
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.08);
+  }
+
+  .nav-menu.active{
+    left:0;
+  }
+
+  .blog-hero{
+    min-height:460px;
+  }
+
+  .blog-hero h1{
+    font-size:46px;
+  }
+
+  .blog-hero p{
+    font-size:17px;
+  }
+
+  .section{
+    padding:70px 20px;
+  }
+
+  .section-header h2{
+    font-size:38px;
+  }
+
+  .main-featured{
+    grid-template-columns:1fr;
+  }
+
+  .main-featured-content{
+    padding:45px 30px;
+  }
+
+  .main-featured-content h2{
+    font-size:36px;
+  }
+
+  .guide-card{
+    grid-template-columns:1fr;
+  }
+
+  .guide-content{
+    padding:40px 30px;
+  }
+
+  .guide-content h3{
+    font-size:34px;
+  }
+
+  .subscribe-box{
+    padding:50px 28px;
+  }
+
+  .subscribe-box h2{
+    font-size:38px;
+  }
+
+  .subscribe-form{
+    flex-direction:column;
+  }
+
+}
+
+/* =========================================
+   EXTRA SMALL
+========================================= */
+
+@media(max-width:600px){
+
+  .header{
+    padding:16px 20px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .blog-hero h1{
+    font-size:38px;
+  }
+
+  .blog-card-content h3{
+    font-size:24px;
+  }
+
+  .guide-content h3{
+    font-size:28px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- HEADER -->
+
+<header class="header">
+
+  <div class="logo">
+    Mirror & Illusion
+  </div>
+
+  <nav>
+
+    <ul class="nav-menu" id="nav-menu">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li><a href="blog.html">Blog</a></li>
+
+      <li><a href="tools/happiness-index/happiness-index.html">Tools</a></li>
+
+      <li><a href="about.html">About</a></li>
+
+    </ul>
+
+  </nav>
+
+  <button class="hamburger" id="hamburger">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </button>
+
+</header>
+
+<!-- HERO -->
+
+<section class="blog-hero">
+
+  <div class="blog-hero-content">
+
+    <span class="hero-tag">
+      MIRROR & ILLUSION BLOG
+    </span>
+
+    <h1>
+      Understand Your Mind.
+      Reset Your Life.
+    </h1>
+
+    <p>
+      Deep insights on psychology, biology, emotional healing,
+      self-awareness, focus, energy, wellbeing, and human behaviour.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FEATURED ARTICLE -->
+
+<section class="section">
+
+  <div class="main-featured">
+
+    <div class="main-featured-image">
+      <img src="images/selfsabotage.png" alt="Self Sabotage">
+    </div>
+
+    <div class="main-featured-content">
+
+      <span class="featured-label">
+        FEATURED ARTICLE
+      </span>
+
+      <h2>
+        The Psychology of Self Sabotage
+      </h2>
+
+      <p>
+        Break the hidden emotional and psychological patterns
+        that quietly destroy confidence, progress, relationships,
+        and long-term growth.
+      </p>
+
+      <a href="self-sabotage.html" class="main-btn">
+        Read Article →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- LATEST ARTICLES -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <h2>Latest Articles</h2>
+
+    <p>
+      Explore science-backed guides to improve your emotional wellbeing,
+      mental clarity, focus, habits, purpose, and daily life.
+    </p>
+
+  </div>
+
+  <div class="blog-grid">
+
+    <!-- CARD -->
+
+    <a href="mastering-mindfulness.html">
+
+      <div class="blog-card">
+
+        <img src="images/mindfulness.png" alt="Mindfulness">
+
+        <div class="blog-card-content">
+
+          <h3>Mastering Mindfulness</h3>
+
+          <p>
+            Improve emotional clarity, reduce mental noise,
+            and reconnect with the present moment.
+          </p>
+
+          <span class="read-link">
+            Read Article →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- CARD -->
+
+    <a href="nurturing-selflove.html">
+
+      <div class="blog-card">
+
+        <img src="images/selflove.png" alt="Self Love">
+
+        <div class="blog-card-content">
+
+          <h3>Nurturing Self Love</h3>
+
+          <p>
+            Build a healthier relationship with yourself
+            through emotional awareness and compassion.
+          </p>
+
+          <span class="read-link">
+            Read Article →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- CARD -->
+
+    <a href="finding-purpose.html">
+
+      <div class="blog-card">
+
+        <img src="images/purpose.png" alt="Purpose">
+
+        <div class="blog-card-content">
+
+          <h3>Finding Purpose</h3>
+
+          <p>
+            Discover direction, meaning, and deeper motivation
+            in your daily life.
+          </p>
+
+          <span class="read-link">
+            Read Article →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- CARD -->
+
+    <a href="wellbeing.html">
+
+      <div class="blog-card">
+
+        <img src="images/wellbeing.png" alt="Wellbeing">
+
+        <div class="blog-card-content">
+
+          <h3>30 Minute Daily Wellbeing Routine</h3>
+
+          <p>
+            A peaceful mind, a healthy body, and a grateful heart
+            create a beautiful life.
+          </p>
+
+          <span class="read-link">
+            Read Article →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FEATURED GUIDES -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <h2>Featured Guides</h2>
+
+    <p>
+      Long-form systems and practical frameworks
+      for healing, reflection, memory, focus, and health.
+    </p>
+
+  </div>
+
+  <div class="featured-guides">
+
+    <!-- MEMORY -->
+
+    <a href="memory-brain.html">
+
+      <div class="guide-card">
+
+        <div class="guide-image">
+          <img src="tools/happiness-index/brain-memory.png" alt="Memory Brain">
+        </div>
+
+        <div class="guide-content">
+
+          <h3>Your Brain Has Vast Memory Than You Think</h3>
+
+          <p>
+            Discover how memory works and learn techniques
+            to improve focus, recall, and cognitive performance.
+          </p>
+
+          <span class="read-link">
+            Read Guide →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- EYE -->
+
+    <a href="eye.html">
+
+      <div class="guide-card">
+
+        <div class="guide-image">
+          <img src="images/cataract 1.png" alt="Eye">
+        </div>
+
+        <div class="guide-content">
+
+          <h3>Can We Reverse Cataract?</h3>
+
+          <p>
+            Explore the latest discussions, biological insights,
+            and lifestyle approaches related to eye health.
+          </p>
+
+          <span class="read-link">
+            Read Guide →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- EYE MANAGEMENT -->
+
+    <a href="eye-management.html">
+
+      <div class="guide-card">
+
+        <div class="guide-image">
+          <img src="images/eye-management.png" alt="Eye Management">
+        </div>
+
+        <div class="guide-content">
+
+          <h3>The Complete Eye Management System</h3>
+
+          <p>
+            A practical framework for preserving vision,
+            reducing eye strain, and supporting long-term eye health.
+          </p>
+
+          <span class="read-link">
+            Read Guide →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- DAILY REFLECTION -->
+
+    <a href="daily-reflection-hub.html">
+
+      <div class="guide-card">
+
+        <div class="guide-image">
+          <img src="images/daily-reflection.png" alt="Daily Reflection">
+        </div>
+
+        <div class="guide-content">
+
+          <h3>Daily Reflection Hub</h3>
+
+          <p>
+            Guided journals and reflective systems
+            for emotional healing, gratitude, clarity, and growth.
+          </p>
+
+          <span class="read-link">
+            Read Guide →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- CIRCULATORY -->
+
+    <a href="circulatory-system.html">
+
+      <div class="guide-card">
+
+        <div class="guide-image">
+          <img src="images/circulation.png" alt="Circulation">
+        </div>
+
+        <div class="guide-content">
+
+          <h3>Understanding Our Circulatory System</h3>
+
+          <p>
+            Learn how circulation affects energy, heart health,
+            oxygen delivery, and long-term wellbeing.
+          </p>
+
+          <span class="read-link">
+            Read Guide →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- DIGESTIVE -->
+
+    <a href="digestive-system.html">
+
+      <div class="guide-card">
+
+        <div class="guide-image">
+          <img src="images/digestive-system.png" alt="Digestive">
+        </div>
+
+        <div class="guide-content">
+
+          <h3>
+            5 Daily Habits To Naturally Boost Your Digestive System
+          </h3>
+
+          <p>
+            Small consistent habits can improve digestion,
+            gut comfort, nutrient absorption, and overall vitality.
+          </p>
+
+          <span class="read-link">
+            Read Guide →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- TOOLS -->
+
+<section class="tools-section">
+
+  <div class="section-header">
+
+    <h2>Biological Reset Tools</h2>
+
+    <p>
+      Interactive systems designed to identify what is draining
+      your energy, focus, mood, and emotional resilience.
+    </p>
+
+  </div>
+
+  <div class="tools-grid">
+
+    <!-- TOOL -->
+
+    <a href="tools/happiness-index/energy_reset.html">
+
+      <div class="tool-card">
+
+        <div class="tool-icon">⚡</div>
+
+        <h3>Energy Reset</h3>
+
+        <p>
+          Restore vitality and reduce fatigue naturally.
+        </p>
+
+        <span class="read-link">
+          Explore Tool →
+        </span>
+
+      </div>
+
+    </a>
+
+    <!-- TOOL -->
+
+    <a href="tools/happiness-index/sleep-reset.html">
+
+      <div class="tool-card">
+
+        <div class="tool-icon">🌙</div>
+
+        <h3>Sleep Reset</h3>
+
+        <p>
+          Improve recovery and build healthier sleep patterns.
+        </p>
+
+        <span class="read-link">
+          Explore Tool →
+        </span>
+
+      </div>
+
+    </a>
+
+    <!-- TOOL -->
+
+    <a href="tools/happiness-index/mar-brain-detox-plan.html">
+
+      <div class="tool-card">
+
+        <div class="tool-icon">🧠</div>
+
+        <h3>Brain Detox</h3>
+
+        <p>
+          Reduce mental overload and improve focus clarity.
+        </p>
+
+        <span class="read-link">
+          Explore Tool →
+        </span>
+
+      </div>
+
+    </a>
+
+    <!-- TOOL -->
+
+    <a href="tools/happiness-index/cholesterol-reset-plan.html">
+
+      <div class="tool-card">
+
+        <div class="tool-icon">❤️</div>
+
+        <h3>Cholesterol Reset</h3>
+
+        <p>
+          Improve cardiovascular health and metabolic balance.
+        </p>
+
+        <span class="read-link">
+          Explore Tool →
+        </span>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- SUBSCRIBE -->
+
+<section class="subscribe-section">
+
+  <div class="subscribe-box">
+
+    <h2>
+      Join The Mirror & Illusion Community
+    </h2>
+
+    <p>
+      Get powerful insights on psychology, self-awareness,
+      biology, emotional healing, focus, and wellbeing.
+    </p>
+
+    <form class="subscribe-form">
+
+      <input
+        type="email"
+        placeholder="Enter your email address"
+      >
+
+      <button type="submit">
+        Subscribe
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  © 2026 Mirror & Illusion
+</footer>
+
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  const hamburger =
+  document.getElementById('hamburger');
+
+  const navMenu =
+  document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', function(){
+
+    navMenu.classList.toggle('active');
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
