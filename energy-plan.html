@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Your Energy Reset Plan</title>
+<style>
+body {
+    background:#0a0f1c;
+    color:#fff;
+    font-family:Arial;
+    padding:20px;
+}
+h1 { color:#00ffd5; }
+
+.premium-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 16px;
+  margin-top: 40px;
+  border: 1px solid #334155;
+  text-align: center;
+}
+
+.premium-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.premium-price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #22c55e;
+  margin-bottom: 10px;
+}
+
+.premium-price span {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.premium-sub {
+  font-size: 14px;
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+.premium-features {
+  text-align: left;
+  margin: 20px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.premium-features li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.premium-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+.premium-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.premium-btn {
+  background: #22c55e;
+  color: white;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.premium-btn:hover {
+  opacity: 0.9;
+}
+
+.premium-trust {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* Wrapper to center */
+.premium-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+/* Card */
+.premium-card {
+  width: 100%;
+  max-width: 380px;   /* 👈 THIS FIXES FULL WIDTH ISSUE */
+  background: #1e293b;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Header */
+.premium-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Price */
+.premium-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #22c55e;
+  margin-bottom: 8px;
+}
+
+.old-price {
+  font-size: 14px;
+  color: #94a3b8;
+  text-decoration: line-through;
+  margin-right: 6px;
+}
+
+/* Subtext */
+.premium-sub {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+/* Features */
+.premium-features {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.premium-features li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.premium-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-size: 13px;
+}
+
+/* Warning */
+.premium-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin: 15px 0;
+}
+
+/* Button */
+.premium-btn {
+  background: #22c55e;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.premium-btn:hover {
+  opacity: 0.9;
+}
+
+/* Trust */
+.premium-trust {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+.premium-card:hover {
+  box-shadow: 0 0 0 1px #22c55e, 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.premium-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.premium-card {
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚡ Your 7-Day Energy Reset Plan</h1>
+
+<h2>Day 1–2</h2>
+<p>Fix sleep timing. No screens after 10 PM.</p>
+
+<h2>Day 3–4</h2>
+<p>Morning sunlight + 10 min walk.</p>
+
+<h2>Day 5–6</h2>
+<p>Reduce sugar + increase protein.</p>
+
+<h2>Day 7</h2>
+<p>Deep reset: no social media, full recovery.</p>
+
+<div class="premium-card">
+
+  <div class="premium-wrapper">
+
+  <div class="premium-card">
+
+    <div class="premium-header">
+      🔓 Unlock Full Reset Protocol
+    </div>
+
+    <div class="premium-price">
+      <span class="old-price">₹499</span>
+      ₹199
+    </div>
+
+    <p class="premium-sub">
+      Based on your diagnosis: <b id="userType">Metabolic Fatigue</b>
+    </p>
+
+    <ul class="premium-features">
+      <li>Root cause analysis</li>
+      <li>7-day reset plan</li>
+      <li>Daily schedule</li>
+      <li>Recovery timeline</li>
+    </ul>
+
+    <div class="premium-warning">
+      ⚠️ Fatigue will persist if not corrected
+    </div>
+
+    <button class="premium-btn">
+      Get Full Plan
+    </button>
+
+    <p class="premium-trust">
+      Instant access • One-time payment
+    </p>
+
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
