@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compassion Journal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   BASE
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:#f8fafc;
+  color:#111;
+}
+
+/* =========================================
+   SECTION BACKGROUND
+========================================= */
+
+.compassion-section{
+  min-height:100vh;
+  padding:90px 20px;
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(255,182,193,0.45),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,105,180,0.18),
+    transparent 30%),
+
+    linear-gradient(
+      135deg,
+      #fff7f8 0%,
+      #ffeef2 25%,
+      #fff5f7 50%,
+      #fdf2f8 75%,
+      #fff9fb 100%
+    );
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* GLOW EFFECTS */
+
+.compassion-section::before{
+  content:'';
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:rgba(255,182,193,0.18);
+  border-radius:50%;
+  top:-180px;
+  left:-120px;
+  filter:blur(80px);
+}
+
+.compassion-section::after{
+  content:'';
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:rgba(255,105,180,0.12);
+  border-radius:50%;
+  bottom:-150px;
+  right:-120px;
+  filter:blur(80px);
+}
+
+/* =========================================
+   MAIN BOX
+========================================= */
+
+.compassion-box{
+  position:relative;
+  z-index:2;
+
+  max-width:900px;
+  margin:auto;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.96),
+      rgba(255,250,251,0.95)
+    );
+
+  backdrop-filter:blur(10px);
+
+  padding:60px;
+  border-radius:30px;
+
+  border:1px solid rgba(255,255,255,0.8);
+
+  box-shadow:
+    0 25px 60px rgba(177,18,38,0.10),
+    0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.compassion-box h2{
+  text-align:center;
+  font-family:'Source Serif Pro', serif;
+  font-size:52px;
+  color:#b11226;
+  margin-bottom:15px;
+}
+
+.journal-subtitle{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 50px;
+
+  font-size:18px;
+  line-height:1.9;
+  color:#666;
+}
+
+/* =========================================
+   JOURNAL BLOCKS
+========================================= */
+
+.journal-block{
+  margin-bottom:30px;
+}
+
+.journal-block label{
+  display:block;
+  margin-bottom:14px;
+
+  font-size:17px;
+  font-weight:600;
+  color:#222;
+}
+
+.journal-block textarea{
+  width:100%;
+  min-height:140px;
+
+  padding:20px;
+
+  border-radius:18px;
+  border:2px solid #f5d3d9;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdfd,
+      #fff7f8
+    );
+
+  resize:vertical;
+
+  font-size:15px;
+  line-height:1.8;
+  font-family:'Inter', sans-serif;
+
+  transition:all 0.3s ease;
+}
+
+.journal-block textarea:focus{
+  outline:none;
+
+  border-color:#b11226;
+
+  box-shadow:
+    0 0 0 5px rgba(177,18,38,0.10);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.journal-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:45px;
+}
+
+.journal-buttons button{
+  flex:1;
+
+  padding:18px;
+
+  border:none;
+  border-radius:16px;
+
+  font-size:16px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:all 0.3s ease;
+}
+
+/* SAVE BUTTON */
+
+.save-btn{
+  background:
+    linear-gradient(
+      135deg,
+      #b11226,
+      #8f0d1d
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 15px 35px rgba(177,18,38,0.30);
+}
+
+.save-btn:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 20px 40px rgba(177,18,38,0.40);
+}
+
+/* CLEAR BUTTON */
+
+.clear-btn{
+  background:#e2e8f0;
+  color:#333;
+}
+
+.clear-btn:hover{
+  background:#cbd5e1;
+  transform:translateY(-2px);
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+#journal-status{
+  text-align:center;
+  margin-top:30px;
+
+  font-weight:600;
+  font-size:16px;
+  color:#16a34a;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .compassion-box{
+    padding:40px 25px;
+  }
+
+  .compassion-box h2{
+    font-size:38px;
+  }
+
+  .journal-subtitle{
+    font-size:16px;
+  }
+
+  .journal-buttons{
+    flex-direction:column;
+  }
+
+}
+/* =========================================
+   JOURNAL BRAND
+========================================= */
+
+.journal-brand{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.journal-brand a{
+  text-decoration:none;
+
+  font-family:'Source Serif Pro', serif;
+  font-size:32px;
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  color:#111;
+
+  transition:0.3s ease;
+}
+
+.journal-brand a:hover{
+  color:#b11226;
+}
+
+</style>
+</head>
+
+<body>
+<!-- TOP BRAND -->
+<div class="journal-brand">
+  <a href="index.html">
+    Mirror & Illusion
+  </a>
+</div>
+<!-- =========================================
+     COMPASSION JOURNAL
+========================================= -->
+
+<section class="compassion-section">
+
+  <div class="compassion-box">
+
+    <h2>💗 Compassion Journal</h2>
+
+    <p class="journal-subtitle">
+      A space to reflect with kindness, gratitude, emotional awareness,
+      and inner peace.
+    </p>
+
+    <!-- QUESTION 1 -->
+    <div class="journal-block">
+      <label>
+        What is something kind you did today?
+      </label>
+
+      <textarea
+        id="kindness"
+        placeholder="Write your reflection here..."></textarea>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="journal-block">
+      <label>
+        What emotion are you feeling most strongly today?
+      </label>
+
+      <textarea
+        id="emotion"
+        placeholder="Describe your emotions..."></textarea>
+    </div>
+
+    <!-- QUESTION 3 -->
+    <div class="journal-block">
+      <label>
+        What are you grateful for right now?
+      </label>
+
+      <textarea
+        id="gratitude"
+        placeholder="Write your gratitude..."></textarea>
+    </div>
+
+    <!-- QUESTION 4 -->
+    <div class="journal-block">
+      <label>
+        Is there anything you need to forgive yourself for?
+      </label>
+
+      <textarea
+        id="forgive"
+        placeholder="Write gently and honestly..."></textarea>
+    </div>
+
+    <!-- QUESTION 5 -->
+    <div class="journal-block">
+      <label>
+        What would make tomorrow more peaceful?
+      </label>
+
+      <textarea
+        id="peace"
+        placeholder="Describe a peaceful tomorrow..."></textarea>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="journal-buttons">
+
+      <button class="save-btn" onclick="saveJournal()">
+        Save Reflection
+      </button>
+
+      <button class="clear-btn" onclick="clearJournal()">
+        Clear Journal
+      </button>
+
+    </div>
+
+    <!-- STATUS -->
+    <p id="journal-status"></p>
+
+  </div>
+
+</section>
+
+<script>
+
+/* =========================================
+   SAVE JOURNAL
+========================================= */
+
+function saveJournal(){
+
+  const kindness =
+    document.getElementById('kindness').value;
+
+  const emotion =
+    document.getElementById('emotion').value;
+
+  const gratitude =
+    document.getElementById('gratitude').value;
+
+  const forgive =
+    document.getElementById('forgive').value;
+
+  const peace =
+    document.getElementById('peace').value;
+
+  const journalData = {
+    kindness,
+    emotion,
+    gratitude,
+    forgive,
+    peace,
+    date: new Date().toLocaleString()
+  };
+
+  localStorage.setItem(
+    'compassionJournal',
+    JSON.stringify(journalData)
+  );
+
+  document.getElementById('journal-status').innerHTML =
+    "Reflection saved successfully 💗";
+}
+
+/* =========================================
+   CLEAR JOURNAL
+========================================= */
+
+function clearJournal(){
+
+  document.getElementById('kindness').value = '';
+  document.getElementById('emotion').value = '';
+  document.getElementById('gratitude').value = '';
+  document.getElementById('forgive').value = '';
+  document.getElementById('peace').value = '';
+
+  document.getElementById('journal-status').innerHTML =
+    "Journal cleared";
+}
+
+/* =========================================
+   LOAD SAVED DATA
+========================================= */
+
+window.onload = function(){
+
+  const saved =
+    localStorage.getItem('compassionJournal');
+
+  if(saved){
+
+    const data = JSON.parse(saved);
+
+    document.getElementById('kindness').value =
+      data.kindness || '';
+
+    document.getElementById('emotion').value =
+      data.emotion || '';
+
+    document.getElementById('gratitude').value =
+      data.gratitude || '';
+
+    document.getElementById('forgive').value =
+      data.forgive || '';
+
+    document.getElementById('peace').value =
+      data.peace || '';
+  }
+
+}
+
+</script>
+
+</body>
+</html>
