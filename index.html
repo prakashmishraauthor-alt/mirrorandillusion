@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mirror & Illusion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root{
+  --primary-red:#b11226;
+  --dark-red:#8f0d1d;
+  --text-dark:#111;
+  --text-light:#666;
+  --white:#ffffff;
+  --bg:#fafafa;
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text-dark);
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.wrapper{
+  width:100%;
+  overflow:hidden;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:22px 40px;
+
+  background:rgba(255,255,255,0.82);
+
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.logo{
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:0.5px;
+}
+
+/* NAVIGATION */
+
+.nav-menu{
+  display:flex;
+  gap:32px;
+  list-style:none;
+}
+
+.nav-menu a{
+  font-weight:600;
+  transition:0.3s;
+}
+
+.nav-menu a:hover{
+  color:var(--primary-red);
+}
+
+/* HAMBURGER */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:28px;
+  height:3px;
+  background:#111;
+  border-radius:4px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.premium-hero{
+  position:relative;
+
+  height:100vh;
+  min-height:780px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  text-align:center;
+
+  background:#111;
+}
+
+.premium-hero img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:brightness(0.55);
+
+  animation:heroZoom 18s ease-in-out infinite alternate;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+
+    radial-gradient(
+      circle at top left,
+      rgba(177,18,38,0.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(255,255,255,0.08),
+      transparent 25%
+    ),
+
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.65)
+    );
+
+  z-index:1;
+}
+
+.premium-hero-content{
+  position:relative;
+  z-index:2;
+
+  max-width:980px;
+
+  padding:20px;
+
+  color:#fff;
+}
+
+.hero-tag{
+  display:inline-block;
+
+  padding:10px 22px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.10);
+
+  border:1px solid rgba(255,255,255,0.18);
+
+  backdrop-filter:blur(10px);
+
+  letter-spacing:2px;
+
+  font-size:13px;
+  font-weight:700;
+
+  margin-bottom:28px;
+}
+
+.premium-hero-content h1{
+  font-family:'Source Serif Pro',serif;
+
+  font-size:78px;
+  line-height:1.05;
+
+  margin-bottom:30px;
+}
+
+.premium-hero-content p{
+  max-width:760px;
+
+  margin:0 auto 42px;
+
+  font-size:21px;
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.88);
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  padding:18px 34px;
+
+  border-radius:18px;
+
+  font-size:15px;
+  font-weight:700;
+
+  transition:0.35s ease;
+}
+
+.primary-btn{
+  background:linear-gradient(135deg,#b11226,#8f0d1d);
+  color:#fff;
+
+  box-shadow:
+    0 18px 40px rgba(177,18,38,0.35);
+}
+
+.primary-btn:hover{
+  transform:translateY(-5px);
+}
+
+.secondary-btn{
+  background:rgba(255,255,255,0.10);
+
+  border:1px solid rgba(255,255,255,0.20);
+
+  backdrop-filter:blur(12px);
+
+  color:#fff;
+}
+
+.secondary-btn:hover{
+  background:rgba(255,255,255,0.16);
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section{
+  padding:110px 20px;
+}
+
+.section-title{
+  text-align:center;
+
+  font-family:'Source Serif Pro',serif;
+
+  font-size:52px;
+
+  margin-bottom:20px;
+}
+
+.section-subtitle{
+  text-align:center;
+
+  max-width:760px;
+
+  margin:0 auto 70px;
+
+  font-size:19px;
+  line-height:1.9;
+
+  color:#666;
+}
+
+/* =========================================
+   RESET TOOLS
+========================================= */
+
+.reset-tools-section{
+  background:
+    linear-gradient(
+      180deg,
+      #fafafa 0%,
+      #ffffff 100%
+    );
+}
+
+.reset-tools-grid{
+  max-width:1200px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(260px,1fr));
+
+  gap:30px;
+}
+
+.reset-card{
+  background:#fff;
+
+  padding:40px 32px;
+
+  border-radius:28px;
+
+  border:1px solid #ececec;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08);
+
+  transition:0.35s ease;
+}
+
+.reset-card:hover{
+  transform:translateY(-10px);
+
+  box-shadow:
+    0 30px 70px rgba(177,18,38,0.16);
+}
+
+.reset-icon{
+  width:72px;
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1f3,
+      #ffe4e8
+    );
+
+  font-size:34px;
+
+  margin-bottom:26px;
+}
+
+.reset-card h3{
+  font-size:30px;
+
+  margin-bottom:16px;
+
+  font-family:'Source Serif Pro',serif;
+}
+
+.reset-card p{
+  font-size:16px;
+  line-height:1.9;
+
+  color:#666;
+
+  margin-bottom:26px;
+}
+
+.reset-card span{
+  color:var(--primary-red);
+
+  font-weight:700;
+}
+
+/* =========================================
+   FEATURED GUIDES
+========================================= */
+
+.featured-articles{
+  max-width:1200px;
+
+  margin:auto;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:40px;
+}
+
+.featured-card{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+
+  background:#fff;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08);
+
+  transition:0.35s ease;
+}
+
+.featured-card:hover{
+  transform:translateY(-8px);
+}
+
+.featured-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.featured-card-content{
+  padding:50px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.featured-card-content h3{
+  font-family:'Source Serif Pro',serif;
+
+  font-size:42px;
+
+  margin-bottom:20px;
+}
+
+.featured-card-content p{
+  font-size:18px;
+  line-height:1.9;
+
+  color:#666;
+
+  margin-bottom:28px;
+}
+
+.featured-card-content span{
+  color:var(--primary-red);
+
+  font-weight:700;
+}
+
+/* =========================================
+   REFLECTION HUB
+========================================= */
+
+.reflection-hub{
+  background:
+
+    radial-gradient(
+      circle at top left,
+      rgba(255,182,193,0.16),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(191,219,254,0.16),
+      transparent 25%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fff9fb 0%,
+      #fffefc 35%,
+      #f8fbff 70%,
+      #ffffff 100%
+    );
+}
+
+.reflection-container{
+  max-width:1250px;
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:70px;
+
+  align-items:center;
+}
+
+.reflection-tag{
+  display:inline-block;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:#fff0f3;
+
+  color:#b11226;
+
+  font-size:13px;
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  margin-bottom:24px;
+}
+
+.reflection-content h2{
+  font-family:'Source Serif Pro',serif;
+
+  font-size:60px;
+
+  line-height:1.12;
+
+  margin-bottom:24px;
+}
+
+.reflection-content p{
+  font-size:18px;
+
+  line-height:1.9;
+
+  color:#666;
+
+  margin-bottom:35px;
+}
+
+.reflection-btn{
+  display:inline-flex;
+
+  align-items:center;
+  gap:10px;
+
+  padding:18px 32px;
+
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b11226,
+      #8f0d1d
+    );
+
+  color:#fff;
+
+  font-weight:700;
+
+  box-shadow:
+    0 18px 40px rgba(177,18,38,0.22);
+
+  transition:0.35s ease;
+}
+
+.reflection-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* MINI CARDS */
+
+.reflection-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.mini-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.95),
+      rgba(255,250,251,0.90)
+    );
+
+  padding:35px 28px;
+
+  border-radius:26px;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.06);
+
+  transition:0.35s ease;
+}
+
+.mini-card:hover{
+  transform:translateY(-8px);
+}
+
+.mini-icon{
+  width:70px;
+  height:70px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1f4,
+      #ffe8ec
+    );
+
+  font-size:32px;
+
+  margin-bottom:24px;
+}
+
+.mini-card h3{
+  font-family:'Source Serif Pro',serif;
+
+  font-size:24px;
+
+  margin-bottom:14px;
+}
+
+.mini-card p{
+  color:#666;
+
+  line-height:1.8;
+}
+
+/* =========================================
+   SUBSCRIBE
+========================================= */
+
+.subscribe-section{
+  padding:110px 20px;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.82),
+      rgba(255,255,255,0.82)
+    ),
+    url('images/pink-marble.jpg')
+    center/cover no-repeat;
+}
+
+.subscribe-box{
+  max-width:900px;
+
+  margin:auto;
+
+  padding:70px 50px;
+
+  text-align:center;
+
+  background:rgba(255,255,255,0.92);
+
+  border-radius:30px;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08);
+}
+
+.subscribe-box h2{
+  font-family:'Source Serif Pro',serif;
+
+  font-size:52px;
+
+  margin-bottom:24px;
+}
+
+.subscribe-box p{
+  max-width:700px;
+
+  margin:0 auto 40px;
+
+  font-size:19px;
+
+  line-height:1.9;
+
+  color:#666;
+}
+
+.subscribe-form{
+  display:flex;
+  gap:18px;
+}
+
+.subscribe-form input{
+  flex:1;
+
+  padding:18px 24px;
+
+  border-radius:16px;
+
+  border:2px solid #f3c8d0;
+
+  font-size:16px;
+
+  outline:none;
+}
+
+.subscribe-form button{
+  padding:18px 36px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b11226,
+      #8f0d1d
+    );
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+}
+
+.subscribe-form button:hover{
+  transform:translateY(-3px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer{
+  padding:50px 20px;
+
+  text-align:center;
+
+  background:#fff;
+
+  border-top:1px solid #eee;
+
+  color:#777;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heroZoom{
+
+  from{
+    transform:scale(1);
+  }
+
+  to{
+    transform:scale(1.06);
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:900px){
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-menu{
+    position:absolute;
+    top:85px;
+    left:-100%;
+
+    width:100%;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    background:#fff;
+
+    padding:30px 0;
+
+    transition:0.35s ease;
+  }
+
+  .nav-menu.active{
+    left:0;
+  }
+
+  .premium-hero-content h1{
+    font-size:52px;
+  }
+
+  .premium-hero-content p{
+    font-size:18px;
+  }
+
+  .reflection-container{
+    grid-template-columns:1fr;
+  }
+
+  .featured-card{
+    grid-template-columns:1fr;
+  }
+
+  .featured-card-content{
+    padding:35px;
+  }
+
+  .subscribe-form{
+    flex-direction:column;
+  }
+
+}
+
+@media(max-width:640px){
+
+  .header{
+    padding:18px 22px;
+  }
+
+  .premium-hero{
+    min-height:700px;
+  }
+
+  .premium-hero-content h1{
+    font-size:40px;
+    line-height:1.15;
+  }
+
+  .premium-hero-content p{
+    font-size:16px;
+  }
+
+  .section-title{
+    font-size:38px;
+  }
+
+  .reflection-content h2{
+    font-size:42px;
+  }
+
+  .reflection-cards{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =========================
+   JOURNAL SECTION
+========================= */
+
+/* =========================
+   JOURNAL SECTION
+========================= */
+
+.journal-section{
+
+    padding:120px 7%;
+
+    background:#f8f8f8;
+
+    overflow:hidden;
+
+}
+
+.journal-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+}
+
+/* LEFT SIDE */
+
+.journal-content{
+
+    width:50%;
+
+}
+
+.journal-tag{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:#111;
+
+    color:#fff;
+
+    border-radius:40px;
+
+    font-size:0.85rem;
+
+    letter-spacing:2px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.journal-content h2{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    color:#111;
+
+    margin-bottom:25px;
+
+    font-family:'Playfair Display', serif;
+
+}
+
+.journal-content h2 span{
+
+    color:#c59b6d;
+
+}
+
+.journal-content p{
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    color:#555;
+
+    margin-bottom:35px;
+
+    max-width:600px;
+
+}
+
+/* FEATURES */
+
+.journal-features{
+
+    list-style:none;
+
+    margin-bottom:40px;
+
+}
+
+.journal-features li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    color:#222;
+
+    font-weight:500;
+
+}
+
+.journal-features i{
+
+    color:#c59b6d;
+
+}
+
+/* BUTTON */
+
+.journal-btn{
+
+    display:inline-block;
+
+    padding:18px 40px;
+
+    background:#111;
+
+    color:#fff;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    transition:0.4s;
+
+}
+
+.journal-btn:hover{
+
+    background:#c59b6d;
+
+    transform:translateY(-4px);
+
+}
+
+/* RIGHT SIDE */
+
+.journal-image{
+
+    width:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.journal-image img{
+
+    width:100%;
+
+    max-width:650px;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .journal-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .journal-content{
+
+        width:100%;
+
+    }
+
+    .journal-image{
+
+        width:100%;
+
+        margin-top:40px;
+
+    }
+
+    .journal-content p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .journal-features{
+
+        display:inline-block;
+
+        text-align:left;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .journal-section{
+
+        padding:90px 6%;
+
+    }
+
+    .journal-content h2{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .journal-content h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .journal-btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .journal-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .journal-content p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .journal-features{
+
+        display:inline-block;
+
+        text-align:left;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .journal-section{
+
+        padding:90px 6%;
+
+    }
+
+    .journal-content h2{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .journal-content h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .journal-btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+  <div class="logo">
+    Mirror & Illusion
+  </div>
+
+  <nav>
+    <ul class="nav-menu" id="nav-menu">
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="tools/happiness-index/tools.html">Tools</a>
+      </li>
+
+      <li>
+        <a href="blog.html">Blog</a>
+      </li>
+
+      <li>
+        <a href="about.html">About</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <button class="hamburger" id="hamburger">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </button>
+
+</header>
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="premium-hero">
+
+  <img src="images/hero.png" alt="Mirror & Illusion">
+
+  <div class="hero-overlay"></div>
+
+  <div class="premium-hero-content">
+
+    <span class="hero-tag">
+      REFLECT • RESET • REBUILD
+    </span>
+
+    <h1>
+      Your Mind & Body
+      Shape The Reality
+      You Live In
+    </h1>
+
+    <p>
+      A reflective wellness ecosystem designed to restore clarity,
+      emotional balance, inner resilience, and biological wellbeing.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="tools/happiness-index/tools.html"
+         class="hero-btn primary-btn">
+
+         Start Biological Reset
+
+      </a>
+
+      <a href="daily-reflection-hub.html"
+         class="hero-btn secondary-btn">
+
+         Explore Reflection Hub
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     BIOLOGICAL RESET TOOLS
+========================================= -->
+
+<section class="section reset-tools-section">
+
+  <h2 class="section-title">
+    Biological Reset Tools
+  </h2>
+
+  <p class="section-subtitle">
+    Science-backed systems designed to restore your mind,
+    body, emotional resilience, and vitality.
+  </p>
+
+  <div class="reset-tools-grid">
+
+    <a href="tools/happiness-index/energy_reset.html"
+       class="reset-card">
+
+      <div class="reset-icon">⚡</div>
+
+      <h3>Energy Reset</h3>
+
+      <p>
+        Restore vitality, overcome fatigue,
+        and recharge naturally.
+      </p>
+
+      <span>Explore Tool →</span>
+
+    </a>
+
+    <a href="tools/happiness-index/mar-brain-detox-plan.html"
+       class="reset-card">
+
+      <div class="reset-icon">🧠</div>
+
+      <h3>Brain Detox</h3>
+
+      <p>
+        Quiet mental overload and reclaim
+        deep clarity and focus.
+      </p>
+
+      <span>Explore Tool →</span>
+
+    </a>
+
+    <a href="tools/happiness-index/cholesterol-reset-plan.html"
+       class="reset-card">
+
+      <div class="reset-icon">❤️</div>
+
+      <h3>Cholesterol Reset</h3>
+
+      <p>
+        Support heart health and optimize
+        your metabolic wellbeing.
+      </p>
+
+      <span>Explore Tool →</span>
+
+    </a>
+
+    <a href="tools/happiness-index/happiness-index.html"
+       class="reset-card">
+
+      <div class="reset-icon">😊</div>
+
+      <h3>Happiness Index</h3>
+
+      <p>
+        Reconnect with emotional balance
+        and inner resilience.
+      </p>
+
+      <span>Explore Tool →</span>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     DAILY REFLECTION HUB
+========================================= -->
+
+<section class="section reflection-hub">
+
+  <div class="reflection-container">
+
+    <div class="reflection-content">
+
+      <span class="reflection-tag">
+        DAILY REFLECTION HUB
+      </span>
+
+      <h2>
+        A Space To Reflect,
+        Heal, Grow &
+        Reconnect
+      </h2>
+
+      <p>
+        Explore guided journals designed to strengthen
+        self-awareness, emotional healing, gratitude,
+        resilience, and inner clarity.
+      </p>
+
+      <a href="daily-reflection-hub.html"
+         class="reflection-btn">
+
+         Enter Reflection Hub →
+
+      </a>
+
+    </div>
+
+    <!-- CARDS -->
+
+    <div class="reflection-cards">
+
+      <div class="mini-card">
+
+        <div class="mini-icon">💗</div>
+
+        <h3>Compassion Journal</h3>
+
+        <p>
+          Practice self-kindness and emotional awareness.
+        </p>
+
+      </div>
+
+      <div class="mini-card">
+
+        <div class="mini-icon">🤍</div>
+
+        <h3>Forgiveness Journal</h3>
+
+        <p>
+          Release emotional burdens and create peace.
+        </p>
+
+      </div>
+
+      <div class="mini-card">
+
+        <div class="mini-icon">🏆</div>
+
+        <h3>Daily Wins</h3>
+
+        <p>
+          Celebrate progress and build confidence daily.
+        </p>
+
+      </div>
+
+      <div class="mini-card">
+
+        <div class="mini-icon">🌿</div>
+
+        <h3>Mindful Reflection</h3>
+
+        <p>
+          Slow down and reconnect with yourself.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     FEATURED GUIDES
+========================================= -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    Featured Guides
+  </h2>
+
+  <p class="section-subtitle">
+    Explore deep psychological, biological,
+    and reflective wellness insights.
+  </p>
+
+  <div class="featured-articles">
+
+    <!-- CARD 1 -->
+
+    <a href="memory-brain.html">
+
+      <div class="featured-card">
+
+        <img src="tools/happiness-index/brain-memory.png">
+
+        <div class="featured-card-content">
+
+          <h3>
+            Your Brain Has Vast Memory Than You Think
+          </h3>
+
+          <p>
+            Discover how memory, focus, and learning can be strengthened
+            using science-backed approaches.
+          </p>
+
+          <span>Read Guide →</span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- CARD 2 -->
+
+    <a href="eye-management.html">
+
+      <div class="featured-card">
+
+        <img src="images/eye-management.png">
+
+        <div class="featured-card-content">
+
+          <h3>
+            The Complete Eye Management System
+          </h3>
+
+          <p>
+            Reduce eye fatigue, protect long-term vision,
+            and optimize visual performance naturally.
+          </p>
+
+          <span>Read Guide →</span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- CARD 3 -->
+
+    <a href="daily-reflection-hub.html">
+
+      <div class="featured-card">
+
+        <img src="images/daily-reflection.png">
+
+        <div class="featured-card-content">
+
+          <h3>
+            Daily Reflection Hub
+          </h3>
+
+          <p>
+            Build emotional intelligence, clarity,
+            gratitude, and self-awareness daily.
+          </p>
+
+          <span>Explore Hub →</span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     JOURNAL COLLECTION SECTION
+========================= -->
+
+<section class="journal-section">
+
+    <div class="journal-container">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="journal-content">
+
+            <span class="journal-tag">
+                NOW AVAILABLE
+            </span>
+
+            <h2>
+                The Reflection
+                <span>Collection</span>
+            </h2>
+
+            <p>
+                A premium collection of guided journals designed to cultivate
+                gratitude, compassion, healing, mindfulness and conscious living.
+                Crafted beautifully to help you reconnect with your deeper self
+                through daily reflection and awareness.
+            </p>
+
+            <ul class="journal-features">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Premium Hardcover Design
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Guided Daily Reflection Prompts
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Elegant Minimal Aesthetic
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Conscious Living & Emotional Growth
+                </li>
+
+            </ul>
+
+            <!-- CTA BUTTON -->
+
+            <a href="journals.html" class="journal-btn">
+                ORDER THE COLLECTION
+            </a>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+
+        <div class="journal-image">
+
+            <img src="images/journal-collection.png" alt="Mirror and Illusion Journal Collection">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     SUBSCRIBE
+========================================= -->
+
+<section class="subscribe-section">
+
+  <div class="subscribe-box">
+
+    <h2>
+      Join The Mirror & Illusion Community
+    </h2>
+
+    <p>
+      Get deep insights on psychology, biological reset,
+      mindfulness, emotional resilience, and self-mastery
+      delivered to your inbox.
+    </p>
+
+    <form class="subscribe-form">
+
+      <input type="email"
+             placeholder="Enter your email address">
+
+      <button type="submit">
+
+        Subscribe
+
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="footer">
+
+  © 2026 Mirror & Illusion
+
+</footer>
+
+</div>
+
+<!-- =========================================
+     SCRIPT
+========================================= -->
+
+<script>
+
+const hamburger =
+document.getElementById('hamburger');
+
+const navMenu =
+document.getElementById('nav-menu');
+
+hamburger.addEventListener('click',()=>{
+
+  navMenu.classList.toggle('active');
+
+});
+
+</script>
+
+</body>
+</html>
