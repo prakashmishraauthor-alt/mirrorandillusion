@@ -1136,26 +1136,99 @@ a{
 
 }
 
-.featured-grid
-.card-link
-.featured-card
-.featured-card:hover
-.card-category
-.featured-card-content h3
-.featured-card-content p
-.featured-card-content span
+/*=========================================
+ FEATURED ARTICLES
+=========================================*/
+
 .featured-articles{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:0 20px;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
 }
 
 .card-link{
+
     text-decoration:none;
+
+    display:block;
+
 }
 
 .featured-card{
+
+    background:#111;
+
+    border-radius:28px;
+
+    padding:40px;
+
     height:100%;
+
+    transition:0.4s;
+
+}
+
+.featured-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card-category{
+
+    color:#c59b6d;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+}
+
+.featured-card-content h3{
+
+    color:#fff;
+
+    font-family:'Source Serif Pro',serif;
+
+    font-size:52px;
+
+    line-height:1.15;
+
+    margin-bottom:30px;
+
+}
+
+.featured-card-content p{
+
+    color:#d0d0d0;
+
+    line-height:2;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
+
+.featured-card-content span{
+
+    color:#ff4b5c;
+
+    font-weight:600;
+
 }
 
 </style>
@@ -1437,7 +1510,30 @@ a{
 <!-- =========================================
      FEATURED GUIDES
 ========================================= -->
+<!-- FEATURED GUIDES -->
 
+<section class="section">
+
+<h2 class="section-title">
+Featured Guides
+</h2>
+
+<p class="section-subtitle">
+Explore deep psychological, biological,
+and reflective wellness insights.
+</p>
+
+<div class="featured-articles">
+
+    CARD 1
+
+    CARD 2
+
+    CARD 3
+
+</div>
+
+</section>
 <div class="featured-articles">
 
     <!-- CARD 1 -->
