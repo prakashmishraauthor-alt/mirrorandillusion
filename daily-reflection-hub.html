@@ -1,99 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Daily Reflection | Mirror & Illusion</title>
+<title>
+Daily Reflection Hub | Mirror & Illusion
+</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-.reflection-grid{
 
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:35px;
-
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.reflection-card{
-
-    background:#111;
-
-    border-radius:28px;
-
-    padding:42px;
-
-    border:1px solid rgba(197,155,109,.15);
-
-    transition:.4s ease;
-
+body{
+font-family:'Inter',sans-serif;
+background:#fafafa;
+color:#111;
+overflow-x:hidden;
 }
 
-.reflection-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:rgba(197,155,109,.5);
-
+a{
+text-decoration:none;
+color:inherit;
 }
 
-.reflection-category{
-
-    color:#c59b6d;
-
-    font-size:13px;
-
-    letter-spacing:2px;
-
-    margin-bottom:18px;
-
-    font-weight:600;
-
+img{
+max-width:100%;
+display:block;
 }
 
-.reflection-card h3{
-
-    font-family:'Source Serif Pro',serif;
-
-    font-size:42px;
-
-    color:white;
-
-    line-height:1.15;
-
-    margin-bottom:25px;
-
+.wrapper{
+overflow:hidden;
 }
 
-.reflection-card p{
+/* HEADER */
 
-    color:#d3d3d3;
-
-    line-height:2;
-
-    font-size:17px;
-
-    margin-bottom:30px;
-
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:22px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.9);
+backdrop-filter:blur(15px);
+border-bottom:1px solid #eee;
+z-index:1000;
 }
 
-.reflection-card span{
+.logo{
+font-size:24px;
+font-weight:700;
+}
 
-    color:#c59b6d;
+.nav-menu{
+display:flex;
+gap:30px;
+list-style:none;
+}
 
-    font-weight:600;
+.nav-menu a{
+font-weight:600;
+transition:.3s;
+}
+
+.nav-menu a:hover{
+color:#b11226;
+}
+
+/* HERO */
+
+.hero{
+padding-top:180px;
+padding-bottom:120px;
+text-align:center;
+background:
+linear-gradient(
+180deg,
+#fff,
+#fafafa
+);
+}
+
+.hero-tag{
+display:inline-block;
+padding:10px 22px;
+background:#fff1f3;
+border-radius:50px;
+color:#b11226;
+font-size:13px;
+font-weight:700;
+letter-spacing:1px;
+margin-bottom:28px;
+}
+
+.hero h1{
+font-family:'Source Serif Pro',serif;
+font-size:72px;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.hero p{
+max-width:760px;
+margin:auto;
+font-size:20px;
+line-height:1.9;
+color:#666;
+}
+
+/* SECTION */
+
+.section{
+padding:110px 20px;
+}
+
+.section-title{
+font-family:'Source Serif Pro',serif;
+font-size:52px;
+text-align:center;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+max-width:760px;
+margin:auto;
+text-align:center;
+font-size:18px;
+line-height:1.9;
+color:#666;
+margin-bottom:70px;
+}
+
+/* CARDS */
+
+.featured-articles{
+max-width:1300px;
+margin:auto;
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+}
+
+.featured-card{
+background:#fff;
+padding:40px;
+border-radius:30px;
+border:1px solid #ececec;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.06);
+
+transition:.35s;
+height:100%;
+}
+
+.featured-card:hover{
+transform:translateY(-8px);
+
+box-shadow:
+0 25px 60px rgba(177,18,38,.15);
+}
+
+.card-category{
+font-size:13px;
+font-weight:700;
+letter-spacing:1px;
+color:#b11226;
+margin-bottom:22px;
+}
+
+.featured-card h3{
+font-family:'Source Serif Pro',serif;
+font-size:36px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.featured-card p{
+line-height:1.9;
+color:#666;
+margin-bottom:25px;
+}
+
+.featured-card span{
+color:#b11226;
+font-weight:700;
+}
+
+/* QUOTE SECTION */
+
+.quote-section{
+background:#fff;
+padding:120px 20px;
+text-align:center;
+}
+
+.quote-section h2{
+font-family:'Source Serif Pro',serif;
+font-size:60px;
+line-height:1.2;
+max-width:850px;
+margin:auto;
+margin-bottom:30px;
+}
+
+.quote-section p{
+max-width:700px;
+margin:auto;
+line-height:2;
+color:#666;
+}
+
+/* FOOTER */
+
+.footer{
+padding:60px 20px;
+text-align:center;
+border-top:1px solid #eee;
+color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:46px;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.quote-section h2{
+font-size:40px;
+}
+
+.nav-menu{
+gap:18px;
+}
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -106,62 +271,65 @@
 
 <header class="header">
 
-  <div class="logo">
-    Mirror & Illusion
-  </div>
+    <div class="logo">
+        Mirror & Illusion
+    </div>
 
-  <nav>
-    <ul class="nav-menu" id="nav-menu">
+    <nav>
 
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tools.html">Tools</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="about.html">About</a></li>
+        <ul class="nav-menu">
 
-    </ul>
-  </nav>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
 
-  <button class="hamburger" id="hamburger">
+            <li>
+                <a href="tools.html">Tools</a>
+            </li>
 
-    <span></span>
-    <span></span>
-    <span></span>
+            <li>
+                <a href="blog.html">Blog</a>
+            </li>
 
-  </button>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 </header>
+
 
 <!-- =========================================
      HERO
 ========================================= -->
 
-<section class="premium-hero">
+<section class="hero">
 
-  <img src="journal-hero.jpg">
-
-  <div class="hero-overlay"></div>
-
-  <div class="premium-hero-content">
-
-    <span class="hero-tag">
-      DAILY REFLECTION HUB
-    </span>
+    <div class="hero-tag">
+        DAILY REFLECTION HUB
+    </div>
 
     <h1>
-      Reflect.<br>
-      Heal.<br>
-      Grow.
+
+        Reflect.<br>
+        Heal.<br>
+        Grow.
+
     </h1>
 
     <p>
-      Strengthen self-awareness, gratitude,
-      emotional resilience and inner peace
-      through simple daily reflection.
+
+        Strengthen gratitude, compassion,
+        forgiveness and confidence through
+        simple daily reflection.
+
     </p>
 
-  </div>
-
 </section>
+
 
 <!-- =========================================
      JOURNALS
@@ -169,301 +337,313 @@
 
 <section class="section">
 
-  <h2 class="section-title">
-    Guided Reflection Journals
-  </h2>
+    <h2 class="section-title">
 
-  <p class="section-subtitle">
-    Four beautiful spaces designed to cultivate
-    gratitude, healing, compassion and confidence.
-  </p>
+        Guided Reflection Journals
 
-  <div class="featured-articles">
+    </h2>
 
-    <!-- CARD 1 -->
+    <p class="section-subtitle">
 
-    <a href="gratitude.html" class="card-link">
+        Small daily practices that cultivate
+        emotional resilience, self-awareness
+        and inner peace.
 
-      <div class="featured-card">
-
-        <div class="featured-card-content">
-
-          <div class="card-category">
-            GRATITUDE
-          </div>
-
-          <h3>
-            Gratitude<br>
-            Journal
-          </h3>
-
-          <p>
-            Train your mind to appreciate
-            life's blessings and cultivate
-            contentment and abundance.
-          </p>
-
-          <span>
-            Open Journal →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
+    </p>
 
 
-    <!-- CARD 2 -->
-
-    <a href="forgiveness.html" class="card-link">
-
-      <div class="featured-card">
-
-        <div class="featured-card-content">
-
-          <div class="card-category">
-            HEALING
-          </div>
-
-          <h3>
-            Forgiveness<br>
-            Journal
-          </h3>
-
-          <p>
-            Release emotional burdens
-            and create space for peace,
-            freedom and understanding.
-          </p>
-
-          <span>
-            Open Journal →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
+    <div class="featured-articles">
 
 
-    <!-- CARD 3 -->
+        <!-- GRATITUDE -->
 
-    <a href="compassion-journal.html" class="card-link">
+        <a href="gratitude.html">
 
-      <div class="featured-card">
+            <div class="featured-card">
 
-        <div class="featured-card-content">
+                <div class="card-category">
+                    GRATITUDE
+                </div>
 
-          <div class="card-category">
-            INNER AWARENESS
-          </div>
+                <h3>
 
-          <h3>
-            Compassion<br>
-            Journal
-          </h3>
+                    Gratitude
+                    Journal
 
-          <p>
-            Develop kindness, emotional
-            balance and a deeper connection
-            with yourself and others.
-          </p>
+                </h3>
 
-          <span>
-            Open Journal →
-          </span>
+                <p>
 
-        </div>
+                    Train your mind to appreciate
+                    life's blessings and cultivate
+                    a deeper sense of contentment.
 
-      </div>
+                </p>
 
-    </a>
+                <span>
+
+                    Open Journal →
+
+                </span>
+
+            </div>
+
+        </a>
 
 
-    <!-- CARD 4 -->
+        <!-- FORGIVENESS -->
 
-    <a href="daily-wins.html" class="card-link">
+        <a href="forgiveness.html">
 
-      <div class="featured-card">
+            <div class="featured-card">
 
-        <div class="featured-card-content">
+                <div class="card-category">
+                    HEALING
+                </div>
 
-          <div class="card-category">
-            SELF GROWTH
-          </div>
+                <h3>
 
-          <h3>
-            Daily<br>
-            Wins
-          </h3>
+                    Forgiveness
+                    Journal
 
-          <p>
-            Celebrate small victories
-            and reinforce confidence
-            through consistent progress.
-          </p>
+                </h3>
 
-          <span>
-            Open Journal →
-          </span>
+                <p>
 
-        </div>
+                    Release emotional burdens and
+                    create space for peace,
+                    understanding and freedom.
 
-      </div>
+                </p>
 
-    </a>
+                <span>
 
-  </div>
+                    Open Journal →
+
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- COMPASSION -->
+
+        <a href="compassion-journal.html">
+
+            <div class="featured-card">
+
+                <div class="card-category">
+                    INNER AWARENESS
+                </div>
+
+                <h3>
+
+                    Compassion
+                    Journal
+
+                </h3>
+
+                <p>
+
+                    Develop kindness, emotional
+                    balance and deeper connection
+                    with yourself and others.
+
+                </p>
+
+                <span>
+
+                    Open Journal →
+
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- DAILY WINS -->
+
+        <a href="daily-wins.html">
+
+            <div class="featured-card">
+
+                <div class="card-category">
+                    SELF GROWTH
+                </div>
+
+                <h3>
+
+                    Daily
+                    Wins
+
+                </h3>
+
+                <p>
+
+                    Celebrate small victories and
+                    reinforce confidence through
+                    consistent progress.
+
+                </p>
+
+                <span>
+
+                    Open Journal →
+
+                </span>
+
+            </div>
+
+        </a>
+
+
+    </div>
 
 </section>
+
 
 
 <!-- =========================================
      QUOTE SECTION
 ========================================= -->
 
-<section class="section reflection-hub">
+<section class="quote-section">
 
-  <div class="reflection-container">
+    <h2>
 
-    <div class="reflection-content">
-
-      <span class="reflection-tag">
-        INNER AWARENESS
-      </span>
-
-      <h2>
         Small Reflections
-        Shape A
-        Beautiful Life
-      </h2>
+        Shape A Beautiful Life
 
-      <p>
-        Growth rarely comes from dramatic changes.
-        More often, it emerges from the quiet habit
-        of paying attention to ourselves every day.
-      </p>
+    </h2>
 
-    </div>
+    <p>
 
-    <div class="reflection-cards">
+        Growth rarely arrives through dramatic
+        transformations. More often, it emerges
+        from the quiet habit of paying attention
+        to ourselves every day.
 
-      <div class="mini-card">
-
-        <div class="mini-icon">🌿</div>
-
-        <h3>Gratitude</h3>
-
-        <p>
-          Appreciate what is already present.
-        </p>
-
-      </div>
-
-      <div class="mini-card">
-
-        <div class="mini-icon">🤍</div>
-
-        <h3>Forgiveness</h3>
-
-        <p>
-          Release what no longer serves you.
-        </p>
-
-      </div>
-
-      <div class="mini-card">
-
-        <div class="mini-icon">❤️</div>
-
-        <h3>Compassion</h3>
-
-        <p>
-          Treat yourself and others with kindness.
-        </p>
-
-      </div>
-
-      <div class="mini-card">
-
-        <div class="mini-icon">🏆</div>
-
-        <h3>Daily Wins</h3>
-
-        <p>
-          Celebrate progress, however small.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
+    </p>
 
 </section>
-
-
 <!-- =========================================
-     JOURNAL COLLECTION
+     REFLECTION COLLECTION
 ========================================= -->
 
-<section class="journal-section">
+<section class="section">
 
-    <div class="journal-container">
+    <h2 class="section-title">
 
-        <div class="journal-content">
+        The Reflection Collection
 
-            <span class="journal-tag">
-                NOW AVAILABLE
-            </span>
+    </h2>
 
-            <h2>
-                The Reflection
-                <span>Collection</span>
-            </h2>
+    <p class="section-subtitle">
 
-            <p>
-                A premium collection of guided journals designed to cultivate
-                gratitude, compassion, healing, mindfulness and conscious living.
-                Crafted beautifully to help you reconnect with your deeper self.
-            </p>
+        A growing collection of journals and
+        guided reflections designed to cultivate
+        awareness, gratitude and emotional resilience.
 
-            <ul class="journal-features">
+    </p>
 
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Premium Hardcover Design
-                </li>
+    <div class="featured-articles">
 
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Guided Daily Reflection Prompts
-                </li>
 
-                <li>
-                    <i class="fa-solid fa-check"></i>
-                    Elegant Minimal Aesthetic
-                </li>
+        <!-- CARD 1 -->
 
-            </ul>
+        <a href="gratitude.html">
 
-            <a href="journals.html" class="journal-btn">
-                ORDER THE COLLECTION
-            </a>
+            <div class="featured-card">
 
-        </div>
+                <div class="card-category">
+                    GRATITUDE
+                </div>
 
-        <div class="journal-image">
+                <h3>
 
-            <img src="journal-collection.png">
+                    Appreciate
+                    Life
 
-        </div>
+                </h3>
+
+                <p>
+
+                    Learn to notice abundance
+                    and reconnect with the beauty
+                    already present around you.
+
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- CARD 2 -->
+
+        <a href="forgiveness.html">
+
+            <div class="featured-card">
+
+                <div class="card-category">
+                    HEALING
+                </div>
+
+                <h3>
+
+                    Let Go
+                    Gently
+
+                </h3>
+
+                <p>
+
+                    Forgiveness creates space
+                    for peace and helps release
+                    emotional burdens.
+
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- CARD 3 -->
+
+        <a href="compassion-journal.html">
+
+            <div class="featured-card">
+
+                <div class="card-category">
+                    COMPASSION
+                </div>
+
+                <h3>
+
+                    Grow
+                    Kindness
+
+                </h3>
+
+                <p>
+
+                    Cultivate empathy, balance
+                    and deeper connection with
+                    yourself and others.
+
+                </p>
+
+            </div>
+
+        </a>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================================
@@ -472,54 +652,38 @@
 
 <footer class="footer">
 
-  © 2026 Mirror & Illusion
+    <h3 style="
+        font-family:'Source Serif Pro',serif;
+        font-size:34px;
+        margin-bottom:20px;
+    ">
+        Mirror & Illusion
+    </h3>
+
+    <p style="
+        max-width:700px;
+        margin:auto;
+        line-height:2;
+        color:#777;
+    ">
+
+        A space dedicated to biological reset,
+        emotional resilience and inner awareness.
+
+    </p>
+
+    <br><br>
+
+    <p>
+
+        © 2026 Mirror & Illusion
+
+    </p>
 
 </footer>
 
 </div>
 
-<script>
-
-const hamburger =
-document.getElementById('hamburger');
-
-const navMenu =
-document.getElementById('nav-menu');
-
-hamburger.addEventListener('click',()=>{
-
-  navMenu.classList.toggle('active');
-
-});
-// ================================
-// MOBILE MENU
-// ================================
-
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("nav-menu");
-
-if (hamburger && navMenu) {
-
-    hamburger.addEventListener("click", () => {
-
-        navMenu.classList.toggle("active");
-
-    });
-
-    const navLinks = navMenu.querySelectorAll("a");
-
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navMenu.classList.remove("active");
-
-        });
-
-    });
-
-}
-</script>
-
 </body>
 </html>
+
