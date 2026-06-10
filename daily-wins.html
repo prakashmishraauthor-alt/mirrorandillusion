@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daily Wins Journal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   BASE
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:#f8fafc;
+  color:#111;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.dailywins-section{
+  min-height:100vh;
+  padding:90px 20px;
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(251,191,36,0.28),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(249,115,22,0.18),
+    transparent 30%),
+
+    linear-gradient(
+      135deg,
+      #fffdf5 0%,
+      #fff8e8 25%,
+      #fffdf7 50%,
+      #fff7ed 75%,
+      #fffdfa 100%
+    );
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* GLOW EFFECTS */
+
+.dailywins-section::before{
+  content:'';
+  position:absolute;
+  width:520px;
+  height:520px;
+  background:rgba(251,191,36,0.16);
+  border-radius:50%;
+  top:-180px;
+  left:-120px;
+  filter:blur(90px);
+}
+
+.dailywins-section::after{
+  content:'';
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:rgba(249,115,22,0.12);
+  border-radius:50%;
+  bottom:-150px;
+  right:-120px;
+  filter:blur(90px);
+}
+
+/* =========================================
+   MAIN BOX
+========================================= */
+
+.dailywins-box{
+  position:relative;
+  z-index:2;
+
+  max-width:920px;
+  margin:auto;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.96),
+      rgba(255,252,245,0.95)
+    );
+
+  backdrop-filter:blur(10px);
+
+  padding:60px;
+  border-radius:32px;
+
+  border:1px solid rgba(255,255,255,0.8);
+
+  box-shadow:
+    0 25px 60px rgba(251,191,36,0.10),
+    0 8px 30px rgba(0,0,0,0.06);
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.dailywins-box h2{
+  text-align:center;
+  font-family:'Source Serif Pro', serif;
+  font-size:54px;
+  color:#d97706;
+  margin-bottom:15px;
+}
+
+.journal-subtitle{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 50px;
+
+  font-size:18px;
+  line-height:1.9;
+  color:#555;
+}
+
+/* =========================================
+   BLOCKS
+========================================= */
+
+.journal-block{
+  margin-bottom:30px;
+}
+
+.journal-block label{
+  display:block;
+  margin-bottom:14px;
+
+  font-size:17px;
+  font-weight:600;
+  color:#222;
+}
+
+.journal-block textarea{
+  width:100%;
+  min-height:130px;
+
+  padding:20px;
+
+  border-radius:18px;
+  border:2px solid #fde68a;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fffdf5
+    );
+
+  resize:vertical;
+
+  font-size:15px;
+  line-height:1.8;
+  font-family:'Inter', sans-serif;
+
+  transition:all 0.3s ease;
+}
+
+.journal-block textarea:focus{
+  outline:none;
+
+  border-color:#d97706;
+
+  box-shadow:
+    0 0 0 5px rgba(217,119,6,0.10);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.journal-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:45px;
+}
+
+.journal-buttons button{
+  flex:1;
+
+  padding:18px;
+
+  border:none;
+  border-radius:16px;
+
+  font-size:16px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:all 0.3s ease;
+}
+
+/* SAVE BUTTON */
+
+.save-btn{
+  background:
+    linear-gradient(
+      135deg,
+      #f59e0b,
+      #d97706
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 15px 35px rgba(245,158,11,0.28);
+}
+
+.save-btn:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 20px 40px rgba(245,158,11,0.35);
+}
+
+/* CLEAR BUTTON */
+
+.clear-btn{
+  background:#e2e8f0;
+  color:#333;
+}
+
+.clear-btn:hover{
+  background:#cbd5e1;
+  transform:translateY(-2px);
+}
+
+/* =========================================
+   RETURN BUTTON
+========================================= */
+
+.return-home{
+  text-align:center;
+  margin-top:35px;
+}
+
+.return-home a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:16px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b11226,
+      #8f0d1d
+    );
+
+  color:#fff;
+  text-decoration:none;
+
+  font-weight:700;
+  font-size:15px;
+
+  border-radius:14px;
+
+  box-shadow:
+    0 12px 30px rgba(177,18,38,0.25);
+
+  transition:all 0.3s ease;
+}
+
+.return-home a:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 18px 40px rgba(177,18,38,0.35);
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+#journal-status{
+  text-align:center;
+  margin-top:30px;
+
+  font-weight:600;
+  font-size:16px;
+  color:#16a34a;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .dailywins-box{
+    padding:40px 25px;
+  }
+
+  .dailywins-box h2{
+    font-size:40px;
+  }
+
+  .journal-subtitle{
+    font-size:16px;
+  }
+
+  .journal-buttons{
+    flex-direction:column;
+  }
+
+}
+/* =========================================
+   JOURNAL BRAND
+========================================= */
+
+.journal-brand{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.journal-brand a{
+  text-decoration:none;
+
+  font-family:'Source Serif Pro', serif;
+  font-size:32px;
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  color:#111;
+
+  transition:0.3s ease;
+}
+
+.journal-brand a:hover{
+  color:#b11226;
+}
+
+</style>
+</head>
+
+<body>
+<!-- TOP BRAND -->
+<div class="journal-brand">
+  <a href="index.html">
+    Mirror & Illusion
+  </a>
+</div>
+<!-- =========================================
+     DAILY WINS JOURNAL
+========================================= -->
+
+<section class="dailywins-section">
+
+  <div class="dailywins-box">
+
+    <h2>🏆 Daily Wins</h2>
+
+    <p class="journal-subtitle">
+      Celebrate your progress, acknowledge small victories,
+      and build confidence one day at a time.
+    </p>
+
+    <!-- QUESTION 1 -->
+    <div class="journal-block">
+      <label>
+        What is one thing you accomplished today?
+      </label>
+
+      <textarea
+        id="win1"
+        placeholder="Describe your achievement..."></textarea>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="journal-block">
+      <label>
+        What challenge did you handle well?
+      </label>
+
+      <textarea
+        id="win2"
+        placeholder="Reflect on your strength..."></textarea>
+    </div>
+
+    <!-- QUESTION 3 -->
+    <div class="journal-block">
+      <label>
+        What healthy choice did you make today?
+      </label>
+
+      <textarea
+        id="win3"
+        placeholder="Exercise, food, mindset, habits..."></textarea>
+    </div>
+
+    <!-- QUESTION 4 -->
+    <div class="journal-block">
+      <label>
+        What made you proud of yourself today?
+      </label>
+
+      <textarea
+        id="win4"
+        placeholder="Celebrate your progress..."></textarea>
+    </div>
+
+    <!-- QUESTION 5 -->
+    <div class="journal-block">
+      <label>
+        What is one small win you often overlook?
+      </label>
+
+      <textarea
+        id="win5"
+        placeholder="Recognize the little victories..."></textarea>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="journal-buttons">
+
+      <button class="save-btn" onclick="saveJournal()">
+        Save Wins
+      </button>
+
+      <button class="clear-btn" onclick="clearJournal()">
+        Clear Journal
+      </button>
+
+    </div>
+
+    <!-- STATUS -->
+    <p id="journal-status"></p>
+
+    <!-- RETURN BUTTON -->
+    <div class="return-home">
+      <a href="daily-reflection-hub.html">
+        ← Return to Daily Reflection Hub
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+/* =========================================
+   SAVE JOURNAL
+========================================= */
+
+function saveJournal(){
+
+  const win1 =
+    document.getElementById('win1').value;
+
+  const win2 =
+    document.getElementById('win2').value;
+
+  const win3 =
+    document.getElementById('win3').value;
+
+  const win4 =
+    document.getElementById('win4').value;
+
+  const win5 =
+    document.getElementById('win5').value;
+
+  const journalData = {
+    win1,
+    win2,
+    win3,
+    win4,
+    win5,
+    date: new Date().toLocaleString()
+  };
+
+  localStorage.setItem(
+    'dailyWinsJournal',
+    JSON.stringify(journalData)
+  );
+
+  document.getElementById('journal-status').innerHTML =
+    "Daily wins saved successfully 🏆";
+}
+
+/* =========================================
+   CLEAR JOURNAL
+========================================= */
+
+function clearJournal(){
+
+  document.getElementById('win1').value = '';
+  document.getElementById('win2').value = '';
+  document.getElementById('win3').value = '';
+  document.getElementById('win4').value = '';
+  document.getElementById('win5').value = '';
+
+  document.getElementById('journal-status').innerHTML =
+    "Journal cleared";
+}
+
+/* =========================================
+   LOAD SAVED DATA
+========================================= */
+
+window.onload = function(){
+
+  const saved =
+    localStorage.getItem('dailyWinsJournal');
+
+  if(saved){
+
+    const data = JSON.parse(saved);
+
+    document.getElementById('win1').value =
+      data.win1 || '';
+
+    document.getElementById('win2').value =
+      data.win2 || '';
+
+    document.getElementById('win3').value =
+      data.win3 || '';
+
+    document.getElementById('win4').value =
+      data.win4 || '';
+
+    document.getElementById('win5').value =
+      data.win5 || '';
+  }
+
+}
+
+</script>
+
+</body>
+</html>
