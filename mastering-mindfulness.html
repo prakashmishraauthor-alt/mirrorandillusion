@@ -4,435 +4,1040 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Mastering the Art of Mindfulness | Mirror & Illusion</title>
+<title>
+Mastering the Art of Mindfulness |
+Mirror & Illusion
+</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap"
+rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ===== ROOT ===== */
+
+:root{
+
+--primary-red:#b11226;
+--dark-red:#8f0d1d;
+
+--text-dark:#111;
+--text-light:#666;
+
+--bg:#fafafa;
+--white:#ffffff;
+
+}
+
+/* ===== BASE ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:var(--bg);
+
+color:var(--text-dark);
+
+line-height:1.9;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* ===== HEADER ===== */
+
+.header{
+
+position:sticky;
+
+top:0;
+
+background:
+rgba(255,255,255,0.92);
+
+backdrop-filter:blur(16px);
+
+padding:22px 7%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+border-bottom:1px solid #eee;
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:700;
+
+font-family:
+'Source Serif Pro',serif;
+
+}
+
+.nav{
+
+display:flex;
+
+gap:35px;
+
+}
+
+.nav a{
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.nav a:hover{
+
+color:var(--primary-red);
+
+}
+
+/* ===== ARTICLE ===== */
+
+.article-wrapper{
+
+max-width:900px;
+
+margin:auto;
+
+padding:80px 25px;
+
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:50px;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.08);
+
+}
+
+/* CATEGORY */
+
+.post-category{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:#fff0f3;
+
+color:var(--primary-red);
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+margin-bottom:30px;
+
+}
+
+/* TITLE */
+
+.post-title{
+
+font-family:
+'Source Serif Pro',serif;
+
+font-size:64px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+/* SUBTITLE */
+
+.post-subtitle{
+
+font-size:22px;
+
+color:#666;
+
+margin-bottom:30px;
+
+line-height:1.8;
+
+}
+
+/* META */
+
+.post-meta{
+
+display:flex;
+
+gap:15px;
+
+color:#888;
+
+font-size:15px;
+
+margin-bottom:60px;
+
+}
+
+/* ARTICLE */
+
+.post-content{
+
+font-size:19px;
+
+color:#333;
+
+}
+
+.post-content h2{
+
+font-family:
+'Source Serif Pro',serif;
+
+font-size:40px;
+
+margin-top:70px;
+
+margin-bottom:25px;
+
+line-height:1.2;
+
+}
+
+.post-content p{
+
+margin-bottom:30px;
+
+color:#444;
+
+}
+
+/* QUOTE */
+
+.quote-box{
+
+margin:70px 0;
+
+padding:50px;
+
+background:white;
+
+border-left:5px solid var(--primary-red);
+
+border-radius:24px;
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.06);
+
+}
+
+.quote-box p{
+
+font-size:28px;
+
+font-family:
+'Source Serif Pro',serif;
+
+line-height:1.5;
+
+margin-bottom:20px;
+
+}
+
+.quote-box span{
+
+color:#777;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.header{
+
+padding:20px;
+
+}
+
+.nav{
+
+display:none;
+
+}
+
+.post-title{
+
+font-size:44px;
+
+}
+
+.post-content h2{
+
+font-size:30px;
+
+}
+
+.quote-box{
+
+padding:35px;
+
+}
+
+.quote-box p{
+
+font-size:23px;
+
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <header class="header">
- <div class="logo-container">
-    <img src="images/logo.png" class="logo-img">
-    <h2 class="logo-text">Mirror & Illusion</h2>
-  </div>
+
+<div class="logo">
+Mirror & Illusion
+</div>
 
 <nav class="nav">
-<a href="index.html">Home</a>
-<a href="blog.html">blog</a>
-<a href="tools/happiness-index/indexx.html">Tools</a>
-<a href="about.html">About</a>
-<p></p>
-<p></p>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="blog.html">
+Blog
+</a>
+
+<a href="tools.html">
+Tools
+</a>
+
+<a href="about.html">
+About
+</a>
+
 </nav>
 
 </header>
 
 
-<!-- PAGE CONTAINER -->
-
-<div class="page-container">
+<div class="article-wrapper">
 
 
-<!-- LEFT SIDEBAR -->
+<div class="hero-image">
 
-<aside class="sidebar-left">
-
-<div class="side-box">
-
-<img src="images/aa.png">
-
-</div>
-
-<div class="side-box quote-box">
-
-<p>
-“The life you want is hidden
-inside the choices you’re avoiding.”
-</p>
-
-<span>— </span>
-
-</div>
-
-<div class="side-box">
-
-<h3>Category</h3>
-
-<p>Mindfulness</p>
-
-</div>
-
-<div class="side-box">
-
-<img src="images/feeling-lost.png">
+<img src="images/mindfulness.png">
 
 </div>
 
 
+<div class="post-category">
 
-</aside>
+INNER AWARENESS
 
-
-
-
-
-<!-- MAIN ARTICLE -->
-
-<main class="article-container">
-
-
-<img class="hero-img" src="images/mindfulness.png">
+</div>
 
 
 <h1 class="post-title">
+
 Mastering the Art of Mindfulness
+
 </h1>
+
+
+<p class="post-subtitle">
+
+From Mental Noise to Effortless Being
+
+</p>
+
 
 <div class="post-meta">
 
-<span>By Mirror & Illusion</span>
+<span>
+Mirror & Illusion
+</span>
+
 <span>•</span>
-<span>9 min read</span>
+
+<span>
+9 min read
+</span>
 
 </div>
-
 
 
 <div class="post-content">
 
 <p>
-Ever feel like your brain is a browser with fifty tabs open, and half of them are frozen? We spend most of our lives in "Doing Mode," a state where we are constantly chasing goals and trying to close the gap between how things are and how we want them to be
-. While this helps us get through our to-do lists, it often leaves us feeling "slightly wounded and tightly wound"
-. Mental health researchers suggest that becoming a "master" of mindfulness isn't about achieving a perfect state of Zen; it’s about moving from that effortful "doing" into a state of "effortless being"
-.
-Here is the roadmap researchers and pioneers like Jon Kabat-Zinn suggest for your personal development journey:
+
+Modern life often feels like having fifty tabs open inside the mind. Thoughts compete for attention, unfinished tasks pull us in different directions, and even moments of rest become occupied by worries about tomorrow. Most people spend their lives in a constant state of doing, always chasing the next task, solving the next problem, and trying to become someone else.
+
+Mindfulness offers another possibility. It is not an escape from life. It is the art of returning to life.
+
 </p>
 
-<h3>1. Start with the "Foundation of Nine"</h3>
+
+<h2>
+
+1. The Foundation of Mindfulness
+
+</h2>
 
 <p>
-Mastery isn’t just about sitting still; it’s about the attitude you bring to your life. Researchers highlight nine foundational attitudes that act like a compass for your mind
-:
-Beginner’s Mind: Try looking at your morning coffee or your partner’s face as if for the very first time
-. As the saying goes, "In the beginner's mind there are many options, but in the expert's mind there are few"
-.
-Non-Judging: We often label everything as "good" or "bad"
-. Mastery means stepping back and seeing things as they are, without the filter of our likes and dislikes
-.
-Patience and Letting Go: Life doesn't always move at our pace
-. Mastery is learning to savor the moment—like enjoying washing the dishes just to wash the dishes—rather than rushing to the next thing
-.
+
+According to Jon Kabat-Zinn and many modern researchers, mindfulness begins with attitude. It begins with curiosity, patience, acceptance, and non-judgment.
+
+A beginner's mind allows us to experience familiar things as if they were new. Non-judgment teaches us to observe without immediately labeling experiences as good or bad. Patience reminds us that growth unfolds in its own time.
+
+Mindfulness is not something we achieve. It is something we practice.
+
 </p>
 
-<p>
-<h3>2. The Three Stages of Your Mindful Journey
-</p></h3>
 
-<p>Think of mindfulness like learning to drive a car
-. It happens in three distinct stages:
-The Novice Stage: At first, it feels clunky
-. You have to follow "meta-instructions" (like "focus on your breath") and it requires a lot of mental effort
-.
-The Proceduralization Stage: With repeated practice, your brain starts building "production rules"
-. The skill becomes smoother and you don’t have to think about the instructions as much
-.
-The Expert Stage: This is where you reach "effortless being"
-. Your brain can now automatically perceive subtle changes in your emotions before they spiral into big reactions
-. You’ve lowered your "metacognitive threshold," allowing you to catch a spark of anger before it becomes a forest fire
-.</p>
+<h2>
 
-<p></p>
+2. The Three Stages of Growth
 
-<h3>What’s Happening Inside Your Brain?</h3> 
+</h2>
 
 <p>
-This isn't just "woo-woo" philosophy; it’s neuroscience. Studies show that as you move toward mastery, your brain actually reshapes itself
-:
-Shrinking the Alarm: The amygdala, your brain’s "alarm system" for stress, can actually show decreased gray matter density
-.
-Boosting Memory and Calm: The hippocampus (linked to learning) grows, and your vagal tone improves, helping your heart rate recover faster after a stressful event
-.
-Quieting the Noise: Masters show less activity in the Default Mode Network (DMN), the part of the brain responsible for "mind-wandering" and that annoying inner critic
-.
-</p>
-<h3>4. Living the "Ninth Session"</h2>
 
-<p>In many programs, there are eight weekly classes, but the most important part is the "ninth session"—which is simply the rest of your life
-. Mastery means integrating mindfulness into everyday tasks
-. It’s using your phone ringing at work as a "Mindful Bell" to take a breath, or noticing the texture of a strawberry with full awareness
-.
-The takeaway? You don’t need to be a monk to master mindfulness. You just need to be willing to "show up" for your own life with curiosity instead of judgment
-. As you practice, you’ll find that you aren’t just "doing" mindfulness; you are living it, creating more space between the stressors of life and your response to them</p>
-</div>
+Every journey begins awkwardly. In the beginning, mindfulness requires conscious effort. Attention wanders and the mind resists silence.
 
+With repeated practice, awareness becomes easier. Gradually the brain learns new patterns and mindfulness starts extending beyond meditation sessions.
 
+Eventually, awareness becomes natural. Emotional reactions are noticed sooner, and calmness becomes less something we chase and more something we embody.
 
-<!-- SHARE -->
-
-<div class="share-section">
-
-<h3>Share this article</h3>
-
-<div class="share-buttons">
-
-<a class="share-btn facebook"
-href="https://www.facebook.com/sharer/sharer.php?u=https://mirrorandillusion.com/post.html"
-target="_blank">
-Facebook
-</a>
-
-<a class="share-btn twitter"
-href="https://twitter.com/intent/tweet?url=https://mirrorandillusion.com/post.html&text=Mastering the Art of Mindfulness"
-target="_blank">
-Twitter
-</a>
-
-<a class="share-btn linkedin"
-href="https://www.linkedin.com/sharing/share-offsite/?url=https://mirrorandillusion.com/post.html"
-target="_blank">
-LinkedIn
-</a>
-
-<button class="share-btn copy-link" onclick="copyLink()">
-Copy Link
-</button>
-
-</div>
-
-</div>
-
-
-<!-- COMMENTS -->
-
-<div class="comments">
-
-<h3>Leave a Comment</h3>
-
-<form id="commentForm">
-
-<input type="text" name="name" placeholder="Name" required>
-
-<textarea name="message" placeholder="Write your comment" required></textarea>
-
-<button type="submit">Post Comment</button>
-
-</form>
-
-<h3 style="margin-top:30px;">Comments</h3>
-
-<div id="commentList"></div>
-
-</div>
-
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCKLY3PN9dtA6YpmRWxQAakSr1x2ipg5Mg",
-  authDomain: "mirror-illusion-comments.firebaseapp.com",
-  projectId: "mirror-illusion-comments",
-  storageBucket: "mirror-illusion-comments.firebasestorage.app",
-  messagingSenderId: "747860097815",
-  appId: "1:747860097815:web:0fdeaa5cbeff3c9bf55552"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// ADD COMMENT
-const form = document.getElementById("commentForm");
-
-form.addEventListener("submit", async (e) => {
-e.preventDefault();
-
-const name = form.name.value;
-const message = form.message.value;
-
-await addDoc(collection(db, "comments"), {
-name: name,
-message: message,
-time: new Date()
-});
-
-form.reset();
-});
-
-// SHOW COMMENTS LIVE
-const commentBox = document.getElementById("commentList");
-
-onSnapshot(collection(db, "comments"), (snapshot) => {
-
-commentBox.innerHTML = "";
-
-snapshot.forEach(doc => {
-let data = doc.data();
-
-commentBox.innerHTML += `
-<div style="margin-bottom:15px; padding:10px; background:#111827; border-radius:8px;">
-<strong>${data.name}</strong>
-<p>${data.message}</p>
-</div>
-`;
-
-});
-
-});
-</script>
-
-
-<!-- RIGHT SIDEBAR -->
-
-<aside class="sidebar-right">
-
-<div class="side-box">
-
-<h3>Popular Posts</h3>
-
-<ul>
-<ul>
-
-<a href="finding-purpose.html">Finding Purpose In Life</a>
-<p></p>
-<a href="mastering-mindfulness.html">Mastering mindfulness</a>
-<p></p>
-<a href="selfsabotage.html">psychology of self sabotage</a>
-
-</ul>
-
-</div>
-
-
-<div class="side-box">
-
-<div class="side-box">
-
-<div class="sidebar-test-box">
-
-    <h3>Are you happy</h3>
-
-    <p>Discover your Happiness Index</p>
-
-    <a href="tools/happiness-index/indexx.html" class="test-btn">
-        Start Test →
-    </a>
-
-</div>
-
-<div class="side-box">
-
-<h3 class="sidebar-title">Popular Articles</h3>
-
-
-<div class="sidebar-post">
-
-<img src="images/selflove.png">
-
-<div class="sidebar-post-text">
-
-<a href="nurturing-selflove.html">
-Nurturing Self Love
-</a>
-
-<span>7 min read</span>
-
-</div>
-
-</div>
-
-
-<div class="sidebar-post">
-
-<img src="images/mindfulness.png">
-
-<div class="sidebar-post-text">
-
-<a href="mastering-mindfulness.html">
-Mastering the Art of Mindfulness
-</a>
-
-<span>9 min read</span>
-
-</div>
-
-</div>
-
-
-<div class="sidebar-post">
-
-<img src="images/purpose.png">
-
-<div class="sidebar-post-text">
-
-<a href="finding-purpose.html">
-Finding Purpose in Life
-</a>
-
-<span>8 min read</span>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</aside>
-
-
-</div>
-
-
-<!-- SUBSCRIBE SECTION -->
-
-<section class="subscribe-section">
-
-<div class="subscribe-box">
-
-<h2>Join the Mirror & Illusion Community</h2>
-
-<p>
-Get deep insights on psychology, self-mastery, and human behaviour delivered to your inbox.
 </p>
 
-<form class="subscribe-form"
-action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
-method="POST"
-target="_blank">
+ <h2>
 
-<input type="email"
-name="entry.123456789"
-placeholder="Enter your email address"
-required>
+3. What Happens Inside the Brain
 
-<button type="submit">
-Subscribe
-</button>
+</h2>
 
-</form>
+<p>
+
+Mindfulness is not merely philosophy. Research suggests that regular practice can reshape the brain itself. The amygdala, which acts as the brain's alarm system, may become less reactive. Regions associated with memory, emotional regulation, and learning can become stronger.
+
+Studies have also shown reduced activity in the Default Mode Network, the system responsible for excessive mind wandering and repetitive self-focused thinking. In simple terms, mindfulness helps quiet the noise and strengthen awareness.
+
+</p>
+
+
+<h2>
+
+4. Bringing Mindfulness into Everyday Life
+
+</h2>
+
+<p>
+
+Many people think mindfulness belongs only to meditation sessions. Yet the deepest practice happens during ordinary moments. Drinking tea, taking a walk, listening to a friend, or simply breathing consciously can become acts of mindfulness.
+
+The goal is not to escape life. The goal is to become fully present within it.
+
+Over time, mindfulness creates more space between an event and our reaction to it. That space is where wisdom grows.
+
+</p>
+
+
+<h2>
+
+Conclusion
+
+</h2>
+
+<p>
+
+Mastering mindfulness does not mean eliminating stress or achieving permanent serenity. It means learning how to meet life with greater awareness, patience, and compassion.
+
+Eventually, you realize that peace is not something hidden somewhere in the future. It is discovered in the present moment.
+
+Mindfulness is not about becoming somebody else.
+
+It is about finally learning how to be fully here.
+
+</p>
+
+</div>
+
+
+<div class="quote-box">
+
+<p>
+
+"Mindfulness means paying attention in a particular way:
+on purpose,
+in the present moment,
+and without judgment."
+
+</p>
+
+<span>
+
+— Jon Kabat-Zinn
+
+</span>
+
+</div>
+
+
+<!-- =====================================
+MORE REFLECTIONS
+====================================== -->
+
+<section style="margin-top:100px;">
+
+<h2 style="
+font-family:'Source Serif Pro',serif;
+font-size:46px;
+margin-bottom:50px;">
+
+More Reflections
+
+</h2>
+
+
+<div style="
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:30px;">
+
+
+
+
+<a href="overthinking.html">
+
+<div style="
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.06);
+height:100%;">
+
+<div class="post-category">
+
+INNER AWARENESS
+
+</div>
+
+<h3 style="
+font-family:'Source Serif Pro',serif;
+font-size:30px;
+margin-bottom:20px;">
+
+Overthinking:
+When the Mind Refuses to Rest
+
+</h3>
+
+<p style="color:#666;">
+
+Most people think overthinking is a problem of thought.
+Often, it is a problem of unresolved emotions.
+
+</p>
+
+</div>
+
+</a>
+
+
+
+<a href="peace.html">
+
+<div style="
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.06);
+height:100%;">
+
+<div class="post-category">
+
+INNER AWARENESS
+
+</div>
+
+<h3 style="
+font-family:'Source Serif Pro',serif;
+font-size:30px;
+margin-bottom:20px;">
+
+Peace Is Not
+the Absence of Noise
+
+</h3>
+
+<p style="color:#666;">
+
+True peace does not arise when life becomes silent. It arises when understanding deepens.
+
+</p>
+
+</div>
+
+</a>
+
+
+
+<a href="selfsabotage.html">
+
+<div style="
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.06);
+height:100%;">
+
+<div class="post-category">
+
+INNER AWARENESS
+
+</div>
+
+<h3 style="
+font-family:'Source Serif Pro',serif;
+font-size:30px;
+margin-bottom:20px;">
+
+The Psychology
+of Self-Sabotage
+
+</h3>
+
+<p style="color:#666;">
+
+Why we resist the very things that could transform our lives.
+
+</p>
+
+</div>
+
+</a>
 
 </div>
 
 </section>
 
-<footer class="footer">
 
-<p>© 2026 Mirror & Illusion</p>
+
+<!-- SHARE -->
+
+<section style="margin-top:100px;">
+
+<h2 style="
+font-family:'Source Serif Pro',serif;
+margin-bottom:25px;">
+
+Share this Reflection
+
+</h2>
+
+<div style="
+display:flex;
+gap:15px;
+flex-wrap:wrap;">
+
+<a href="#"
+style="
+padding:16px 28px;
+border-radius:16px;
+background:#b11226;
+color:white;
+font-weight:600;">
+
+Facebook
+
+</a>
+
+
+<a href="#"
+style="
+padding:16px 28px;
+border-radius:16px;
+background:#111;
+color:white;
+font-weight:600;">
+
+Twitter
+
+</a>
+
+
+<a href="#"
+style="
+padding:16px 28px;
+border-radius:16px;
+background:#444;
+color:white;
+font-weight:600;">
+
+LinkedIn
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- COMMENTS -->
+
+<section style="margin-top:100px;">
+
+<h2 style="
+font-family:'Source Serif Pro',serif;
+margin-bottom:30px;">
+
+Leave a Comment
+
+</h2>
+
+<form id="commentForm">
+
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required
+
+style="
+width:100%;
+padding:20px;
+border:1px solid #ddd;
+border-radius:18px;
+margin-bottom:20px;
+font-size:16px;">
+
+
+<textarea
+name="message"
+placeholder="Write your thoughts..."
+required
+
+style="
+width:100%;
+height:180px;
+padding:20px;
+border:1px solid #ddd;
+border-radius:18px;
+font-size:16px;"></textarea>
+
+
+<button
+type="submit"
+
+style="
+margin-top:25px;
+padding:18px 40px;
+background:#b11226;
+color:white;
+border:none;
+border-radius:18px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;">
+
+Post Comment
+
+</button>
+
+</form>
+
+
+<div id="commentList"
+style="
+margin-top:50px;">
+
+</div>
+
+</section>
+
+
+
+</div>
+
+
+
+<footer style="
+margin-top:120px;
+padding:60px;
+text-align:center;
+background:white;
+border-top:1px solid #eee;
+color:#777;">
+
+<p>
+
+© 2026 Mirror & Illusion
+
+</p>
+
+<p style="margin-top:15px;">
+
+Simple Wisdom for Modern Life
+
+</p>
 
 </footer>
+<script>
+
+function copyLink(){
+
+navigator.clipboard.writeText(window.location.href);
+
+alert("Link copied to clipboard.");
+
+}
+
+</script>
+
+
+
+<script type="module">
+
+import {
+initializeApp
+}
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+import {
+
+getFirestore,
+collection,
+addDoc,
+onSnapshot
+
+}
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyCKLY3PN9dtA6YpmRWxQAakSr1x2ipg5Mg",
+
+authDomain:
+"mirror-illusion-comments.firebaseapp.com",
+
+projectId:
+"mirror-illusion-comments",
+
+storageBucket:
+"mirror-illusion-comments.firebasestorage.app",
+
+messagingSenderId:
+"747860097815",
+
+appId:
+"1:747860097815:web:0fdeaa5cbeff3c9bf55552"
+
+};
+
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+
+/* =========================
+   ADD COMMENT
+========================= */
+
+const form =
+document.getElementById("commentForm");
+
+form.addEventListener(
+
+"submit",
+
+async (e)=>{
+
+e.preventDefault();
+
+const name =
+form.name.value;
+
+const message =
+form.message.value;
+
+
+await addDoc(
+
+collection(
+db,
+"mindfulness-comments"
+),
+
+{
+
+name:name,
+
+message:message,
+
+time:new Date()
+
+}
+
+);
+
+
+form.reset();
+
+}
+
+);
+
+
+
+/* =========================
+   SHOW COMMENTS LIVE
+========================= */
+
+const commentBox =
+document.getElementById(
+"commentList"
+);
+
+
+onSnapshot(
+
+collection(
+db,
+"mindfulness-comments"
+),
+
+(snapshot)=>{
+
+commentBox.innerHTML = "";
+
+
+snapshot.forEach((doc)=>{
+
+const data =
+doc.data();
+
+
+commentBox.innerHTML +=
+
+`
+
+<div style="
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.06);
+
+margin-bottom:25px;
+
+">
+
+<h4 style="
+
+margin-bottom:10px;
+
+font-size:18px;
+
+color:#111;
+
+">
+
+${data.name}
+
+</h4>
+
+
+<p style="
+
+color:#555;
+
+line-height:1.8;
+
+">
+
+${data.message}
+
+</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+);
+
+</script>
+
 
 </body>
+
 </html>
