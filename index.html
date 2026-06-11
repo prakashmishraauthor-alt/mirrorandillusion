@@ -1247,6 +1247,25 @@ a{
 
 }
 
+   /* Fix anchor behaving like inline text */
+.blog-grid a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ensure card behaves properly inside link */
+.blog-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 </style>
 </head>
 
@@ -1431,8 +1450,7 @@ a{
 </section>
 
     <!-- CARD -->
-
-    <a href="mastering-mindfulness.html">
+<a href="mastering-mindfulness.html" class="blog-card-link">
 
       <div class="blog-card">
 
