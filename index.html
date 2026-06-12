@@ -1187,6 +1187,174 @@ body {
   color: inherit;
 }
 
+ /* =========================================
+   MOBILE DARK THEME FIX (MI STYLE)
+========================================= */
+
+@media (max-width:768px){
+
+/* GLOBAL */
+html,
+body{
+    background:#000 !important;
+    color:#f5f5f5;
+    overflow-x:hidden;
+}
+
+/* All major sections */
+section,
+.hero,
+.premium-hero,
+.reflection-section,
+.reflection-collection,
+.journal-section,
+.book-showcase,
+.author-section,
+.footer{
+    background:#000 !important;
+    color:#fff;
+}
+
+/* Containers */
+.container,
+.content,
+.wrapper{
+    width:100%;
+    max-width:100%;
+}
+
+/* Headings */
+h1{
+    font-size:2.4rem !important;
+}
+
+h2{
+    font-size:2rem !important;
+}
+
+.section-title{
+    color:#d4af37 !important;
+}
+
+/* Paragraph */
+p{
+    color:#cccccc !important;
+}
+
+/* =========================
+   FIX TWO COLUMN SECTIONS
+========================= */
+
+.journal-container,
+.reflection-content,
+.book-showcase,
+.hero-content,
+.author-container,
+.premium-grid,
+.reflection-grid,
+.grid,
+.row,
+.two-column,
+.columns{
+
+    display:flex !important;
+    flex-direction:column !important;
+
+    align-items:center;
+    text-align:center;
+
+    gap:40px;
+}
+
+/* Children */
+.journal-content,
+.journal-image,
+.left,
+.right,
+.col,
+.column,
+.text-column,
+.image-column{
+
+    width:100% !important;
+    max-width:100% !important;
+
+    display:block !important;
+}
+
+/* Images */
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+.book-showcase img,
+.journal-image img,
+.author-image img{
+
+    width:100%;
+    max-width:450px;
+    margin:auto;
+}
+
+/* Reflection cards */
+.reflection-cards,
+.journal-grid{
+
+    grid-template-columns:1fr !important;
+    gap:30px;
+}
+
+/* Card styling */
+.journal-card,
+.card{
+
+    background:#111 !important;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    box-shadow:
+    0 15px 35px rgba(212,175,55,.08);
+
+    color:#fff;
+}
+
+/* Buttons */
+.collection-btn,
+.journal-btn,
+.btn{
+
+    background:#c62828 !important;
+
+    color:#fff !important;
+
+    width:100%;
+
+    max-width:320px;
+
+    margin:auto;
+}
+
+/* Prevent hidden content */
+.hidden,
+.desktop-only{
+
+    display:block !important;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+}
+
+/* Remove horizontal scroll */
+*{
+    max-width:100%;
+}
+
+}
+
 </style>
 </head>
 
