@@ -1456,6 +1456,114 @@ img{
 
 }
 
+ .practice-section{
+    background:#000;
+    padding:120px 20px;
+    position:relative;
+}
+
+.practice-container{
+    max-width:1100px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.practice-label{
+    display:inline-block;
+    color:#caa85e;
+    letter-spacing:3px;
+    font-size:0.8rem;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.practice-section h2{
+    font-size:clamp(2.5rem,5vw,4.8rem);
+    line-height:1.1;
+    color:#fff;
+    margin-bottom:30px;
+    font-weight:300;
+}
+
+.practice-intro{
+    max-width:760px;
+    margin:0 auto 70px;
+    color:rgba(255,255,255,0.75);
+    font-size:1.15rem;
+    line-height:1.9;
+}
+
+.practice-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-bottom:70px;
+}
+
+.practice-card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(202,168,94,0.18);
+    border-radius:24px;
+    padding:40px 30px;
+    backdrop-filter:blur(10px);
+    transition:all .35s ease;
+}
+
+.practice-card:hover{
+    transform:translateY(-6px);
+    border-color:#caa85e;
+}
+
+.practice-card h3{
+    color:#caa85e;
+    font-size:1.4rem;
+    margin-bottom:15px;
+}
+
+.practice-card p{
+    color:rgba(255,255,255,0.75);
+    line-height:1.8;
+    font-size:1rem;
+}
+
+.practice-quote{
+    max-width:800px;
+    margin:0 auto;
+    color:#fff;
+    font-size:1.5rem;
+    line-height:1.8;
+    font-style:italic;
+    font-weight:300;
+    padding-top:30px;
+    border-top:1px solid rgba(202,168,94,0.25);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .practice-section{
+        padding:80px 20px;
+    }
+
+    .practice-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .practice-section h2{
+        font-size:2.5rem;
+    }
+
+    .practice-intro{
+        font-size:1rem;
+    }
+
+    .practice-quote{
+        font-size:1.2rem;
+    }
+}
+
 </style>
 </head>
 
@@ -1799,12 +1907,6 @@ and reflective wellness insights.
 
 <div class="featured-articles">
 
-    CARD 1
-
-    CARD 2
-
-    CARD 3
-
 </div>
 
 </section>
@@ -1897,6 +1999,73 @@ and reflective wellness insights.
     </a>
 
 </div>
+</section>
+
+ <section class="practice-section">
+
+  <div class="practice-container">
+
+    <span class="practice-label">THE PATH OF TRANSFORMATION</span>
+
+    <h2>
+      Transformation<br>
+      Needs Practice
+    </h2>
+
+    <p class="practice-intro">
+      Every person desires transformation.
+      Yet transformation is not achieved through wishing,
+      hoping, or merely understanding.
+      It is created through practice.
+    </p>
+
+    <div class="practice-grid">
+
+      <div class="practice-card">
+        <h3>Emotional Freedom</h3>
+        <p>
+          Practice gratitude,
+          compassion,
+          and forgiveness.
+        </p>
+      </div>
+
+      <div class="practice-card">
+        <h3>Mental Clarity</h3>
+        <p>
+          Practice reflection,
+          awareness,
+          and stillness.
+        </p>
+      </div>
+
+      <div class="practice-card">
+        <h3>Physical Well-Being</h3>
+        <p>
+          Practice movement,
+          nourishment,
+          and rest.
+        </p>
+      </div>
+
+      <div class="practice-card">
+        <h3>Wisdom & Purpose</h3>
+        <p>
+          Practice self-inquiry,
+          conscious living,
+          and meaningful action.
+        </p>
+      </div>
+
+    </div>
+
+    <blockquote class="practice-quote">
+      “Life does not give us what we want.
+      Life gives us what we repeatedly practice.”
+    </blockquote>
+
+  </div>
+
 </section>
 
 <section class="reflection-collection">
