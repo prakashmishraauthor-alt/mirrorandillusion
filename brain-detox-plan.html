@@ -1,273 +1,747 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Brain Detox Plan</title>
 
+<html lang="en">
+<head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>21-Day Brain Reset Challenge | Mirror & Illusion</title>
 
 <style>
-body {
-    background:#0a0f1c;
-    color:#e5e7eb;
-    font-family: Arial;
-    padding:20px;
-    line-height:1.6;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-h1 {
-    color:#00ffd5;
-    text-align:center;
+html{
+scroll-behavior:smooth;
 }
 
-h2 {
-    color:#22c55e;
-    margin-top:30px;
+body{
+background:#000;
+color:#fff;
+font-family:Georgia, serif;
+line-height:1.7;
+overflow-x:hidden;
 }
 
-.container {
-    max-width:800px;
-    margin:auto;
+/* -------------------- */
+/* GLOBAL */
+/* -------------------- */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
 }
 
-.box {
-    background:#111827;
-    padding:20px;
-    border-radius:10px;
-    margin-top:20px;
+.gold{
+color:#caa85e;
 }
 
-.cta {
-    text-align:center;
-    margin-top:40px;
+.section-title{
+font-size:clamp(2rem,4vw,4rem);
+font-weight:300;
+line-height:1.2;
+margin-bottom:20px;
 }
 
-.cta a {
-    display:inline-block;
-    background:#00ffd5;
-    color:#000;
-    padding:12px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+.section-subtitle{
+max-width:800px;
+margin:auto;
+font-size:1.15rem;
+color:rgba(255,255,255,.75);
+line-height:1.9;
 }
 
-.premium-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
+/* -------------------- */
+/* HERO */
+/* -------------------- */
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.7),
+rgba(0,0,0,.95)
+),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop')
+center/cover;
 }
 
-.premium-card {
-  max-width: 380px;
-  width: 100%;
-  margin: 0 auto;
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(
+circle at center,
+rgba(202,168,94,.12),
+transparent 60%
+);
 }
 
-
-/* ===== PREMIUM CARD FIX ===== */
-
-#energy-tool .premium-wrapper,
-.premium-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:40px 20px;
 }
 
-#energy-tool .premium-card,
-.premium-card {
-  max-width: 380px;
-  width: 100%;
-  background: #1e293b !important;
-  padding: 22px;
-  border-radius: 16px;
-  border: 1px solid #334155;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  text-align: center;
-  color: white;
+.hero-tag{
+display:inline-block;
+padding:10px 18px;
+border-radius:999px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(202,168,94,.25);
+color:#caa85e;
+letter-spacing:2px;
+font-size:.8rem;
+margin-bottom:30px;
 }
 
-/* Header */
-.premium-header {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.hero h1{
+font-size:clamp(3rem,7vw,6rem);
+font-weight:300;
+line-height:1.1;
+margin-bottom:25px;
 }
 
-/* Price */
-.premium-price {
-  font-size: 28px;
-  font-weight: bold;
-  color: #22c55e !important;
+.hero p{
+max-width:760px;
+margin:auto;
+font-size:1.2rem;
+line-height:1.9;
+color:rgba(255,255,255,.8);
 }
 
-.old-price {
-  font-size: 14px;
-  color: #94a3b8;
-  text-decoration: line-through;
-  margin-right: 6px;
+.hero-btn{
+display:inline-block;
+margin-top:40px;
+padding:16px 36px;
+background:#caa85e;
+color:#000;
+font-weight:700;
+text-decoration:none;
+border-radius:999px;
+transition:.3s;
 }
 
-/* Subtext */
-.premium-sub {
-  font-size: 13px;
-  color: #cbd5e1;
-  margin-bottom: 15px;
+.hero-btn:hover{
+transform:translateY(-3px);
 }
 
-/* Features */
-.premium-features {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-  text-align: left;
+/* -------------------- */
+/* BRAIN IMAGE SECTION */
+/* -------------------- */
+
+.brain-banner{
+padding:120px 20px;
+background:
+linear-gradient(
+180deg,
+#000,
+#090909
+);
 }
 
-.premium-features li {
-  font-size: 14px;
-  margin-bottom: 8px;
-  padding-left: 18px;
-  position: relative;
+.brain-card{
+max-width:1100px;
+margin:auto;
+padding:40px;
+border-radius:28px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(202,168,94,.18);
+backdrop-filter:blur(10px);
 }
 
-.premium-features li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #22c55e;
+.brain-image{
+width:100%;
+height:500px;
+border-radius:24px;
+overflow:hidden;
+margin-bottom:40px;
 }
 
-/* Warning */
-.premium-warning {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  margin: 15px 0;
+.brain-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
 }
 
-/* BUTTON FIX (IMPORTANT) */
-.premium-card .premium-btn {
-  background: #22c55e !important;
-  color: #ffffff !important;
-  padding: 12px;
-  width: 100%;
-  border: none !important;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  display: block;
+.brain-content{
+text-align:center;
 }
 
-.premium-card .premium-btn:hover {
-  background: #16a34a !important;
+.brain-content h2{
+font-size:clamp(2rem,4vw,3.5rem);
+font-weight:300;
+margin-bottom:25px;
 }
 
-/* Trust text */
-.premium-trust {
-  font-size: 11px;
-  color: #94a3b8;
-  margin-top: 10px;
+.brain-content p{
+max-width:850px;
+margin:auto;
+font-size:1.15rem;
+line-height:1.9;
+color:rgba(255,255,255,.75);
 }
+
+/* -------------------- */
+/* DIVIDER */
+/* -------------------- */
+
+.divider{
+width:120px;
+height:1px;
+background:#caa85e;
+margin:35px auto;
+}
+
+/* -------------------- */
+/* MOBILE */
+/* -------------------- */
+
+@media(max-width:768px){
+
+.hero{
+min-height:90vh;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.brain-banner{
+padding:80px 20px;
+}
+
+.brain-card{
+padding:20px;
+}
+
+.brain-image{
+height:280px;
+}
+
+.brain-content h2{
+font-size:2rem;
+}
+
+.brain-content p{
+font-size:1rem;
+}
+
+}
+
+    .brain-section{
+padding:100px 20px;
+background:#000;
+}
+
+.symptom-grid,
+.challenge-grid,
+.practice-grid,
+.benefit-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.symptom-card,
+.challenge-card,
+.practice-card,
+.benefit-card,
+.tracker-day{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(202,168,94,.18);
+border-radius:24px;
+padding:30px;
+backdrop-filter:blur(10px);
+}
+
+.symptom-card h3,
+.challenge-card h3,
+.practice-card h3,
+.benefit-card h3{
+color:#caa85e;
+margin-bottom:15px;
+}
+
+.challenge-card ul{
+list-style:none;
+padding:0;
+}
+
+.challenge-card li{
+margin-bottom:12px;
+color:rgba(255,255,255,.8);
+}
+
+.phase{
+color:#caa85e;
+letter-spacing:2px;
+font-size:.8rem;
+display:block;
+margin-bottom:12px;
+}
+
+.tracker-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:15px;
+margin-top:50px;
+}
+
+.tracker-day{
+text-align:center;
+padding:20px;
+}
+
+.closing-text,
+.philosophy-text,
+.life-quote{
+max-width:900px;
+margin:50px auto 0;
+text-align:center;
+color:rgba(255,255,255,.8);
+}
+
+.life-quote{
+font-size:1.6rem;
+color:#fff;
+margin-top:60px;
+font-style:italic;
+}
+
+.final-cta{
+padding:140px 20px;
+text-align:center;
+background:linear-gradient(180deg,#000,#0b0b0b);
+}
+
+.final-cta h2{
+font-size:clamp(2.5rem,5vw,4rem);
+margin-bottom:25px;
+}
+
+.final-cta p{
+max-width:700px;
+margin:auto;
+color:rgba(255,255,255,.8);
+line-height:1.9;
+}
+
+@media(max-width:768px){
+
+.brain-section{
+padding:70px 20px;
+}
+
+.life-quote{
+font-size:1.2rem;
+}
+
+.tracker-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<!-- HERO -->
 
-<h1>🧠 Your Brain Detox Reset Plan</h1>
+<section class="hero">
 
-<p style="text-align:center;">
-You are experiencing cognitive overload.  
-This plan will help you reset focus, clarity, and mental energy.
+<div class="hero-content">
+
+<span class="hero-tag">
+MIRROR & ILLUSION PRESENTS
+</span>
+
+<h1>
+21-Day<br>
+Brain Reset Challenge
+</h1>
+
+<p>
+Reduce mental clutter.
+Restore clarity.
+Reclaim your attention.
+
+Modern life is training your brain to switch constantly.
+This challenge helps you slow down, regain focus,
+and create the mental space needed for peace,
+purpose, and conscious living.
+
 </p>
 
-<!-- DAY 1–2 -->
-<div class="box">
-<h2>Day 1–2: Reduce Input Overload</h2>
+<a href="#brain-banner" class="hero-btn">
+BEGIN THE RESET
+</a>
+
+</div>
+
+</section>
+
+<!-- BRAIN BANNER -->
+
+<section id="brain-banner" class="brain-banner">
+
+<div class="brain-card">
+
+<div class="brain-image">
+
+<img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1600&auto=format&fit=crop"
+alt="Brain Reset">
+
+</div>
+
+<div class="brain-content">
+
+<h2>
+Why Your Brain Needs a Reset
+</h2>
+
+<div class="divider"></div>
+
+<p>
+Mental exhaustion isn't always obvious.
+
+Modern life floods the brain with notifications,
+information, stress, and constant stimulation.
+
+When the mind is constantly consuming,
+it loses its ability to reflect.
+
+When attention is scattered,
+clarity becomes difficult.
+
+A reset begins by reducing what drains your attention
+and strengthening what restores it.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+
+<!-- WHY YOUR BRAIN NEEDS A RESET -->
+
+<!-- ========================================= -->
+
+<section class="brain-section">
+
+<div class="container">
+
+<h2 class="section-title">Why Your Brain Needs a Reset</h2>
+
+<p class="section-subtitle">
+Mental exhaustion isn't always obvious.
+Modern life floods the brain with notifications,
+information, stress, and constant stimulation.
+</p>
+
+<div class="symptom-grid">
+
+<div class="symptom-card">
+<h3>🧠 Brain Fog</h3>
+<p>Difficulty thinking clearly and making decisions.</p>
+</div>
+
+<div class="symptom-card">
+<h3>🎯 Poor Concentration</h3>
+<p>Your attention feels scattered and unfocused.</p>
+</div>
+
+<div class="symptom-card">
+<h3>💭 Overthinking</h3>
+<p>The mind keeps replaying the same thoughts.</p>
+</div>
+
+<div class="symptom-card">
+<h3>❤️ Emotional Exhaustion</h3>
+<p>You feel drained even when nothing seems wrong.</p>
+</div>
+
+<div class="symptom-card">
+<h3>✨ Reduced Creativity</h3>
+<p>Your mind struggles to generate fresh ideas.</p>
+</div>
+
+</div>
+
+<p class="closing-text">
+A reset begins by reducing what drains your attention
+and strengthening what restores it.
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- 21 DAY CHALLENGE -->
+
+<!-- ========================================= -->
+
+<section class="brain-section">
+
+<div class="container">
+
+<h2 class="section-title">The 21-Day Brain Reset Challenge</h2>
+
+<div class="challenge-grid">
+
+<div class="challenge-card">
+
+<span class="phase">DAYS 1–7</span>
+
+<h3>Awareness</h3>
+
 <ul>
-<li>No social media after 8 PM</li>
-<li>Turn off non-essential notifications</li>
-<li>Avoid multitasking</li>
-<li>Consume only essential content</li>
+<li>✓ No phone for first 30 minutes after waking</li>
+<li>✓ 10 minutes of silence</li>
+<li>✓ Drink water before caffeine</li>
+<li>✓ Journal one page daily</li>
+<li>✓ Sleep before 11 PM</li>
 </ul>
+
 </div>
 
-<!-- DAY 3–4 -->
-<div class="box">
-<h2>Day 3–4: Cognitive Reset</h2>
+<div class="challenge-card">
+
+<span class="phase">DAYS 8–14</span>
+
+<h3>Recovery</h3>
+
 <ul>
-<li>10 minutes of silence daily</li>
-<li>Write down all pending thoughts</li>
-<li>Do single-task work sessions (45 min)</li>
-<li>Avoid random scrolling</li>
+<li>✓ 20-minute walk</li>
+<li>✓ 15-minute meditation</li>
+<li>✓ No doom scrolling</li>
+<li>✓ Read 10 pages of a book</li>
+<li>✓ Practice gratitude</li>
 </ul>
+
 </div>
 
-<!-- DAY 5–6 -->
-<div class="box">
-<h2>Day 5–6: Focus Rebuild</h2>
+<div class="challenge-card">
+
+<span class="phase">DAYS 15–21</span>
+
+<h3>Renewal</h3>
+
 <ul>
-<li>Deep work (2 × 45 min sessions)</li>
-<li>Morning planning (top 3 tasks)</li>
-<li>No phone during work blocks</li>
-<li>Take structured breaks</li>
+<li>✓ Deep work session</li>
+<li>✓ Creative activity</li>
+<li>✓ Reflection journaling</li>
+<li>✓ Digital sunset after 9 PM</li>
+<li>✓ Weekly self-review</li>
 </ul>
-</div>
-
-<!-- DAY 7 -->
-<div class="box">
-<h2>Day 7: Full Brain Reset</h2>
-<ul>
-<li>No social media entire day</li>
-<li>Nature walk or offline activity</li>
-<li>Reflect: What drained you most?</li>
-<li>Plan next week with clarity</li>
-</ul>
-</div>
-
-<div class="premium-wrapper">
-
-  <div class="premium-card">
-
-    <div class="premium-header">
-      🧠 Unlock Full Cognitive Reset Protocol
-    </div>
-
-    <div class="premium-price">
-      <span class="old-price">₹499</span>
-      ₹199
-    </div>
-
-    <p class="premium-sub">
-      Based on your diagnosis: <b id="brainType">Cognitive Overload State</b>
-    </p>
-
-    <ul class="premium-features">
-      <li>Focus & mental clarity recovery plan</li>
-      <li>Dopamine reset strategy</li>
-      <li>Daily brain optimization routine</li>
-      <li>Attention span rebuilding system</li>
-      <li>Mental fatigue root cause breakdown</li>
-    </ul>
-
-    <div class="premium-warning">
-      ⚠️ Brain fog and low focus will persist if not corrected
-    </div>
-
-    <button class="premium-btn" onclick="goToPayment()">
-      Get Full Plan
-    </button>
-
-    <p class="premium-trust">
-      Instant access • One-time payment • No subscription
-    </p>
-
-  </div>
 
 </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- TRACKER -->
+
+<!-- ========================================= -->
+
+<section class="brain-section">
+
+<div class="container">
+
+<h2 class="section-title">Your 21-Day Tracker</h2>
+
+<div class="tracker-grid">
+
+<div class="tracker-day">Day 1 □</div>
+<div class="tracker-day">Day 2 □</div>
+<div class="tracker-day">Day 3 □</div>
+<div class="tracker-day">Day 4 □</div>
+<div class="tracker-day">Day 5 □</div>
+<div class="tracker-day">Day 6 □</div>
+<div class="tracker-day">Day 7 □</div>
+
+<div class="tracker-day">Day 8 □</div>
+<div class="tracker-day">Day 9 □</div>
+<div class="tracker-day">Day 10 □</div>
+<div class="tracker-day">Day 11 □</div>
+<div class="tracker-day">Day 12 □</div>
+<div class="tracker-day">Day 13 □</div>
+<div class="tracker-day">Day 14 □</div>
+
+<div class="tracker-day">Day 15 □</div>
+<div class="tracker-day">Day 16 □</div>
+<div class="tracker-day">Day 17 □</div>
+<div class="tracker-day">Day 18 □</div>
+<div class="tracker-day">Day 19 □</div>
+<div class="tracker-day">Day 20 □</div>
+<div class="tracker-day">Day 21 □</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- TRANSFORMATION NEEDS PRACTICE -->
+
+<!-- ========================================= -->
+
+<section class="brain-section philosophy">
+
+<div class="container">
+
+<h2 class="section-title">Transformation Needs Practice</h2>
+
+<p class="philosophy-text">
+
+Every person desires transformation.
+
+We want peace instead of anxiety.
+Confidence instead of self-doubt.
+Health instead of fatigue.
+Purpose instead of confusion.
+
+Yet transformation is not achieved through wishing,
+hoping, or merely understanding.
+
+It is created through practice.
+
+</p>
+
+<div class="practice-grid">
+
+<div class="practice-card">
+<h3>Emotional Freedom</h3>
+<p>Gratitude, Compassion & Forgiveness</p>
+</div>
+
+<div class="practice-card">
+<h3>Mental Clarity</h3>
+<p>Reflection, Awareness & Stillness</p>
+</div>
+
+<div class="practice-card">
+<h3>Physical Vitality</h3>
+<p>Movement, Nourishment & Rest</p>
+</div>
+
+<div class="practice-card">
+<h3>Purpose & Wisdom</h3>
+<p>Self-Inquiry & Conscious Living</p>
+</div>
+
+</div>
+
+<p class="life-quote">
+Life does not give us what we want.<br>
+Life gives us what we repeatedly practice.
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- BENEFITS -->
+
+<!-- ========================================= -->
+
+<section class="brain-section">
+
+<div class="container">
+
+<h2 class="section-title">What You May Notice</h2>
+
+<div class="benefit-grid">
+
+<div class="benefit-card">
+<h3>🧠 Better Focus</h3>
+<p>Improve concentration and mental performance.</p>
+</div>
+
+<div class="benefit-card">
+<h3>🌿 Less Mental Noise</h3>
+<p>Reduce overstimulation and distraction.</p>
+</div>
+
+<div class="benefit-card">
+<h3>❤️ Emotional Balance</h3>
+<p>Respond with greater calm and awareness.</p>
+</div>
+
+<div class="benefit-card">
+<h3>✨ Greater Clarity</h3>
+<p>See what truly matters and act with intention.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- CTA -->
+
+<!-- ========================================= -->
+
+<section class="final-cta">
+
+<div class="container">
+
+<h2>Ready to Reset Your Mind?</h2>
+
+<p>
+The challenge is simple.
+Not easy.
+But transformation never begins with complexity.
+It begins with practice.
+</p>
+
+<a href="#" class="hero-btn">
+START THE CHALLENGE
+</a>
+
+</div>
+
+</section>
 
 </body>
 </html>
