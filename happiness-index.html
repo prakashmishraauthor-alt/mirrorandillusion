@@ -86,6 +86,61 @@ color:#caa85e;
 margin-bottom:10px;
 }
 
+    .action-row{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.gold-btn{
+background:#caa85e;
+color:#000;
+border:none;
+padding:15px 30px;
+border-radius:999px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+font-size:1rem;
+}
+
+.gold-btn:hover{
+transform:translateY(-3px);
+}
+
+.outline-btn{
+background:transparent;
+color:#caa85e;
+border:1px solid rgba(202,168,94,.6);
+padding:15px 28px;
+border-radius:999px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+font-size:1rem;
+}
+
+.outline-btn:hover{
+background:rgba(202,168,94,.1);
+transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+
+.action-row{
+flex-direction:column;
+align-items:center;
+}
+
+.gold-btn,
+.outline-btn{
+width:260px;
+}
+
+}
+
 
 </style>
 
@@ -211,10 +266,18 @@ How connected do you feel with yourself?
 
 </div>
 
-<div style="text-align:center;margin-top:40px;">
+<div class="action-row">
 
-<button onclick="calculateHappiness()" class="btn">
-Check Happiness
+<button onclick="calculateHappiness()" class="gold-btn">
+✨ Check Happiness
+</button>
+
+<button onclick="window.print()" class="outline-btn">
+🖨 Print
+</button>
+
+<button onclick="sharePage()" class="outline-btn">
+📤 Share
 </button>
 
 </div>
@@ -352,10 +415,6 @@ mental, and spiritual wellbeing.
 </p>
 </div>
 
-</div>
-
-</div>
-
 </section>
 
 <!-- ========================================= -->
@@ -437,7 +496,6 @@ alert('Link copied to clipboard.');
 }
 
 }
-<script>
 
 function calculateHappiness(){
 
