@@ -1,219 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/style.css">
 
-<title>Happiness Index Tool</title>
+<title>Happiness Index | Mirror & Illusion</title>
+
+<meta name="description" content="Discover your current level of happiness, wellbeing, purpose, and inner balance through the Mirror & Illusion Happiness Index.">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0f1c;
-    color: #e5e7eb;
+
+/* ALL YOUR CSS GOES HERE */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: #111827;
-    padding: 25px;
-    border-radius: 12px;
+html{
+scroll-behavior:smooth;
 }
 
-/* TITLE */
-h1 {
-    text-align: center;
-    color: #ffd700;
+body{
+background:#000;
+color:#fff;
+font-family:Georgia,serif;
+line-height:1.8;
+overflow-x:hidden;
 }
 
-/* QUESTION */
-.question {
-    margin-bottom: 20px;
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
+.assessment-section{
+padding:100px 20px;
+background:#000;
 }
 
-/* SELECT */
-select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    background: #020617;
-    color: #fff;
+.assessment-card{
+max-width:800px;
+margin:auto;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(202,168,94,.18);
+border-radius:24px;
+padding:40px;
+backdrop-filter:blur(10px);
 }
 
-/* BUTTON */
-button {
-    width: 100%;
-    padding: 12px;
-    background: #ffd700;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #000;
+.question{
+margin-bottom:30px;
 }
 
-/* RESULT */
-.result {
-    margin-top: 20px;
-    padding: 20px;
-    background: #020617;
-    border-radius: 10px;
-    display: none;
-    text-align: center;
+.question label{
+display:block;
+margin-bottom:10px;
+font-size:1.1rem;
+color:#fff;
 }
 
-.score {
-    font-size: 26px;
-    color: #ffd700;
+.question select{
+width:100%;
+padding:15px;
+background:#111;
+color:#fff;
+border:1px solid rgba(202,168,94,.3);
+border-radius:12px;
+font-size:1rem;
 }
+
+.result-box{
+margin-top:40px;
+text-align:center;
+font-size:1.2rem;
+color:#fff;
+}
+
+.result-box h3{
+color:#caa85e;
+margin-bottom:10px;
+}
+
+
 </style>
+
 </head>
 
 <body>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
 
 <div class="container">
 
 <h1>😊 Happiness Index</h1>
 
-<div class="question">
-<label>How satisfied are you with your life?</label>
-<select id="q1">
-<option value="10">Very satisfied</option>
-<option value="7">Somewhat satisfied</option>
-<option value="4">Neutral</option>
-<option value="0">Not satisfied</option>
-</select>
+<div class="gold-line"></div>
+
+<p>
+Discover the state of your inner wellbeing.
+Reflect on your happiness, purpose,
+mental clarity and connection with yourself.
+</p>
+
 </div>
 
-<div class="question">
-<label>How often do you feel stressed?</label>
-<select id="q2">
-<option value="0">Very often</option>
-<option value="5">Sometimes</option>
-<option value="10">Rarely</option>
-</select>
-</div>
+</section>
 
-<div class="question">
-<label>Do you feel your life has purpose?</label>
-<select id="q3">
-<option value="10">Yes</option>
-<option value="5">Somewhat</option>
-<option value="0">No</option>
-</select>
-</div>
+    <!-- ========================================= -->
 
-<div class="question">
-<label>How is your mental clarity?</label>
-<select id="q4">
-<option value="10">Clear</option>
-<option value="5">Average</option>
-<option value="0">Confused</option>
-</select>
-</div>
+<!-- HAPPINESS ASSESSMENT -->
+
+<!-- ========================================= -->
+
+<section class="assessment-section">
+
+<div class="container">
+
+<h2 class="section-title">
+Reflect On Your Current Experience
+</h2>
+
+<div class="gold-line"></div>
+
+<div class="assessment-card">
 
 <div class="question">
-<label>How connected do you feel with yourself?</label>
-<select id="q5">
-<option value="10">Very connected</option>
-<option value="5">Somewhat</option>
-<option value="0">Disconnected</option>
+
+<label>
+How satisfied are you with your life?
+</label>
+
+<select id="life">
+<option value="20">Very Satisfied</option>
+<option value="15">Satisfied</option>
+<option value="10">Neutral</option>
+<option value="5">Dissatisfied</option>
+<option value="0">Very Dissatisfied</option>
 </select>
-</div>
-
-<button onclick="calculate()">Check Happiness</button>
-
-<div class="result" id="resultBox">
-<div class="score" id="score"></div>
-<p id="status"></p>
-<p id="advice"></p>
-</div>
 
 </div>
 
-<div class="cta-box">
-  <h3>Get Your Full Reset Plan</h3>
-  <p>Receive a personalized 7-day biological reset system.</p>
+<div class="question">
 
-   <form id="planForm" action="https://formspree.io/f/xzdjnzbn" method="POST">
-    
-    <input type="email" name="email" placeholder="Enter your email" required>
+<label>
+How often do you feel stressed?
+</label>
 
-    <button type="submit">Get My Plan</button>
+<select id="stress">
+<option value="20">Rarely</option>
+<option value="15">Sometimes</option>
+<option value="10">Often</option>
+<option value="5">Very Often</option>
+<option value="0">Constantly</option>
+</select>
 
-</form>
+</div>
 
+<div class="question">
+
+<label>
+Do you feel your life has purpose?
+</label>
+
+<select id="purpose">
+<option value="20">Strong Sense of Purpose</option>
+<option value="15">Mostly Purposeful</option>
+<option value="10">Somewhat Purposeful</option>
+<option value="5">Unsure</option>
+<option value="0">Lacking Direction</option>
+</select>
+
+</div>
+
+<div class="question">
+
+<label>
+How is your mental clarity?
+</label>
+
+<select id="clarity">
+<option value="20">Very Clear</option>
+<option value="15">Mostly Clear</option>
+<option value="10">Occasionally Clouded</option>
+<option value="5">Frequently Distracted</option>
+<option value="0">Constant Mental Noise</option>
+</select>
+
+</div>
+
+<div class="question">
+
+<label>
+How connected do you feel with yourself?
+</label>
+
+<select id="connection">
+<option value="20">Deeply Connected</option>
+<option value="15">Mostly Connected</option>
+<option value="10">Somewhat Connected</option>
+<option value="5">Often Disconnected</option>
+<option value="0">Completely Disconnected</option>
+</select>
+
+</div>
+
+<div style="text-align:center;margin-top:40px;">
+
+<button onclick="calculateHappiness()" class="btn">
+Check Happiness
+</button>
+
+</div>
+
+<div id="result" class="result-box"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================================= -->
+
+<!-- HAPPINESS INSIGHT SECTION -->
+
+<!-- ========================================= -->
+
+<section class="happiness-insight">
+
+<div class="container">
+
+<h2>Happiness Is Not Something You Find</h2>
+
+<div class="gold-line"></div>
+
+<p class="intro-text">
+Many people spend years chasing happiness through success,
+achievement, possessions, and recognition.
+
+Yet happiness rarely appears when pursued directly.
+
+More often, it emerges when we understand ourselves,
+release unnecessary burdens, and cultivate habits that nourish
+the mind, heart, and spirit.
+
+</p>
+
+<div class="insight-grid">
+
+<div class="insight-card">
+<div class="icon">🌿</div>
+<h3>Gratitude</h3>
+<p>
+Appreciating what is already present creates abundance
+where the mind once saw lack.
+</p>
+</div>
+
+<div class="insight-card">
+<div class="icon">❤️</div>
+<h3>Compassion</h3>
+<p>
+The way we treat ourselves shapes the quality of our inner world.
+</p>
+</div>
+
+<div class="insight-card">
+<div class="icon">🕊️</div>
+<h3>Forgiveness</h3>
+<p>
+Freedom often begins when we stop carrying yesterday's pain.
+</p>
+</div>
+
+<div class="insight-card">
+<div class="icon">✨</div>
+<h3>Purpose</h3>
+<p>
+A meaningful life is not always easy,
+but it is deeply fulfilling.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- SCORE MEANING SECTION -->
+
+<!-- ========================================= -->
+
+<section class="score-meaning">
+
+<div class="container">
+
+<h2>What Your Score Means</h2>
+
+<div class="gold-line"></div>
+
+<div class="meaning-grid">
+
+<div class="meaning-card">
+<h3>🌱 Flourishing</h3>
+<span>80–100</span>
+<p>
+You are living with a healthy level of balance,
+connection, and purpose.
+Continue nurturing the habits that support your wellbeing.
+</p>
+</div>
+
+<div class="meaning-card">
+<h3>🌿 Growing</h3>
+<span>60–79</span>
+<p>
+Many aspects of life are functioning well,
+yet there may be opportunities for deeper alignment,
+peace, and fulfillment.
+</p>
+</div>
+
+<div class="meaning-card">
+<h3>⚖️ Rebalancing</h3>
+<span>40–59</span>
+<p>
+Stress, emotional burdens, or distractions may be affecting
+your overall wellbeing.
+A conscious reset can create meaningful change.
+</p>
+</div>
+
+<div class="meaning-card">
+<h3>🔄 Reset Needed</h3>
+<span>Below 40</span>
+<p>
+Life may be asking for rest, reflection,
+and renewed attention to your emotional,
+mental, and spiritual wellbeing.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- REFLECTION SECTION -->
+
+<!-- ========================================= -->
+
+<section class="reflection-section">
+
+<div class="container">
+
+<div class="reflection-box">
+
+<h2>A Question Worth Reflecting On</h2>
+
+<p>
+What is one small practice you can begin today
+that would make your life more peaceful,
+meaningful, and joyful?
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- SHARE & PRINT -->
+
+<section class="share-print-section">
+
+<div class="container">
+
+<h2 class="section-title">
+Save or Share Your Results
+</h2>
+
+<div class="gold-line"></div>
+
+<p class="section-subtitle">
+Print your Happiness Index for reflection,
+or share it with someone who may benefit from the journey.
+</p>
+
+<div class="action-buttons">
+
+<button onclick="window.print()" class="action-btn">
+🖨 Print Results
+</button>
+
+<button onclick="sharePage()" class="action-btn">
+📤 Share Happiness Index
+</button>
+
+</div>
+
+</div>
+
+</section>
 <script>
-document.getElementById("planForm").addEventListener("submit", function(e){
 
-e.preventDefault(); // stop default form
+function sharePage(){
 
-let form = this;
-let data = new FormData(form);
+if(navigator.share){
 
-// send data to Formspree
-fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: {
-        'Accept': 'application/json'
-    }
-}).then(response => {
-
-    if(response.ok){
-        // ✅ REDIRECT MANUALLY
-        window.location.href = "happiness-plan.html";
-    } else {
-        alert("Something went wrong. Try again.");
-    }
-
+navigator.share({
+title:'Mirror & Illusion Happiness Index',
+text:'Discover your Happiness Index and begin your journey of self-awareness.',
+url:window.location.href
 });
-});
-</script>
-</div>
 
+}else{
+
+navigator.clipboard.writeText(window.location.href);
+
+alert('Link copied to clipboard.');
+
+}
+
+}
 <script>
 
-function calculate(){
+function calculateHappiness(){
 
-let total =
-+q1.value + +q2.value + +q3.value + +q4.value + +q5.value;
+let score = 0;
 
-resultBox.style.display = "block";
-score.innerText = "Happiness Score: " + total + "/50";
+score += Number(document.getElementById('life').value);
+score += Number(document.getElementById('stress').value);
+score += Number(document.getElementById('purpose').value);
+score += Number(document.getElementById('clarity').value);
+score += Number(document.getElementById('connection').value);
 
-let status = "";
-let advice = "";
+let title = "";
+let message = "";
 
-if(total < 15){
-status = "Low Happiness";
-advice = "You need a reset. Start with small habits and reduce stress triggers.";
+if(score >= 80){
+
+title = "🌱 Flourishing";
+message = "You are living with a healthy level of balance, purpose and wellbeing.";
+
+}else if(score >= 60){
+
+title = "🌿 Growing";
+message = "You have a strong foundation with room for deeper fulfillment.";
+
+}else if(score >= 40){
+
+title = "⚖️ Rebalancing";
+message = "Stress or emotional burdens may be affecting your happiness.";
+
+}else{
+
+title = "🔄 Reset Needed";
+message = "A gentle reset may help restore clarity, peace and wellbeing.";
+
 }
-else if(total < 30){
-status = "Moderate Happiness";
-advice = "You are stable but need clarity and direction.";
-}
-else if(total < 45){
-status = "Good Happiness";
-advice = "You are doing well. Maintain your routines.";
-}
-else{
-status = "High Happiness";
-advice = "You are aligned. Keep growing.";
-}
 
-document.getElementById("status").innerText = status;
-document.getElementById("advice").innerText = advice;
+document.getElementById('result').innerHTML =
+"<h2>Your Happiness Score: " + score + "/100</h2>" +
+"<h3>" + title + "</h3>" +
+"<p>" + message + "</p>";
 
 }
 
