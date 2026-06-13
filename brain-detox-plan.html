@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,14 +24,10 @@ scroll-behavior:smooth;
 body{
 background:#000;
 color:#fff;
-font-family:Georgia, serif;
-line-height:1.7;
+font-family:Georgia,serif;
+line-height:1.8;
 overflow-x:hidden;
 }
-
-/* -------------------- */
-/* GLOBAL */
-/* -------------------- */
 
 .container{
 max-width:1200px;
@@ -37,28 +35,7 @@ margin:auto;
 padding:0 20px;
 }
 
-.gold{
-color:#caa85e;
-}
-
-.section-title{
-font-size:clamp(2rem,4vw,4rem);
-font-weight:300;
-line-height:1.2;
-margin-bottom:20px;
-}
-
-.section-subtitle{
-max-width:800px;
-margin:auto;
-font-size:1.15rem;
-color:rgba(255,255,255,.75);
-line-height:1.9;
-}
-
-/* -------------------- */
 /* HERO */
-/* -------------------- */
 
 .hero{
 position:relative;
@@ -67,41 +44,27 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-overflow:hidden;
+padding:120px 20px;
 background:
 linear-gradient(
 180deg,
-rgba(0,0,0,.7),
+rgba(0,0,0,.75),
 rgba(0,0,0,.95)
 ),
-url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop')
-center/cover;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:
-radial-gradient(
-circle at center,
-rgba(202,168,94,.12),
-transparent 60%
-);
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
 }
 
 .hero-content{
-position:relative;
-z-index:2;
 max-width:900px;
-padding:40px 20px;
 }
 
 .hero-tag{
 display:inline-block;
 padding:10px 18px;
 border-radius:999px;
-background:rgba(255,255,255,.06);
+background:rgba(255,255,255,.05);
 border:1px solid rgba(202,168,94,.25);
 color:#caa85e;
 letter-spacing:2px;
@@ -111,23 +74,22 @@ margin-bottom:30px;
 
 .hero h1{
 font-size:clamp(3rem,7vw,6rem);
-font-weight:300;
 line-height:1.1;
+font-weight:300;
 margin-bottom:25px;
 }
 
 .hero p{
 max-width:760px;
 margin:auto;
-font-size:1.2rem;
-line-height:1.9;
 color:rgba(255,255,255,.8);
+font-size:1.15rem;
 }
 
 .hero-btn{
 display:inline-block;
-margin-top:40px;
-padding:16px 36px;
+margin-top:35px;
+padding:15px 34px;
 background:#caa85e;
 color:#000;
 font-weight:700;
@@ -140,35 +102,28 @@ transition:.3s;
 transform:translateY(-3px);
 }
 
-/* -------------------- */
-/* BRAIN IMAGE SECTION */
-/* -------------------- */
+/* BRAIN IMAGE */
 
 .brain-banner{
 padding:120px 20px;
-background:
-linear-gradient(
-180deg,
-#000,
-#090909
-);
+background:#050505;
 }
 
 .brain-card{
 max-width:1100px;
 margin:auto;
-padding:40px;
-border-radius:28px;
 background:rgba(255,255,255,.03);
-border:1px solid rgba(202,168,94,.18);
+border:1px solid rgba(202,168,94,.2);
+border-radius:28px;
+padding:35px;
 backdrop-filter:blur(10px);
 }
 
 .brain-image{
 width:100%;
 height:500px;
-border-radius:24px;
 overflow:hidden;
+border-radius:24px;
 margin-bottom:40px;
 }
 
@@ -185,73 +140,45 @@ text-align:center;
 
 .brain-content h2{
 font-size:clamp(2rem,4vw,3.5rem);
+margin-bottom:20px;
 font-weight:300;
-margin-bottom:25px;
 }
 
 .brain-content p{
 max-width:850px;
 margin:auto;
-font-size:1.15rem;
-line-height:1.9;
 color:rgba(255,255,255,.75);
 }
-
-/* -------------------- */
-/* DIVIDER */
-/* -------------------- */
 
 .divider{
 width:120px;
 height:1px;
 background:#caa85e;
-margin:35px auto;
+margin:25px auto;
 }
 
-/* -------------------- */
-/* MOBILE */
-/* -------------------- */
+/* GLOBAL SECTIONS */
 
-@media(max-width:768px){
-
-.hero{
-min-height:90vh;
-}
-
-.hero h1{
-font-size:2.8rem;
-}
-
-.hero p{
-font-size:1rem;
-}
-
-.brain-banner{
-padding:80px 20px;
-}
-
-.brain-card{
-padding:20px;
-}
-
-.brain-image{
-height:280px;
-}
-
-.brain-content h2{
-font-size:2rem;
-}
-
-.brain-content p{
-font-size:1rem;
-}
-
-}
-
-    .brain-section{
+.brain-section{
 padding:100px 20px;
 background:#000;
 }
+
+.section-title{
+text-align:center;
+font-size:clamp(2rem,4vw,4rem);
+font-weight:300;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+max-width:800px;
+margin:auto;
+text-align:center;
+color:rgba(255,255,255,.75);
+}
+
+/* CARDS */
 
 .symptom-grid,
 .challenge-grid,
@@ -294,12 +221,14 @@ color:rgba(255,255,255,.8);
 }
 
 .phase{
-color:#caa85e;
-letter-spacing:2px;
-font-size:.8rem;
 display:block;
 margin-bottom:12px;
+font-size:.8rem;
+letter-spacing:2px;
+color:#caa85e;
 }
+
+/* TRACKER */
 
 .tracker-grid{
 display:grid;
@@ -313,6 +242,8 @@ text-align:center;
 padding:20px;
 }
 
+/* PHILOSOPHY */
+
 .closing-text,
 .philosophy-text,
 .life-quote{
@@ -325,14 +256,20 @@ color:rgba(255,255,255,.8);
 .life-quote{
 font-size:1.6rem;
 color:#fff;
-margin-top:60px;
 font-style:italic;
+margin-top:60px;
 }
+
+/* CTA */
 
 .final-cta{
 padding:140px 20px;
 text-align:center;
-background:linear-gradient(180deg,#000,#0b0b0b);
+background:linear-gradient(
+180deg,
+#000,
+#0b0b0b
+);
 }
 
 .final-cta h2{
@@ -344,21 +281,45 @@ margin-bottom:25px;
 max-width:700px;
 margin:auto;
 color:rgba(255,255,255,.8);
-line-height:1.9;
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
-.brain-section{
+.hero{
+min-height:85vh;
+padding:90px 20px;
+}
+
+.hero h1{
+font-size:2.7rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.brain-banner,
+.brain-section,
+.final-cta{
 padding:70px 20px;
 }
 
-.life-quote{
-font-size:1.2rem;
+.brain-card{
+padding:20px;
+}
+
+.brain-image{
+height:280px;
 }
 
 .tracker-grid{
 grid-template-columns:repeat(2,1fr);
+}
+
+.life-quote{
+font-size:1.2rem;
 }
 
 }
@@ -366,7 +327,6 @@ grid-template-columns:repeat(2,1fr);
 </style>
 
 </head>
-
 <body>
 
 <!-- HERO -->
@@ -396,7 +356,7 @@ purpose, and conscious living.
 
 </p>
 
-<a href="#brain-banner" class="hero-btn">
+<a href="#challenge" class="hero-btn">
 BEGIN THE RESET
 </a>
 
@@ -404,9 +364,9 @@ BEGIN THE RESET
 
 </section>
 
-<!-- BRAIN BANNER -->
+<!-- BRAIN IMAGE SECTION -->
 
-<section id="brain-banner" class="brain-banner">
+<section class="brain-banner">
 
 <div class="brain-card">
 
@@ -419,9 +379,7 @@ alt="Brain Reset">
 
 <div class="brain-content">
 
-<h2>
-Why Your Brain Needs a Reset
-</h2>
+<h2>Why Your Brain Needs a Reset</h2>
 
 <div class="divider"></div>
 
@@ -431,11 +389,13 @@ Mental exhaustion isn't always obvious.
 Modern life floods the brain with notifications,
 information, stress, and constant stimulation.
 
-When the mind is constantly consuming,
-it loses its ability to reflect.
+The result?
 
-When attention is scattered,
-clarity becomes difficult.
+Brain fog.
+Poor concentration.
+Overthinking.
+Emotional exhaustion.
+Reduced creativity.
 
 A reset begins by reducing what drains your attention
 and strengthening what restores it.
@@ -447,73 +407,21 @@ and strengthening what restores it.
 </div>
 
 </section>
-<!-- ========================================= -->
 
-<!-- WHY YOUR BRAIN NEEDS A RESET -->
+<!-- CHALLENGE -->
 
-<!-- ========================================= -->
-
-<section class="brain-section">
+<section id="challenge" class="brain-section">
 
 <div class="container">
 
-<h2 class="section-title">Why Your Brain Needs a Reset</h2>
+<h2 class="section-title">
+The 21-Day Brain Reset Challenge
+</h2>
 
 <p class="section-subtitle">
-Mental exhaustion isn't always obvious.
-Modern life floods the brain with notifications,
-information, stress, and constant stimulation.
+Three weeks. Small daily actions.
+A calmer, clearer and more focused mind.
 </p>
-
-<div class="symptom-grid">
-
-<div class="symptom-card">
-<h3>🧠 Brain Fog</h3>
-<p>Difficulty thinking clearly and making decisions.</p>
-</div>
-
-<div class="symptom-card">
-<h3>🎯 Poor Concentration</h3>
-<p>Your attention feels scattered and unfocused.</p>
-</div>
-
-<div class="symptom-card">
-<h3>💭 Overthinking</h3>
-<p>The mind keeps replaying the same thoughts.</p>
-</div>
-
-<div class="symptom-card">
-<h3>❤️ Emotional Exhaustion</h3>
-<p>You feel drained even when nothing seems wrong.</p>
-</div>
-
-<div class="symptom-card">
-<h3>✨ Reduced Creativity</h3>
-<p>Your mind struggles to generate fresh ideas.</p>
-</div>
-
-</div>
-
-<p class="closing-text">
-A reset begins by reducing what drains your attention
-and strengthening what restores it.
-</p>
-
-</div>
-
-</section>
-
-<!-- ========================================= -->
-
-<!-- 21 DAY CHALLENGE -->
-
-<!-- ========================================= -->
-
-<section class="brain-section">
-
-<div class="container">
-
-<h2 class="section-title">The 21-Day Brain Reset Challenge</h2>
 
 <div class="challenge-grid">
 
@@ -571,17 +479,20 @@ and strengthening what restores it.
 
 </section>
 
-<!-- ========================================= -->
-
 <!-- TRACKER -->
-
-<!-- ========================================= -->
 
 <section class="brain-section">
 
 <div class="container">
 
-<h2 class="section-title">Your 21-Day Tracker</h2>
+<h2 class="section-title">
+Your 21-Day Tracker
+</h2>
+
+<p class="section-subtitle">
+Consistency creates transformation.
+Mark each day as you complete it.
+</p>
 
 <div class="tracker-grid">
 
@@ -615,25 +526,26 @@ and strengthening what restores it.
 
 </section>
 
-<!-- ========================================= -->
+<!-- TRANSFORMATION -->
 
-<!-- TRANSFORMATION NEEDS PRACTICE -->
-
-<!-- ========================================= -->
-
-<section class="brain-section philosophy">
+<section class="brain-section">
 
 <div class="container">
 
-<h2 class="section-title">Transformation Needs Practice</h2>
+<h2 class="section-title">
+Transformation Needs Practice
+</h2>
 
 <p class="philosophy-text">
 
 Every person desires transformation.
 
 We want peace instead of anxiety.
+
 Confidence instead of self-doubt.
+
 Health instead of fatigue.
+
 Purpose instead of confusion.
 
 Yet transformation is not achieved through wishing,
@@ -647,67 +559,88 @@ It is created through practice.
 
 <div class="practice-card">
 <h3>Emotional Freedom</h3>
-<p>Gratitude, Compassion & Forgiveness</p>
+<p>
+Practice Gratitude,
+Compassion and Forgiveness.
+</p>
 </div>
 
 <div class="practice-card">
 <h3>Mental Clarity</h3>
-<p>Reflection, Awareness & Stillness</p>
+<p>
+Practice Reflection,
+Awareness and Stillness.
+</p>
 </div>
 
 <div class="practice-card">
 <h3>Physical Vitality</h3>
-<p>Movement, Nourishment & Rest</p>
+<p>
+Practice Movement,
+Nourishment and Rest.
+</p>
 </div>
 
 <div class="practice-card">
 <h3>Purpose & Wisdom</h3>
-<p>Self-Inquiry & Conscious Living</p>
+<p>
+Practice Self-Inquiry,
+Conscious Living and Meaningful Action.
+</p>
 </div>
 
 </div>
 
 <p class="life-quote">
-Life does not give us what we want.<br>
+
+Life does not give us what we want.
+
 Life gives us what we repeatedly practice.
+
 </p>
 
 </div>
 
 </section>
 
-<!-- ========================================= -->
-
 <!-- BENEFITS -->
-
-<!-- ========================================= -->
 
 <section class="brain-section">
 
 <div class="container">
 
-<h2 class="section-title">What You May Notice</h2>
+<h2 class="section-title">
+What You May Notice
+</h2>
 
 <div class="benefit-grid">
 
 <div class="benefit-card">
 <h3>🧠 Better Focus</h3>
-<p>Improve concentration and mental performance.</p>
+<p>
+Improve concentration and mental performance.
+</p>
 </div>
 
 <div class="benefit-card">
 <h3>🌿 Less Mental Noise</h3>
-<p>Reduce overstimulation and distraction.</p>
+<p>
+Reduce overstimulation and distraction.
+</p>
 </div>
 
 <div class="benefit-card">
 <h3>❤️ Emotional Balance</h3>
-<p>Respond with greater calm and awareness.</p>
+<p>
+Respond with greater calm and awareness.
+</p>
 </div>
 
 <div class="benefit-card">
 <h3>✨ Greater Clarity</h3>
-<p>See what truly matters and act with intention.</p>
+<p>
+See what truly matters and act with intention.
+</p>
 </div>
 
 </div>
@@ -716,26 +649,29 @@ Life gives us what we repeatedly practice.
 
 </section>
 
-<!-- ========================================= -->
-
 <!-- CTA -->
-
-<!-- ========================================= -->
 
 <section class="final-cta">
 
 <div class="container">
 
-<h2>Ready to Reset Your Mind?</h2>
+<h2>
+Ready to Reset Your Mind?
+</h2>
 
 <p>
+
 The challenge is simple.
+
 Not easy.
+
 But transformation never begins with complexity.
+
 It begins with practice.
+
 </p>
 
-<a href="#" class="hero-btn">
+<a href="#challenge" class="hero-btn">
 START THE CHALLENGE
 </a>
 
