@@ -151,6 +151,43 @@ button:hover {
     }
 }
 
+    .action-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:60px;
+}
+
+.action-btn{
+background:#caa85e;
+color:#000;
+border:none;
+padding:15px 30px;
+border-radius:999px;
+font-weight:700;
+cursor:pointer;
+font-size:1rem;
+transition:.3s;
+}
+
+.action-btn:hover{
+transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+
+.action-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.action-btn{
+width:260px;
+}
+
+}
+
 </style>
 </head>
 
@@ -268,7 +305,17 @@ You cannot “flush clean” arteries instantly, but you can significantly impro
 
 </div>
 <h3>PRESS F5 TO RESET<h3></h3>
+<div class="action-buttons">
 
+<button onclick="window.print()" class="action-btn">
+🖨 Print Challenge
+</button>
+
+<button onclick="sharePage()" class="action-btn">
+📤 Share Challenge
+</button>
+
+</div>
 <!-- CTA -->
 <div class="brain-cta">
     <h2>🧠 Reset Your Brain</h2>
