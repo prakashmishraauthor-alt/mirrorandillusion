@@ -398,57 +398,22 @@
 
 </div>
 
-<div class="actions">
-  <button onclick="window.print()" class="btn print-btn">Print</button>
-  <button onclick="sharePage()" class="btn share-btn">Share</button>
-</div>
-
-<div class="comment-box">
-  <h3>Comments</h3>
-
-  <textarea id="commentInput" placeholder="Write your thoughts..."></textarea>
-
-  <button onclick="addComment()">Post Comment</button>
-
-  <div id="commentList"></div>
-</div>
-
 <script>
-const COMMENT_KEY = "comments_" + window.location.pathname;
+function sharePage() {
+  const shareData = {
+    title: document.title,
+    text: "Check this page",
+    url: window.location.href
+  };
 
-function addComment() {
-  const input = document.getElementById("commentInput");
-  const text = input.value.trim();
-
-  if (!text) return;
-
-  const comments = JSON.parse(localStorage.getItem(COMMENT_KEY) || "[]");
-
-  comments.unshift(text);
-
-  localStorage.setItem(COMMENT_KEY, JSON.stringify(comments));
-
-  input.value = "";
-
-  loadComments();
+  if (navigator.share) {
+    navigator.share(shareData)
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link copied to clipboard!");
+  }
 }
-
-function loadComments() {
-  const list = document.getElementById("commentList");
-
-  const comments = JSON.parse(localStorage.getItem(COMMENT_KEY) || "[]");
-
-  list.innerHTML = "";
-
-  comments.forEach(text => {
-    const div = document.createElement("div");
-    div.className = "comment";
-    div.textContent = text;
-    list.appendChild(div);
-  });
-}
-
-loadComments();
 </script>
 
 </body>
