@@ -1,289 +1,489 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Happiness Reset Plan</title>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happiness Index | Mirror & Illusion</title>
+
+<meta name="description" content="Discover your current level of happiness, wellbeing, purpose, and inner balance through the Mirror & Illusion Happiness Index.">
 
 <style>
-body {
-    background:#0a0f1c;
-    color:#e5e7eb;
-    font-family: Arial;
-    padding:20px;
-    line-height:1.6;
+
+/* ALL YOUR CSS GOES HERE */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-h1 {
-    color:#00ffd5;
-    text-align:center;
+html{
+scroll-behavior:smooth;
 }
 
-h2 {
-    color:#facc15;
-    margin-top:30px;
+body{
+background:#000;
+color:#fff;
+font-family:Georgia,serif;
+line-height:1.8;
+overflow-x:hidden;
 }
 
-.container {
-    max-width:800px;
-    margin:auto;
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
 }
 
-.box {
-    background:#111827;
-    padding:20px;
-    border-radius:10px;
-    margin-top:20px;
+.assessment-section{
+padding:100px 20px;
+background:#000;
 }
 
-.highlight {
-    color:#22c55e;
-    font-weight:bold;
+.assessment-card{
+max-width:800px;
+margin:auto;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(202,168,94,.18);
+border-radius:24px;
+padding:40px;
+backdrop-filter:blur(10px);
 }
 
-.cta {
-    text-align:center;
-    margin-top:40px;
+.question{
+margin-bottom:30px;
 }
 
-.cta a {
-    display:inline-block;
-    background:#00ffd5;
-    color:#000;
-    padding:12px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+.question label{
+display:block;
+margin-bottom:10px;
+font-size:1.1rem;
+color:#fff;
 }
 
-/* ===== PREMIUM CARD FIX ===== */
-
-#energy-tool .premium-wrapper,
-.premium-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
+.question select{
+width:100%;
+padding:15px;
+background:#111;
+color:#fff;
+border:1px solid rgba(202,168,94,.3);
+border-radius:12px;
+font-size:1rem;
 }
 
-#energy-tool .premium-card,
-.premium-card {
-  max-width: 380px;
-  width: 100%;
-  background: #1e293b !important;
-  padding: 22px;
-  border-radius: 16px;
-  border: 1px solid #334155;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  text-align: center;
-  color: white;
+.result-box{
+margin-top:40px;
+text-align:center;
+font-size:1.2rem;
+color:#fff;
 }
 
-/* Header */
-.premium-header {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.result-box h3{
+color:#caa85e;
+margin-bottom:10px;
 }
 
-/* Price */
-.premium-price {
-  font-size: 28px;
-  font-weight: bold;
-  color: #22c55e !important;
-}
 
-.old-price {
-  font-size: 14px;
-  color: #94a3b8;
-  text-decoration: line-through;
-  margin-right: 6px;
-}
-
-/* Subtext */
-.premium-sub {
-  font-size: 13px;
-  color: #cbd5e1;
-  margin-bottom: 15px;
-}
-
-/* Features */
-.premium-features {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-  text-align: left;
-}
-
-.premium-features li {
-  font-size: 14px;
-  margin-bottom: 8px;
-  padding-left: 18px;
-  position: relative;
-}
-
-.premium-features li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #22c55e;
-}
-
-/* Warning */
-.premium-warning {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  margin: 15px 0;
-}
-
-/* BUTTON FIX (IMPORTANT) */
-.premium-card .premium-btn {
-  background: #22c55e !important;
-  color: #ffffff !important;
-  padding: 12px;
-  width: 100%;
-  border: none !important;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  display: block;
-}
-
-.premium-card .premium-btn:hover {
-  background: #16a34a !important;
-}
-
-/* Trust text */
-.premium-trust {
-  font-size: 11px;
-  color: #94a3b8;
-  margin-top: 10px;
-}
 </style>
+
 </head>
 
 <body>
 
+<!-- HERO SECTION -->
+
+<section class="hero">
+
 <div class="container">
 
-<h1>😊 Your 7-Day Happiness Reset Plan</h1>
+<h1>😊 Happiness Index</h1>
 
-<p style="text-align:center;">
-You are not broken. You are overstimulated and disconnected.  
-This system will help you regain clarity, control, and inner stability.
+<div class="gold-line"></div>
+
+<p>
+Discover the state of your inner wellbeing.
+Reflect on your happiness, purpose,
+mental clarity and connection with yourself.
 </p>
 
-<h3 style="text-align:center; color:#facc15;">
-Follow this for 7 days. Your mindset will shift.
-</h3>
-
-<!-- DAY 1–2 -->
-<div class="box">
-<h2>Day 1–2: Awareness Reset</h2>
-<ul>
-<li>Observe your thoughts without reacting</li>
-<li>Reduce unnecessary social media</li>
-<li>Write: “What is making me unhappy?”</li>
-<li class="highlight">Goal: Awareness, not change</li>
-</ul>
 </div>
 
-<!-- DAY 3–4 -->
-<div class="box">
-<h2>Day 3–4: Remove Mental Noise</h2>
-<ul>
-<li>Avoid negative content & distractions</li>
-<li>Spend 10 minutes in silence daily</li>
-<li>Limit comparison (social media detox)</li>
-<li>Focus on present tasks only</li>
-</ul>
-</div>
+</section>
 
-<!-- DAY 5–6 -->
-<div class="box">
-<h2>Day 5–6: Build Positive State</h2>
-<ul>
-<li>Do one activity you enjoy daily</li>
-<li>Practice gratitude (write 3 things)</li>
-<li>Talk to someone meaningful</li>
-<li>Reduce overthinking loops</li>
-</ul>
-</div>
+    <!-- ========================================= -->
 
-<!-- DAY 7 -->
-<div class="box">
-<h2>Day 7: Clarity & Direction</h2>
-<ul>
-<li>Write your priorities clearly</li>
-<li>What truly matters in your life?</li>
-<li>What drains your energy?</li>
-<li>Design your ideal daily routine</li>
-</ul>
-</div>
+<!-- HAPPINESS ASSESSMENT -->
 
-<!-- BONUS -->
-<div class="box">
-<h2>⚡ Daily Rules</h2>
-<ul>
-<li>Don’t chase happiness — build stability</li>
-<li>Reduce stimulation, increase awareness</li>
-<li>Control inputs → control emotions</li>
-<li>Consistency > motivation</li>
-</ul>
-</div>
+<!-- ========================================= -->
 
+<section class="assessment-section">
 
-<div class="premium-wrapper">
+<div class="container">
 
-  <div class="premium-card">
+<h2 class="section-title">
+Reflect On Your Current Experience
+</h2>
 
-    <div class="premium-header">
-      😊 Unlock Full Mood Reset Protocol
-    </div>
+<div class="gold-line"></div>
 
-    <div class="premium-price">
-      <span class="old-price">₹399</span>
-      ₹149
-    </div>
+<div class="assessment-card">
 
-    <p class="premium-sub">
-      Based on your diagnosis: <b id="moodType">Low Dopamine Stability Type</b>
-    </p>
+<div class="question">
 
-    <ul class="premium-features">
-      <li>Mood stabilization strategy</li>
-      <li>Dopamine balance reset plan</li>
-      <li>Daily routine for emotional stability</li>
-      <li>Stress & overthinking control system</li>
-      <li>Habits to improve long-term happiness</li>
-    </ul>
+<label>
+How satisfied are you with your life?
+</label>
 
-    <div class="premium-warning">
-      ⚠️ Mood instability may continue if not addressed
-    </div>
-
-    <button class="premium-btn" onclick="goToPayment()">
-      Get Full Plan
-    </button>
-
-    <p class="premium-trust">
-      Instant access • One-time payment • No subscription
-    </p>
-
-  </div>
+<select id="life">
+<option value="20">Very Satisfied</option>
+<option value="15">Satisfied</option>
+<option value="10">Neutral</option>
+<option value="5">Dissatisfied</option>
+<option value="0">Very Dissatisfied</option>
+</select>
 
 </div>
-<!-- CTA -->
-<div class="cta">
-<p>Want full mind-body reset systems?</p>
 
-<a href="../../index.html">Back to Dashboard</a>
+<div class="question">
+
+<label>
+How often do you feel stressed?
+</label>
+
+<select id="stress">
+<option value="20">Rarely</option>
+<option value="15">Sometimes</option>
+<option value="10">Often</option>
+<option value="5">Very Often</option>
+<option value="0">Constantly</option>
+</select>
+
+</div>
+
+<div class="question">
+
+<label>
+Do you feel your life has purpose?
+</label>
+
+<select id="purpose">
+<option value="20">Strong Sense of Purpose</option>
+<option value="15">Mostly Purposeful</option>
+<option value="10">Somewhat Purposeful</option>
+<option value="5">Unsure</option>
+<option value="0">Lacking Direction</option>
+</select>
+
+</div>
+
+<div class="question">
+
+<label>
+How is your mental clarity?
+</label>
+
+<select id="clarity">
+<option value="20">Very Clear</option>
+<option value="15">Mostly Clear</option>
+<option value="10">Occasionally Clouded</option>
+<option value="5">Frequently Distracted</option>
+<option value="0">Constant Mental Noise</option>
+</select>
+
+</div>
+
+<div class="question">
+
+<label>
+How connected do you feel with yourself?
+</label>
+
+<select id="connection">
+<option value="20">Deeply Connected</option>
+<option value="15">Mostly Connected</option>
+<option value="10">Somewhat Connected</option>
+<option value="5">Often Disconnected</option>
+<option value="0">Completely Disconnected</option>
+</select>
+
+</div>
+
+<div style="text-align:center;margin-top:40px;">
+
+<button onclick="calculateHappiness()" class="btn">
+Check Happiness
+</button>
+
+</div>
+
+<div id="result" class="result-box"></div>
+
 </div>
 
 </div>
+
+</section>
+
+
+<!-- ========================================= -->
+
+<!-- HAPPINESS INSIGHT SECTION -->
+
+<!-- ========================================= -->
+
+<section class="happiness-insight">
+
+<div class="container">
+
+<h2>Happiness Is Not Something You Find</h2>
+
+<div class="gold-line"></div>
+
+<p class="intro-text">
+Many people spend years chasing happiness through success,
+achievement, possessions, and recognition.
+
+Yet happiness rarely appears when pursued directly.
+
+More often, it emerges when we understand ourselves,
+release unnecessary burdens, and cultivate habits that nourish
+the mind, heart, and spirit.
+
+</p>
+
+<div class="insight-grid">
+
+<div class="insight-card">
+<div class="icon">🌿</div>
+<h3>Gratitude</h3>
+<p>
+Appreciating what is already present creates abundance
+where the mind once saw lack.
+</p>
+</div>
+
+<div class="insight-card">
+<div class="icon">❤️</div>
+<h3>Compassion</h3>
+<p>
+The way we treat ourselves shapes the quality of our inner world.
+</p>
+</div>
+
+<div class="insight-card">
+<div class="icon">🕊️</div>
+<h3>Forgiveness</h3>
+<p>
+Freedom often begins when we stop carrying yesterday's pain.
+</p>
+</div>
+
+<div class="insight-card">
+<div class="icon">✨</div>
+<h3>Purpose</h3>
+<p>
+A meaningful life is not always easy,
+but it is deeply fulfilling.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- SCORE MEANING SECTION -->
+
+<!-- ========================================= -->
+
+<section class="score-meaning">
+
+<div class="container">
+
+<h2>What Your Score Means</h2>
+
+<div class="gold-line"></div>
+
+<div class="meaning-grid">
+
+<div class="meaning-card">
+<h3>🌱 Flourishing</h3>
+<span>80–100</span>
+<p>
+You are living with a healthy level of balance,
+connection, and purpose.
+Continue nurturing the habits that support your wellbeing.
+</p>
+</div>
+
+<div class="meaning-card">
+<h3>🌿 Growing</h3>
+<span>60–79</span>
+<p>
+Many aspects of life are functioning well,
+yet there may be opportunities for deeper alignment,
+peace, and fulfillment.
+</p>
+</div>
+
+<div class="meaning-card">
+<h3>⚖️ Rebalancing</h3>
+<span>40–59</span>
+<p>
+Stress, emotional burdens, or distractions may be affecting
+your overall wellbeing.
+A conscious reset can create meaningful change.
+</p>
+</div>
+
+<div class="meaning-card">
+<h3>🔄 Reset Needed</h3>
+<span>Below 40</span>
+<p>
+Life may be asking for rest, reflection,
+and renewed attention to your emotional,
+mental, and spiritual wellbeing.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+
+<!-- REFLECTION SECTION -->
+
+<!-- ========================================= -->
+
+<section class="reflection-section">
+
+<div class="container">
+
+<div class="reflection-box">
+
+<h2>A Question Worth Reflecting On</h2>
+
+<p>
+What is one small practice you can begin today
+that would make your life more peaceful,
+meaningful, and joyful?
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- SHARE & PRINT -->
+
+<section class="share-print-section">
+
+<div class="container">
+
+<h2 class="section-title">
+Save or Share Your Results
+</h2>
+
+<div class="gold-line"></div>
+
+<p class="section-subtitle">
+Print your Happiness Index for reflection,
+or share it with someone who may benefit from the journey.
+</p>
+
+<div class="action-buttons">
+
+<button onclick="window.print()" class="action-btn">
+🖨 Print Results
+</button>
+
+<button onclick="sharePage()" class="action-btn">
+📤 Share Happiness Index
+</button>
+
+</div>
+
+</div>
+
+</section>
+<script>
+
+function sharePage(){
+
+if(navigator.share){
+
+navigator.share({
+title:'Mirror & Illusion Happiness Index',
+text:'Discover your Happiness Index and begin your journey of self-awareness.',
+url:window.location.href
+});
+
+}else{
+
+navigator.clipboard.writeText(window.location.href);
+
+alert('Link copied to clipboard.');
+
+}
+
+}
+<script>
+
+function calculateHappiness(){
+
+let score = 0;
+
+score += Number(document.getElementById('life').value);
+score += Number(document.getElementById('stress').value);
+score += Number(document.getElementById('purpose').value);
+score += Number(document.getElementById('clarity').value);
+score += Number(document.getElementById('connection').value);
+
+let title = "";
+let message = "";
+
+if(score >= 80){
+
+title = "🌱 Flourishing";
+message = "You are living with a healthy level of balance, purpose and wellbeing.";
+
+}else if(score >= 60){
+
+title = "🌿 Growing";
+message = "You have a strong foundation with room for deeper fulfillment.";
+
+}else if(score >= 40){
+
+title = "⚖️ Rebalancing";
+message = "Stress or emotional burdens may be affecting your happiness.";
+
+}else{
+
+title = "🔄 Reset Needed";
+message = "A gentle reset may help restore clarity, peace and wellbeing.";
+
+}
+
+document.getElementById('result').innerHTML =
+"<h2>Your Happiness Score: " + score + "/100</h2>" +
+"<h3>" + title + "</h3>" +
+"<p>" + message + "</p>";
+
+}
+
+</script>
+
+</script>
 
 </body>
 </html>
