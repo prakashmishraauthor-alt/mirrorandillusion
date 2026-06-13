@@ -361,6 +361,31 @@ width:260px;
 
 }
 
+  @media print{
+
+.hero-btn,
+.action-buttons,
+nav,
+footer{
+display:none;
+}
+
+body{
+background:#fff;
+color:#000;
+}
+
+.brain-card,
+.challenge-card,
+.practice-card,
+.benefit-card,
+.tracker-day{
+border:1px solid #999;
+background:#fff;
+}
+
+}
+
 </style>
 
 </head>
@@ -726,6 +751,28 @@ START THE CHALLENGE
 </div>
 
 </section>
+<script>
 
+function sharePage(){
+
+if(navigator.share){
+
+navigator.share({
+title:'21-Day Brain Detox Plan',
+text:'Join me in the 21-Day Brain Detox Plan from Mirror & Illusion.',
+url:window.location.href
+});
+
+}else{
+
+navigator.clipboard.writeText(window.location.href);
+
+alert('Page link copied to clipboard.');
+
+}
+
+}
+
+</script>
 </body>
 </html>
