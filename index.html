@@ -1,101 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mirror & Illusion</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0c10;
-  color: #ffffff;
-}
-
-header {
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 40px;
-}
-
-.hero {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.sub {
-  opacity: 0.7;
-  margin-top: 10px;
-  max-width: 600px;
-  text-align: center;
-}
-
-.card {
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 20px;
-  margin: 10px;
-  width: 200px;
-  text-align: center;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura — Premium SaaS Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+ /* --- Base Reset Definitions --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
+:root {
+    --bg-dark: #09090b;
+    --bg-surface: #141417;
+    --border-color: #27272a;
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --accent-purple: #a855f7;
+    --accent-blue: #3b82f6;
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- Layout Containers --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Interactive Navigation UI --- */
+.header {
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(9, 9, 11, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--accent-purple);
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 32px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+/* --- Button Framework --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(168, 85, 247, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-large {
+    padding: 14px 28px;
+    font-size: 16px;
+}
+
+/* --- Hero Section Design --- */
+.hero {
+    position: relative;
+    padding-top: 180px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.hero-glow {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+    filter: blur(60px);
+    z-index: -1;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    color: #c084fc;
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    max-width: 800px;
+    margin: 0 auto 24px auto;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #f3e8ff, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 80px;
+}
+
+/* --- Dashboard Mockup Element --- */
+.hero-mockup {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(39, 39, 42, 0.5), rgba(20, 20, 23, 0.5));
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.mockup-screen {
+    background-color: #0c0c0e;
+    border-radius: 8px;
+    height: 350px;
+    border: 1px solid rgba(255,255,255,0.03);
+    padding: 20px;
+    text-align: left;
+}
+
+.mockup-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.mockup-header .dot {
+    width: 100%;
+    max-width: 10px;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+}
+
+.chart-line {
+    height: 12px;
+    background: linear-gradient(90deg, #27272a 0%, #141417 100%);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    width: 80%;
+}
+
+.chart-line.short {
+    width: 50%;
+}
+
+/* --- Features Grid Section --- */
+.features {
+    padding: 100px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.feature-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 32px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+.icon-box {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* --- Minimal Footer Layout --- */
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 24px;
+}
+
+/* --- Mobile Responsiveness Rules --- */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .nav-cta .btn-secondary {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 38px;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+ 
 <body>
 
-<header>
-  MIRROR & ILLUSION
-</header>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">Aura<span>.</span></div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="#get-started" class="btn btn-secondary">Login</a>
+                <a href="#get-started" class="btn btn-primary">Start Free</a>
+            </div>
+        </div>
+    </header>
 
-<section>
-  <div class="hero">The Journey Back to Yourself</div>
-  <div class="sub">Ancient wisdom. Modern science. Inner transformation.</div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-container">
+            <span class="badge">✨ AI-Powered Intelligence Platform</span>
+            <h1>Next generation platform for <span class="text-gradient">digital scale</span></h1>
+            <p>Optimize your automated workflows, track system metrics, and build custom web data pipelines with zero complex configuration required.</p>
+            <div class="hero-actions">
+                <a href="#pricing" class="btn btn-primary btn-large">Get Started Free</a>
+                <a href="#features" class="btn btn-secondary btn-large">See How It Works</a>
+            </div>
+            <div class="hero-mockup">
+                <div class="mockup-screen">
+                    <div class="mockup-header">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="chart-line"></div>
+                        <div class="chart-line short"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>Philosophy</h2>
-  <p style="max-width:600px;text-align:center;">
-    Everything you experience is a reflection of consciousness. This is a space to observe, not escape.
-  </p>
-</section>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Engineered for extreme performance</h2>
+                <p>Everything you need to ship products faster without technical limitations.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box">⚡</div>
+                    <h3>Lightning Fast Execution</h3>
+                    <p>Sub-millisecond processing pipelines built straight on edge infrastructure servers worldwide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">🔒</div>
+                    <h3>Bank-Grade Security</h3>
+                    <p>End-to-end operational data encryption combined with continuous automated threat profiling monitoring.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">📊</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Uncover underlying system processing patterns using out-of-the-box machine learning modules.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>The Four Pillars</h2>
-
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;">
-    <div class="card">Mind</div>
-    <div class="card">Body</div>
-    <div class="card">Spirit</div>
-    <div class="card">Life</div>
-  </div>
-</section>
-
-<section>
-  <h2>Library</h2>
-
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;">
-    <div class="card">Meditation</div>
-    <div class="card">Philosophy</div>
-    <div class="card">Neuroscience</div>
-  </div>
-</section>
-
-<section>
-  <h2>Join</h2>
-  <input type="email" placeholder="Enter email" style="padding:10px;width:250px;">
-  <button style="padding:10px 20px;">Subscribe</button>
-</section>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Aura Inc. Designed for premium web operations.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+  
 
 </body>
 </html>
