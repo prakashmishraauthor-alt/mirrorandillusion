@@ -1,103 +1,23 @@
-```javascript id="main-js"
-/* ==========================================================
-   MIRROR & ILLUSION V2
-   main.js
-   Master Controller
-========================================================== */
-
 (function () {
 
     "use strict";
 
-    /* ==========================================
-       DOM Ready Helper
-    ========================================== */
-
-    function ready(callback) {
+    function domReady(callback) {
 
         if (document.readyState !== "loading") {
-
             callback();
-
         } else {
-
             document.addEventListener("DOMContentLoaded", callback);
-
         }
 
     }
 
+    domReady(() => {
 
-    /* ==========================================
-       Safe Module Loader
-    ========================================== */
-
-    function loadModule(fn, name) {
-
-        try {
-
-            if (typeof fn === "function") {
-
-                fn();
-
-            }
-
-        } catch (error) {
-
-            console.error(`Module Error [${name}]:`, error);
-
-        }
-
-    }
-
-
-    /* ==========================================
-       Initialize System
-    ========================================== */
-
-    ready(() => {
-
-        /* Core UX Modules */
-
-        loadModule(() => {
-
-            if (window.navigationInit) window.navigationInit();
-
-        }, "navigation");
-
-        loadModule(() => {
-
-            if (window.intersectionInit) window.intersectionInit();
-
-        }, "intersection");
-
-        loadModule(() => {
-
-            if (window.smoothScrollInit) window.smoothScrollInit();
-
-        }, "smooth-scroll");
-
-        loadModule(() => {
-
-            if (window.animationsInit) window.animationsInit();
-
-        }, "animations");
-
-        loadModule(() => {
-
-            if (window.newsletterInit) window.newsletterInit();
-
-        }, "newsletter");
-
-
-        /* ==========================================
-           Global Enhancements
-        ========================================== */
+        // Modules already self-initialize via DOMContentLoaded
+        // So we just safely track system readiness
 
         document.body.classList.add("mi-ready");
-
-
-        /* Performance Hint */
 
         setTimeout(() => {
 
@@ -105,18 +25,14 @@
 
         }, 300);
 
+        console.log("Mirror & Illusion V2 initialized");
+
     });
 
+    window.addEventListener("error", (e) => {
 
-    /* ==========================================
-       Global Error Catch
-    ========================================== */
-
-    window.addEventListener("error", (event) => {
-
-        console.warn("Mirror & Illusion JS Error:", event.message);
+        console.warn("JS Error:", e.message);
 
     });
 
 })();
-```
