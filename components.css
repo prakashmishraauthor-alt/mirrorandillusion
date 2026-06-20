@@ -1,0 +1,439 @@
+```css id="mi-components-css"
+/* ==========================================================
+   MIRROR & ILLUSION V2
+   COMPONENTS.CSS
+   Reusable UI Components
+==========================================================*/
+
+
+/*==========================================================
+SECTION HEADER
+==========================================================*/
+
+.section-header{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+.section-header h2{
+
+    margin:20px 0 24px;
+
+}
+
+.section-header p{
+
+    margin:auto;
+
+}
+
+
+/*==========================================================
+BADGE
+==========================================================*/
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(216,179,106,.18);
+
+    background:rgba(216,179,106,.06);
+
+    color:var(--color-primary);
+
+    font-family:var(--font-ui);
+
+    font-size:.8rem;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+}
+
+
+/*==========================================================
+CHIP
+==========================================================*/
+
+.chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--color-text-light);
+
+    font-size:.85rem;
+
+}
+
+
+/*==========================================================
+GLASS CARD
+==========================================================*/
+
+.glass{
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+}
+
+
+/*==========================================================
+CARD
+==========================================================*/
+
+.card{
+
+    position:relative;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:var(--color-surface);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(216,179,106,.22);
+
+}
+
+
+/*==========================================================
+BUTTONS
+==========================================================*/
+
+.btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-height:56px;
+
+    padding:0 32px;
+
+    border-radius:999px;
+
+    font-family:var(--font-ui);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--gradient-gold);
+
+    color:#111;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.btn-outline{
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:var(--color-white);
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.btn-outline:hover{
+
+    border-color:var(--color-primary);
+
+    color:var(--color-primary);
+
+}
+
+
+/*==========================================================
+ICON BOX
+==========================================================*/
+
+.icon-box{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:22px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:rgba(216,179,106,.08);
+
+    color:var(--color-primary);
+
+    margin-bottom:28px;
+
+}
+
+
+/*==========================================================
+DIVIDER
+==========================================================*/
+
+.divider{
+
+    width:90px;
+
+    height:2px;
+
+    margin:60px auto;
+
+    background:var(--gradient-gold);
+
+}
+
+
+/*==========================================================
+IMAGE WRAPPER
+==========================================================*/
+
+.image-wrapper{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+}
+
+.image-wrapper img{
+
+    transition:transform .8s ease;
+
+}
+
+.image-wrapper:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/*==========================================================
+TAG
+==========================================================*/
+
+.tag{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--color-primary);
+
+    font-size:.78rem;
+
+    letter-spacing:.08em;
+
+}
+
+
+/*==========================================================
+NUMBER
+==========================================================*/
+
+.number{
+
+    font-family:var(--font-heading);
+
+    font-size:4rem;
+
+    color:var(--color-primary);
+
+    line-height:1;
+
+}
+
+
+/*==========================================================
+HIGHLIGHT
+==========================================================*/
+
+.highlight{
+
+    color:var(--color-primary);
+
+}
+
+
+/*==========================================================
+TEXT UTILITIES
+==========================================================*/
+
+.text-muted{
+
+    color:var(--color-text-muted);
+
+}
+
+.text-light{
+
+    color:var(--color-text-light);
+
+}
+
+.text-white{
+
+    color:var(--color-white);
+
+}
+
+
+/*==========================================================
+SPACERS
+==========================================================*/
+
+.space-40{
+
+    height:40px;
+
+}
+
+.space-80{
+
+    height:80px;
+
+}
+
+.space-120{
+
+    height:120px;
+
+}
+
+
+/*==========================================================
+BORDER UTILITIES
+==========================================================*/
+
+.rounded{
+
+    border-radius:28px;
+
+}
+
+.rounded-full{
+
+    border-radius:999px;
+
+}
+
+.border{
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/*==========================================================
+SHADOW UTILITIES
+==========================================================*/
+
+.shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+.shadow-lg{
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/*==========================================================
+HOVER LIFT
+==========================================================*/
+
+.hover-lift{
+
+    transition:.4s ease;
+
+}
+
+.hover-lift:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+/*==========================================================
+GRADIENT TEXT
+==========================================================*/
+
+.gradient-text{
+
+    background:var(--gradient-gold);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+
+}
+```
