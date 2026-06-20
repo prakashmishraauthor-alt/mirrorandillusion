@@ -2,37 +2,34 @@
 
     "use strict";
 
-    function domReady(callback) {
+    let initialized = false;
 
-        if (document.readyState !== "loading") {
-            callback();
-        } else {
-            document.addEventListener("DOMContentLoaded", callback);
-        }
+    function init() {
 
-    }
-
-    domReady(() => {
-
-        // Modules already self-initialize via DOMContentLoaded
-        // So we just safely track system readiness
+        if (initialized) return;
+        initialized = true;
 
         document.body.classList.add("mi-ready");
 
-        setTimeout(() => {
+        // Wait one frame for layout stability
+        requestAnimationFrame(() => {
 
             document.body.classList.add("mi-loaded");
 
-        }, 300);
+        });
 
-        console.log("Mirror & Illusion V2 initialized");
+        console.log("Mirror & Illusion V2 fully loaded");
 
-    });
+    }
+
+    if (document.readyState === "complete") {
+        init();
+    } else {
+        window.addEventListener("load", init);
+    }
 
     window.addEventListener("error", (e) => {
-
-        console.warn("JS Error:", e.message);
-
+        console.warn("MI V2 Error:", e.message);
     });
 
 })();
