@@ -158,1496 +158,3949 @@ a{
   background:#fff;
 }
 
-/* =========================================
-   HEADER
-========================================= */
 
-.header{
-  position:sticky;
-  top:0;
-  z-index:999;
 
-  background:rgba(255,255,255,0.92);
 
-  backdrop-filter:blur(12px);
+  <style>
+/*========================================================
 
-  border-bottom:1px solid rgba(0,0,0,0.06);
+MIRROR & ILLUSION
+MASTER STYLESHEET
 
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+Version : 2.0
+Author  : ChatGPT
 
-  padding:18px 28px;
+==========================================================*/
+
+
+
+/*========================================================
+RESET
+========================================================*/
+
+*,
+*::before,
+*::after{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#080808;
+
+color:#ffffff;
+
+overflow-x:hidden;
+
+line-height:1.7;
+
+font-size:16px;
+
+}
+
+
+
+/*========================================================
+BLOGGER FIXES
+========================================================*/
+
+body,
+.post,
+.post-body,
+.main,
+.content,
+.section,
+.widget{
+
+background:#080808 !important;
+
+}
+
+.post-body{
+
+max-width:100% !important;
+
+width:100% !important;
+
+padding:0 !important;
+
+margin:0 !important;
+
+font-size:16px;
+
+}
+
+.main{
+
+width:100% !important;
+
+max-width:100% !important;
+
+}
+
+.content{
+
+width:100% !important;
+
+}
+
+.widget{
+
+margin:0 !important;
+
+padding:0 !important;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+
+
+/*========================================================
+CONTAINER
+========================================================*/
+
+/* ===========================================
+   BLOGGER FULL WIDTH OVERRIDE
+=========================================== */
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden !important;
+}
+
+body{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.main,
+.main-wrapper,
+.content,
+.content-outer,
+.content-inner,
+.post,
+.post-body,
+.section,
+.widget,
+.blog-posts,
+.centered,
+.page_body,
+.page-content,
+.columns,
+.fauxcolumn-outer{
+
+width:100% !important;
+max-width:100% !important;
+margin:0 auto !important;
+padding:0 !important;
+
+}
+
+/* Our main container */
+
+.container{
+
+width:100% !important;
+max-width:1600px !important;
+margin:0 auto !important;
+padding-left:10px !important;
+padding-right:10px !important;
+
+}
+
+/* Navigation */
+
+nav{
+
+width:100% !important;
+
+}
+
+.nav-container{
+
+width:100%;
+max-width:1600px;
+margin:auto;
+padding:0 50px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+/* Every major section */
+
+.hero,
+.intro,
+.pillars,
+.why,
+.journey,
+.mirror,
+.illusion,
+.self,
+.wisdom-section,
+.bio-reset,
+.science-section,
+.meditation-section,
+.articles,
+.newsletter,
+footer{
+
+width:100%;
+max-width:100%;
+margin:0 auto;
+
+}
+
+/* Pillars */
+
+.pillar{
+
+display:grid !important;
+grid-template-columns:1fr 1fr !important;
+
+max-width:1000px;
+
+margin:120px auto;
+
+padding:0 50px;
+
+gap:80px;
+
+}
+
+/* Cards */
+
+.wisdom-grid,
+.bio-grid,
+.science-grid,
+.article-grid{
+
+display:grid;
+
+justify-content:center;
+
+max-width:1000px;
+
+margin:0 auto;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+/* Stop text wrapping */
+
+.logo,
+nav a,
+.wisdom-card h3,
+.bio-item h3,
+.science-card h3{
+
+white-space:nowrap;
+
+}
+
+.pillar-content h2{
+
+white-space:normal;
+
+word-break:normal;
+
+}
+
+
+/*========================================================
+TYPOGRAPHY
+========================================================*/
+
+h1{
+
+font-size:7rem;
+
+line-height:1;
+
+font-weight:700;
+
+}
+
+h2{
+
+font-size:4rem;
+
+line-height:1.15;
+
+font-weight:700;
+
+}
+
+h3{
+
+font-size:2rem;
+
+font-weight:400;
+
+}
+
+p{
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+color:#d4d4d4;
+
+}
+
+
+
+/*========================================================
+COLORS
+========================================================*/
+
+:root{
+
+--orange:#ff7a00;
+
+--gold:#ffb347;
+
+--black:#080808;
+
+--surface:#111111;
+
+--card:#181818;
+
+--text:#ffffff;
+
+--muted:#b8b8b8;
+
+--border:rgba(255,255,255,.08);
+
+}
+
+
+
+/*========================================================
+NAVIGATION
+========================================================*/
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:22px 0;
+
+z-index:9999;
+
+transition:.4s;
+
+}
+
+nav.scrolled{
+
+background:#0c0c0c;
+
+backdrop-filter:blur(15px);
+
+box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.nav-container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
 }
 
 .logo{
-  font-size:22px;
-  font-weight:700;
-  letter-spacing:-0.5px;
+
+font-size:2rem;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+color:#fff;
+
 }
 
-/* NAV */
+.logo span{
 
-.nav-menu{
-  display:flex;
-  align-items:center;
-  gap:34px;
+color:var(--orange);
 
-  list-style:none;
 }
 
-.nav-menu a{
-  color:#222;
-  font-size:15px;
-  font-weight:600;
+nav ul{
 
-  transition:0.3s ease;
+display:flex;
+
+gap:40px;
+
+align-items:center;
+
 }
 
-.nav-menu a:hover{
-  color:var(--primary-red);
+nav li{
+
+display:flex;
+
 }
 
-/* HAMBURGER */
+nav a{
 
-.hamburger{
-  display:none;
+font-size:.95rem;
 
-  flex-direction:column;
-  gap:5px;
+font-weight:500;
 
-  background:none;
-  border:none;
-  cursor:pointer;
+transition:.35s;
+
+position:relative;
+
 }
 
-.hamburger span{
-  width:28px;
-  height:3px;
+nav a:hover{
 
-  background:#111;
-  border-radius:4px;
+color:var(--orange);
+
 }
 
-/* =========================================
-   HERO
-========================================= */
+nav a::after{
 
-.blog-hero{
-  position:relative;
+content:"";
 
-  min-height:560px;
+position:absolute;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+left:0;
 
-  overflow:hidden;
+bottom:-8px;
 
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.45),
-      rgba(0,0,0,0.55)
-    ),
-    url('images/blog-hero.jpg') center/cover no-repeat;
+height:2px;
+
+width:0;
+
+background:var(--orange);
+
+transition:.4s;
+
 }
 
-.blog-hero-content{
-  position:relative;
-  z-index:2;
+nav a:hover::after{
 
-  max-width:900px;
+width:100%;
 
-  text-align:center;
-
-  padding:40px 20px;
 }
 
-.hero-tag{
-  display:inline-block;
 
-  padding:10px 18px;
 
-  border-radius:999px;
+/*========================================================
+HERO
+========================================================*/
 
-  background:rgba(255,255,255,0.12);
+.hero{
 
-  border:1px solid rgba(255,255,255,0.15);
+height:100vh;
 
-  color:#fff;
+position:relative;
 
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:1px;
+display:flex;
 
-  margin-bottom:28px;
+justify-content:center;
 
-  backdrop-filter:blur(10px);
+align-items:center;
+
+overflow:hidden;
+
+background:
+
+radial-gradient(circle at center,rgba(255,122,0,.10),transparent 55%),
+
+linear-gradient(180deg,#040404,#101010);
+
 }
 
-.blog-hero h1{
-  font-family:'Source Serif Pro',serif;
-  font-size:72px;
-  line-height:1.08;
+.hero::before{
 
-  color:#fff;
+content:"";
 
-  margin-bottom:24px;
+position:absolute;
+
+width:1000px;
+
+height:900px;
+
+border-radius:50%;
+
+background:var(--orange);
+
+filter:blur(250px);
+
+opacity:.15;
+
+bottom:-450px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+animation:sunrise 9s ease-in-out infinite alternate;
+
 }
 
-.blog-hero p{
-  max-width:760px;
+@keyframes sunrise{
 
-  margin:auto;
+from{
 
-  color:rgba(255,255,255,0.88);
+transform:translate(-50%,120px);
 
-  font-size:20px;
-  line-height:1.9;
 }
 
-/* =========================================
-   FEATURED SECTION
-========================================= */
+to{
 
-.section{
-  padding:100px 24px;
+transform:translate(-50%,-80px);
+
 }
 
-.section-header{
-  text-align:center;
-
-  max-width:800px;
-
-  margin:0 auto 70px;
 }
 
-.section-header h2{
-  font-family:'Source Serif Pro',serif;
-  font-size:52px;
+.hero-content{
 
-  margin-bottom:18px;
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+max-width:1100px;
+
+padding:0 30px;
+
 }
 
-.section-header p{
-  color:#666;
-  font-size:18px;
-  line-height:1.9;
+.subtitle{
+
+text-transform:uppercase;
+
+letter-spacing:7px;
+
+font-size:.9rem;
+
+color:var(--gold);
+
+margin-bottom:30px;
+
 }
 
-/* =========================================
-   FEATURED MAIN ARTICLE
-========================================= */
+.hero h1{
 
-.main-featured{
-  max-width:1250px;
-  margin:auto;
+letter-spacing:12px;
 
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
+margin-bottom:30px;
 
-  background:#fff;
-
-  border-radius:34px;
-
-  overflow:hidden;
-
-  border:1px solid var(--border);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.08);
 }
 
-.main-featured-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.hero h1 span{
+
+color:var(--orange);
+
 }
 
-.main-featured-content{
-  padding:70px 60px;
+.hero h2{
 
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+font-size:1.6rem;
+
+font-weight:300;
+
+color:#e0e0e0;
+
+margin-bottom:40px;
+
 }
 
-.featured-label{
-  display:inline-block;
+.description{
 
-  padding:8px 14px;
+font-size:1.4rem;
 
-  background:#fff1f3;
+line-height:2;
 
-  border-radius:999px;
+max-width:850px;
 
-  color:var(--primary-red);
+margin:auto;
 
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:1px;
+margin-bottom:60px;
 
-  margin-bottom:26px;
+color:#d9d9d9;
+
 }
 
-.main-featured-content h2{
-  font-family:'Source Serif Pro',serif;
-  font-size:48px;
-  line-height:1.15;
 
-  margin-bottom:22px;
+
+/*========================================================
+BUTTON
+========================================================*/
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:18px 46px;
+
+border-radius:60px;
+
+background:var(--orange);
+
+color:#fff;
+
+font-weight:600;
+
+transition:.35s;
+
 }
 
-.main-featured-content p{
-  font-size:18px;
-  color:#666;
-  line-height:1.9;
+.btn:hover{
 
-  margin-bottom:34px;
+transform:translateY(-5px);
+
+box-shadow:0 20px 60px rgba(255,122,0,.35);
+
 }
 
-.main-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+.scroll{
 
-  width:fit-content;
+margin-top:70px;
 
-  padding:18px 34px;
+font-size:2.5rem;
 
-  border-radius:16px;
+color:var(--gold);
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary-red),
-      var(--dark-red)
-    );
+animation:bounce 2s infinite;
 
-  color:#fff;
-
-  font-weight:700;
-  font-size:15px;
-
-  transition:0.35s ease;
-
-  box-shadow:
-    0 18px 40px rgba(177,18,38,0.24);
 }
 
-.main-btn:hover{
-  transform:translateY(-4px);
+@keyframes bounce{
 
-  box-shadow:
-    0 25px 50px rgba(177,18,38,0.32);
+0%,100%{
+
+transform:translateY(0);
+
 }
 
-/* =========================================
-   BLOG GRID
-========================================= */
+50%{
 
-.blog-grid{
-  max-width:1300px;
-  margin:auto;
+transform:translateY(15px);
 
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-  gap:34px;
 }
 
-.blog-card{
-  background:#fff;
-
-  border-radius:26px;
-
-  overflow:hidden;
-
-  border:1px solid var(--border);
-
-  box-shadow:
-    0 15px 45px rgba(0,0,0,0.06);
-
-  transition:0.35s ease;
 }
 
-.blog-card:hover{
-  transform:translateY(-10px);
 
-  box-shadow:
-    0 30px 60px rgba(0,0,0,0.12);
+
+/*========================================================
+INTRO
+========================================================*/
+
+.intro{
+
+padding:180px 0;
+
+text-align:center;
+
+background:#080808;
+
 }
 
-.blog-card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
+.intro h2{
+
+margin-bottom:60px;
+
 }
 
-.blog-card-content{
-  padding:32px;
+.intro p{
+
+font-size:1.6rem;
+
+margin:30px auto;
+
+max-width:900px;
+
+transition:.4s;
+
 }
 
-.blog-card-content h3{
-  font-family:'Source Serif Pro',serif;
-  font-size:30px;
+.intro p:hover{
 
-  margin-bottom:16px;
+color:#fff;
 
-  line-height:1.2;
+transform:scale(1.03);
+
 }
 
-.blog-card-content p{
-  color:#666;
-  font-size:16px;
-  line-height:1.9;
 
-  margin-bottom:24px;
+
+/*========================================================
+FOUR PILLARS
+========================================================*/
+
+.pillars{
+
+padding:120px 0;
+
+background:#0b0b0b;
+
 }
 
-.read-link{
-  color:var(--primary-red);
-  font-weight:700;
-  font-size:15px;
+.pillar{
+
+display:grid;
+
+grid-template-columns:1.2fr 1fr;
+
+gap:80px;
+
+align-items:center;
+
+max-width:1600px;
+
+margin:140px auto;
+
+padding:0 60px;
+
 }
 
-/* =========================================
-   FEATURED GUIDE CARDS
-========================================= */
+.pillar.reverse{
 
-.featured-guides{
-  display:flex;
-  flex-direction:column;
-  gap:40px;
+grid-template-columns:1fr 1.2fr;
 
-  max-width:1300px;
-  margin:auto;
 }
 
-.guide-card{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
+.pillar.reverse .pillar-image{
 
-  background:#fff;
+order:2;
 
-  border-radius:30px;
-
-  overflow:hidden;
-
-  border:1px solid var(--border);
-
-  box-shadow:
-    0 18px 50px rgba(0,0,0,0.06);
-
-  transition:0.35s ease;
 }
 
-.guide-card:hover{
-  transform:translateY(-8px);
+.pillar.reverse .pillar-content{
 
-  box-shadow:
-    0 30px 70px rgba(177,18,38,0.14);
+order:1;
+
 }
 
-.guide-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.pillar-image{
+
+width:100%;
+
+aspect-ratio:16/10;
+
+border-radius:32px;
+
+background-size:cover;
+
+background-position:center;
+
+box-shadow:0 30px 70px rgba(0,0,0,.55);
+
+transition:.5s;
+
 }
 
-.guide-content{
-  padding:60px 50px;
+.pillar-image:hover{
 
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+transform:scale(1.03);
+
 }
 
-.guide-content h3{
-  font-family:'Source Serif Pro',serif;
-  font-size:42px;
-  line-height:1.15;
+.ancient{
 
-  margin-bottom:18px;
+background-position:center;
+
 }
 
-.guide-content p{
-  color:#666;
-  font-size:17px;
-  line-height:1.9;
+.biology{
 
-  margin-bottom:28px;
+background-position:center;
+
 }
 
-/* =========================================
-   TOOLS PANEL
-========================================= */
+.science{
 
-.tools-section{
-  padding:100px 24px;
+background-position:center;
 
-  background:
-    linear-gradient(
-      180deg,
-      #fff7f8 0%,
-      #ffffff 100%
-    );
 }
 
-.tools-grid{
-  max-width:1250px;
-  margin:auto;
+.meditation{
 
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+background-position:center;
 
-  gap:30px;
 }
 
-.tool-card{
-  background:#fff;
+.pillar-content{
 
-  padding:40px 34px;
+width:100%;
 
-  border-radius:28px;
+padding:20px;
 
-  border:1px solid #f1d9de;
-
-  transition:0.35s ease;
-
-  box-shadow:
-    0 15px 40px rgba(177,18,38,0.08);
 }
 
-.tool-card:hover{
-  transform:translateY(-8px);
+.pillar-content span{
+
+font-size:5rem;
+
+font-weight:700;
+
+color:var(--orange);
+
+display:block;
+
+margin-bottom:15px;
+
 }
 
-.tool-icon{
-  width:72px;
-  height:72px;
+.pillar-content h2{
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+font-size:4rem;
 
-  border-radius:22px;
+margin-bottom:25px;
 
-  background:#fff1f3;
+line-height:1.1;
 
-  font-size:34px;
-
-  margin-bottom:24px;
 }
 
-.tool-card h3{
-  font-family:'Source Serif Pro',serif;
-  font-size:30px;
+.pillar-content p{
 
-  margin-bottom:16px;
+max-width:650px;
+
+margin-bottom:35px;
+
 }
 
-.tool-card p{
-  color:#666;
-  margin-bottom:24px;
+.pillar-content a{
+
+display:inline-block;
+
+padding:16px 36px;
+
+border:2px solid var(--orange);
+
+border-radius:40px;
+
+transition:.35s;
+
 }
 
-/* =========================================
-   SUBSCRIBE
-========================================= */
+.pillar-content a:hover{
 
-.subscribe-section{
-  padding:110px 24px;
+background:var(--orange);
 
-  background:
-    linear-gradient(
-      rgba(255,255,255,0.84),
-      rgba(255,255,255,0.84)
-    ),
-    url('images/pink-marble.jpg') center/cover no-repeat;
+}
+    /*========================================================
+WHY MIRROR & ILLUSION
+========================================================*/
+
+.why{
+
+padding:180px 0;
+
+background:#101010;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
 }
 
-.subscribe-box{
-  max-width:900px;
-  margin:auto;
+.why::before{
 
-  background:rgba(255,255,255,0.92);
+content:"";
 
-  padding:70px 60px;
+position:absolute;
 
-  border-radius:34px;
+width:700px;
 
-  text-align:center;
+height:700px;
 
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.08);
+background:rgba(255,122,0,.08);
 
-  border:1px solid rgba(177,18,38,0.12);
+filter:blur(180px);
+
+top:-250px;
+
+left:50%;
+
+transform:translateX(-50%);
+
 }
 
-.subscribe-box h2{
-  font-family:'Source Serif Pro',serif;
-  font-size:52px;
+.why .container{
 
-  margin-bottom:20px;
+position:relative;
+
+z-index:2;
+
 }
 
-.subscribe-box p{
-  color:#666;
-  font-size:18px;
-  line-height:1.9;
+.why h2{
 
-  margin-bottom:40px;
+margin-bottom:40px;
+
 }
 
-.subscribe-form{
-  display:flex;
-  gap:18px;
+.why p{
+
+max-width:950px;
+
+margin:35px auto;
+
+font-size:1.35rem;
+
+line-height:2;
+
 }
 
-.subscribe-form input{
-  flex:1;
 
-  padding:20px 24px;
 
-  border-radius:16px;
+/*========================================================
+SECTION HEADING
+========================================================*/
 
-  border:2px solid #f1d1d7;
+.section-heading{
 
-  font-size:16px;
+text-align:center;
 
-  outline:none;
+max-width:900px;
+
+margin:0 auto 90px;
+
 }
 
-.subscribe-form input:focus{
-  border-color:var(--primary-red);
+.section-heading span{
+
+display:inline-block;
+
+color:var(--orange);
+
+letter-spacing:5px;
+
+font-size:.95rem;
+
+font-weight:600;
+
+margin-bottom:20px;
+
 }
 
-.subscribe-form button{
-  padding:20px 36px;
+.section-heading h2{
 
-  border:none;
-  border-radius:16px;
+margin-bottom:25px;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary-red),
-      var(--dark-red)
-    );
-
-  color:#fff;
-
-  font-size:15px;
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:0.35s ease;
 }
 
-.subscribe-form button:hover{
-  transform:translateY(-4px);
+.section-heading p{
+
+font-size:1.25rem;
+
+color:#cfcfcf;
+
 }
 
-/* =========================================
-   FOOTER
-========================================= */
 
-.footer{
-  padding:40px 20px;
 
-  text-align:center;
+/*========================================================
+JOURNEY
+========================================================*/
 
-  border-top:1px solid #eee;
+.journey{
 
-  color:#777;
-  font-size:14px;
+padding:180px 0;
+
+background:#080808;
+
+text-align:center;
+
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+.journey-title{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.journey h2{
+
+margin-bottom:30px;
+
+}
+
+.journey p{
+
+font-size:1.4rem;
+
+}
+
+
+
+/*========================================================
+MIRROR
+========================================================*/
+
+.mirror{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:100px;
+
+align-items:center;
+
+padding:160px 6%;
+
+background:#0c0c0c;
+
+}
+
+.mirror-image{
+
+height:650px;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+
+145deg,
+
+rgba(255,255,255,.12),
+
+rgba(255,255,255,.03)
+
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+position:relative;
+
+box-shadow:0 30px 80px rgba(0,0,0,.45);
+
+}
+
+.glass{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.10),
+
+rgba(255,255,255,.03)
+
+);
+
+backdrop-filter:blur(14px);
+
+animation:mirrorGlow 10s infinite alternate;
+
+}
+
+@keyframes mirrorGlow{
+
+0%{
+
+opacity:.25;
+
+filter:blur(12px);
+
+}
+
+100%{
+
+opacity:.95;
+
+filter:blur(2px);
+
+}
+
+}
+
+.mirror-content{
+
+padding-right:40px;
+
+}
+
+.mirror-content h2{
+
+margin-bottom:30px;
+
+}
+
+.mirror-content p{
+
+font-size:1.25rem;
+
+line-height:2;
+
+margin-bottom:30px;
+
+}
+
+
+
+/*========================================================
+ILLUSION
+========================================================*/
+
+.illusion{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:100px;
+
+align-items:center;
+
+padding:160px 6%;
+
+background:#131313;
+
+}
+
+.illusion-content h2{
+
+margin-bottom:30px;
+
+}
+
+.illusion-content p{
+
+font-size:1.25rem;
+
+line-height:2;
+
+margin-bottom:25px;
+
+}
+
+.illusion-image{
+
+height:650px;
+
+border-radius:30px;
+
+background:
+
+radial-gradient(circle at center,
+
+rgba(255,122,0,.25),
+
+transparent 60%),
+
+linear-gradient(180deg,#1d1d1d,#090909);
+
+box-shadow:0 0 120px rgba(255,122,0,.18);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.illusion-image::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.06);
+
+top:70px;
+
+right:60px;
+
+filter:blur(60px);
+
+}
+
+
+
+/*========================================================
+ORIGINAL SELF
+========================================================*/
+
+.self{
+
+padding:220px 0;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#111,
+
+#050505
+
+);
+
+}
+
+.self-overlay{
+
+position:absolute;
+
+width:900px;
+
+height:900px;
+
+background:var(--orange);
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+filter:blur(260px);
+
+opacity:.15;
+
+}
+
+.self .container{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.self h2{
+
+font-size:5.5rem;
+
+margin-bottom:35px;
+
+}
+
+.self h3{
+
+font-size:4rem;
+
+margin:45px 0;
+
+color:var(--orange);
+
+}
+
+.self p{
+
+font-size:1.35rem;
+
+max-width:900px;
+
+margin:30px auto;
+
+line-height:2;
+
+}
+
+.self .btn{
+
+margin-top:30px;
+
+}
+
+
+
+/*========================================================
+GLASS CARD
+========================================================*/
+
+.glass-card{
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:28px;
+
+transition:.35s;
+
+}
+
+.glass-card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(255,122,0,.45);
+
+box-shadow:0 25px 70px rgba(255,122,0,.12);
+
+}
+
+
+
+/*========================================================
+REVEAL ANIMATIONS
+========================================================*/
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:none;
+
+}
+
+
+
+/*========================================================
+FADE ANIMATION
+========================================================*/
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+.fade-up{
+
+animation:fadeUp 1s ease forwards;
+
+}
+
+
+
+/*========================================================
+HOVER LIFT
+========================================================*/
+
+.hover-lift{
+
+transition:.35s;
+
+}
+
+.hover-lift:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+/*========================================================
+ORANGE GLOW
+========================================================*/
+
+.orange-glow{
+
+box-shadow:
+
+0 0 30px rgba(255,122,0,.15),
+
+0 0 70px rgba(255,122,0,.12);
+
+}
+
+
+
+/*========================================================
+SPACING HELPERS
+========================================================*/
+
+.mt-100{
+
+margin-top:100px;
+
+}
+
+.mt-150{
+
+margin-top:150px;
+
+}
+
+.mb-100{
+
+margin-bottom:100px;
+
+}
+
+.py-180{
+
+padding:180px 0;
+
+}
+    /*========================================================
+ANCIENT WISDOM
+========================================================*/
+
+.wisdom-section{
+
+padding:180px 0;
+
+background:#080808;
+
+}
+
+.wisdom-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+}
+
+.wisdom-card{
+
+background:#161616;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:28px;
+
+padding:45px;
+
+transition:.4s;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.wisdom-card::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:4px;
+
+background:#ff7a00;
+
+transform:scaleX(0);
+
+transition:.4s;
+
+}
+
+.wisdom-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.wisdom-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 25px 60px rgba(255,122,0,.18);
+
+}
+
+.icon{
+
+font-size:60px;
+
+margin-bottom:25px;
+
+}
+
+.wisdom-card h3{
+
+margin-bottom:20px;
+
+}
+
+.wisdom-card p{
+
+margin-bottom:25px;
+
+}
+
+.wisdom-card a{
+
+color:#ff7a00;
+
+font-weight:600;
+
+}
+
+
+
+/*========================================================
+BIOLOGICAL RESET
+========================================================*/
+
+.bio-reset{
+
+padding:180px 0;
+
+background:#0d0d0d;
+
+}
+
+.bio-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+}
+
+.bio-item{
+
+background:#181818;
+
+padding:55px 35px;
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.bio-item:hover{
+
+background:#ff7a00;
+
+transform:translateY(-10px);
+
+}
+
+.bio-item:hover p,
+
+.bio-item:hover h3{
+
+color:white;
+
+}
+
+.bio-item{
+
+font-size:55px;
+
+}
+
+.bio-item h3{
+
+margin:25px 0;
+
+}
+
+.bio-item p{
+
+font-size:1rem;
+
+}
+
+
+
+/*========================================================
+MODERN SCIENCE
+========================================================*/
+
+.science-section{
+
+padding:180px 0;
+
+background:#111;
+
+}
+
+.science-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+.science-card{
+
+background:#1a1a1a;
+
+padding:40px;
+
+border-radius:24px;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.science-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#ff7a00;
+
+}
+
+.science-card h3{
+
+margin-bottom:20px;
+
+font-size:1.5rem;
+
+}
+
+.science-card p{
+
+font-size:1rem;
+
+}
+
+
+
+/*========================================================
+MEDITATION
+========================================================*/
+
+.meditation-section{
+
+padding:180px 0;
+
+background:#090909;
+
+}
+
+.meditation-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:40px;
+
+}
+
+.meditation-card{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#1a1a1a,
+
+#111
+
+);
+
+padding:60px;
+
+border-radius:30px;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.meditation-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 70px rgba(255,122,0,.15);
+
+}
+
+.meditation-card h3{
+
+margin-bottom:25px;
+
+}
+
+
+
+/*========================================================
+ARTICLES
+========================================================*/
+
+.articles{
+
+padding:180px 0;
+
+background:#101010;
+
+}
+
+.article-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+}
+
+.article{
+
+background:#181818;
+
+border-radius:28px;
+
+overflow:hidden;
+
+transition:.35s;
+
+}
+
+.article img{
+
+height:260px;
+
+width:100%;
+
+object-fit:cover;
+
+}
+
+.article-content{
+
+padding:35px;
+
+}
+
+.article:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+/*========================================================
+NEWSLETTER
+========================================================*/
+
+.newsletter{
+
+padding:170px 0;
+
+text-align:center;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#111,
+
+#080808
+
+);
+
+}
+
+.newsletter h2{
+
+margin-bottom:30px;
+
+}
+
+.newsletter p{
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:45px;
+
+}
+
+.newsletter form{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.newsletter input{
+
+width:420px;
+
+padding:18px 25px;
+
+border:none;
+
+border-radius:50px;
+
+background:#1b1b1b;
+
+color:white;
+
+font-size:1rem;
+
+}
+
+.newsletter button{
+
+padding:18px 45px;
+
+background:#ff7a00;
+
+border:none;
+
+border-radius:50px;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+
+
+/*========================================================
+FOOTER
+========================================================*/
+
+footer{
+
+padding:100px 0 60px;
+
+background:#050505;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1fr;
+
+gap:60px;
+
+}
+
+footer h3{
+
+margin-bottom:25px;
+
+}
+
+footer ul li{
+
+margin-bottom:15px;
+
+}
+
+footer a{
+
+color:#bdbdbd;
+
+transition:.3s;
+
+}
+
+footer a:hover{
+
+color:#ff7a00;
+
+}
+
+.copyright{
+
+margin-top:70px;
+
+padding-top:30px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+color:#999;
+
+}
+
+
+
+/*========================================================
+SCROLLBAR
+========================================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff7a00;
+
+border-radius:20px;
+
+}
+
+
+
+/*========================================================
+RESPONSIVE
+========================================================*/
+
+@media(max-width:1200px){
+
+.wisdom-grid,
+.bio-grid,
+.article-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.science-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
 
 @media(max-width:900px){
 
-  .hamburger{
-    display:flex;
-  }
+.container{
 
-  .nav-menu{
-    position:absolute;
-
-    top:80px;
-    left:-100%;
-
-    width:100%;
-
-    background:#fff;
-
-    flex-direction:column;
-
-    padding:40px 0;
-
-    transition:0.35s ease;
-
-    box-shadow:
-      0 20px 40px rgba(0,0,0,0.08);
-  }
-
-  .nav-menu.active{
-    left:0;
-  }
-
-  .blog-hero{
-    min-height:460px;
-  }
-
-  .blog-hero h1{
-    font-size:46px;
-  }
-
-  .blog-hero p{
-    font-size:17px;
-  }
-
-  .section{
-    padding:70px 20px;
-  }
-
-  .section-header h2{
-    font-size:38px;
-  }
-
-  .main-featured{
-    grid-template-columns:1fr;
-  }
-
-  .main-featured-content{
-    padding:45px 30px;
-  }
-
-  .main-featured-content h2{
-    font-size:36px;
-  }
-
-  .guide-card{
-    grid-template-columns:1fr;
-  }
-
-  .guide-content{
-    padding:40px 30px;
-  }
-
-  .guide-content h3{
-    font-size:34px;
-  }
-
-  .subscribe-box{
-    padding:50px 28px;
-  }
-
-  .subscribe-box h2{
-    font-size:38px;
-  }
-
-  .subscribe-form{
-    flex-direction:column;
-  }
+padding:0 25px;
 
 }
 
-/* =========================================
-   EXTRA SMALL
-========================================= */
+nav ul{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:4rem;
+
+}
+
+.hero h2{
+
+font-size:1.2rem;
+
+}
+
+.description{
+
+font-size:1.1rem;
+
+}
+
+h2{
+
+font-size:2.5rem;
+
+}
+
+.pillar{
+
+grid-template-columns:1fr;
+
+padding:0 25px;
+
+gap:50px;
+
+}
+
+.pillar.reverse{
+
+grid-template-columns:1fr;
+
+}
+
+.pillar.reverse .pillar-image,
+
+.pillar.reverse .pillar-content{
+
+order:unset;
+
+}
+
+.mirror,
+.illusion{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+padding:120px 25px;
+
+}
+
+.mirror-image,
+.illusion-image{
+
+height:380px;
+
+}
+
+.wisdom-grid,
+.bio-grid,
+.science-grid,
+.article-grid,
+.meditation-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.newsletter input{
+
+width:100%;
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.self h2{
+
+font-size:3rem;
+
+}
+
+.self h3{
+
+font-size:2.3rem;
+
+}
+
+}
 
 @media(max-width:600px){
 
-  .header{
-    padding:16px 20px;
-  }
+.hero{
 
-  .logo{
-    font-size:20px;
-  }
-
-  .blog-hero h1{
-    font-size:38px;
-  }
-
-  .blog-card-content h3{
-    font-size:24px;
-  }
-
-  .guide-content h3{
-    font-size:28px;
-  }
-
-}
-   /* DARK PAGE THEME */
-
-.dark-page{
-    background:#000;
-    color:#fff;
-}
-
-.dark-page section,
-.dark-page div,
-.dark-page main,
-.dark-page header,
-.dark-page footer{
-    background:inherit;
-}
-
-   /* =================================
-   FORCE DARK MOBILE BACKGROUND
-================================= */
-
-@media (max-width:768px){
-
-html,
-body{
-    background:#000 !important;
-    background-color:#000 !important;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-/* FORCE ALL PAGE SECTIONS DARK */
-body *{
-    background-color:transparent;
-}
-
-section,
-div,
-main,
-header,
-footer,
-nav,
-.hero,
-.premium-hero,
-.reflection-collection,
-.journal-section,
-.book-showcase,
-.author-section,
-.footer{
-
-    background:#000 !important;
-    color:#fff;
-}
-
-/* Cards stay slightly lighter */
-.journal-card,
-.card{
-    background:#111 !important;
-}
+height:90vh;
 
 }
 
-   /* =========================================
-   GLOBAL MOBILE DARK THEME FIX
+.hero h1{
+
+font-size:3rem;
+
+letter-spacing:4px;
+
+}
+
+.subtitle{
+
+letter-spacing:3px;
+
+font-size:.8rem;
+
+}
+
+.btn{
+
+padding:15px 30px;
+
+font-size:.9rem;
+
+}
+
+p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+}
+
+}
+    /* =========================================
+   BLOGGER LAYOUT FIX
 ========================================= */
 
-@media (max-width:768px){
-
 html,
 body{
-    background:#000 !important;
-    color:#fff !important;
+    overflow-x:hidden !important;
 }
 
-/* ALL SECTIONS */
-section,
-main,
-footer,
-header,
+body{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.post-body,
+.post,
+.main,
+.content,
+.section,
+.widget{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto !important;
+    padding:0 !important;
+    overflow:hidden !important;
+}
+
+/* Master container */
+
+.container{
+    width:100% !important;
+    max-width:1400px !important;
+    margin:0 auto !important;
+    padding-left:40px !important;
+    padding-right:40px !important;
+}
+
+/* Every major section */
+
 .hero,
-.container,
-.wrapper{
-    background:#000 !important;
-}
+.intro,
+.pillars,
+.why,
+.journey,
+.mirror,
+.illusion,
+.self,
+.wisdom-section,
+.bio-reset,
+.science-section,
+.meditation-section,
+.articles,
+.newsletter,
+footer{
 
-/* MENU */
-.header,
-nav,
-.navbar{
-    background:#111 !important;
-    border-bottom:1px solid rgba(212,175,55,.15) !important;
-}
-
-/* MENU LINKS */
-.logo,
-.nav-menu a,
-nav a,
-.menu a{
-    color:#fff !important;
-}
-
-/* HAMBURGER */
-.hamburger span{
-    background:#fff !important;
-}
-
-/* ALL CARDS */
-.reset-card,
-.blog-card,
-.featured-card,
-.journal-card,
-.mini-card,
-.card{
-    background:#111 !important;
-    color:#fff !important;
-    border:1px solid rgba(212,175,55,.25) !important;
-}
-
-/* CARD TEXT */
-.reset-card h3,
-.blog-card h3,
-.featured-card h3,
-.journal-card h3,
-.mini-card h3,
-.card h3{
-    color:#fff !important;
-}
-
-.reset-card p,
-.blog-card p,
-.featured-card p,
-.journal-card p,
-.mini-card p,
-.card p{
-    color:#cccccc !important;
-}
-
-/* TITLES */
-h1,h2,h3,h4{
-    color:#fff !important;
-}
-
-/* GOLD HEADINGS */
-.section-title,
-.gold{
-    color:#d4af37 !important;
-}
-
-/* PARAGRAPHS */
-p{
-    color:#cccccc !important;
-}
-
-/* BUTTONS */
-button,
-.btn,
-.collection-btn,
-.journal-btn,
-.primary-btn{
-    background:#c62828 !important;
-    color:#fff !important;
-}
-
-/* MOBILE MENU DROPDOWN */
-.nav-menu{
-    background:#111 !important;
-}
-
-/* LINKS */
-a{
-    color:inherit;
-}
+width:100% !important;
+margin:0 auto !important;
+padding-left:0 !important;
+padding-right:0 !important;
 
 }
 
+/* Fix pillar layout */
+
+.pillar{
+
+display:grid !important;
+grid-template-columns:1fr 1fr !important;
+max-width:1400px !important;
+margin:120px auto !important;
+padding:0 40px !important;
+gap:70px !important;
+
+}
+
+/* Fix all grids */
+
+.wisdom-grid,
+.bio-grid,
+.science-grid,
+.article-grid{
+
+max-width:1400px !important;
+margin:0 auto !important;
+justify-content:center !important;
+
+}
 </style>
+   
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mirror & Illusion</title>
+
+<meta name="description"
+content="Ancient Wisdom • Modern Science • Biological Reset • Meditation">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
-<body class="dark-page">
+<body>
 
-<div class="wrapper">
+<!-- ===========================================
+NAVIGATION
+=========================================== -->
 
-<!-- HEADER -->
+<nav id="navbar">
 
-<header class="header">
+<div class="container nav-container">
 
-  <div class="logo">
-    Mirror & Illusion
-  </div>
+<a href="#" class="logo">
 
-  <nav>
+Mirror<span>&</span>Illusion
 
-    <ul class="nav-menu" id="nav-menu">
+</a>
 
-      <li><a href="index.html">Home</a></li>
+<ul class="nav-links">
 
-      <li><a href="blog.html">Blog</a></li>
+<li><a href="#">Home</a></li>
 
-      <li><a href="tools.html">Tools</a></li>
+<li><a href="#">Ancient Wisdom</a></li>
 
-      <li><a href="about.html">About</a></li>
+<li><a href="#">Biological Reset</a></li>
 
-    </ul>
+<li><a href="#">Modern Science</a></li>
 
-  </nav>
+<li><a href="#">Meditation</a></li>
 
-  <button class="hamburger" id="hamburger">
+<li><a href="#">Articles</a></li>
 
-    <span></span>
-    <span></span>
-    <span></span>
+<li><a href="#">Join</a></li>
 
-  </button>
-
-</header>
-
-<!-- HERO -->
-
-<section class="blog-hero">
-
-  <div class="blog-hero-content">
-
-    <span class="hero-tag">
-      MIRROR & ILLUSION BLOG
-    </span>
-
-    <h1>
-      Understand Your Mind.
-      Reset Your Life.
-    </h1>
-
-    <p>
-      Deep insights on psychology, biology, emotional healing,
-      self-awareness, focus, energy, wellbeing, and human behaviour.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- FEATURED ARTICLE -->
-
-<section class="section">
-
-  <div class="main-featured">
-
-    <div class="main-featured-image">
-      <img src="selfsabotage.png" alt="Self Sabotage">
-    </div>
-
-    <div class="main-featured-content">
-
-      <span class="featured-label">
-        FEATURED ARTICLE
-      </span>
-
-      <h2>
-        The Psychology of Self Sabotage
-      </h2>
-
-      <p>
-        Break the hidden emotional and psychological patterns
-        that quietly destroy confidence, progress, relationships,
-        and long-term growth.
-      </p>
-
-      <a href="self-sabotage.html" class="main-btn">
-        Read Article →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- LATEST ARTICLES -->
-
-<section class="section">
-
-  <div class="section-header">
-
-    <h2>Latest Articles</h2>
-
-    <p>
-      Explore science-backed guides to improve your emotional wellbeing,
-      mental clarity, focus, habits, purpose, and daily life.
-    </p>
-
-  </div>
-
-  <div class="blog-grid">
-
-    <!-- CARD -->
-
-    <a href="mastering-mindfulness.html">
-
-      <div class="blog-card">
-
-        <img src="mindfulness1.png" alt="Mindfulness">
-
-        <div class="blog-card-content">
-
-          <h3>Mastering Mindfulness</h3>
-
-          <p>
-            Improve emotional clarity, reduce mental noise,
-            and reconnect with the present moment.
-          </p>
-
-          <span class="read-link">
-            Read Article →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- CARD -->
-
-    <a href="nurturing-selflove.html">
-
-      <div class="blog-card">
-
-        <img src="selflove1.png" alt="Self Love">
-
-        <div class="blog-card-content">
-
-          <h3>Nurturing Self Love</h3>
-
-          <p>
-            Build a healthier relationship with yourself
-            through emotional awareness and compassion.
-          </p>
-
-          <span class="read-link">
-            Read Article →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- CARD -->
-
-    <a href="finding-purpose.html">
-
-      <div class="blog-card">
-
-        <img src="purpose.png" alt="Purpose">
-
-        <div class="blog-card-content">
-
-          <h3>Finding Purpose</h3>
-
-          <p>
-            Discover direction, meaning, and deeper motivation
-            in your daily life.
-          </p>
-
-          <span class="read-link">
-            Read Article →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- CARD -->
-
-    <a href="wellbeing.html">
-
-      <div class="blog-card">
-
-        <img src="wellbeing.png" alt="Wellbeing">
-
-        <div class="blog-card-content">
-
-          <h3>30 Minute Daily Wellbeing Routine</h3>
-
-          <p>
-            A peaceful mind, a healthy body, and a grateful heart
-            create a beautiful life.
-          </p>
-
-          <span class="read-link">
-            Read Article →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- FEATURED GUIDES -->
-
-<section class="section">
-
-  <div class="section-header">
-
-    <h2>Featured Guides</h2>
-
-    <p>
-      Long-form systems and practical frameworks
-      for healing, reflection, memory, focus, and health.
-    </p>
-
-  </div>
-
-  <div class="featured-guides">
-
-    <!-- MEMORY -->
-
-    <a href="memory-brain.html">
-
-      <div class="guide-card">
-
-        <div class="guide-image">
-          <img src="brain-memory.png" alt="Memory Brain">
-        </div>
-
-        <div class="guide-content">
-
-          <h3>Your Brain Has Vast Memory Than You Think</h3>
-
-          <p>
-            Discover how memory works and learn techniques
-            to improve focus, recall, and cognitive performance.
-          </p>
-
-          <span class="read-link">
-            Read Guide →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- EYE -->
-
-    <a href="eye.html">
-
-      <div class="guide-card">
-
-        <div class="guide-image">
-          <img src="images/cataract 1.png" alt="Eye">
-        </div>
-
-        <div class="guide-content">
-
-          <h3>Can We Reverse Cataract?</h3>
-
-          <p>
-            Explore the latest discussions, biological insights,
-            and lifestyle approaches related to eye health.
-          </p>
-
-          <span class="read-link">
-            Read Guide →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- EYE MANAGEMENT -->
-
-    <a href="eye-management.html">
-
-      <div class="guide-card">
-
-        <div class="guide-image">
-          <img src="images/eye-management.png" alt="Eye Management">
-        </div>
-
-        <div class="guide-content">
-
-          <h3>The Complete Eye Management System</h3>
-
-          <p>
-            A practical framework for preserving vision,
-            reducing eye strain, and supporting long-term eye health.
-          </p>
-
-          <span class="read-link">
-            Read Guide →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- DAILY REFLECTION -->
-
-    <a href="daily-reflection-hub.html">
-
-      <div class="guide-card">
-
-        <div class="guide-image">
-          <img src="daily-reflection.png" alt="Daily Reflection">
-        </div>
-
-        <div class="guide-content">
-
-          <h3>Daily Reflection Hub</h3>
-
-          <p>
-            Guided journals and reflective systems
-            for emotional healing, gratitude, clarity, and growth.
-          </p>
-
-          <span class="read-link">
-            Read Guide →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- CIRCULATORY -->
-
-    <a href="circulatory-system.html">
-
-      <div class="guide-card">
-
-        <div class="guide-image">
-          <img src="images/circulation.png" alt="Circulation">
-        </div>
-
-        <div class="guide-content">
-
-          <h3>Understanding Our Circulatory System</h3>
-
-          <p>
-            Learn how circulation affects energy, heart health,
-            oxygen delivery, and long-term wellbeing.
-          </p>
-
-          <span class="read-link">
-            Read Guide →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-    <!-- DIGESTIVE -->
-
-    <a href="digestive-system.html">
-
-      <div class="guide-card">
-
-        <div class="guide-image">
-          <img src="images/digestive-system.png" alt="Digestive">
-        </div>
-
-        <div class="guide-content">
-
-          <h3>
-            5 Daily Habits To Naturally Boost Your Digestive System
-          </h3>
-
-          <p>
-            Small consistent habits can improve digestion,
-            gut comfort, nutrient absorption, and overall vitality.
-          </p>
-
-          <span class="read-link">
-            Read Guide →
-          </span>
-
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- TOOLS -->
-
-<section class="tools-section">
-
-  <div class="section-header">
-
-    <h2>Biological Reset Tools</h2>
-
-    <p>
-      Interactive systems designed to identify what is draining
-      your energy, focus, mood, and emotional resilience.
-    </p>
-
-  </div>
-
-  <div class="tools-grid">
-
-    <!-- TOOL -->
-
-    <a href="energy_reset.html">
-
-      <div class="tool-card">
-
-        <div class="tool-icon">⚡</div>
-
-        <h3>Energy Reset</h3>
-
-        <p>
-          Restore vitality and reduce fatigue naturally.
-        </p>
-
-        <span class="read-link">
-          Explore Tool →
-        </span>
-
-      </div>
-
-    </a>
-
-    <!-- TOOL -->
-
-    <a href="sleep-reset.html">
-
-      <div class="tool-card">
-
-        <div class="tool-icon">🌙</div>
-
-        <h3>Sleep Reset</h3>
-
-        <p>
-          Improve recovery and build healthier sleep patterns.
-        </p>
-
-        <span class="read-link">
-          Explore Tool →
-        </span>
-
-      </div>
-
-    </a>
-
-    <!-- TOOL -->
-
-    <a href="mar-brain-detox-plan.html">
-
-      <div class="tool-card">
-
-        <div class="tool-icon">🧠</div>
-
-        <h3>Brain Detox</h3>
-
-        <p>
-          Reduce mental overload and improve focus clarity.
-        </p>
-
-        <span class="read-link">
-          Explore Tool →
-        </span>
-
-      </div>
-
-    </a>
-
-    <!-- TOOL -->
-
-    <a href="cholesterol-reset-plan.html">
-
-      <div class="tool-card">
-
-        <div class="tool-icon">❤️</div>
-
-        <h3>Cholesterol Reset</h3>
-
-        <p>
-          Improve cardiovascular health and metabolic balance.
-        </p>
-
-        <span class="read-link">
-          Explore Tool →
-        </span>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- SUBSCRIBE -->
-
-<section class="subscribe-section">
-
-  <div class="subscribe-box">
-
-    <h2>
-      Join The Mirror & Illusion Community
-    </h2>
-
-    <p>
-      Get powerful insights on psychology, self-awareness,
-      biology, emotional healing, focus, and wellbeing.
-    </p>
-
-    <form class="subscribe-form">
-
-      <input
-        type="email"
-        placeholder="Enter your email address"
-      >
-
-      <button type="submit">
-        Subscribe
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-  © 2026 Mirror & Illusion
-</footer>
+</ul>
 
 </div>
 
+</nav>
+
+<!-- ===========================================
+HERO
+=========================================== -->
+
+<header class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="container hero-container">
+
+<p class="hero-tag">
+
+Awaken • Reset • Remember
+
+</p>
+
+<h1>
+
+Mirror
+
+<span>&</span>
+
+Illusion
+
+</h1>
+
+<h2>
+
+Ancient Wisdom
+
+Modern Science
+
+Biological Reset
+
+Meditative Transformation
+
+</h2>
+
+<p class="hero-text">
+
+You are not here to become someone else.
+
+You are here to remember who you have always been.
+
+Mirror & Illusion is where timeless wisdom meets modern science,
+helping you uncover the Original Self hidden beneath conditioning,
+fear and illusion.
+
+</p>
+
+<a href="#" class="btn">
+
+Begin Your Journey
+
+</a>
+
+<div class="scroll-down">
+
+↓
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ===========================================
+INTRO
+=========================================== -->
+
+<section class="intro">
+
+<div class="container">
+
+<h2>
+
+Have You Ever Wondered...
+
+</h2>
+
+<p>
+
+Why success doesn't guarantee peace?
+
+</p>
+
+<p>
+
+Why the mind never stops thinking?
+
+</p>
+
+<p>
+
+Why ancient wisdom still transforms lives today?
+
+</p>
+
+<p>
+
+Why neuroscience is confirming truths discovered thousands of years ago?
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+FOUR PILLARS
+PART 2 STARTS BELOW
+=========================================== -->
+``<!-- ===========================================
+FOUR PILLARS
+=========================================== -->
+
+<section class="pillars">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>OUR FOUR PILLARS</span>
+
+<h2>
+The Four Pathways to the Original Self
+</h2>
+
+<p>
+
+Mirror & Illusion is built upon four complementary disciplines.
+Each reveals a different dimension of human transformation.
+Together they form a complete path toward clarity, resilience,
+purpose and inner freedom.
+
+</p>
+
+</div>
+
+<!-- ===================== -->
+<!-- PILLAR 1 -->
+<!-- ===================== -->
+
+<div class="pillar reveal">
+
+<div class="pillar-image ancient">
+
+<img src="images/ancient-wisdom.jpg"
+alt="Ancient Wisdom">
+
+</div>
+
+<div class="pillar-content">
+
+<span>01</span>
+
+<h2>Ancient Wisdom</h2>
+
+<p>
+
+For thousands of years, sages explored consciousness,
+identity and the nature of reality.
+
+Vedanta, Buddhism, Taoism, Stoicism and Yoga offer timeless
+principles that help us understand ourselves beyond fear,
+ego and conditioning.
+
+</p>
+
+<a href="#" class="btn-outline">
+
+Explore Ancient Wisdom
+
+</a>
+
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- PILLAR 2 -->
+<!-- ===================== -->
+
+<div class="pillar reverse reveal">
+
+<div class="pillar-image biology">
+
+<img src="images/biological-reset.jpg"
+alt="Biological Reset">
+
+</div>
+
+<div class="pillar-content">
+
+<span>02</span>
+
+<h2>Biological Reset</h2>
+
+<p>
+
+The quality of your thoughts depends upon
+the quality of your biology.
+
+Sunlight, sleep, nutrition, movement,
+breathing and circadian rhythm create
+the foundation for mental clarity.
+
+</p>
+
+<a href="#" class="btn-outline">
+
+Start Your Reset
+
+</a>
+
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- PILLAR 3 -->
+<!-- ===================== -->
+
+<div class="pillar reveal">
+
+<div class="pillar-image science">
+
+<img src="images/modern-science.jpg"
+alt="Modern Science">
+
+</div>
+
+<div class="pillar-content">
+
+<span>03</span>
+
+<h2>Modern Science</h2>
+
+<p>
+
+Neuroscience, psychology,
+epigenetics and cognitive science
+are increasingly validating principles
+known by contemplative traditions
+for centuries.
+
+Science explains why transformation works.
+
+</p>
+
+<a href="#" class="btn-outline">
+
+Explore Science
+
+</a>
+
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- PILLAR 4 -->
+<!-- ===================== -->
+
+<div class="pillar reverse reveal">
+
+<div class="pillar-image meditation">
+
+<img src="images/meditation.jpg"
+alt="Meditative Programs">
+
+</div>
+
+<div class="pillar-content">
+
+<span>04</span>
+
+<h2>Meditative Programs</h2>
+
+<p>
+
+Meditation is not about escaping life.
+
+It is about clearing the mind,
+dissolving illusion
+and returning to your Original Self.
+
+Our guided programs combine ancient practices
+with modern understanding.
+
+</p>
+
+<a href="#" class="btn-outline">
+
+Begin Meditation
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+WHY MIRROR & ILLUSION
+=========================================== -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>WHY WE EXIST</span>
+
+<h2>
+
+Why Mirror & Illusion?
+
+</h2>
+
+</div>
+
+<p>
+
+Humanity has never possessed more information,
+yet anxiety, loneliness and distraction continue
+to increase.
+
+We know more than ever,
+yet understand ourselves less.
+
+</p>
+
+<p>
+
+Mirror & Illusion bridges ancient wisdom,
+modern neuroscience,
+biological optimization
+and meditation into one practical framework.
+
+</p>
+
+<p>
+
+We believe transformation is not about becoming someone new.
+
+It is about removing the layers
+that hide who you already are.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+PART 3 STARTS HERE
+
+Mirror
+
+Illusion
+
+Original Self
+
+=========================================== -->`
+    <!-- ===========================================
+THE JOURNEY
+=========================================== -->
+
+<section class="journey">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>THE JOURNEY</span>
+
+<h2>
+
+The Journey Back to Yourself
+
+</h2>
+
+<p>
+
+Transformation is not becoming someone new.
+
+It is remembering who you have always been.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+THE MIRROR
+=========================================== -->
+
+<section class="mirror">
+
+<div class="container">
+
+<div class="mirror-grid">
+
+<div class="mirror-image">
+
+<img src="images/mirror.jpg"
+alt="The Mirror">
+
+</div>
+
+<div class="mirror-content">
+
+<span>THE MIRROR</span>
+
+<h2>
+
+Your Mind Reflects Reality...
+
+Until It Doesn't.
+
+</h2>
+
+<p>
+
+Imagine a perfectly polished mirror.
+
+It reflects everything exactly as it is.
+
+Now imagine dust slowly collecting upon it.
+
+Fear.
+
+Conditioning.
+
+Comparison.
+
+Trauma.
+
+Expectations.
+
+Limiting beliefs.
+
+Eventually the mirror no longer reflects reality.
+
+It reflects the dust.
+
+</p>
+
+<p>
+
+This is how most of us experience life.
+
+We don't see the world.
+
+We see our conditioning.
+
+</p>
+
+<p>
+
+Mirror & Illusion exists to help clean that mirror.
+
+</p>
+
+<a href="#" class="btn">
+
+Clean the Mirror
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+THE ILLUSION
+=========================================== -->
+
+<section class="illusion">
+
+<div class="container">
+
+<div class="illusion-grid">
+
+<div class="illusion-content">
+
+<span>THE ILLUSION</span>
+
+<h2>
+
+What If Everything You've Been Chasing...
+
+Cannot Give You Peace?
+
+</h2>
+
+<p>
+
+Society teaches us that happiness lies in:
+
+More money.
+
+More followers.
+
+More possessions.
+
+More achievements.
+
+More recognition.
+
+</p>
+
+<p>
+
+Yet countless successful people still experience
+
+stress,
+
+loneliness,
+
+anxiety,
+
+and emptiness.
+
+</p>
+
+<p>
+
+Because peace is not something we acquire.
+
+Peace is what remains when illusion disappears.
+
+</p>
+
+<a href="#" class="btn">
+
+See Beyond Illusion
+
+</a>
+
+</div>
+
+<div class="illusion-image">
+
+<img src="images/illusion.jpg"
+alt="Illusion">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+THE ORIGINAL SELF
+=========================================== -->
+
+<section class="self">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>THE ORIGINAL SELF</span>
+
+<h2>
+
+Who Were You
+
+Before The World Told You
+
+Who To Be?
+
+</h2>
+
+</div>
+
+<p>
+
+Before your labels...
+
+Before your fears...
+
+Before your successes...
+
+Before your failures...
+
+Before comparison...
+
+Before conditioning...
+
+there existed a quiet awareness.
+
+</p>
+
+<p>
+
+It has never been damaged.
+
+It has never been diminished.
+
+It has never been lost.
+
+</p>
+
+<h3>
+
+That Is Your Original Self.
+
+</h3>
+
+<p>
+
+Ancient wisdom points toward it.
+
+Modern science explains it.
+
+Biological reset prepares the body for it.
+
+Meditation reveals it.
+
+</p>
+
+<a href="#" class="btn">
+
+Remember Yourself
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+PART 4
+
+Ancient Wisdom Hub
+
+Biological Reset Hub
+
+=========================================== -->
+    <!-- ===========================================
+ANCIENT WISDOM HUB
+=========================================== -->
+
+<section class="wisdom-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>ANCIENT WISDOM</span>
+
+<h2>
+
+Timeless Wisdom.
+Living Knowledge.
+
+</h2>
+
+<p>
+
+For thousands of years, civilizations explored the deepest questions of human existence.
+
+Mirror & Illusion gathers these timeless teachings into one living library for the modern seeker.
+
+</p>
+
+</div>
+
+<div class="wisdom-grid">
+
+<div class="wisdom-card">
+
+<div class="icon">🕉</div>
+
+<h3>Vedanta</h3>
+
+<p>
+
+Discover the Original Self beyond the ego, thoughts and identity.
+
+</p>
+
+<a href="#">Explore →</a>
+
+</div>
+
+<div class="wisdom-card">
+
+<div class="icon">☸</div>
+
+<h3>Buddhism</h3>
+
+<p>
+
+Learn mindfulness, awareness, compassion and the end of suffering.
+
+</p>
+
+<a href="#">Explore →</a>
+
+</div>
+
+<div class="wisdom-card">
+
+<div class="icon">🏛</div>
+
+<h3>Stoicism</h3>
+
+<p>
+
+Develop resilience, discipline and emotional mastery.
+
+</p>
+
+<a href="#">Explore →</a>
+
+</div>
+
+<div class="wisdom-card">
+
+<div class="icon">☯</div>
+
+<h3>Taoism</h3>
+
+<p>
+
+Flow with life instead of fighting it.
+
+Discover effortless action.
+
+</p>
+
+<a href="#">Explore →</a>
+
+</div>
+
+<div class="wisdom-card">
+
+<div class="icon">🧘</div>
+
+<h3>Yoga Philosophy</h3>
+
+<p>
+
+Understand consciousness through the timeless Yoga Sutras.
+
+</p>
+
+<a href="#">Explore →</a>
+
+</div>
+
+<div class="wisdom-card">
+
+<div class="icon">📚</div>
+
+<h3>Mirror Library</h3>
+
+<p>
+
+Books, commentaries, journals and timeless teachings collected in one place.
+
+</p>
+
+<a href="#">Browse Library →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+BIOLOGICAL RESET HUB
+=========================================== -->
+
+<section class="bio-reset">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>BIOLOGICAL RESET</span>
+
+<h2>
+
+Change Your Biology.
+
+Change Your Mind.
+
+</h2>
+
+<p>
+
+Mental clarity begins with physical health.
+
+Your brain is not separate from your body.
+
+Reset the biology and the mind follows.
+
+</p>
+
+</div>
+
+<div class="bio-grid">
+
+<div class="bio-item">
+
+<div class="icon">☀</div>
+
+<h3>Morning Sunlight</h3>
+
+<p>
+
+Reset your circadian rhythm and improve mood, focus and energy naturally.
+
+</p>
+
+</div>
+
+<div class="bio-item">
+
+<div class="icon">🥗</div>
+
+<h3>Nutrition</h3>
+
+<p>
+
+Feed your brain with whole foods that support long-term cognitive health.
+
+</p>
+
+</div>
+
+<div class="bio-item">
+
+<div class="icon">🏃</div>
+
+<h3>Movement</h3>
+
+<p>
+
+Movement is medicine for the brain, body and emotional wellbeing.
+
+</p>
+
+</div>
+
+<div class="bio-item">
+
+<div class="icon">😴</div>
+
+<h3>Deep Sleep</h3>
+
+<p>
+
+Recovery, memory and emotional balance all begin with restorative sleep.
+
+</p>
+
+</div>
+
+<div class="bio-item">
+
+<div class="icon">🌬</div>
+
+<h3>Breathwork</h3>
+
+<p>
+
+Use conscious breathing to calm the nervous system and regain clarity.
+
+</p>
+
+</div>
+
+<div class="bio-item">
+
+<div class="icon">🧠</div>
+
+<h3>Brain Detox</h3>
+
+<p>
+
+Reduce overstimulation, reclaim attention and create space for deep thinking.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+QUOTE SECTION
+=========================================== -->
+
+<section class="quote-section">
+
+<div class="container">
+
+<blockquote>
+
+"You are not a drop in the ocean.
+
+You are the entire ocean in a drop."
+
+</blockquote>
+
+<p>
+
+Every tradition points toward the same truth.
+
+Everything we seek already exists within us.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+PART 5
+
+Modern Science
+
+Meditation Programs
+
+Featured Articles
+
+=========================================== -->
+    <!-- ===========================================
+MODERN SCIENCE
+=========================================== -->
+
+<section class="science-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>MODERN SCIENCE</span>
+
+<h2>
+
+Ancient Truths.
+Scientific Evidence.
+
+</h2>
+
+<p>
+
+Science is increasingly validating what the great wisdom traditions discovered centuries ago.
+
+Mirror & Illusion translates cutting-edge research into practical insights for everyday transformation.
+
+</p>
+
+</div>
+
+<div class="science-grid">
+
+<div class="science-card">
+
+<div class="icon">🧠</div>
+
+<h3>Neuroscience</h3>
+
+<p>
+
+Understand how the brain creates habits, emotions, perception and consciousness.
+
+</p>
+
+<a href="#">Learn More →</a>
+
+</div>
+
+<div class="science-card">
+
+<div class="icon">🧬</div>
+
+<h3>Epigenetics</h3>
+
+<p>
+
+Discover how lifestyle choices influence gene expression and long-term wellbeing.
+
+</p>
+
+<a href="#">Explore →</a>
+
+</div>
+
+<div class="science-card">
+
+<div class="icon">❤️</div>
+
+<h3>Positive Psychology</h3>
+
+<p>
+
+Explore research on happiness, resilience, gratitude and flourishing.
+
+</p>
+
+<a href="#">Read Articles →</a>
+
+</div>
+
+<div class="science-card">
+
+<div class="icon">⚡</div>
+
+<h3>Habit Science</h3>
+
+<p>
+
+Build lasting habits using proven behavioural science rather than willpower alone.
+
+</p>
+
+<a href="#">Discover →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+MEDITATION PROGRAMS
+=========================================== -->
+
+<section class="meditation-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>MEDITATION</span>
+
+<h2>
+
+Meditation Is Not Escaping Reality.
+
+It Is Seeing Reality Clearly.
+
+</h2>
+
+<p>
+
+Whether you are beginning your journey or seeking profound self-inquiry,
+
+our meditation programs provide a practical path toward clarity and inner freedom.
+
+</p>
+
+</div>
+
+<div class="meditation-grid">
+
+<div class="meditation-card">
+
+<div class="icon">🌱</div>
+
+<h3>
+
+Beginner Meditation
+
+</h3>
+
+<p>
+
+Simple breathing practices and awareness exercises for developing calm, focus and emotional balance.
+
+</p>
+
+<a href="#">Begin →</a>
+
+</div>
+
+<div class="meditation-card">
+
+<div class="icon">🧘</div>
+
+<h3>
+
+Mindfulness Practice
+
+</h3>
+
+<p>
+
+Learn to observe thoughts without becoming controlled by them.
+
+Develop presence in everyday life.
+
+</p>
+
+<a href="#">Explore →</a>
+
+</div>
+
+<div class="meditation-card">
+
+<div class="icon">🌌</div>
+
+<h3>
+
+Self Inquiry
+
+</h3>
+
+<p>
+
+Investigate the timeless question:
+
+Who am I beyond the mind, memory and identity?
+
+</p>
+
+<a href="#">Discover →</a>
+
+</div>
+
+<div class="meditation-card">
+
+<div class="icon">✨</div>
+
+<h3>
+
+Original Self Program
+
+</h3>
+
+<p>
+
+An integrated journey combining ancient wisdom, neuroscience, biological reset and meditation.
+
+</p>
+
+<a href="#">Join Program →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+FEATURED ARTICLES
+=========================================== -->
+
+<section class="articles">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>FEATURED ARTICLES</span>
+
+<h2>
+
+Ideas That Can Transform Your Life
+
+</h2>
+
+<p>
+
+Explore essays, research, reflections and practical guides designed to awaken deeper understanding.
+
+</p>
+
+</div>
+
+<div class="article-grid">
+
+<div class="article">
+
+<img src="images/article1.jpg" alt="">
+
+<div class="article-content">
+
+<h3>
+
+Who Were You Before the World Told You Who to Be?
+
+</h3>
+
+<p>
+
+Rediscover the Original Self hidden beneath years of conditioning.
+
+</p>
+
+<a href="#">Read Article →</a>
+
+</div>
+
+</div>
+
+<div class="article">
+
+<img src="images/article2.jpg" alt="">
+
+<div class="article-content">
+
+<h3>
+
+Brain Detox Protocol
+
+</h3>
+
+<p>
+
+Ancient wisdom meets modern neuroscience for a complete biological reset.
+
+</p>
+
+<a href="#">Read Article →</a>
+
+</div>
+
+</div>
+
+<div class="article">
+
+<img src="images/article3.jpg" alt="">
+
+<div class="article-content">
+
+<h3>
+
+The Mirror and the Dust
+
+</h3>
+
+<p>
+
+Why we suffer—not because of reality, but because of the layers covering our perception.
+
+</p>
+
+<a href="#">Read Article →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+CALL TO ACTION
+=========================================== -->
+
+<section class="journey">
+
+<div class="container">
+
+<h2>
+
+The Journey Begins Within
+
+</h2>
+
+<p>
+
+Every article.
+
+Every meditation.
+
+Every insight.
+
+Every biological reset.
+
+Every ancient teaching.
+
+Points toward one destination—
+
+<strong>Your Original Self.</strong>
+
+</p>
+
+<a href="#" class="btn">
+
+Begin the Journey
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+PART 6
+
+Newsletter
+Footer
+JavaScript
+Closing HTML
+
+=========================================== -->
+  
+  <!-- ===========================================
+NEWSLETTER
+=========================================== -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>JOIN THE COMMUNITY</span>
+
+<h2>
+
+Become Part of
+
+Mirror & Illusion
+
+</h2>
+
+<p>
+
+Receive weekly insights on Ancient Wisdom,
+Modern Science,
+Biological Reset
+and Meditation.
+
+No spam.
+
+Only timeless ideas for living consciously.
+
+</p>
+
+</div>
+
+<form>
+
+<input
+type="email"
+placeholder="Enter your email address">
+
+<button type="submit">
+
+Join Free
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+FOOTER
+=========================================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+
+Mirror & Illusion
+
+</h3>
+
+<p>
+
+A living platform dedicated to helping humanity
+rediscover the Original Self through
+Ancient Wisdom,
+Modern Science,
+Biological Reset
+and Meditation.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Explore
+
+</h3>
+
+<ul>
+
+<li><a href="#">Ancient Wisdom</a></li>
+
+<li><a href="#">Biological Reset</a></li>
+
+<li><a href="#">Modern Science</a></li>
+
+<li><a href="#">Meditation</a></li>
+
+<li><a href="#">Articles</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+
+Resources
+
+</h3>
+
+<ul>
+
+<li><a href="#">Mirror Library</a></li>
+
+<li><a href="#">Guided Meditations</a></li>
+
+<li><a href="#">Brain Reset</a></li>
+
+<li><a href="#">Newsletter</a></li>
+
+<li><a href="#">Community</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+
+Connect
+
+</h3>
+
+<ul>
+
+<li><a href="#">Facebook</a></li>
+
+<li><a href="#">Instagram</a></li>
+
+<li><a href="#">YouTube</a></li>
+
+<li><a href="#">Email</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+<p>
+
+© 2026 Mirror & Illusion.
+
+All Rights Reserved.
+
+<br><br>
+
+"Know Yourself.
+Remember Yourself.
+Live Authentically."
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ===========================================
+JAVASCRIPT
+=========================================== -->
+
 <script>
 
-document.addEventListener('DOMContentLoaded', function(){
+/* Sticky Navigation */
 
-  const hamburger =
-  document.getElementById('hamburger');
+const navbar = document.getElementById("navbar");
 
-  const navMenu =
-  document.getElementById('nav-menu');
+window.addEventListener("scroll",function(){
 
-  hamburger.addEventListener('click', function(){
+if(window.scrollY>60){
 
-    navMenu.classList.toggle('active');
+navbar.classList.add("scrolled");
 
-  });
+}else{
+
+navbar.classList.remove("scrolled");
+
+}
+
+});
+
+
+/* Scroll Reveal */
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}
+
+});
+
+},{
+threshold:0.15
+});
+
+document.querySelectorAll(".reveal").forEach((el)=>{
+
+observer.observe(el);
+
+});
+
+
+/* Smooth Scroll */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
 
 });
 
