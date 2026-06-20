@@ -392,6 +392,11 @@ input::placeholder{
 body.loaded{
 
     opacity:1;
+   section {
+
+    scroll-margin-top: 120px;
+
+}
 
 }
 ```
