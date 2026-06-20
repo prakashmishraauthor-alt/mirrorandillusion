@@ -1,0 +1,300 @@
+```css id="mi-quote-css"
+/* ==========================================================
+   MIRROR & ILLUSION V2
+   QUOTE.CSS
+   Philosophy Section
+========================================================== */
+
+
+/*==========================================================
+PHILOSOPHY SECTION
+==========================================================*/
+
+.philosophy{
+
+    position:relative;
+
+    background:var(--color-background);
+
+    overflow:hidden;
+
+}
+
+
+/*==========================================================
+BACKGROUND GLOW
+==========================================================*/
+
+.philosophy::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-220px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(216,179,106,.05);
+
+    filter:blur(140px);
+
+    pointer-events:none;
+
+}
+
+
+/*==========================================================
+SECTION HEADING
+==========================================================*/
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.eyebrow{
+
+    display:inline-block;
+
+    font-family:var(--font-ui);
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    font-size:.82rem;
+
+    color:var(--color-primary);
+
+}
+
+
+/*==========================================================
+BLOCKQUOTE
+==========================================================*/
+
+.philosophy blockquote{
+
+    position:relative;
+
+    max-width:920px;
+
+    margin:0 auto 60px;
+
+    padding:0 40px;
+
+    text-align:center;
+
+    font-family:var(--font-heading);
+
+    font-size:clamp(2rem,4vw,3.5rem);
+
+    line-height:1.35;
+
+    color:var(--color-white);
+
+    font-style:italic;
+
+}
+
+
+/*==========================================================
+QUOTE MARKS
+==========================================================*/
+
+.philosophy blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-55px;
+    left:-10px;
+
+    font-size:7rem;
+
+    color:rgba(216,179,106,.18);
+
+    line-height:1;
+
+}
+
+.philosophy blockquote::after{
+
+    content:"”";
+
+    position:absolute;
+
+    bottom:-90px;
+    right:-10px;
+
+    font-size:7rem;
+
+    color:rgba(216,179,106,.18);
+
+    line-height:1;
+
+}
+
+
+/*==========================================================
+DIVIDER
+==========================================================*/
+
+.philosophy blockquote+p::before{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:2px;
+
+    margin:0 auto 45px;
+
+    background:var(--gradient-gold);
+
+}
+
+
+/*==========================================================
+DESCRIPTION
+==========================================================*/
+
+.philosophy p{
+
+    max-width:860px;
+
+    margin:auto;
+
+    text-align:center;
+
+    font-size:1.15rem;
+
+    color:var(--color-text-light);
+
+}
+
+
+/*==========================================================
+FADE ANIMATION
+==========================================================*/
+
+.philosophy blockquote{
+
+    animation:quoteFade 1.2s ease;
+
+}
+
+@keyframes quoteFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media(max-width:992px){
+
+    .philosophy blockquote{
+
+        padding:0 20px;
+
+    }
+
+}
+
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media(max-width:768px){
+
+    .philosophy{
+
+        text-align:center;
+
+    }
+
+    .philosophy blockquote{
+
+        font-size:2rem;
+
+        padding:0;
+
+    }
+
+    .philosophy blockquote::before{
+
+        font-size:4rem;
+
+        top:-35px;
+
+        left:0;
+
+    }
+
+    .philosophy blockquote::after{
+
+        font-size:4rem;
+
+        bottom:-45px;
+
+        right:0;
+
+    }
+
+    .philosophy p{
+
+        font-size:1rem;
+
+    }
+
+}
+
+
+/*==========================================================
+SMALL MOBILE
+==========================================================*/
+
+@media(max-width:480px){
+
+    .philosophy blockquote{
+
+        font-size:1.7rem;
+
+        line-height:1.45;
+
+    }
+
+}
+```
