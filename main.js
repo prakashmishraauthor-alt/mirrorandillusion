@@ -33,3 +33,6 @@
     });
 
 })();
+loadModule(() => {
+    if (window.audioInit) window.audioInit();
+}, "audio");
