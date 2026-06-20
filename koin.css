@@ -1,0 +1,320 @@
+```css id="mi-join-css"
+/* ==========================================================
+   MIRROR & ILLUSION V2
+   JOIN.CSS
+   Newsletter / Community Section
+========================================================== */
+
+
+/*==========================================================
+JOIN SECTION
+==========================================================*/
+
+.join{
+
+    position:relative;
+
+    padding:180px 0;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top center,
+    rgba(216,179,106,.08),
+    transparent 45%),
+    var(--color-surface);
+
+}
+
+
+/*==========================================================
+BACKGROUND GLOW
+==========================================================*/
+
+.join::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-180px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(216,179,106,.05);
+
+    filter:blur(140px);
+
+    pointer-events:none;
+
+}
+
+
+/*==========================================================
+CONTENT
+==========================================================*/
+
+.join-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+/*==========================================================
+TITLE
+==========================================================*/
+
+.join h2{
+
+    margin:20px 0 24px;
+
+    font-size:clamp(2.8rem,6vw,4.5rem);
+
+}
+
+.join p{
+
+    max-width:640px;
+
+    margin:0 auto 50px;
+
+    font-size:1.15rem;
+
+    color:var(--color-text-light);
+
+}
+
+
+/*==========================================================
+NEWSLETTER FORM
+==========================================================*/
+
+.newsletter-form{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    max-width:760px;
+
+    margin:auto;
+
+}
+
+
+/*==========================================================
+INPUT
+==========================================================*/
+
+.newsletter-form input{
+
+    flex:1;
+
+    height:62px;
+
+    padding:0 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--color-white);
+
+    transition:var(--transition);
+
+}
+
+.newsletter-form input:focus{
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 0 0 4px rgba(216,179,106,.12);
+
+}
+
+
+/*==========================================================
+BUTTON
+==========================================================*/
+
+.newsletter-form button{
+
+    height:62px;
+
+    padding:0 38px;
+
+    border-radius:999px;
+
+    background:var(--gradient-gold);
+
+    color:#111;
+
+    font-family:var(--font-ui);
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    transition:all .35s ease;
+
+    box-shadow:var(--shadow-gold);
+
+}
+
+.newsletter-form button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/*==========================================================
+DECORATIVE RINGS
+==========================================================*/
+
+.join::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-180px;
+    bottom:-180px;
+
+    width:500px;
+    height:500px;
+
+    border:1px solid rgba(216,179,106,.08);
+
+    border-radius:50%;
+
+}
+
+
+/*==========================================================
+ANIMATION
+==========================================================*/
+
+.join-content{
+
+    animation:joinFade 1s ease both;
+
+}
+
+@keyframes joinFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media(max-width:992px){
+
+.newsletter-form{
+
+    flex-direction:column;
+
+}
+
+.newsletter-form input,
+.newsletter-form button{
+
+    width:100%;
+
+}
+
+}
+
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media(max-width:768px){
+
+.join{
+
+    padding:120px 0;
+
+}
+
+.join h2{
+
+    font-size:2.5rem;
+
+}
+
+.join p{
+
+    font-size:1rem;
+
+}
+
+.newsletter-form{
+
+    gap:16px;
+
+}
+
+}
+
+
+/*==========================================================
+SMALL MOBILE
+==========================================================*/
+
+@media(max-width:480px){
+
+.newsletter-form input{
+
+    height:58px;
+
+}
+
+.newsletter-form button{
+
+    height:58px;
+
+}
+
+}
+```
