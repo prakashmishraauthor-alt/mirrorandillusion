@@ -14,7 +14,12 @@
   --muted:#aaaaaa;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
 body{
   background:var(--dark);
@@ -22,38 +27,38 @@ body{
   scroll-behavior:smooth;
 }
 
-/* NAV */
+/* HEADER */
 header{
   position:fixed;
-  width:100%;
   top:0;
-  left:0;
-  z-index:1000;
-  background:rgba(26,26,26,0.85);
-  backdrop-filter:blur(10px);
+  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px 25px;
+  background:rgba(26,26,26,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
 .logo{
   color:var(--accent);
   font-weight:bold;
-  letter-spacing:1px;
+  letter-spacing:2px;
 }
 
 .menu-toggle{
+  color:var(--accent);
   font-size:26px;
   cursor:pointer;
-  color:var(--accent);
 }
 
+/* NAV */
 nav{
   position:fixed;
-  top:0;
   right:-100%;
-  width:250px;
+  top:0;
+  width:260px;
   height:100vh;
   background:var(--secondary);
   padding:80px 20px;
@@ -65,38 +70,33 @@ nav a{
   color:var(--text);
   text-decoration:none;
   margin:15px 0;
-  transition:0.3s;
 }
 
-nav a:hover{
-  color:var(--accent);
-}
-
+nav a:hover{color:var(--accent);}
 nav.active{right:0;}
 
 /* HERO */
 .hero{
   height:100vh;
-  background:url('https://picsum.photos/1920/1080?blur=3') center/cover fixed;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   position:relative;
+  background:url('https://picsum.photos/1920/1080?blur=3') center/cover fixed;
 }
 
 .hero::after{
   content:"";
   position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.65);
+  inset:0;
+  background:rgba(0,0,0,0.7);
 }
 
 .hero-content{
   position:relative;
   z-index:1;
-  max-width:750px;
+  max-width:800px;
 }
 
 .hero h1{
@@ -105,12 +105,12 @@ nav.active{right:0;}
 }
 
 .hero p{
-  margin-top:15px;
   color:var(--muted);
+  margin-top:15px;
   line-height:1.6;
 }
 
-/* SECTIONS */
+/* SECTION BASE */
 section{
   padding:80px 20px;
 }
@@ -120,7 +120,7 @@ section{
   margin:auto;
 }
 
-/* CARDS */
+/* GRID CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -140,7 +140,21 @@ section{
   border-color:var(--accent);
 }
 
-/* COUNTERS */
+/* PILLARS */
+.pillar{
+  border-left:3px solid var(--accent);
+}
+
+/* REFLECTION */
+.reflection-box{
+  margin-top:20px;
+  padding:20px;
+  background:#222;
+  border-left:3px solid var(--accent);
+  border-radius:8px;
+}
+
+/* STATS */
 .stats{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -156,7 +170,6 @@ section{
 
 .stat h2{
   color:var(--accent);
-  font-size:2rem;
 }
 
 /* PRICING */
@@ -173,13 +186,10 @@ section{
   border:1px solid #333;
 }
 
-.price-box h3{
-  color:var(--accent);
-}
-
 .price{
   font-size:2rem;
-  margin:15px 0;
+  color:var(--accent);
+  margin:10px 0;
 }
 
 /* FAQ */
@@ -236,23 +246,16 @@ footer{
   gap:20px;
 }
 
-footer a{
-  color:var(--muted);
-  text-decoration:none;
-  display:block;
-  margin:5px 0;
-}
-
 /* BACK TO TOP */
 #topBtn{
   position:fixed;
   bottom:20px;
   right:20px;
-  padding:10px 15px;
   background:var(--accent);
   border:none;
-  cursor:pointer;
+  padding:10px 15px;
   display:none;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -266,229 +269,155 @@ footer a{
 
 <nav id="nav">
   <a href="#hero">Entrance</a>
-  <a href="#features">Hall of Reflection</a>
+  <a href="#pillars">Four Pillars</a>
+  <a href="#reflection">Reflection Chamber</a>
   <a href="#stats">Inner Shift</a>
   <a href="#pricing">Pathways</a>
   <a href="#faq">Truth Layers</a>
-  <a href="#contact">Echo Chamber</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-content">
-    <h1>You Are the Mirror.</h1>
-    <p>
-      What you see outside is only a reflection of what has already been shaped within.
-      Step inside the illusion—and begin to see clearly.
-    </p>
+    <h1>You Are Not Inside the World.</h1>
+    <p>The world is appearing inside you.  
+    What you call reality is a reflection moving through perception.</p>
   </div>
 </section>
+
+<!-- PILLARS -->
 <section id="pillars">
   <div class="container">
-    <h2>The Four Pillars of Mirror & Illusion</h2>
-    <p style="color:var(--muted);margin-top:10px;">
-      The entire system rests on four foundational forces that shape perception, discipline, and inner clarity.
-    </p>
-    <br/>
+    <h2>The Four Pillars</h2><br/>
 
     <div class="grid">
 
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">1. Awareness</h3>
-        <p>
-          The ability to observe thoughts, emotions, and reactions without becoming them.
-          Awareness is the mirror itself — silent, non-reactive, and infinitely clear.
-        </p>
+      <div class="card pillar">
+        <h3>Awareness</h3>
+        <p>Seeing thought without becoming thought.</p>
       </div>
 
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">2. Discipline</h3>
-        <p>
-          The force that converts insight into action.
-          Without discipline, awareness remains vision; with it, awareness becomes transformation.
-        </p>
+      <div class="card pillar">
+        <h3>Discipline</h3>
+        <p>Turning insight into consistent action.</p>
       </div>
 
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">3. Detachment</h3>
-        <p>
-          The ability to see life without being controlled by it.
-          Detachment is not absence of feeling — it is freedom from automatic reaction.
-        </p>
+      <div class="card pillar">
+        <h3>Detachment</h3>
+        <p>Freedom from emotional automation.</p>
       </div>
 
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">4. Alignment</h3>
-        <p>
-          The state where thought, action, and intention move in one direction.
-          Alignment is where illusion dissolves and life becomes coherent.
-        </p>
+      <div class="card pillar">
+        <h3>Alignment</h3>
+        <p>When inner truth and outer action become one.</p>
       </div>
 
     </div>
   </div>
 </section>
-  <section id="reflection">
+
+<!-- REFLECTION -->
+<section id="reflection">
   <div class="container">
-    <h2>The Reflection Chamber</h2>
-
-    <p style="color:var(--muted);margin-top:10px;line-height:1.6;">
-      Before you move forward, the system pauses you here.  
-      Not to give answers — but to reveal what you are currently carrying within.
-    </p>
-
-    <br/>
+    <h2>Reflection Chamber</h2><br/>
 
     <div class="grid">
 
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">What are you reacting to repeatedly?</h3>
-        <p>
-          Notice the patterns that trigger you.  
-          Repetition is never external — it is internal architecture repeating itself.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">What are you avoiding?</h3>
-        <p>
-          Avoidance is a mirror.  
-          What you escape is often what holds the key to your next level of clarity.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">What belief is silently running your life?</h3>
-        <p>
-          Most decisions are not decisions — they are unconscious instructions repeating in disguise.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color:var(--accent);margin-bottom:10px;">If nothing changes for 5 years… what remains?</h3>
-        <p>
-          This is not fear. It is exposure.  
-          Awareness begins when denial loses comfort.
-        </p>
-      </div>
+      <div class="card">What are you repeatedly reacting to?</div>
+      <div class="card">What are you avoiding right now?</div>
+      <div class="card">What belief is silently running you?</div>
+      <div class="card">If nothing changes, what remains?</div>
 
     </div>
 
-    <br/>
-
-    <div class="card" style="margin-top:20px;">
-      <h3 style="color:var(--accent);margin-bottom:10px;">Final Reflection Prompt</h3>
-      <p>
-        “Am I seeing reality… or am I seeing my interpretation of it?”  
-        <br/><br/>
-        Sit with this before you proceed.
-      </p>
+    <div class="reflection-box">
+      “Am I observing reality… or interpreting it through old conditioning?”
     </div>
 
   </div>
 </section>
-<section id="features">
-  <div class="container">
-    <h2>The Hall of Reflection</h2><br/>
-    <div class="grid">
-      <div class="card">Daily mental rituals designed to dissolve internal noise and restore clarity.</div>
-      <div class="card">Structured self-observation practices that reveal hidden behavioral patterns.</div>
-      <div class="card">Guided awareness modules to separate truth from illusion in thought and action.</div>
-      <div class="card">Inner discipline systems that transform intention into lived reality.</div>
-    </div>
-  </div>
-</section>
 
+<!-- STATS -->
 <section id="stats">
   <div class="container">
     <h2>Inner Shift</h2><br/>
+
     <div class="stats">
-      <div class="stat"><h2 class="counter" data-target="1200">0</h2><p>Observers Awakened</p></div>
-      <div class="stat"><h2 class="counter" data-target="92">0</h2><p>Clarity Rate %</p></div>
-      <div class="stat"><h2 class="counter" data-target="36">0</h2><p>Reflection Modules</p></div>
-      <div class="stat"><h2 class="counter" data-target="8">0</h2><p>Years of Insight</p></div>
+      <div class="stat"><h2 class="counter" data-target="1200">0</h2><p>Awakened</p></div>
+      <div class="stat"><h2 class="counter" data-target="92">0</h2><p>Clarity %</p></div>
+      <div class="stat"><h2 class="counter" data-target="36">0</h2><p>Modules</p></div>
+      <div class="stat"><h2 class="counter" data-target="8">0</h2><p>Years Insight</p></div>
     </div>
+
   </div>
 </section>
 
+<!-- PRICING -->
 <section id="pricing">
   <div class="container">
-    <h2>Pathways of Transformation</h2><br/>
+    <h2>Pathways</h2><br/>
+
     <div class="pricing">
+
       <div class="price-box">
-        <h3>Awareness Entry</h3>
+        <h3>Entry</h3>
         <div class="price">₹499</div>
-        <p>Begin your journey into structured self-observation and mental clarity.</p>
+        <p>Begin awareness training.</p>
       </div>
+
       <div class="price-box">
-        <h3>Deep Reflection</h3>
+        <h3>Depth</h3>
         <div class="price">₹1499</div>
-        <p>Advanced practices to dismantle illusion patterns and build awareness discipline.</p>
+        <p>Break unconscious patterns.</p>
       </div>
+
       <div class="price-box">
-        <h3>Mirror Mastery</h3>
+        <h3>Mastery</h3>
         <div class="price">₹2999</div>
-        <p>Complete transformation system for sustained inner alignment and mastery of self.</p>
+        <p>Full inner transformation system.</p>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section id="faq">
   <div class="container">
     <h2>Truth Layers</h2><br/>
 
     <div class="faq-item">
-      <div class="faq-question">What is Mirror & Illusion?</div>
-      <div class="faq-answer">A structured inner transformation system designed to help you see through mental patterns and return to clarity.</div>
+      <div class="faq-question">What is this?</div>
+      <div class="faq-answer">A structured system of inner clarity and transformation.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Is this spiritual or practical?</div>
-      <div class="faq-answer">It is practical spirituality—rooted in observation, discipline, and real-life behavioral transformation.</div>
+      <div class="faq-question">Is this spiritual?</div>
+      <div class="faq-answer">It is practical awareness applied to life.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Who is this for?</div>
-      <div class="faq-answer">For those who feel there is more beyond distraction and want structured inner mastery.</div>
+      <div class="faq-question">Who is it for?</div>
+      <div class="faq-answer">Those who want to see beyond mental noise.</div>
     </div>
 
   </div>
 </section>
 
-<section id="contact">
-  <div class="container">
-    <h2>Echo Chamber</h2><br/>
-    <form onsubmit="return validateForm()">
-      <input type="text" id="name" placeholder="Your Name"/>
-      <input type="email" id="email" placeholder="Your Email"/>
-      <textarea id="message" rows="5" placeholder="What do you wish to reflect upon?"></textarea>
-      <button type="submit">Enter</button>
-    </form>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
       <h3>Mirror & Illusion</h3>
-      <p>A journey inward where perception dissolves and awareness begins.</p>
-    </div>
-    <div>
-      <h3>Navigation</h3>
-      <a href="#features">Hall of Reflection</a>
-      <a href="#pricing">Pathways</a>
-      <a href="#faq">Truth Layers</a>
-    </div>
-    <div>
-      <h3>Contact</h3>
-      <p>support@mirrorillusion.com</p>
+      <p>A system of perception, discipline, and awakening.</p>
     </div>
   </div>
 </footer>
 
-<button id="topBtn" onclick="scrollTopBtn()">↑</button>
+<button id="topBtn" onclick="scrollToTop()">↑</button>
 
 <script>
+
 // MENU
 function toggleMenu(){
   document.getElementById("nav").classList.toggle("active");
@@ -496,57 +425,44 @@ function toggleMenu(){
 
 // FAQ
 document.querySelectorAll(".faq-question").forEach(q=>{
-  q.addEventListener("click",()=>{
-    const ans = q.nextElementSibling;
-    ans.style.display = ans.style.display === "block" ? "none" : "block";
-  });
+  q.onclick = ()=>{
+    let a = q.nextElementSibling;
+    a.style.display = a.style.display==="block"?"none":"block";
+  }
 });
 
-// COUNTERS
+// COUNTER
 const counters = document.querySelectorAll(".counter");
+
 window.addEventListener("scroll",()=>{
-  counters.forEach(counter=>{
-    const rect = counter.getBoundingClientRect().top;
-    if(rect < window.innerHeight){
-      const update = ()=>{
-        const target = +counter.getAttribute("data-target");
-        const current = +counter.innerText;
-        const inc = target / 100;
-        if(current < target){
-          counter.innerText = Math.ceil(current + inc);
+  counters.forEach(c=>{
+    let top = c.getBoundingClientRect().top;
+    if(top < window.innerHeight){
+      let update = ()=>{
+        let target = +c.dataset.target;
+        let val = +c.innerText;
+        let inc = target/100;
+        if(val < target){
+          c.innerText = Math.ceil(val+inc);
           setTimeout(update,20);
-        } else {
-          counter.innerText = target;
-        }
+        } else c.innerText = target;
       }
-      if(counter.innerText == "0") update();
+      if(c.innerText==="0") update();
     }
   });
 });
 
-// FORM
-function validateForm(){
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
-
-  if(!name || !email || !message){
-    alert("Please complete the reflection fields");
-    return false;
-  }
-
-  alert("Your message has been received in the Mirror.");
-  return false;
-}
-
 // BACK TO TOP
 let btn = document.getElementById("topBtn");
+
 window.onscroll = ()=>{
-  btn.style.display = window.scrollY > 300 ? "block" : "none";
+  btn.style.display = window.scrollY>300?"block":"none";
 }
-function scrollTopBtn(){
+
+function scrollToTop(){
   window.scrollTo({top:0,behavior:"smooth"});
 }
+
 </script>
 
 </body>
