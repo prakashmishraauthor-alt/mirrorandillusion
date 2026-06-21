@@ -1,39 +1,29 @@
-/*=========================================================
- MIRROR & ILLUSION
- script.js
- PART 1
-=========================================================*/
-
-
 /*=========================================
-ELEMENTS
+MIRROR & ILLUSION
+script.js
 =========================================*/
 
 const hero = document.getElementById("hero");
 const museum = document.getElementById("museum");
-const enterButton = document.getElementById("enterButton");
 const wizard = document.getElementById("wizard");
+const enterButton = document.getElementById("enterButton");
 const particles = document.getElementById("particles");
 
-
-/*=========================================
-INITIAL STATE
-=========================================*/
+/*----------------------------------------
+INITIAL
+----------------------------------------*/
 
 enterButton.style.opacity = "0";
 enterButton.style.pointerEvents = "none";
-enterButton.style.transform = "translateY(20px)";
+enterButton.style.transform = "translateY(25px)";
 
-
-/*=========================================
-CREATE MAGIC PARTICLES
-=========================================*/
+/*----------------------------------------
+CREATE PARTICLES
+----------------------------------------*/
 
 function createParticles() {
 
-    const total = 120;
-
-    for (let i = 0; i < total; i++) {
+    for (let i = 0; i < 120; i++) {
 
         const p = document.createElement("div");
 
@@ -41,15 +31,13 @@ function createParticles() {
 
         p.style.left = Math.random() * 100 + "%";
 
-        p.style.bottom = -20 + Math.random() * 50 + "px";
-
-        const size = Math.random() * 5 + 2;
+        const size = 2 + Math.random() * 4;
 
         p.style.width = size + "px";
         p.style.height = size + "px";
 
         p.style.animationDuration =
-            6 + Math.random() * 10 + "s";
+            6 + Math.random() * 8 + "s";
 
         p.style.animationDelay =
             Math.random() * 8 + "s";
@@ -61,149 +49,166 @@ function createParticles() {
 
 createParticles();
 
-
-/*=========================================
-SHOW ENTER BUTTON
-=========================================*/
+/*----------------------------------------
+BUTTON REVEAL
+----------------------------------------*/
 
 function revealButton() {
 
-    enterButton.style.transition =
-        "all 1.2s ease";
+    enterButton.style.transition = "1s";
 
     enterButton.style.opacity = "1";
 
     enterButton.style.pointerEvents = "auto";
 
-    enterButton.style.transform =
-        "translateY(0)";
+    enterButton.style.transform = "translateY(0)";
 
 }
 
+/*----------------------------------------
+WIZARD WALK
+----------------------------------------*/
 
-/*=========================================
-WIZARD ARRIVES
-=========================================*/
+wizard.classList.add("walking");
 
-setTimeout(() => {
+wizard.animate(
+
+[
+    {
+        left: "-180px"
+    },
+
+    {
+        left: "42%"
+    }
+
+],
+
+{
+
+    duration:3000,
+
+    fill:"forwards",
+
+    easing:"ease-out"
+
+}
+
+);
+
+/*----------------------------------------
+STOP WALK
+----------------------------------------*/
+
+setTimeout(()=>{
+
+    wizard.classList.remove("walking");
+
+    wizard.classList.add("magic");
+
+},3000);
+
+/*----------------------------------------
+SHOW BUTTON
+----------------------------------------*/
+
+setTimeout(()=>{
 
     revealButton();
 
-}, 7000);
+},4000);
 
+/*----------------------------------------
+ENTER
+----------------------------------------*/
 
-/*=========================================
-BUTTON GLOW
-=========================================*/
+let entered=false;
 
-setInterval(() => {
+enterButton.onclick=function(){
 
-    if (enterButton.style.opacity == "1") {
+    if(entered) return;
 
-        enterButton.animate(
-
-            [
-
-                {
-                    transform: "scale(1)"
-                },
-
-                {
-                    transform: "scale(1.04)"
-                },
-
-                {
-                    transform: "scale(1)"
-                }
-
-            ],
-
-            {
-
-                duration: 1800
-
-            }
-
-        );
-
-    }
-
-}, 2200);
-
-
-/*=========================================
-ENTER BUTTON
-=========================================*/
-
-let entered = false;
-
-enterButton.addEventListener("click", function () {
-
-    if (entered) return;
-
-    entered = true;
+    entered=true;
 
     hero.classList.add("fade-out");
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        hero.style.display = "none";
+        hero.style.display="none";
 
-        museum.style.display = "block";
+        museum.style.display="block";
 
         museum.classList.add("fade-in");
 
         window.scrollTo({
 
-            top: 0,
+            top:0,
 
-            behavior: "smooth"
+            behavior:"smooth"
 
         });
 
-    }, 900);
+    },1000);
 
-});
+};
 
+/*----------------------------------------
+BUTTON PULSE
+----------------------------------------*/
 
-/*=========================================
-WELCOME MESSAGE
-=========================================*/
+setInterval(()=>{
 
-console.log(
+    if(enterButton.style.opacity=="1"){
 
-"Mirror & Illusion Loaded Successfully"
+        enterButton.animate(
 
-);
-/*====================================================
-SCRIPT.JS
-PART 2
-====================================================*/
+        [
 
+        {
+            transform:"scale(1)"
+        },
 
-/*=============================
+        {
+            transform:"scale(1.05)"
+        },
+
+        {
+            transform:"scale(1)"
+        }
+
+        ],
+
+        {
+
+            duration:1800
+
+        });
+
+    }
+
+},2200);
+
+/*----------------------------------------
 PARALLAX
-=============================*/
+----------------------------------------*/
 
-const heroContent = document.querySelector(".hero-content");
+const heroContent=document.querySelector(".hero-content");
 
 document.addEventListener("mousemove",(e)=>{
 
-const x=(e.clientX/window.innerWidth-.5)*20;
-const y=(e.clientY/window.innerHeight-.5)*20;
+    const x=(e.clientX/window.innerWidth-.5)*20;
 
-heroContent.style.transform=
-`translate(${x}px,${y}px)`;
+    const y=(e.clientY/window.innerHeight-.5)*20;
 
-wizard.style.transform=
-`translate(${x*.35}px,${y*.35}px)`;
+    heroContent.style.transform=
+
+    `translate(${x}px,${y}px)`;
 
 });
 
-
-/*=============================
+/*----------------------------------------
 EXHIBIT HOVER
-=============================*/
+----------------------------------------*/
 
 const exhibits=document.querySelectorAll(".exhibit");
 
@@ -211,102 +216,38 @@ exhibits.forEach(card=>{
 
 card.addEventListener("mouseenter",()=>{
 
-card.animate(
-
-[
-{
-transform:"translateY(0px) scale(1)"
-},
-
-{
-transform:"translateY(-8px) scale(1.02)"
-}
-
-],
-
-{
-duration:300,
-fill:"forwards"
-}
-
-);
+card.style.transform="translateY(-10px) scale(1.02)";
 
 });
 
 card.addEventListener("mouseleave",()=>{
 
-card.animate(
-
-[
-{
-transform:"translateY(-8px) scale(1.02)"
-},
-
-{
-transform:"translateY(0px) scale(1)"
-}
-
-],
-
-{
-duration:300,
-fill:"forwards"
-}
-
-);
+card.style.transform="translateY(0px) scale(1)";
 
 });
 
 });
 
-
-/*=============================
-RANDOM PARTICLE TWINKLE
-=============================*/
+/*----------------------------------------
+TWINKLE
+----------------------------------------*/
 
 setInterval(()=>{
 
-const all=document.querySelectorAll(".particle");
-
-all.forEach(p=>{
+document.querySelectorAll(".particle").forEach(p=>{
 
 p.style.opacity=.3+Math.random()*.7;
 
 });
 
-},1200);
+},1000);
 
-
-/*=============================
-PAGE RESIZE
-=============================*/
-
-window.addEventListener("resize",()=>{
-
-hero.style.height=window.innerHeight+"px";
-
-});
-
-
-/*=============================
-WELCOME
-=============================*/
-
-setTimeout(()=>{
-
-console.log(
-"Welcome to Mirror & Illusion."
-);
-
-},500);
-
-
-/*=============================
+/*----------------------------------------
 READY
-=============================*/
+----------------------------------------*/
 
-window.addEventListener("load",()=>{
+window.onload=function(){
 
-document.body.classList.add("loaded");
+console.log("Mirror & Illusion Ready");
 
-});
+};
