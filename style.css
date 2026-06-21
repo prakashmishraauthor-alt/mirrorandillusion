@@ -367,21 +367,15 @@ WIZARD
     left:-180px;
 
     width:140px;
-
     height:180px;
 
-    background:url("images/wizard-sprite.png") center center no-repeat;
+    background-image:url("images/wizard-sprite-sheet.png");
 
-    background-size:contain;
+    background-repeat:no-repeat;
 
-    z-index:25;
+    background-size:840px 180px;
 
-    pointer-events:none;
-
-    filter:
-
-        drop-shadow(0 0 12px rgba(255,215,0,.75))
-        drop-shadow(0 0 35px rgba(255,215,0,.45));
+    z-index:20;
 
 }
 
