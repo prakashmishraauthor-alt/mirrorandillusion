@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enter the Magical Museum</title>
+  <title>Mirror and Illusion/title>
   <style>
     * {
       margin: 0;
@@ -19,30 +19,24 @@
     }
     
     .hero {
-      /* Use the FULL image I generated - wizard + button already in it */
       background: url('museum-bg.jpg') no-repeat center center;
       background-size: cover;
       height: 100vh;
       width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       position: relative;
       cursor: pointer;
     }
     
-    /* Invisible clickable area where the ENTER button is in your image */
+    /* Invisible clickable area over ENTER button in your image */
     .enter-area {
       position: absolute;
-      /* Adjust these values to match where ENTER button is in your image */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 320px;  /* Make this match your button width */
-      height: 90px;  /* Make this match your button height */
+      width: 320px;
+      height: 90px;
       cursor: pointer;
       z-index: 10;
-      /* Subtle hover glow to show it's clickable */
       transition: all 0.3s ease;
     }
     
@@ -51,7 +45,29 @@
       border-radius: 12px;
     }
     
-    /* Floating candle particles on top of image */
+    /* WIZARD WALKING ANIMATION */
+    .wizard {
+      position: absolute;
+      bottom: 18%;
+      left: -200px;
+      width: 100px;
+      height: 150px;
+      background: url('wizard-sprite.png') no-repeat;
+      background-size: contain;
+      z-index: 5;
+      animation: walkIn 5s ease-out forwards;
+    }
+    
+    @keyframes walkIn {
+      0% { left: -200px; transform: translateY(0px); }
+      20% { transform: translateY(-8px); }
+      40% { transform: translateY(0px); }
+      60% { transform: translateY(-8px); }
+      80% { transform: translateY(0px); }
+      100% { left: 38%; transform: translateY(0px); }
+    }
+    
+    /* FLOATING CANDLE PARTICLES */
     .particle {
       position: absolute;
       width: 5px;
@@ -88,6 +104,9 @@
     <div class="particle"></div>
     <div class="particle"></div>
     <div class="particle"></div>
+    
+    <!-- WIZARD THAT WALKS IN -->
+    <div class="wizard"></div>
     
     <!-- Invisible clickable zone over the ENTER button in your image -->
     <div class="enter-area" title="Enter the Museum"></div>
