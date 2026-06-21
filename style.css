@@ -357,28 +357,198 @@ body.transition{
 /*=====================================
 WIZARD
 =====================================*/
+/*==============================
+WIZARD
+==============================*/
 
 .wizard{
 
     position:absolute;
 
     bottom:8%;
-
     left:-180px;
 
     width:140px;
     height:180px;
 
     background-image:url("images/wizard-sprite-sheet.png");
-
     background-repeat:no-repeat;
 
     background-size:840px 180px;
 
+    background-position:0 0;
+
     z-index:20;
+
+    filter:drop-shadow(0 0 15px rgba(255,215,0,.6));
 
 }
 
+
+/*==============================
+/*====================================
+WIZARD
+====================================*/
+
+.wizard{
+
+    position:absolute;
+    bottom:8%;
+    left:-180px;
+
+    width:140px;
+    height:180px;
+
+    background:url("images/wizard-sprite-sheet.png") no-repeat;
+    background-size:840px 180px;
+    background-position:0 0;
+
+    z-index:20;
+
+    filter:drop-shadow(0 0 12px rgba(255,215,0,.5));
+
+}
+
+
+/*====================================
+START WALK
+====================================*/
+
+.walk{
+
+    animation:
+
+        walkFrames .8s steps(6) infinite,
+
+        moveWizard 3s ease-out forwards;
+
+}
+
+
+/*====================================
+SPRITE FRAMES
+====================================*/
+
+@keyframes walkFrames{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:-840px 0;
+
+    }
+
+}
+
+
+/*====================================
+MOVE ACROSS SCREEN
+====================================*/
+
+@keyframes moveWizard{
+
+    from{
+
+        left:-180px;
+
+    }
+
+    to{
+
+        left:42%;
+
+    }
+
+}
+
+
+/*====================================
+MAGICAL GLOW
+====================================*/
+
+.magic{
+
+    filter:
+
+    drop-shadow(0 0 15px gold)
+
+    drop-shadow(0 0 35px gold)
+
+    drop-shadow(0 0 80px gold);
+
+    animation:magicGlow 1.4s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes magicGlow{
+
+    from{
+
+        transform:scale(1);
+
+        filter:
+
+        drop-shadow(0 0 15px gold);
+
+    }
+
+    to{
+
+        transform:scale(1.05);
+
+        filter:
+
+        drop-shadow(0 0 35px gold)
+
+        drop-shadow(0 0 90px gold);
+
+    }
+
+}
+
+/*==============================
+MAGICAL GLOW
+==============================*/
+
+.magic{
+
+    animation:
+
+    walkFrames .8s steps(6) infinite,
+
+    magicGlow 1.5s ease-in-out infinite alternate;
+
+}
+
+@keyframes magicGlow{
+
+    from{
+
+        filter:
+
+        drop-shadow(0 0 15px gold)
+
+        drop-shadow(0 0 30px gold);
+
+    }
+
+    to{
+
+        filter:
+
+        drop-shadow(0 0 30px gold)
+
+        drop-shadow(0 0 80px gold);
+
+    }
+
+}
 
 /*=====================================
 MAGICAL AURA
