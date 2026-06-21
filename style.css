@@ -1318,5 +1318,25 @@ font-size:18px;
 grid-template-columns:1fr;
 
 }
+ @keyframes wizardWalk{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:-840px 0;
+    }
+
+}
+
+
+.walking{
+
+    animation:
+
+    wizardWalk .8s steps(6) infinite;
+
+}
 
 }
