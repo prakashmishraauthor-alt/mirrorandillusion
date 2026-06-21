@@ -68,7 +68,7 @@ HERO SECTION
 
     align-items:center;
 
-    background-image:url("images/museum-bg.jpg");
+    background-image:url("museum-bg.jpg");
 
     background-size:cover;
 
@@ -371,7 +371,7 @@ WIZARD
     width:140px;
     height:180px;
 
-    background-image:url("images/wizard-sprite-sheet.png");
+    background-image:url("wizard-sprite-sheet.png");
     background-repeat:no-repeat;
 
     background-size:840px 180px;
