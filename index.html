@@ -1,469 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mirror & Illusion</title>
-
-<style>
-:root{
-  --accent:#00ff88;
-  --dark:#1a1a1a;
-  --secondary:#003322;
-  --text:#eaeaea;
-  --muted:#aaaaaa;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
-body{
-  background:var(--dark);
-  color:var(--text);
-  scroll-behavior:smooth;
-}
-
-/* HEADER */
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 25px;
-  background:rgba(26,26,26,0.85);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
-
-.logo{
-  color:var(--accent);
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.menu-toggle{
-  color:var(--accent);
-  font-size:26px;
-  cursor:pointer;
-}
-
-/* NAV */
-nav{
-  position:fixed;
-  right:-100%;
-  top:0;
-  width:260px;
-  height:100vh;
-  background:var(--secondary);
-  padding:80px 20px;
-  transition:0.4s ease;
-}
-
-nav a{
-  display:block;
-  color:var(--text);
-  text-decoration:none;
-  margin:15px 0;
-}
-
-nav a:hover{color:var(--accent);}
-nav.active{right:0;}
-
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-  background:url('https://picsum.photos/1920/1080?blur=3') center/cover fixed;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-}
-
-.hero-content{
-  position:relative;
-  z-index:1;
-  max-width:800px;
-}
-
-.hero h1{
-  font-size:3rem;
-  color:var(--accent);
-}
-
-.hero p{
-  color:var(--muted);
-  margin-top:15px;
-  line-height:1.6;
-}
-
-/* SECTION BASE */
-section{
-  padding:80px 20px;
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-}
-
-/* GRID CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:#222;
-  padding:20px;
-  border-radius:10px;
-  border:1px solid #333;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:var(--accent);
-}
-
-/* PILLARS */
-.pillar{
-  border-left:3px solid var(--accent);
-}
-
-/* REFLECTION */
-.reflection-box{
-  margin-top:20px;
-  padding:20px;
-  background:#222;
-  border-left:3px solid var(--accent);
-  border-radius:8px;
-}
-
-/* STATS */
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-  text-align:center;
-}
-
-.stat{
-  background:#222;
-  padding:30px;
-  border-radius:10px;
-}
-
-.stat h2{
-  color:var(--accent);
-}
-
-/* PRICING */
-.pricing{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.price-box{
-  background:#222;
-  padding:25px;
-  border-radius:10px;
-  border:1px solid #333;
-}
-
-.price{
-  font-size:2rem;
-  color:var(--accent);
-  margin:10px 0;
-}
-
-/* FAQ */
-.faq-item{
-  background:#222;
-  margin-bottom:10px;
-  border-radius:8px;
-  overflow:hidden;
-}
-
-.faq-question{
-  padding:15px;
-  cursor:pointer;
-  background:#2a2a2a;
-}
-
-.faq-answer{
-  display:none;
-  padding:15px;
-  color:var(--muted);
-}
-
-/* CONTACT */
-form{
-  display:grid;
-  gap:15px;
-}
-
-input, textarea{
-  padding:12px;
-  border:none;
-  border-radius:5px;
-  background:#2a2a2a;
-  color:white;
-}
-
-button{
-  padding:12px;
-  background:var(--accent);
-  border:none;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-/* FOOTER */
-footer{
-  background:#111;
-  padding:40px 20px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-}
-
-/* BACK TO TOP */
-#topBtn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:var(--accent);
-  border:none;
-  padding:10px 15px;
-  display:none;
-  cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="logo">MIRROR & ILLUSION</div>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-</header>
-
-<nav id="nav">
-  <a href="#hero">Entrance</a>
-  <a href="#pillars">Four Pillars</a>
-  <a href="#reflection">Reflection Chamber</a>
-  <a href="#stats">Inner Shift</a>
-  <a href="#pricing">Pathways</a>
-  <a href="#faq">Truth Layers</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-content">
-    <h1>You Are Not Inside the World.</h1>
-    <p>The world is appearing inside you.  
-    What you call reality is a reflection moving through perception.</p>
-  </div>
-</section>
-
-<!-- PILLARS -->
-<section id="pillars">
-  <div class="container">
-    <h2>The Four Pillars</h2><br/>
-
-    <div class="grid">
-
-      <div class="card pillar">
-        <h3>Awareness</h3>
-        <p>Seeing thought without becoming thought.</p>
-      </div>
-
-      <div class="card pillar">
-        <h3>Discipline</h3>
-        <p>Turning insight into consistent action.</p>
-      </div>
-
-      <div class="card pillar">
-        <h3>Detachment</h3>
-        <p>Freedom from emotional automation.</p>
-      </div>
-
-      <div class="card pillar">
-        <h3>Alignment</h3>
-        <p>When inner truth and outer action become one.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- REFLECTION -->
-<section id="reflection">
-  <div class="container">
-    <h2>Reflection Chamber</h2><br/>
-
-    <div class="grid">
-
-      <div class="card">What are you repeatedly reacting to?</div>
-      <div class="card">What are you avoiding right now?</div>
-      <div class="card">What belief is silently running you?</div>
-      <div class="card">If nothing changes, what remains?</div>
-
-    </div>
-
-    <div class="reflection-box">
-      “Am I observing reality… or interpreting it through old conditioning?”
-    </div>
-
-  </div>
-</section>
-
-<!-- STATS -->
-<section id="stats">
-  <div class="container">
-    <h2>Inner Shift</h2><br/>
-
-    <div class="stats">
-      <div class="stat"><h2 class="counter" data-target="1200">0</h2><p>Awakened</p></div>
-      <div class="stat"><h2 class="counter" data-target="92">0</h2><p>Clarity %</p></div>
-      <div class="stat"><h2 class="counter" data-target="36">0</h2><p>Modules</p></div>
-      <div class="stat"><h2 class="counter" data-target="8">0</h2><p>Years Insight</p></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container">
-    <h2>Pathways</h2><br/>
-
-    <div class="pricing">
-
-      <div class="price-box">
-        <h3>Entry</h3>
-        <div class="price">₹499</div>
-        <p>Begin awareness training.</p>
-      </div>
-
-      <div class="price-box">
-        <h3>Depth</h3>
-        <div class="price">₹1499</div>
-        <p>Break unconscious patterns.</p>
-      </div>
-
-      <div class="price-box">
-        <h3>Mastery</h3>
-        <div class="price">₹2999</div>
-        <p>Full inner transformation system.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <h2>Truth Layers</h2><br/>
-
-    <div class="faq-item">
-      <div class="faq-question">What is this?</div>
-      <div class="faq-answer">A structured system of inner clarity and transformation.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">Is this spiritual?</div>
-      <div class="faq-answer">It is practical awareness applied to life.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">Who is it for?</div>
-      <div class="faq-answer">Those who want to see beyond mental noise.</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>Mirror & Illusion</h3>
-      <p>A system of perception, discipline, and awakening.</p>
-    </div>
-  </div>
-</footer>
-
-<button id="topBtn" onclick="scrollToTop()">↑</button>
-
-<script>
-
-// MENU
-function toggleMenu(){
-  document.getElementById("nav").classList.toggle("active");
-}
-
-// FAQ
-document.querySelectorAll(".faq-question").forEach(q=>{
-  q.onclick = ()=>{
-    let a = q.nextElementSibling;
-    a.style.display = a.style.display==="block"?"none":"block";
-  }
-});
-
-// COUNTER
-const counters = document.querySelectorAll(".counter");
-
-window.addEventListener("scroll",()=>{
-  counters.forEach(c=>{
-    let top = c.getBoundingClientRect().top;
-    if(top < window.innerHeight){
-      let update = ()=>{
-        let target = +c.dataset.target;
-        let val = +c.innerText;
-        let inc = target/100;
-        if(val < target){
-          c.innerText = Math.ceil(val+inc);
-          setTimeout(update,20);
-        } else c.innerText = target;
-      }
-      if(c.innerText==="0") update();
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter the Magical Museum</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  });
-});
+    
+    body, html {
+      height: 100%;
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+      background: #000;
+    }
+    
+    .hero {
+      /* Use the FULL image I generated - wizard + button already in it */
+      background: url('museum-bg.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    /* Invisible clickable area where the ENTER button is in your image */
+    .enter-area {
+      position: absolute;
+      /* Adjust these values to match where ENTER button is in your image */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;  /* Make this match your button width */
+      height: 90px;  /* Make this match your button height */
+      cursor: pointer;
+      z-index: 10;
+      /* Subtle hover glow to show it's clickable */
+      transition: all 0.3s ease;
+    }
+    
+    .enter-area:hover {
+      box-shadow: 0 0 80px rgba(255, 215, 0, 0.6);
+      border-radius: 12px;
+    }
+    
+    /* Floating candle particles on top of image */
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #FFD700;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #FFD700;
+      animation: float 10s infinite ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(-10vh) translateX(30px) scale(1.2); opacity: 0; }
+    }
+    
+    .particle:nth-child(1) { left: 15%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .particle:nth-child(3) { left: 45%; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 60%; animation-delay: 1s; }
+    .particle:nth-child(5) { left: 75%; animation-delay: 3s; }
+    .particle:nth-child(6) { left: 85%; animation-delay: 5s; }
+  </style>
+</head>
+<body>
+  <div class="hero" onclick="enterMuseum()">
+    <!-- Floating candle particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    <!-- Invisible clickable zone over the ENTER button in your image -->
+    <div class="enter-area" title="Enter the Museum"></div>
+  </div>
 
-// BACK TO TOP
-let btn = document.getElementById("topBtn");
-
-window.onscroll = ()=>{
-  btn.style.display = window.scrollY>300?"block":"none";
-}
-
-function scrollToTop(){
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-</script>
-
+  <script>
+    function enterMuseum() {
+      document.body.style.transition = 'opacity 1.2s ease';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'museum-interior.html'; // Change to your next page
+      }, 1200);
+    }
+  </script>
 </body>
 </html>
