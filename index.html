@@ -3,49 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mirror and Illusion/title>
+  <title>The Magical Museum</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body, html {
       height: 100%;
       font-family: 'Georgia', serif;
-      overflow: hidden;
-      background: #000;
+      overflow-x: hidden;
+      background: #0a0a0a;
+      color: #FFD700;
     }
     
+    /* LANDING PAGE */
     .hero {
-      background: url('museum-bg.jpg') no-repeat center center;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                  url('museum-bg.jpg') no-repeat center center;
       background-size: cover;
       height: 100vh;
       width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      cursor: pointer;
+      transition: opacity 1s ease, transform 1s ease;
     }
     
-    /* Invisible clickable area over ENTER button in your image */
-    .enter-area {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 320px;
-      height: 90px;
+    .hero.hidden {
+      opacity: 0;
+      transform: scale(1.1);
+      pointer-events: none;
+      display: none;
+    }
+    
+    .title {
+      color: #FFD700;
+      font-size: 52px;
+      margin-bottom: 80px;
+      text-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+      letter-spacing: 8px;
+      z-index: 10;
+    }
+    
+    .enter-btn {
+      padding: 28px 72px;
+      font-size: 36px;
+      letter-spacing: 4px;
+      font-weight: bold;
+      color: #1a0f00;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      border: 4px solid #fff;
+      border-radius: 12px;
       cursor: pointer;
       z-index: 10;
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.9), 0 0 100px rgba(255, 215, 0, 0.5);
       transition: all 0.3s ease;
+      animation: pulse 2s infinite;
     }
     
-    .enter-area:hover {
-      box-shadow: 0 0 80px rgba(255, 215, 0, 0.6);
-      border-radius: 12px;
+    .enter-btn:hover { transform: scale(1.08); }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.9), 0 0 100px rgba(255, 215, 0, 0.5); }
+      50% { box-shadow: 0 0 60px rgba(255, 215, 0, 1), 0 0 120px rgba(255, 215, 0, 0.7); }
     }
     
-    /* WIZARD WALKING ANIMATION */
+    /* WIZARD WALKING */
     .wizard {
       position: absolute;
       bottom: 18%;
@@ -67,59 +91,153 @@
       100% { left: 38%; transform: translateY(0px); }
     }
     
-    /* FLOATING CANDLE PARTICLES */
+    /* PARTICLES */
     .particle {
       position: absolute;
-      width: 5px;
-      height: 5px;
+      width: 4px;
+      height: 4px;
       background: #FFD700;
       border-radius: 50%;
-      box-shadow: 0 0 15px #FFD700;
-      animation: float 10s infinite ease-in-out;
-      opacity: 0;
-      pointer-events: none;
+      box-shadow: 0 0 10px #FFD700;
+      animation: float 8s infinite ease-in-out;
+      opacity: 0.7;
     }
     
     @keyframes float {
-      0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.8; }
-      100% { transform: translateY(-10vh) translateX(30px) scale(1.2); opacity: 0; }
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10%, 90% { opacity: 0.7; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
     }
     
-    .particle:nth-child(1) { left: 15%; animation-delay: 0s; }
+    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
     .particle:nth-child(2) { left: 30%; animation-delay: 2s; }
-    .particle:nth-child(3) { left: 45%; animation-delay: 4s; }
-    .particle:nth-child(4) { left: 60%; animation-delay: 1s; }
-    .particle:nth-child(5) { left: 75%; animation-delay: 3s; }
-    .particle:nth-child(6) { left: 85%; animation-delay: 5s; }
-  </style>
-</head>
-<body>
-  <div class="hero" onclick="enterMuseum()">
-    <!-- Floating candle particles -->
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
+    .particle:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 70%; animation-delay: 1s; }
+    .particle:nth-child(5) { left: 90%; animation-delay: 3s; }
     
-    <!-- WIZARD THAT WALKS IN -->
-    <div class="wizard"></div>
-    
-    <!-- Invisible clickable zone over the ENTER button in your image -->
-    <div class="enter-area" title="Enter the Museum"></div>
-  </div>
-
-  <script>
-    function enterMuseum() {
-      document.body.style.transition = 'opacity 1.2s ease';
-      document.body.style.opacity = '0';
-      setTimeout(() => {
-        window.location.href = 'museum-interior.html'; // Change to your next page
-      }, 1200);
+    /* CARDS PAGE */
+    .museum-interior {
+      display: none;
+      min-height: 100vh;
+      padding: 80px 40px;
+      background: linear-gradient(180deg, #1a0f00 0%, #0a0a0a 100%);
+      opacity: 0;
+      transition: opacity 1s ease 0.5s;
     }
-  </script>
-</body>
-</html>
+    
+    .museum-interior.show {
+      display: block;
+      opacity: 1;
+    }
+    
+    .interior-title {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 60px;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+      letter-spacing: 4px;
+    }
+    
+    .back-btn {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      padding: 12px 24px;
+      background: rgba(255, 215, 0, 0.2);
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 100;
+    }
+    
+    .back-btn:hover {
+      background: rgba(255, 215, 0, 0.4);
+    }
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .card {
+      background: rgba(20, 15, 5, 0.8);
+      border: 2px solid #FFD700;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: cardFadeIn 0.6s ease forwards;
+    }
+    
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    
+    @keyframes cardFadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    }
+    
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .card-content { padding: 24px; }
+    .card-title { font-size: 24px; margin-bottom: 12px; color: #FFD700; }
+    .card-desc { font-size: 14px; color: #D4AF37; line-height: 1.6; }
+    
+    /* POPUP MODAL FOR EXHIBITS */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      animation: modalFadeIn 0.4s ease;
+    }
+    
+    .modal.show {
+      display: flex;
+    }
+    
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .modal-content {
+      background: linear-gradient(135deg, #1a0f00, #0a0a0a);
+      border: 3px solid #FFD700;
+      border-radius: 16px;
+      max-width: 900px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 0 80px rgba(255, 215, 0, 0.5);
+      animation: modalSlideUp 0.4s ease;
+    }
+    
+    @keyframes modalSlideUp {
+      from { transform: translateY
