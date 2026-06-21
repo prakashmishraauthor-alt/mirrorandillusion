@@ -69,33 +69,22 @@ function revealButton() {
 WIZARD WALK
 ----------------------------------------*/
 
-wizard.classList.add("walking");
+/*==================================
+START WIZARD
+==================================*/
 
-wizard.animate(
+wizard.classList.add("walk");
 
-[
-    {
-        left: "-180px"
-    },
 
-    {
-        left: "42%"
-    }
+setTimeout(()=>{
 
-],
+    wizard.classList.remove("walk");
 
-{
+    wizard.classList.add("magic");
 
-    duration:3000,
+    revealButton();
 
-    fill:"forwards",
-
-    easing:"ease-out"
-
-}
-
-);
-
+},3000);
 /*----------------------------------------
 STOP WALK
 ----------------------------------------*/
