@@ -166,50 +166,105 @@ TAGLINE
 
 }
 
+/*====================================
+MAGICAL ENTER BUTTON
+====================================*/
 
-/*=========================
-ENTER BUTTON
-=========================*/
+.enter-button{
 
-#enterButton{
+    position:absolute;
 
-    margin-top:70px;
+    left:50%;
+    top:65%;
 
-    padding:22px 70px;
+    transform:translate(-50%,-50%);
 
-    font-size:22px;
+    display:block;
 
-    letter-spacing:3px;
+    width:520px;
 
-    font-family:'Cinzel',serif;
+    opacity:0;
 
-    border:none;
+    pointer-events:none;
 
-    border-radius:10px;
+    transition:
+    opacity 1.2s ease,
+    transform .35s ease;
 
-    cursor:pointer;
+    z-index:50;
 
-    color:#2d2200;
+}
 
-    background:
 
-    linear-gradient(
+.enter-button.show{
 
-    135deg,
+    opacity:1;
 
-    #ffd76b,
+    pointer-events:auto;
 
-    #c99512
+}
 
-    );
 
-    transition:.35s;
+.enter-button img{
 
-    box-shadow:
+    width:100%;
 
-    0 0 25px rgba(255,215,0,.45),
+    display:block;
 
-    0 0 60px rgba(255,215,0,.2);
+    filter:
+    drop-shadow(0 0 18px #29ff61)
+    drop-shadow(0 0 35px #00ff66)
+    drop-shadow(0 0 60px rgba(0,255,120,.8));
+
+    animation:buttonGlow 2.5s ease-in-out infinite;
+
+}
+
+
+.enter-button:hover{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.05);
+
+}
+
+
+.enter-button:active{
+
+    transform:
+    translate(-50%,-50%)
+    scale(.98);
+
+}
+
+
+@keyframes buttonGlow{
+
+0%{
+
+filter:
+drop-shadow(0 0 10px #27ff59)
+drop-shadow(0 0 30px #00ff66);
+
+}
+
+50%{
+
+filter:
+drop-shadow(0 0 25px #6dff86)
+drop-shadow(0 0 55px #33ff77)
+drop-shadow(0 0 90px #00ff99);
+
+}
+
+100%{
+
+filter:
+drop-shadow(0 0 10px #27ff59)
+drop-shadow(0 0 30px #00ff66);
+
+}
 
 }
 
