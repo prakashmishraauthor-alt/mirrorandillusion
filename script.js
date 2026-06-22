@@ -8,7 +8,7 @@ const museum = document.getElementById("museum");
 const wizard = document.getElementById("wizard");
 const enterButton = document.getElementById("enterButton");
 const particles = document.getElementById("particles");
-
+const bgMusic = document.getElementById("bgMusic");
 /*----------------------------------------
 INITIAL
 ----------------------------------------*/
