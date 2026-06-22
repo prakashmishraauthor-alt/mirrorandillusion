@@ -166,8 +166,10 @@ TAGLINE
 
 }
 
+
+
 /*====================================
-MAGICAL ENTER BUTTON
+ENTER BUTTON
 ====================================*/
 
 .enter-button{
@@ -175,26 +177,36 @@ MAGICAL ENTER BUTTON
     position:absolute;
 
     left:50%;
-    top:65%;
+    bottom:14%;
 
-    transform:translate(-50%,-50%);
+    transform:translateX(-50%);
 
-    display:block;
-
-    width:520px;
+    width:240px;      /* Change this to 220, 240, 280 etc. */
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:
-    opacity 1.2s ease,
-    transform .35s ease;
+    z-index:100;
 
-    z-index:50;
+    transition:opacity .8s ease,
+               transform .3s ease;
 
 }
 
+.enter-button img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    filter:
+    drop-shadow(0 0 12px #00ff66)
+    drop-shadow(0 0 30px #00ff66);
+
+}
 
 .enter-button.show{
 
@@ -204,70 +216,21 @@ MAGICAL ENTER BUTTON
 
 }
 
-
-.enter-button img{
-
-    width:100%;
-
-    display:block;
-
-    filter:
-    drop-shadow(0 0 18px #29ff61)
-    drop-shadow(0 0 35px #00ff66)
-    drop-shadow(0 0 60px rgba(0,255,120,.8));
-
-    animation:buttonGlow 2.5s ease-in-out infinite;
-
-}
-
-
 .enter-button:hover{
 
     transform:
-    translate(-50%,-50%)
+    translateX(-50%)
     scale(1.05);
 
 }
 
-
 .enter-button:active{
 
     transform:
-    translate(-50%,-50%)
+    translateX(-50%)
     scale(.98);
 
 }
-
-
-@keyframes buttonGlow{
-
-0%{
-
-filter:
-drop-shadow(0 0 10px #27ff59)
-drop-shadow(0 0 30px #00ff66);
-
-}
-
-50%{
-
-filter:
-drop-shadow(0 0 25px #6dff86)
-drop-shadow(0 0 55px #33ff77)
-drop-shadow(0 0 90px #00ff99);
-
-}
-
-100%{
-
-filter:
-drop-shadow(0 0 10px #27ff59)
-drop-shadow(0 0 30px #00ff66);
-
-}
-
-}
-
 
 /*=========================
 BUTTON HOVER
