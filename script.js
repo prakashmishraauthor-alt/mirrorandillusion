@@ -112,7 +112,7 @@ let entered=false;
 enterButton.onclick=function(){
 
     if(entered) return;
-bgMusic.play();
+
     entered=true;
 
     hero.classList.add("fade-out");
