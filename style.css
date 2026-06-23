@@ -3090,3 +3090,19 @@ LIVING BOOK ANIMATIONS
 .door-frame{
     position:relative;
 }
+#index-page .wizard,
+#wizard{
+    display:block !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    z-index:9999 !important;
+}
+
+#index-page #enterButton,
+#index-page .enter-btn,
+#enterButton{
+    display:inline-block !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    z-index:9999 !important;
+}
