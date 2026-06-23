@@ -3131,3 +3131,20 @@ LIVING BOOK ANIMATIONS
 .home-page #goldDust{
     pointer-events:none !important;
 }
+/* Fix overlays blocking the home page */
+
+#particles,
+#goldDust,
+.hero-overlay,
+.overlay,
+.fog,
+#loader {
+    pointer-events: none !important;
+}
+
+.home-page .enter-btn,
+.home-page #enterButton{
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}
