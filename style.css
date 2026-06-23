@@ -2251,6 +2251,53 @@ box-shadow:
 inset 0 0 15px rgba(0,0,0,.4);
 
 }
+...previous CSS...
+
+/*==================================
+STONE ENTRANCE
+==================================*/
+
+.hero-door{
+
+height:100vh;
+
+background:url("ancient-door.png") center center/cover no-repeat;
+
+background-size:cover;
+
+display:flex;
+justify-content:center;
+align-items:flex-end;
+
+padding-bottom:80px;
+
+position:relative;
+
+}
+
+.hero-door::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.35);
+
+}
+
+#enterHall{
+
+position:relative;
+
+z-index:10;
+
+}
+
+/*==================================
+NEXT SECTION
+==================================*/
 /*==============================
 DOOR HANDLE
 ==============================*/
