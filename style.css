@@ -1698,7 +1698,7 @@ STONE GATE
 
 .stone-gate{
 
-padding:180px 30px;
+padding:120px 30px;
 
 display:flex;
 
@@ -1706,29 +1706,37 @@ justify-content:center;
 
 align-items:center;
 
+min-height:100vh;
+
 }
 
 .gate-door{
 
-width:700px;
+width:900px;
+
+height:550px;
 
 max-width:90%;
 
-padding:80px;
+background:linear-gradient(180deg,#2a2a2a,#1b1b1b);
 
-background:#181818;
-
-border:8px solid #333;
+border:8px solid #7f7463;
 
 box-shadow:
 
-0 0 60px rgba(0,0,0,.8),
+0 0 80px rgba(0,0,0,.85),
 
-0 0 40px rgba(255,210,100,.08);
-
-text-align:center;
+0 0 40px rgba(255,210,100,.12);
 
 position:relative;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
 
@@ -1742,35 +1750,15 @@ left:50%;
 
 top:0;
 
-width:6px;
+width:3px;
 
 height:100%;
 
-background:#303030;
+background:#8d8068;
 
 transform:translateX(-50%);
 
-}
-
-.gate-door h2{
-
-font-size:54px;
-
-font-family:'Cinzel',serif;
-
-color:var(--gold-light);
-
-margin-bottom:25px;
-
-}
-
-.gate-door p{
-
-font-size:28px;
-
-line-height:1.8;
-
-margin-bottom:45px;
+box-shadow:0 0 10px rgba(255,215,100,.2);
 
 }
 
@@ -2216,131 +2204,51 @@ box-shadow:
 ANCIENT STONE DOOR
 ==================================================*/
 
-.stone-gate{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#050505;
-}
-
-.door-frame{
-
-    width:900px;
-    max-width:90%;
-
-    height:550px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border:8px solid #2d2d2d;
-
-    box-shadow:
-    0 0 80px rgba(0,0,0,.8),
-    inset 0 0 50px rgba(255,220,120,.05);
-
-}
-
 .door{
 
-    position:absolute;
+width:340px;
+height:420px;
 
-    top:0;
+background:
 
-    width:50%;
+linear-gradient(
+90deg,
+#383838,
+#4d4d4d,
+#3a3a3a);
 
-    height:100%;
+border:6px solid #8a7c66;
 
-    background:
-    linear-gradient(#3c3c3c,#181818);
+box-shadow:
 
-    transition:2s ease;
+0 0 35px rgba(0,0,0,.7),
 
-    display:flex;
+inset 0 0 25px rgba(255,255,255,.05);
 
-    justify-content:center;
+position:relative;
 
-    align-items:center;
-
-}
-
-.left-door{
-
-    left:0;
-
-    border-right:2px solid #111;
+overflow:hidden;
 
 }
 
-.right-door{
+/* wooden panels */
 
-    right:0;
+.door::before{
 
-    border-left:2px solid #111;
+content:"";
 
-}
+position:absolute;
 
-.door-symbol{
+left:30px;
+right:30px;
+top:35px;
+bottom:35px;
 
-    font-size:90px;
+border:2px solid rgba(170,145,95,.45);
 
-    color:#d9b46a;
+box-shadow:
 
-    opacity:.7;
-
-    text-shadow:
-
-    0 0 20px rgba(255,200,100,.4);
-
-}
-
-#enterHall{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:40px;
-
-    transform:translateX(-50%);
-
-    z-index:50;
-
-    padding:18px 45px;
-
-    background:none;
-
-    border:2px solid #d9b46a;
-
-    color:#d9b46a;
-
-    cursor:pointer;
-
-    letter-spacing:3px;
-
-    font-family:'Cinzel',serif;
-
-}
-
-#enterHall:hover{
-
-    background:#d9b46a;
-
-    color:#111;
-
-}
-
-.open .left-door{
-
-    transform:translateX(-100%);
-
-}
-
-.open .right-door{
-
-    transform:translateX(100%);
+inset 0 0 15px rgba(0,0,0,.4);
 
 }
 /*==================================
@@ -2492,9 +2400,6 @@ FLOATING GOLD DUST
     }
 
 }
-/*==================================================
-TEMPLE PILLARS
-==================================================*/
 
 /*=====================================
 STONE PILLARS
