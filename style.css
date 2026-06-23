@@ -2343,3 +2343,85 @@ ANCIENT STONE DOOR
     transform:translateX(100%);
 
 }
+/*==================================
+TEMPLE TORCHES
+==================================*/
+
+.torch{
+
+    position:absolute;
+
+    top:50%;
+
+    width:22px;
+
+    height:160px;
+
+    background:#4a3b27;
+
+    border-radius:10px;
+
+    transform:translateY(-50%);
+
+    z-index:5;
+
+}
+
+.torch-left{
+
+    left:70px;
+
+}
+
+.torch-right{
+
+    right:70px;
+
+}
+
+.flame{
+
+    position:absolute;
+
+    top:-38px;
+
+    left:50%;
+
+    width:34px;
+
+    height:48px;
+
+    transform:translateX(-50%);
+
+    border-radius:50% 50% 40% 40%;
+
+    background:radial-gradient(circle,#fff4b5,#ffb400,#ff6b00);
+
+    animation:flicker .18s infinite alternate;
+
+    box-shadow:
+    0 0 20px orange,
+    0 0 45px gold;
+
+}
+
+@keyframes flicker{
+
+    from{
+
+        transform:
+        translateX(-50%)
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+        translateX(-50%)
+        scale(1.12)
+        rotate(2deg);
+
+    }
+
+}
