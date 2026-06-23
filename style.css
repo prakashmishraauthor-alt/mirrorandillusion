@@ -3106,3 +3106,11 @@ LIVING BOOK ANIMATIONS
     visibility:visible !important;
     z-index:9999 !important;
 }
+.home-page #enterButton,
+.home-page .enter-btn,
+.home-page .wizard{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    z-index:99999 !important;
+}
