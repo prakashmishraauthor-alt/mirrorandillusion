@@ -2251,6 +2251,65 @@ box-shadow:
 inset 0 0 15px rgba(0,0,0,.4);
 
 }
+/*==============================
+DOOR HANDLE
+==============================*/
+
+.handle{
+
+position:absolute;
+
+width:28px;
+height:28px;
+
+border:4px solid #caa54d;
+border-radius:50%;
+
+top:50%;
+transform:translateY(-50%);
+
+background:rgba(255,215,100,.08);
+
+box-shadow:
+0 0 12px rgba(255,210,80,.45);
+
+}
+
+/* Left door handle */
+
+.left-door .handle{
+
+right:32px;
+
+}
+
+/* Right door handle */
+
+.right-door .handle{
+
+left:32px;
+
+}
+
+.handle::after{
+
+content:"";
+
+position:absolute;
+
+width:8px;
+height:8px;
+
+background:#d8b15a;
+
+border-radius:50%;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+}
 /*==================================
 TEMPLE TORCHES
 ==================================*/
