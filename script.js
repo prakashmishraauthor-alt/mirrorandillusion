@@ -185,10 +185,16 @@ document.addEventListener("mousemove",(e)=>{
 
     const y=(e.clientY/window.innerHeight-.5)*20;
 
-    heroContent.style.transform=
+  const logo = document.querySelector(".logo");
+const tagline = document.querySelector(".tagline");
 
-    `translate(${x}px,${y}px)`;
+if (logo) {
+    logo.style.transform = `translate(${x}px,${y}px)`;
+}
 
+if (tagline) {
+    tagline.style.transform = `translate(${x/2}px,${y/2}px)`;
+}
 });
 
 /*----------------------------------------
@@ -273,26 +279,30 @@ ENTER HALL
 =========================*/
 
 const button = document.getElementById("enterHall");
-
 const frame = document.querySelector(".door-frame");
 
-button.addEventListener("click",()=>{
+if (button && frame) {
 
-    frame.classList.add("open");
+    button.addEventListener("click", () => {
 
-    setTimeout(()=>{
+        frame.classList.add("open");
 
-        window.scrollTo({
+        setTimeout(() => {
 
-            top:document.querySelector(".voice-section").offsetTop,
+            const voice = document.querySelector(".voice-section");
 
-            behavior:"smooth"
+            if (voice) {
+                window.scrollTo({
+                    top: voice.offsetTop,
+                    behavior: "smooth"
+                });
+            }
 
-        });
+        }, 1800);
 
-    },1800);
+    });
 
-});
+}
 /*=========================
 SCROLL REVEAL
 =========================*/
