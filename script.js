@@ -272,25 +272,27 @@ window.addEventListener("load", () => {
 ENTER HALL
 =========================*/
 
-const enterBtn = document.getElementById("enterHall");
+const button = document.getElementById("enterHall");
 
-if(enterBtn){
+const frame = document.querySelector(".door-frame");
 
-enterBtn.addEventListener("click",()=>{
+button.addEventListener("click",()=>{
 
-document.querySelector(".stone-gate").scrollIntoView({
+    frame.classList.add("open");
 
-behavior:"smooth"
+    setTimeout(()=>{
+
+        window.scrollTo({
+
+            top:document.querySelector(".voice-section").offsetTop,
+
+            behavior:"smooth"
+
+        });
+
+    },1800);
 
 });
-
-document.body.classList.add("entered");
-
-});
-
-}
-
-
 /*=========================
 SCROLL REVEAL
 =========================*/
