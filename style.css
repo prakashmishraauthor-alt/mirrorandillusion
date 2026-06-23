@@ -2496,96 +2496,95 @@ FLOATING GOLD DUST
 TEMPLE PILLARS
 ==================================================*/
 
-.pillar-hall{
-
-    display:flex;
-
-    justify-content:space-evenly;
-
-    align-items:flex-end;
-
-    padding:80px 5%;
-
-}
+/*=====================================
+STONE PILLARS
+=====================================*/
 
 .pillar{
 
-    width:90px;
+position:absolute;
+top:0;
+bottom:0;
 
-    height:420px;
+width:90px;
+height:100%;
 
-    border-radius:8px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #262626,
-        #505050,
-        #2d2d2d
-    );
-
-    position:relative;
-
-    box-shadow:
-    inset 0 0 15px rgba(255,255,255,.05),
-    0 15px 30px rgba(0,0,0,.6);
+display:flex;
+flex-direction:column;
+align-items:center;
 
 }
 
-.pillar::before{
+/* positions */
 
-    content:"";
+.p1{left:18%;}
+.p2{left:38%;}
+.p3{right:38%;}
+.p4{right:18%;}
 
-    position:absolute;
+/* TOP */
 
-    top:-20px;
+.pillar-top{
 
-    left:-10px;
+width:110px;
+height:22px;
 
-    width:110px;
+background:linear-gradient(
+to right,
+#555,
+#8b8b8b,
+#555);
 
-    height:28px;
+border-radius:4px;
 
-    background:#555;
-
-    border-radius:4px;
-
-}
-
-.pillar::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-20px;
-
-    left:-10px;
-
-    width:110px;
-
-    height:28px;
-
-    background:#444;
-
-    border-radius:4px;
+box-shadow:
+0 5px 12px rgba(0,0,0,.55);
 
 }
 
-@media(max-width:900px){
+/* SHAFT */
 
-.pillar:nth-child(2),
-.pillar:nth-child(3){
+.pillar-body{
 
-display:none;
+width:70px;
+flex:1;
+
+background:
+linear-gradient(
+90deg,
+#42474b,
+#777,
+#555,
+#3f4447);
+
+box-shadow:
+
+inset 12px 0 rgba(255,255,255,.08),
+
+inset -12px 0 rgba(0,0,0,.45),
+
+0 0 18px rgba(0,0,0,.55);
 
 }
 
-.pillar{
+/* BASE */
 
-height:300px;
+.pillar-bottom{
 
-}
+width:110px;
+height:26px;
+
+background:linear-gradient(
+to right,
+#555,
+#8b8b8b,
+#555);
+
+border-radius:4px;
+
+box-shadow:
+0 -3px 10px rgba(255,255,255,.05),
+0 10px 20px rgba(0,0,0,.65);
 
 }
 /*==================================================
