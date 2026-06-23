@@ -464,3 +464,35 @@ heroTitle.style.transform=
 }
 
 });
+/*==================================================
+FLOATING DUST
+==================================================*/
+
+const dustContainer = document.getElementById("goldDust");
+
+if(dustContainer){
+
+    for(let i=0;i<120;i++){
+
+        const dust=document.createElement("div");
+
+        dust.className="dust";
+
+        const size=Math.random()*4+1;
+
+        dust.style.width=size+"px";
+        dust.style.height=size+"px";
+
+        dust.style.left=Math.random()*100+"%";
+
+        dust.style.animationDuration=
+        (10+Math.random()*15)+"s";
+
+        dust.style.animationDelay=
+        (Math.random()*15)+"s";
+
+        dustContainer.appendChild(dust);
+
+    }
+
+}
