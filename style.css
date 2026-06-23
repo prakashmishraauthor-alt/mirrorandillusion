@@ -2796,3 +2796,201 @@ WISDOM WALL
     color:#cccccc;
 
 }
+/*==================================================
+LIVING LIBRARY
+==================================================*/
+
+.living-library{
+
+    padding:180px 6%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #0b0b0b,
+        #111,
+        #080808);
+
+    text-align:center;
+
+}
+
+.library-heading{
+
+    font-family:'Cinzel',serif;
+
+    font-size:64px;
+
+    color:#d7b267;
+
+    margin-bottom:15px;
+
+}
+
+.library-subtitle{
+
+    color:#bbb;
+
+    font-size:24px;
+
+    margin-bottom:80px;
+
+}
+
+.bookshelf{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    position:relative;
+
+}
+
+.bookshelf::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-18px;
+
+    width:100%;
+
+    max-width:1100px;
+
+    height:22px;
+
+    background:#3d2817;
+
+    border-radius:6px;
+
+}
+
+.book{
+
+    width:90px;
+
+    height:340px;
+
+    border-radius:5px 5px 2px 2px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    transition:.45s;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+
+    0 12px 20px rgba(0,0,0,.45);
+
+}
+
+.book:hover{
+
+    transform:
+
+    translateY(-18px)
+
+    scale(1.06);
+
+}
+
+.book-title{
+
+    writing-mode:vertical-rl;
+
+    transform:rotate(180deg);
+
+    color:white;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    text-align:center;
+
+    font-family:'Cinzel',serif;
+
+}
+
+/* Individual Books */
+
+.gold{
+
+background:#8f6b22;
+
+}
+
+.green{
+
+background:#365d3f;
+
+}
+
+.blue{
+
+background:#2b4f75;
+
+}
+
+.red{
+
+background:#6b2f2f;
+
+}
+
+.brown{
+
+background:#5d4129;
+
+}
+
+.black{
+
+background:#262626;
+
+}
+
+/* Hover Glow */
+
+.book:hover{
+
+box-shadow:
+
+0 0 25px rgba(255,210,120,.35),
+
+0 20px 35px rgba(0,0,0,.6);
+
+}
+
+@media(max-width:900px){
+
+.book{
+
+width:70px;
+
+height:260px;
+
+}
+
+.library-heading{
+
+font-size:44px;
+
+}
+
+}
