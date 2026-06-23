@@ -1497,3 +1497,609 @@ grid-template-columns:1fr;
 }
 
 }
+/*==================================================
+ANCIENT WISDOM
+PHASE 2
+GRAND ENTRANCE
+assets/css/ancient-wisdom.css
+==================================================*/
+
+:root{
+    --gold:#d8b46a;
+    --gold-light:#f3d28b;
+    --bg:#080808;
+    --stone:#1d1d1d;
+    --text:#f2eee6;
+}
+
+/* =========================
+BODY
+========================= */
+
+body{
+    margin:0;
+    background:#000;
+    color:var(--text);
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at center,
+    rgba(255,190,80,.08),
+    transparent 60%),
+    linear-gradient(#030303,#111);
+    z-index:-3;
+}
+
+/* =========================
+FOG
+========================= */
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.03),
+    transparent 70%);
+    animation:fog 18s linear infinite alternate;
+    z-index:-2;
+}
+
+@keyframes fog{
+
+0%{
+transform:translateX(-5%) translateY(0);
+}
+
+100%{
+transform:translateX(5%) translateY(-2%);
+}
+
+}
+
+/* =========================
+HERO
+========================= */
+
+.wisdom-hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+z-index:2;
+
+animation:fadeUp 2s;
+
+}
+
+.hall-title{
+
+letter-spacing:8px;
+
+color:var(--gold);
+
+font-size:18px;
+
+display:block;
+
+margin-bottom:20px;
+
+}
+
+.wisdom-hero h1{
+
+font-family:'Cinzel',serif;
+
+font-size:80px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+color:var(--gold-light);
+
+text-shadow:
+
+0 0 20px rgba(255,210,120,.35);
+
+}
+
+.wisdom-hero p{
+
+font-size:28px;
+
+line-height:1.8;
+
+opacity:.85;
+
+max-width:760px;
+
+margin:auto;
+
+}
+
+/* =========================
+LIGHT RAYS
+========================= */
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+120deg,
+
+transparent 25%,
+
+rgba(255,220,140,.06) 45%,
+
+transparent 65%
+
+);
+
+animation:lightmove 12s linear infinite;
+
+}
+
+@keyframes lightmove{
+
+from{
+
+transform:translateX(-40%);
+
+}
+
+to{
+
+transform:translateX(40%);
+
+}
+
+}
+
+/* =========================
+STONE GATE
+========================= */
+
+.stone-gate{
+
+padding:180px 30px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.gate-door{
+
+width:700px;
+
+max-width:90%;
+
+padding:80px;
+
+background:#181818;
+
+border:8px solid #333;
+
+box-shadow:
+
+0 0 60px rgba(0,0,0,.8),
+
+0 0 40px rgba(255,210,100,.08);
+
+text-align:center;
+
+position:relative;
+
+}
+
+.gate-door::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+width:6px;
+
+height:100%;
+
+background:#303030;
+
+transform:translateX(-50%);
+
+}
+
+.gate-door h2{
+
+font-size:54px;
+
+font-family:'Cinzel',serif;
+
+color:var(--gold-light);
+
+margin-bottom:25px;
+
+}
+
+.gate-door p{
+
+font-size:28px;
+
+line-height:1.8;
+
+margin-bottom:45px;
+
+}
+
+/* =========================
+BUTTON
+========================= */
+
+#enterHall{
+
+padding:18px 55px;
+
+font-size:20px;
+
+letter-spacing:3px;
+
+background:transparent;
+
+color:var(--gold-light);
+
+border:2px solid var(--gold);
+
+cursor:pointer;
+
+transition:.35s;
+
+font-family:'Cinzel',serif;
+
+}
+
+#enterHall:hover{
+
+background:var(--gold);
+
+color:#111;
+
+box-shadow:
+
+0 0 30px rgba(255,210,100,.45);
+
+}
+
+/* =========================
+VOICE
+========================= */
+
+.voice-section{
+
+padding:160px 30px;
+
+text-align:center;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.voice-section h2{
+
+font-size:52px;
+
+font-family:'Cinzel',serif;
+
+margin-bottom:35px;
+
+color:var(--gold);
+
+}
+
+.voice-section p{
+
+font-size:32px;
+
+line-height:1.8;
+
+opacity:.9;
+
+margin-bottom:50px;
+
+}
+
+.listen-btn{
+
+padding:18px 45px;
+
+background:none;
+
+border:2px solid var(--gold);
+
+color:var(--gold);
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.listen-btn:hover{
+
+background:var(--gold);
+
+color:#111;
+
+}
+
+/* =========================
+SCROLLS
+========================= */
+
+.scroll-gallery{
+
+padding:140px 8%;
+
+}
+
+.scroll-gallery h2{
+
+text-align:center;
+
+font-size:62px;
+
+font-family:'Cinzel',serif;
+
+margin-bottom:90px;
+
+color:var(--gold-light);
+
+}
+
+.scroll-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:45px;
+
+}
+
+.scroll-card{
+
+background:linear-gradient(#ead7a6,#d6be85);
+
+color:#2a2418;
+
+padding:45px;
+
+border-radius:6px;
+
+transition:.4s;
+
+box-shadow:
+
+0 25px 35px rgba(0,0,0,.4);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.scroll-card:hover{
+
+transform:
+
+translateY(-14px)
+
+scale(1.03);
+
+box-shadow:
+
+0 25px 70px rgba(255,210,100,.25);
+
+}
+
+.scroll-card span{
+
+font-size:18px;
+
+letter-spacing:5px;
+
+display:block;
+
+margin-bottom:25px;
+
+}
+
+.scroll-card h3{
+
+font-family:'Cinzel',serif;
+
+font-size:32px;
+
+margin-bottom:20px;
+
+}
+
+.scroll-card p{
+
+font-size:22px;
+
+line-height:1.7;
+
+}
+
+/* =========================
+QUOTE
+========================= */
+
+.wisdom-quote{
+
+padding:180px 30px;
+
+text-align:center;
+
+}
+
+.wisdom-quote blockquote{
+
+font-size:48px;
+
+font-style:italic;
+
+max-width:900px;
+
+margin:auto;
+
+color:var(--gold-light);
+
+}
+
+.wisdom-quote span{
+
+display:block;
+
+margin-top:40px;
+
+letter-spacing:6px;
+
+font-size:18px;
+
+color:#aaa;
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+padding:60px;
+
+text-align:center;
+
+color:#777;
+
+border-top:1px solid #222;
+
+}
+
+/* =========================
+ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.wisdom-hero h1{
+
+font-size:48px;
+
+}
+
+.gate-door{
+
+padding:45px;
+
+}
+
+.gate-door h2{
+
+font-size:36px;
+
+}
+
+.voice-section p{
+
+font-size:24px;
+
+}
+
+.scroll-gallery h2{
+
+font-size:42px;
+
+}
+
+.wisdom-quote blockquote{
+
+font-size:32px;
+
+}
+
+}
