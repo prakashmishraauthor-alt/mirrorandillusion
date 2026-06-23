@@ -3075,3 +3075,18 @@ LIVING BOOK ANIMATIONS
     0 25px 50px rgba(0,0,0,.7);
 
 }
+#enterHall{
+    position:absolute;
+    left:50%;
+    bottom:40px;
+    transform:translateX(-50%);
+    z-index:9999;
+
+    display:inline-block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+}
+
+.door-frame{
+    position:relative;
+}
