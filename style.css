@@ -2425,3 +2425,70 @@ TEMPLE TORCHES
     }
 
 }
+/*==================================================
+FLOATING GOLD DUST
+==================================================*/
+
+#goldDust{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+.dust{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:#ffd777;
+
+    opacity:.25;
+
+    filter:blur(.4px);
+
+    animation:rise linear infinite;
+
+}
+
+@keyframes rise{
+
+    0%{
+
+        transform:
+        translateY(120vh)
+        translateX(0);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.4;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-20vh)
+        translateX(80px);
+
+        opacity:0;
+
+    }
+
+}
