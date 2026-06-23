@@ -3114,3 +3114,20 @@ LIVING BOOK ANIMATIONS
     opacity:1 !important;
     z-index:99999 !important;
 }
+.home-page #enterButton,
+.home-page .enter-btn{
+    position:relative !important;
+    z-index:99999 !important;
+    pointer-events:auto !important;
+}
+
+.home-page #wizard,
+.home-page .wizard{
+    pointer-events:none !important;
+}
+
+.home-page #particles,
+.home-page .particles,
+.home-page #goldDust{
+    pointer-events:none !important;
+}
