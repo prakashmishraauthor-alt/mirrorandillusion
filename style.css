@@ -2103,3 +2103,243 @@ font-size:32px;
 }
 
 }
+/*=========================
+DUST PARTICLES
+=========================*/
+
+#particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:1;
+}
+
+#particles span{
+
+position:absolute;
+
+bottom:-20px;
+
+background:rgba(255,230,170,.25);
+
+border-radius:50%;
+
+animation:float linear infinite;
+
+filter:blur(.5px);
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:
+translateY(0)
+translateX(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+translateX(80px);
+
+opacity:0;
+
+}
+
+}
+
+/*=========================
+REVEAL
+=========================*/
+
+.voice-section,
+.scroll-card,
+.wisdom-quote{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:1.2s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/*=========================
+ENTER EFFECT
+=========================*/
+
+.entered .gate-door{
+
+animation:gateGlow 2s forwards;
+
+}
+
+@keyframes gateGlow{
+
+0%{
+
+box-shadow:
+0 0 0 rgba(255,200,100,0);
+
+}
+
+100%{
+
+box-shadow:
+0 0 80px rgba(255,210,120,.35);
+
+}
+
+}
+/*==================================================
+ANCIENT STONE DOOR
+==================================================*/
+
+.stone-gate{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050505;
+}
+
+.door-frame{
+
+    width:900px;
+    max-width:90%;
+
+    height:550px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:8px solid #2d2d2d;
+
+    box-shadow:
+    0 0 80px rgba(0,0,0,.8),
+    inset 0 0 50px rgba(255,220,120,.05);
+
+}
+
+.door{
+
+    position:absolute;
+
+    top:0;
+
+    width:50%;
+
+    height:100%;
+
+    background:
+    linear-gradient(#3c3c3c,#181818);
+
+    transition:2s ease;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.left-door{
+
+    left:0;
+
+    border-right:2px solid #111;
+
+}
+
+.right-door{
+
+    right:0;
+
+    border-left:2px solid #111;
+
+}
+
+.door-symbol{
+
+    font-size:90px;
+
+    color:#d9b46a;
+
+    opacity:.7;
+
+    text-shadow:
+
+    0 0 20px rgba(255,200,100,.4);
+
+}
+
+#enterHall{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:40px;
+
+    transform:translateX(-50%);
+
+    z-index:50;
+
+    padding:18px 45px;
+
+    background:none;
+
+    border:2px solid #d9b46a;
+
+    color:#d9b46a;
+
+    cursor:pointer;
+
+    letter-spacing:3px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+#enterHall:hover{
+
+    background:#d9b46a;
+
+    color:#111;
+
+}
+
+.open .left-door{
+
+    transform:translateX(-100%);
+
+}
+
+.open .right-door{
+
+    transform:translateX(100%);
+
+}
