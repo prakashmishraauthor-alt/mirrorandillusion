@@ -236,3 +236,229 @@ window.onload=function(){
 console.log("Mirror & Illusion Ready");
 
 };
+
+/*==================================================
+ANCIENT WISDOM
+PHASE 3
+JAVASCRIPT
+==================================================*/
+
+/*=========================
+LOADER
+=========================*/
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.style.opacity = "0";
+
+        loader.style.pointerEvents = "none";
+
+        setTimeout(() => {
+
+            loader.remove();
+
+        },800);
+
+    },1800);
+
+});
+
+
+/*=========================
+ENTER HALL
+=========================*/
+
+const enterBtn = document.getElementById("enterHall");
+
+if(enterBtn){
+
+enterBtn.addEventListener("click",()=>{
+
+document.querySelector(".stone-gate").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+document.body.classList.add("entered");
+
+});
+
+}
+
+
+/*=========================
+SCROLL REVEAL
+=========================*/
+
+const reveals=document.querySelectorAll(
+
+".scroll-card,.voice-section,.wisdom-quote"
+
+);
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{threshold:.15});
+
+reveals.forEach(el=>observer.observe(el));
+
+
+/*=========================
+FLOATING DUST
+=========================*/
+
+const particles=document.getElementById("particles");
+
+if(particles){
+
+for(let i=0;i<90;i++){
+
+const p=document.createElement("span");
+
+const size=Math.random()*5+2;
+
+p.style.width=size+"px";
+p.style.height=size+"px";
+
+p.style.left=Math.random()*100+"%";
+
+p.style.animationDuration=
+
+8+Math.random()*12+"s";
+
+p.style.animationDelay=
+
+Math.random()*10+"s";
+
+particles.appendChild(p);
+
+}
+
+}
+
+
+/*=========================
+LISTEN BUTTON
+=========================*/
+
+const listen=document.querySelector(".listen-btn");
+
+if(listen){
+
+listen.addEventListener("click",()=>{
+
+listen.innerHTML="🔊 Playing...";
+
+listen.disabled=true;
+
+/*
+
+Future:
+
+Voice narration
+
+Ambient music
+
+Word highlighting
+
+*/
+
+});
+
+}
+
+
+/*=========================
+PARALLAX HERO
+=========================*/
+
+window.addEventListener("scroll",()=>{
+
+const y=window.scrollY;
+
+const hero=document.querySelector(".wisdom-hero");
+
+if(hero){
+
+hero.style.backgroundPositionY=
+
+y*0.35+"px";
+
+}
+
+});
+
+
+/*=========================
+SCROLL CARD HOVER GLOW
+=========================*/
+
+document.querySelectorAll(".scroll-card").forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+
+const y=e.clientY-rect.top;
+
+card.style.background=
+
+`radial-gradient(circle at ${x}px ${y}px,
+
+#fff2c2,
+
+#e2cb93 40%,
+
+#d2ba81)`;
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.background=
+
+"linear-gradient(#ead7a6,#d6be85)";
+
+});
+
+});
+
+
+/*=========================
+TITLE FADE
+=========================*/
+
+const heroTitle=document.querySelector(".hero-content");
+
+window.addEventListener("scroll",()=>{
+
+if(heroTitle){
+
+heroTitle.style.opacity=
+
+1-window.scrollY/500;
+
+heroTitle.style.transform=
+
+`translateY(${window.scrollY*.25}px)`;
+
+}
+
+});
