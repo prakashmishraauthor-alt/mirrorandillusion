@@ -1768,5 +1768,224 @@ JOIN THE COMMUNITY
     0 0 20px rgba(217,180,106,.3);
 
 }
+/*==================================================
+KRISHNA CHAMBER
+==================================================*/
+
+.krishna-page{
+
+    background:
+    radial-gradient(
+    circle at center,
+    rgba(120,80,20,.12),
+    transparent 50%),
+    #070707;
+
+}
+
+/*==================================================
+SECTION SPACING
+==================================================*/
+
+.krishna-section{
+
+    padding:120px 8%;
+
+}
+
+.krishna-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/*==================================================
+HEADINGS
+==================================================*/
+
+.krishna-title{
+
+    text-align:center;
+
+    font-size:62px;
+
+    color:#d9b46a;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:25px;
+
+}
+
+.krishna-subtitle{
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:auto;
+
+    color:#d4c7b0;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+}
+
+/*==================================================
+CARD GRID
+==================================================*/
+
+.krishna-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+/*==================================================
+CARDS
+==================================================*/
+
+.krishna-card{
+
+    padding:40px 30px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(42,31,21,.95),
+    rgba(18,13,9,.98));
+
+    border:2px solid rgba(217,180,106,.25);
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+.krishna-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#d9b46a;
+
+    box-shadow:
+    0 0 35px rgba(217,180,106,.18);
+
+}
+
+.krishna-card h3{
+
+    color:#e7c97e;
+
+    font-size:30px;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:15px;
+
+}
+
+.krishna-card p{
+
+    color:#d2c4ac;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+/*==================================================
+QUOTES
+==================================================*/
+
+.krishna-quote{
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    text-align:center;
+
+    color:#f0d391;
+
+    font-size:32px;
+
+    line-height:1.6;
+
+    font-family:'Cinzel',serif;
+
+}
+
+/*==================================================
+BUTTONS
+==================================================*/
+
+.krishna-btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:16px 34px;
+
+    border:1px solid #d9b46a;
+
+    color:#d9b46a;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.krishna-btn:hover{
+
+    background:#d9b46a;
+
+    color:#111;
+
+}
+
+/*==================================================
+PORTRAIT
+==================================================*/
+
+.krishna-portrait{
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid rgba(217,180,106,.4);
+
+    display:block;
+
+    margin:40px auto;
+
+    box-shadow:
+    0 0 40px rgba(217,180,106,.2);
+
+}
 
 
