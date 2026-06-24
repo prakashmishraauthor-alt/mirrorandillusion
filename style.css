@@ -2005,5 +2005,42 @@ PORTRAIT
     display:block;
 
 }
+/*==================================
+KRISHNA CLOSING
+==================================*/
+
+.krishna-closing{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.krishna-closing h2{
+
+    font-size:52px;
+
+    color:#d9b46a;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:35px;
+
+}
+
+.krishna-closing p{
+
+    font-size:22px;
+
+    line-height:2;
+
+    color:#d4c7b0;
+
+    margin-bottom:45px;
+
+}
 
 
