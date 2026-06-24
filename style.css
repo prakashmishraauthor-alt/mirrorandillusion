@@ -1987,5 +1987,14 @@ PORTRAIT
     0 0 40px rgba(217,180,106,.2);
 
 }
+.master-card-link{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    display:block;
+
+}
 
 
