@@ -2507,241 +2507,162 @@ FLOATING GOLD DUST
 
 }
 
-/*=====================================
-STONE PILLARS
-=====================================*/
+
+/*==================================
+ANCIENT STONE PILLARS
+==================================*/
 
 .pillar{
 
-position:absolute;
-top:0;
-bottom:0;
+    width:120px;
 
-width:90px;
-height:100%;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-
-}
-
-/* positions */
-
-.p1{left:18%;}
-.p2{left:38%;}
-.p3{right:38%;}
-.p4{right:18%;}
-
-/* TOP */
-
-.pillar-top{
-
-width:110px;
-height:22px;
-
-background:linear-gradient(
-to right,
-#555,
-#8b8b8b,
-#555);
-
-border-radius:4px;
-
-box-shadow:
-0 5px 12px rgba(0,0,0,.55);
-
-}
-
-/* SHAFT */
-
-.pillar-body{
-
-width:70px;
-flex:1;
-
-background:
-linear-gradient(
-90deg,
-#42474b,
-#777,
-#555,
-#3f4447);
-
-box-shadow:
-
-inset 12px 0 rgba(255,255,255,.08),
-
-inset -12px 0 rgba(0,0,0,.45),
-
-0 0 18px rgba(0,0,0,.55);
-
-}
-
-/* BASE */
-
-.pillar-bottom{
-
-width:110px;
-height:26px;
-
-background:linear-gradient(
-to right,
-#555,
-#8b8b8b,
-#555);
-
-border-radius:4px;
-
-box-shadow:
-0 -3px 10px rgba(255,255,255,.05),
-0 10px 20px rgba(0,0,0,.65);
-
-}
-/*==================================================
-SACRED SCROLL LIBRARY
-==================================================*/
-
-./*==================================================
-SACRED SCROLL LIBRARY
-==================================================*/
-
-.scroll-library{
-
-    display:block;
-
-    width:100%;
-
-    padding:150px 8%;
-
-    background:#1a1510;
+    height:650px;
 
     position:relative;
 
-    z-index:10;
-
-}
-
-.library-title{
-
-    text-align:center;
-
-    font-size:60px;
-
-    color:#d9b46a;
-
-    margin-bottom:90px;
-
-    font-family:'Cinzel',serif;
-
-}
-
-.scroll-shelf{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(320px,1fr));
-
-    gap:60px;
-
-}
-
-.ancient-scroll{
-
-    display:block;
-
-    transition:.5s;
-
-    cursor:pointer;
-
-}
-
-.ancient-scroll:hover{
-
-    transform:
-    translateY(-15px)
-    scale(1.03);
-
-}
-
-.scroll-top,
-.scroll-bottom{
-
-    height:22px;
+    border-radius:8px;
 
     background:
-    linear-gradient(#7d5633,#4f341f);
 
-    border-radius:30px;
-
-}
-
-.scroll-paper{
-
-    background:
-    linear-gradient(#f5e8be,#e5d2a0);
-
-    padding:35px;
-
-    color:#2b2418;
+    linear-gradient(
+    90deg,
+    #4b4640 0%,
+    #6a635b 15%,
+    #8a8178 30%,
+    #5d5750 50%,
+    #8d857c 70%,
+    #5a544d 85%,
+    #403b36 100%);
 
     box-shadow:
-    0 20px 35px rgba(0,0,0,.35);
+
+    inset -15px 0 20px rgba(0,0,0,.35),
+
+    inset 15px 0 20px rgba(255,255,255,.05),
+
+    0 0 25px rgba(0,0,0,.5);
+
+    overflow:hidden;
 
 }
 
-.scroll-paper span{
+/* Stone cracks */
 
-    display:block;
+.pillar::before{
 
-    letter-spacing:4px;
+    content:"";
 
-    color:#86673c;
+    position:absolute;
 
-    margin-bottom:15px;
+    inset:0;
 
-}
+    background:
 
-.scroll-paper h3{
+    repeating-linear-gradient(
 
-    margin:25px 0;
+    175deg,
 
-    font-size:30px;
+    transparent 0px,
 
-    line-height:1.3;
+    transparent 40px,
 
-    font-family:'Cinzel',serif;
+    rgba(0,0,0,.12) 41px,
 
-}
+    transparent 43px,
 
-.scroll-paper p{
+    transparent 80px);
 
-    font-size:22px;
-
-    line-height:1.8;
+    opacity:.8;
 
 }
 
-.scroll-paper a{
+/* Stone grain */
 
-    display:inline-block;
+.pillar::after{
 
-    margin-top:30px;
+    content:"";
 
-    color:#6b4724;
+    position:absolute;
 
-    text-decoration:none;
+    inset:0;
 
-    font-weight:bold;
+    background:
+
+    repeating-linear-gradient(
+
+    90deg,
+
+    rgba(255,255,255,.03) 0px,
+
+    rgba(255,255,255,.03) 2px,
+
+    transparent 2px,
+
+    transparent 8px);
 
 }
 
-.scroll-paper a:hover{
+/* Capital */
 
-    color:#000;
+.pillar-top{
+
+    position:absolute;
+
+    top:-30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:150px;
+
+    height:50px;
+
+    background:
+
+    linear-gradient(
+    #9b9288,
+    #625c55);
+
+    border-radius:8px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.4);
 
 }
+
+/* Base */
+
+.pillar-bottom{
+
+    position:absolute;
+
+    bottom:-30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:160px;
+
+    height:60px;
+
+    background:
+
+    linear-gradient(
+    #5f5953,
+    #3d3935);
+
+    border-radius:8px;
+
+    box-shadow:
+    0 -5px 15px rgba(255,255,255,.05);
+
+}
+
+
+
+
 /*==================================================
 WISDOM WALL
 ==================================================*/
@@ -2818,96 +2739,47 @@ WISDOM WALL
     color:#cccccc;
 
 }
-/*==================================================
-LIVING LIBRARY
-==================================================*/
+/*==================================
+GRAND WISDOM TABLE
+==================================*/
 
-.living-library{
+.wisdom-table-section{
 
-    padding:180px 6%;
-
-    background:
-    linear-gradient(
-        to bottom,
-        #0b0b0b,
-        #111,
-        #080808);
+    padding:140px 8%;
 
     text-align:center;
 
+    background:
+    linear-gradient(
+    to bottom,
+    #1a1510,
+    #241b12);
+
 }
 
-.library-heading{
+.wisdom-table-title{
+
+    font-size:58px;
+
+    color:#d9b46a;
 
     font-family:'Cinzel',serif;
 
-    font-size:64px;
-
-    color:#d7b267;
-
-    margin-bottom:15px;
+    margin-bottom:20px;
 
 }
 
-.library-subtitle{
+.wisdom-table-subtitle{
 
-    color:#bbb;
+    font-size:22px;
 
-    font-size:24px;
+    color:#cfc2a7;
 
-    margin-bottom:80px;
-
-}
-
-.bookshelf{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    gap:14px;
-
-    flex-wrap:wrap;
-
-    position:relative;
+    margin-bottom:70px;
 
 }
 
-.bookshelf::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-18px;
-
-    width:100%;
-
-    max-width:1100px;
-
-    height:22px;
-
-    background:#3d2817;
-
-    border-radius:6px;
-
-}
-
-.book{
-
-    width:90px;
-
-    height:340px;
-
-    border-radius:5px 5px 2px 2px;
-
-    cursor:pointer;
-
-    position:relative;
-
-    transition:.45s;
+.wisdom-table{
 
     display:flex;
 
@@ -2915,261 +2787,82 @@ LIVING LIBRARY
 
     align-items:center;
 
+    gap:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.candle{
+
+    font-size:70px;
+
+    animation:flicker 2s infinite;
+
+}
+
+.open-scroll{
+
+    max-width:700px;
+
+    padding:50px;
+
+    background:
+    linear-gradient(
+    #f5e8be,
+    #e4d09a);
+
+    border:5px solid #9d7b39;
+
+    border-radius:12px;
+
+    color:#2b2418;
+
     box-shadow:
-
-    0 12px 20px rgba(0,0,0,.45);
-
-}
-
-.book:hover{
-
-    transform:
-
-    translateY(-18px)
-
-    scale(1.06);
+    0 20px 40px rgba(0,0,0,.4);
 
 }
 
-.book-title{
+.open-scroll span{
 
-    writing-mode:vertical-rl;
+    letter-spacing:4px;
 
-    transform:rotate(180deg);
+    color:#86673c;
 
-    color:white;
+}
 
-    font-size:18px;
+.open-scroll h3{
 
-    letter-spacing:2px;
+    margin:25px 0;
 
-    text-align:center;
+    font-size:38px;
+
+    line-height:1.4;
 
     font-family:'Cinzel',serif;
 
 }
 
-/* Individual Books */
+.open-scroll p{
 
-.gold{
+    font-size:22px;
 
-background:#8f6b22;
-
-}
-
-.green{
-
-background:#365d3f;
+    line-height:1.8;
 
 }
 
-.blue{
+@keyframes flicker{
 
-background:#2b4f75;
+    0%,100%{
+        transform:scale(1);
+    }
 
-}
-
-.red{
-
-background:#6b2f2f;
-
-}
-
-.brown{
-
-background:#5d4129;
+    50%{
+        transform:scale(1.08);
+    }
 
 }
 
-.black{
-
-background:#262626;
-
-}
-
-/* Hover Glow */
-
-.book:hover{
-
-box-shadow:
-
-0 0 25px rgba(255,210,120,.35),
-
-0 20px 35px rgba(0,0,0,.6);
-
-}
-
-@media(max-width:900px){
-
-.book{
-
-width:70px;
-
-height:260px;
-
-}
-
-.library-heading{
-
-font-size:44px;
-
-}
-
-}
-/*==================================================
-LIVING BOOK ANIMATIONS
-==================================================*/
-
-.book{
-
-    overflow:hidden;
-
-}
-
-.book::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:18px;
-    height:100%;
-
-    background:rgba(255,255,255,.18);
-
-    transition:.4s;
-
-}
-
-.book::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    right:0;
-
-    width:4px;
-    height:100%;
-
-    background:rgba(0,0,0,.25);
-
-}
-
-.book:hover{
-
-    transform:
-    translateY(-20px)
-    translateZ(30px)
-    rotateY(-10deg);
-
-}
-
-.book:hover::before{
-
-    width:28px;
-
-    background:rgba(255,255,255,.28);
-
-}
-
-.book:active{
-
-    transform:
-    translateY(-12px)
-    scale(.98);
-
-}
-.selected{
-
-    transform:
-    translateY(-30px)
-    scale(1.08);
-
-    box-shadow:
-
-    0 0 40px rgba(255,210,120,.5),
-
-    0 25px 50px rgba(0,0,0,.7);
-
-}
-#enterHall{
-    position:absolute;
-    left:50%;
-    bottom:40px;
-    transform:translateX(-50%);
-    z-index:9999;
-
-    display:inline-block !important;
-    visibility:visible !important;
-    opacity:1 !important;
-}
-
-.door-frame{
-    position:relative;
-}
-#index-page .wizard,
-#wizard{
-    display:block !important;
-    opacity:1 !important;
-    visibility:visible !important;
-    z-index:9999 !important;
-}
-
-#index-page #enterButton,
-#index-page .enter-btn,
-#enterButton{
-    display:inline-block !important;
-    opacity:1 !important;
-    visibility:visible !important;
-    z-index:9999 !important;
-}
-.home-page #enterButton,
-.home-page .enter-btn,
-.home-page .wizard{
-    display:block !important;
-    visibility:visible !important;
-    opacity:1 !important;
-    z-index:99999 !important;
-}
-.home-page #enterButton,
-.home-page .enter-btn{
-    position:relative !important;
-    z-index:99999 !important;
-    pointer-events:auto !important;
-}
-
-.home-page #wizard,
-.home-page .wizard{
-    pointer-events:none !important;
-}
-
-.home-page #particles,
-.home-page .particles,
-.home-page #goldDust{
-    pointer-events:none !important;
-}
-/* Fix overlays blocking the home page */
-
-#particles,
-#goldDust,
-.hero-overlay,
-.overlay,
-.fog,
-#loader {
-    pointer-events: none !important;
-}
-
-.home-page .enter-btn,
-.home-page #enterButton{
-    position: relative !important;
-    z-index: 999999 !important;
-    pointer-events: auto !important;
-}
 /*==================================
 HALL OF MASTERS
 ==================================*/
@@ -3358,5 +3051,128 @@ font-size:17px;
 line-height:1.8;
 
 color:#d8ccb7;
+
+}
+/*==================================
+GRAND WISDOM TABLE
+==================================*/
+
+.wisdom-table-section{
+
+    padding:140px 8%;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    to bottom,
+    #1a1510,
+    #241b12);
+
+}
+
+.wisdom-table-title{
+
+    font-size:58px;
+
+    color:#d9b46a;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:20px;
+
+}
+
+.wisdom-table-subtitle{
+
+    font-size:22px;
+
+    color:#cfc2a7;
+
+    margin-bottom:70px;
+
+}
+
+.wisdom-table{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.candle{
+
+    font-size:70px;
+
+    animation:flicker 2s infinite;
+
+}
+
+.open-scroll{
+
+    max-width:700px;
+
+    padding:50px;
+
+    background:
+    linear-gradient(
+    #f5e8be,
+    #e4d09a);
+
+    border:5px solid #9d7b39;
+
+    border-radius:12px;
+
+    color:#2b2418;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.4);
+
+}
+
+.open-scroll span{
+
+    letter-spacing:4px;
+
+    color:#86673c;
+
+}
+
+.open-scroll h3{
+
+    margin:25px 0;
+
+    font-size:38px;
+
+    line-height:1.4;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.open-scroll p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+@keyframes flicker{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
 
 }
