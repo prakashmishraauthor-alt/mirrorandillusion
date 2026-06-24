@@ -1495,5 +1495,125 @@ line-height:1.8;
 color:#d8ccb7;
 
 }
+/*==================================
+LIVING WISDOM LIBRARY
+==================================*/
+
+.wisdom-library{
+
+    padding:140px 8%;
+
+    text-align:center;
+
+}
+
+.library-header{
+
+    max-width:900px;
+
+    margin:0 auto 80px;
+
+}
+
+.library-header h2{
+
+    font-size:58px;
+
+    color:#d9b46a;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:25px;
+
+    text-shadow:
+    0 0 20px rgba(217,180,106,.2);
+
+}
+
+.library-header p{
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    color:#d6c9b0;
+
+}
+
+.wisdom-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+.wisdom-path{
+
+    padding:40px 30px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(42,31,21,.95),
+    rgba(22,16,11,.98));
+
+    border:2px solid rgba(217,180,106,.25);
+
+    border-radius:18px;
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,.25);
+
+}
+
+.wisdom-path:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:#d9b46a;
+
+    box-shadow:
+    0 0 35px rgba(217,180,106,.18);
+
+}
+
+.wisdom-path span{
+
+    display:block;
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+}
+
+.wisdom-path h3{
+
+    font-size:30px;
+
+    color:#e7c97e;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:18px;
+
+}
+
+.wisdom-path p{
+
+    color:#d2c4ac;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
 
 
