@@ -2602,9 +2602,23 @@ box-shadow:
 SACRED SCROLL LIBRARY
 ==================================================*/
 
+./*==================================================
+SACRED SCROLL LIBRARY
+==================================================*/
+
 .scroll-library{
 
+    display:block;
+
+    width:100%;
+
     padding:150px 8%;
+
+    background:#1a1510;
+
+    position:relative;
+
+    z-index:10;
 
 }
 
@@ -2635,6 +2649,8 @@ SACRED SCROLL LIBRARY
 
 .ancient-scroll{
 
+    display:block;
+
     transition:.5s;
 
     cursor:pointer;
@@ -2655,9 +2671,7 @@ SACRED SCROLL LIBRARY
     height:22px;
 
     background:
-    linear-gradient(
-    #7d5633,
-    #4f341f);
+    linear-gradient(#7d5633,#4f341f);
 
     border-radius:30px;
 
@@ -2666,28 +2680,26 @@ SACRED SCROLL LIBRARY
 .scroll-paper{
 
     background:
-
-    linear-gradient(
-
-    #f5e8be,
-
-    #e5d2a0);
+    linear-gradient(#f5e8be,#e5d2a0);
 
     padding:35px;
 
     color:#2b2418;
 
     box-shadow:
-
     0 20px 35px rgba(0,0,0,.35);
 
 }
 
 .scroll-paper span{
 
+    display:block;
+
     letter-spacing:4px;
 
     color:#86673c;
+
+    margin-bottom:15px;
 
 }
 
