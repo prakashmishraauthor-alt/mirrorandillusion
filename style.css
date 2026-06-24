@@ -1616,4 +1616,157 @@ LIVING WISDOM LIBRARY
 
 }
 
+/*==================================
+JOIN THE COMMUNITY
+==================================*/
+
+.community-section{
+
+    padding:140px 8%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.community-box{
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:70px 60px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(35,25,18,.95),
+    rgba(18,13,9,.98));
+
+    border:2px solid rgba(217,180,106,.25);
+
+    border-radius:24px;
+
+    box-shadow:
+    0 0 40px rgba(217,180,106,.08);
+
+}
+
+.community-box h2{
+
+    font-size:56px;
+
+    color:#d9b46a;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:15px;
+
+}
+
+.community-box h3{
+
+    font-size:30px;
+
+    color:#f0d391;
+
+    margin-bottom:30px;
+
+    font-family:'Cinzel',serif;
+
+    font-weight:400;
+
+}
+
+.community-box p{
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    color:#d4c7b0;
+
+}
+
+.community-form{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.community-form input{
+
+    width:420px;
+
+    max-width:100%;
+
+    padding:18px 24px;
+
+    background:#111;
+
+    border:1px solid rgba(217,180,106,.3);
+
+    border-radius:12px;
+
+    color:#fff;
+
+    font-size:18px;
+
+    outline:none;
+
+}
+
+.community-form input:focus{
+
+    border-color:#d9b46a;
+
+    box-shadow:
+    0 0 15px rgba(217,180,106,.2);
+
+}
+
+.community-form button{
+
+    padding:18px 34px;
+
+    background:#d9b46a;
+
+    color:#111;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.community-form button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(217,180,106,.3);
+
+}
+
 
