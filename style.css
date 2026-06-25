@@ -2086,4 +2086,36 @@ MASTER PORTRAIT FRAME
 
 }
 
+/*==================================
+AUDIO FIX
+==================================*/
+
+.krishna-section,
+.krishna-container,
+.krishna-closing{
+
+    position:relative;
+    z-index:1;
+
+}
+
+audio{
+
+    display:block;
+    width:100%;
+    max-width:700px;
+    margin:30px auto;
+    position:relative;
+    z-index:9999;
+    pointer-events:auto;
+
+}
+
+audio,
+audio *{
+
+    pointer-events:auto !important;
+
+}
+
 
