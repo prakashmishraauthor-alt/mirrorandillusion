@@ -2042,5 +2042,48 @@ KRISHNA CLOSING
     margin-bottom:45px;
 
 }
+/*==================================
+MASTER PORTRAIT FRAME
+==================================*/
+
+.master-frame{
+
+    width:320px;
+
+    height:420px;
+
+    margin:50px auto;
+
+    padding:12px;
+
+    border:3px solid #d9b46a;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    145deg,
+    #3d2b18,
+    #1a120b);
+
+    box-shadow:
+    0 0 25px rgba(217,180,106,.4),
+    0 0 60px rgba(217,180,106,.15);
+
+}
+
+.master-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:6px;
+
+    display:block;
+
+}
 
 
