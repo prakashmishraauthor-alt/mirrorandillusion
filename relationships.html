@@ -1,0 +1,496 @@
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:
+radial-gradient(circle at center,
+rgba(255,180,70,0.08),
+transparent 60%),
+#0d0a07;
+color:#e8dcc2;
+font-family:'Cormorant Garamond',serif;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle,
+rgba(255,180,70,.12),
+transparent 70%);
+pointer-events:none;
+}
+
+.hero-content{
+max-width:900px;
+z-index:2;
+}
+
+.hero-title{
+font-family:'Cinzel',serif;
+font-size:4rem;
+color:#f4d18f;
+letter-spacing:3px;
+text-shadow:
+0 0 20px rgba(255,200,100,.4),
+0 0 40px rgba(255,200,100,.2);
+margin-bottom:30px;
+}
+
+.hero-question{
+font-size:2rem;
+font-style:italic;
+color:#fff2d6;
+margin-bottom:40px;
+}
+
+.hero-intro{
+font-size:1.4rem;
+max-width:750px;
+margin:auto;
+color:#d8ccb4;
+}
+
+.scroll-down{
+margin-top:60px;
+font-size:2rem;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(10px);
+}
+}
+
+/* ================= SECTION ================= */
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:100px 30px;
+}
+
+.section-title{
+font-family:'Cinzel',serif;
+font-size:2.3rem;
+color:#f0c97d;
+margin-bottom:35px;
+text-align:center;
+}
+
+.section-text{
+font-size:1.35rem;
+color:#ddd0b6;
+}
+
+/* ================= SCROLL BOX ================= */
+
+.scroll-box{
+background:
+linear-gradient(
+135deg,
+rgba(255,220,160,.05),
+rgba(255,220,160,.02)
+);
+border:1px solid rgba(255,210,120,.2);
+padding:40px;
+border-radius:18px;
+margin-top:40px;
+backdrop-filter:blur(8px);
+}
+
+/* ================= BRIDGE ================= */
+
+.bridge{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+gap:20px;
+align-items:center;
+margin-top:50px;
+text-align:center;
+}
+
+.bridge-card{
+padding:30px;
+border:1px solid rgba(255,210,120,.2);
+border-radius:18px;
+background:rgba(255,255,255,.03);
+}
+
+.plus{
+font-size:3rem;
+color:#f0c97d;
+}
+
+/* ================= PROTOCOL ================= */
+
+.protocol{
+margin-top:40px;
+display:grid;
+gap:20px;
+}
+
+.step{
+background:rgba(255,255,255,.03);
+border-left:4px solid #d9ab54;
+padding:20px;
+font-size:1.25rem;
+}
+
+/* ================= QUOTE ================= */
+
+.quote{
+max-width:900px;
+margin:120px auto;
+text-align:center;
+font-size:2rem;
+font-style:italic;
+color:#fff0cc;
+padding:0 30px;
+}
+
+/* ================= NEXT ================= */
+
+.next{
+text-align:center;
+padding:100px 20px;
+}
+
+.next h2{
+font-family:'Cinzel',serif;
+color:#f0c97d;
+margin-bottom:40px;
+}
+
+.next-links{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.next-links a{
+text-decoration:none;
+color:#f6d28e;
+border:1px solid rgba(255,210,120,.25);
+padding:14px 25px;
+border-radius:40px;
+transition:.4s;
+}
+
+.next-links a:hover{
+background:rgba(255,210,120,.08);
+transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:2.5rem;
+}
+
+.hero-question{
+font-size:1.5rem;
+}
+
+.bridge{
+grid-template-columns:1fr;
+}
+
+.plus{
+display:none;
+}
+
+}
+
+</style>
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 class="hero-title">
+RELATIONSHIPS
+</h1>
+
+<div class="hero-question">
+"What if the quality of your relationships reflects the quality of your relationship with yourself?"
+</div>
+
+<p class="hero-intro">
+Every human being longs for connection. Yet many relationships become
+sources of conflict, misunderstanding and pain. The path to deeper
+relationships begins not with changing others, but with understanding ourselves.
+</p>
+
+<div class="scroll-down">
+▼
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Why Relationships Feel Difficult Today
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+We live in a hyperconnected world, yet many people feel lonelier than ever.
+
+Constant distractions reduce meaningful conversations.
+
+Social media encourages comparison.
+
+Busy schedules leave little room for genuine connection.
+
+Many people enter relationships seeking validation, security or completion.
+
+When relationships become a source of emotional dependency,
+conflict often follows.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+What Ancient Wisdom Knew
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Ancient wisdom traditions taught that love is not possession.
+
+The Buddha emphasized compassion and understanding.
+
+The Bhagavad Gita encouraged acting with love while releasing attachment to outcomes.
+
+True relationships flourish when people appreciate one another
+without trying to control one another.
+
+The more attached we become to expectations,
+the more suffering we create.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+What Psychology Reveals
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Modern psychology shows that our early experiences shape how we connect with others.
+
+People with secure attachment tend to trust and communicate openly.
+
+People with insecure attachment often fear rejection,
+abandonment or vulnerability.
+
+Research consistently shows that healthy relationships depend on:
+
+Trust
+
+Communication
+
+Empathy
+
+Emotional regulation
+
+Mutual respect
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Where Wisdom Meets Science
+</h2>
+
+<div class="bridge">
+
+<div class="bridge-card">
+<h3>Ancient Insight</h3>
+<p>Love without attachment.</p>
+</div>
+
+<div class="plus">+</div>
+
+<div class="bridge-card">
+<h3>Modern Science</h3>
+<p>Secure attachment creates healthier relationships.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Signs of an Unhealthy Relationship Pattern
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+✓ Constant need for approval
+
+✓ Fear of being alone
+
+✓ Difficulty expressing feelings
+
+✓ Excessive jealousy
+
+✓ Trying to control others
+
+✓ Losing your identity in relationships
+
+✓ Holding unrealistic expectations
+
+These patterns often arise not from lack of love,
+but from fear.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+The 10 Minute Connection Reset
+</h2>
+
+<div class="protocol">
+
+<div class="step">
+✓ 2 Minutes Deep Breathing Before Important Conversations
+</div>
+
+<div class="step">
+✓ 3 Minutes Reflecting On What You Truly Feel
+</div>
+
+<div class="step">
+✓ 2 Minutes Listening Without Interrupting
+</div>
+
+<div class="step">
+✓ 3 Minutes Expressing Appreciation To Someone
+</div>
+
+</div>
+
+</section>
+
+<div class="quote">
+
+"Seek first to understand,
+then to be understood."
+
+</div>
+
+<section class="section">
+
+<h2 class="section-title">
+Mirror & Illusion Insight
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Many people search for someone who will complete them.
+
+But completeness cannot be found in another person.
+
+A healthy relationship is not two halves becoming whole.
+
+It is two whole individuals sharing their journey together.
+
+When you stop asking others to fill an inner void,
+relationships become lighter, freer and more authentic.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="next">
+
+<h2>
+Continue Your Journey
+</h2>
+
+<div class="next-links">
+
+<a href="confidence.html">
+Confidence & Self-Worth
+</a>
+
+<a href="purpose.html">
+Purpose & Direction
+</a>
+
+<a href="mindfulness.html">
+Mindfulness Practice
+</a>
+
+<a href="original-self.html">
+Original Self Program
+</a>
+
+</div>
+
+</section>
+
+</body>
+```
