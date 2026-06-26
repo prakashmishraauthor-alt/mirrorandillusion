@@ -911,7 +911,47 @@ transform:translateX(40%);
 
 }
 
+.four-pillars-intro{
 
+max-width:900px;
+
+margin:100px auto 70px;
+
+text-align:center;
+
+padding:0 25px;
+
+}
+
+.four-pillars-intro h2{
+
+font-family:'Cinzel',serif;
+
+font-size:2.7rem;
+
+color:#d4af37;
+
+letter-spacing:2px;
+
+margin-bottom:25px;
+
+text-shadow:0 0 15px rgba(212,175,55,.25);
+
+}
+
+.four-pillars-intro p{
+
+font-size:1.15rem;
+
+line-height:2;
+
+color:#d7ccb5;
+
+max-width:760px;
+
+margin:auto;
+
+}
 /* =========================
 VOICE
 ========================= */
