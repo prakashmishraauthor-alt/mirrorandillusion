@@ -9,6 +9,9 @@
 
 <title>Mirror & Illusion</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -29,11 +32,13 @@ font-family:'Inter',sans-serif;
 
 background:
 radial-gradient(circle at top,
-#3b2818 0%,
-#1b140f 45%,
-#090807 100%);
+#4a311a 0%,
+#221710 40%,
+#0b0908 100%);
 
-color:#f5f2ea;
+color:#f4efe4;
+
+min-height:100vh;
 
 display:flex;
 
@@ -41,48 +46,45 @@ justify-content:center;
 
 align-items:center;
 
-min-height:100vh;
-
-padding:30px;
-
-overflow:hidden;
+padding:40px 20px;
 
 }
 
-/*========================
+/*=========================
 HERO
-========================*/
+=========================*/
 
 .hero{
 
+max-width:900px;
+
 width:100%;
-max-width:950px;
 
 text-align:center;
 
-animation:fadeIn 1.2s ease;
+animation:fade 1.2s ease;
 
 }
 
-.hero-label{
+.badge{
 
 display:inline-block;
 
-padding:8px 24px;
+padding:10px 24px;
 
 border:1px solid rgba(212,175,55,.35);
 
-border-radius:50px;
+border-radius:40px;
 
 color:#d4af37;
 
-font-size:.85rem;
-
 letter-spacing:3px;
 
-margin-bottom:35px;
+font-size:.8rem;
 
 text-transform:uppercase;
+
+margin-bottom:35px;
 
 }
 
@@ -90,54 +92,56 @@ text-transform:uppercase;
 
 font-family:'Cinzel',serif;
 
-.hero h1{
-
-font-size:clamp(2.6rem,7vw,5rem);
+font-size:clamp(2.8rem,8vw,5.3rem);
 
 line-height:1.05;
 
-letter-spacing:5px;
+letter-spacing:4px;
 
-color:#d4af37;
+color:#e0bc63;
 
 margin-bottom:35px;
 
 text-shadow:
-0 0 20px rgba(212,175,55,.25);
+0 0 18px rgba(224,188,99,.25);
 
 }
 
 .hero p{
 
-max-width:760px;
+max-width:720px;
 
 margin:auto;
 
-font-size:clamp(1.05rem,2vw,1.3rem);
+font-size:clamp(1rem,2vw,1.25rem);
 
 line-height:2;
 
-color:#d9cfbb;
+color:#d9ceb8;
 
 margin-bottom:55px;
 
 }
 
-/*========================
+/*=========================
 BUTTON
-========================*/
+=========================*/
 
 .hero-btn{
 
 display:inline-block;
 
-padding:18px 60px;
+padding:18px 55px;
 
 background:#d4af37;
 
-color:#111 !important;
+background:linear-gradient(180deg,#e5c46b,#c69231);
 
-text-decoration:none;
+border:2px solid #f4dd9a;
+
+border-radius:12px;
+
+color:#111;
 
 font-family:'Cinzel',serif;
 
@@ -147,54 +151,54 @@ font-weight:700;
 
 letter-spacing:3px;
 
-border:2px solid #f0d47a;
+text-decoration:none;
 
-border-radius:12px;
+box-shadow:
+0 0 25px rgba(212,175,55,.35);
 
-box-shadow:0 0 25px rgba(212,175,55,.45);
-
-transition:.3s ease;
+transition:.35s ease;
 
 }
 
 .hero-btn:hover{
 
-background:#e6c76c;
+transform:translateY(-4px);
 
-transform:translateY(-3px);
-
-box-shadow:0 0 40px rgba(212,175,55,.65);
+box-shadow:
+0 0 45px rgba(212,175,55,.65);
 
 }
-/*========================
-FOOTER
-========================*/
 
-.hero-footer{
+/*=========================
+FOOTER
+=========================*/
+
+.footer{
 
 margin-top:70px;
 
-font-size:.9rem;
+color:#9d9487;
+
+font-size:.85rem;
 
 letter-spacing:3px;
 
 text-transform:uppercase;
 
-color:#8d8475;
-
 line-height:2;
 
 }
 
-/*========================
+/*=========================
 ANIMATION
-========================*/
+=========================*/
 
-@keyframes fadeIn{
+@keyframes fade{
 
 from{
 
 opacity:0;
+
 transform:translateY(30px);
 
 }
@@ -202,29 +206,28 @@ transform:translateY(30px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
 
 }
 
-/*========================
+/*=========================
 MOBILE
-========================*/
+=========================*/
 
 @media(max-width:768px){
 
 body{
 
-padding:25px;
-
-overflow:auto;
+padding:30px 22px;
 
 }
 
-.hero-label{
+.badge{
 
-font-size:.75rem;
+font-size:.72rem;
 
 letter-spacing:2px;
 
@@ -235,8 +238,6 @@ letter-spacing:2px;
 font-size:3rem;
 
 letter-spacing:2px;
-
-margin-bottom:25px;
 
 }
 
@@ -258,13 +259,15 @@ width:100%;
 
 padding:18px;
 
+font-size:.95rem;
+
 }
 
-.hero-footer{
+.footer{
 
 margin-top:45px;
 
-font-size:.75rem;
+font-size:.72rem;
 
 letter-spacing:2px;
 
@@ -282,9 +285,9 @@ line-height:1.8;
 
 <section class="hero">
 
-<div class="hero-label">
+<div class="badge">
 
-The Beginning
+THE BEGINNING
 
 </div>
 
@@ -303,23 +306,24 @@ ILLUSION
 Throughout history, seekers from different civilizations,
 traditions and disciplines have pursued the same timeless truth.
 
-Their methods differ,
-but their destination remains one.
+Their methods differ.
 
-Begin your journey into ancient wisdom,
+Their destination remains one.
+
+Begin your journey through ancient wisdom,
 modern science,
-biological optimization,
+biological reset,
 and meditative practices.
 
 </p>
 
-<a href="journey.html" class="hero-btn">
+<a href="universal-journey.html" class="hero-btn">
 
 BEGIN THE JOURNEY →
 
 </a>
 
-<div class="hero-footer">
+<div class="footer">
 
 Ancient Wisdom • Biological Reset • Modern Science • Meditative Practices
 
