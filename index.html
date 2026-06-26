@@ -165,6 +165,196 @@ padding:18px;
 }
 
 }
+  /*====================================
+HERO
+====================================*/
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+background:
+radial-gradient(circle at top,
+#342316 0%,
+#18120d 45%,
+#090807 100%);
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+text-align:center;
+
+}
+
+.hero-label{
+
+display:inline-block;
+
+padding:8px 22px;
+
+border:1px solid rgba(212,175,55,.3);
+
+border-radius:40px;
+
+font-size:.85rem;
+
+letter-spacing:3px;
+
+color:#d4af37;
+
+margin-bottom:30px;
+
+}
+
+.hero h1{
+
+font-family:'Cinzel',serif;
+
+font-size:clamp(3.2rem,8vw,6rem);
+
+line-height:1.08;
+
+letter-spacing:5px;
+
+color:#d4af37;
+
+margin-bottom:35px;
+
+text-shadow:
+0 0 18px rgba(212,175,55,.25);
+
+}
+
+.hero-text{
+
+max-width:720px;
+
+margin:auto;
+
+font-size:1.2rem;
+
+line-height:2;
+
+color:#ddd2bd;
+
+margin-bottom:55px;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+padding:18px 55px;
+
+background:linear-gradient(180deg,#d4af37,#b8892f);
+
+color:#111;
+
+text-decoration:none;
+
+font-family:'Cinzel',serif;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+border-radius:10px;
+
+transition:.35s;
+
+box-shadow:
+0 0 25px rgba(212,175,55,.35);
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 40px rgba(212,175,55,.6);
+
+}
+
+.hero-footer{
+
+margin-top:70px;
+
+font-size:.9rem;
+
+letter-spacing:3px;
+
+color:#8e8576;
+
+text-transform:uppercase;
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding:25px;
+
+}
+
+.hero-label{
+
+font-size:.75rem;
+
+letter-spacing:2px;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+letter-spacing:2px;
+
+}
+
+.hero-text{
+
+font-size:1.05rem;
+
+line-height:1.8;
+
+}
+
+.hero-btn{
+
+display:block;
+
+width:100%;
+
+padding:18px;
+
+}
+
+.hero-footer{
+
+margin-top:45px;
+
+font-size:.75rem;
+
+line-height:1.8;
+
+}
+
+}
 
 </style>
 
@@ -196,6 +386,47 @@ Their methods differ, but their destination is one.
 ENTER THE ARCHIVE
 
 </a>
+
+</section>
+  <!--====================================
+HERO
+=====================================-->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            A JOURNEY OF SELF-DISCOVERY
+        </span>
+
+        <h1>
+            MIRROR<br>
+            AND<br>
+            ILLUSION
+        </h1>
+
+        <p class="hero-text">
+
+            Throughout history, seekers from different cultures,
+            traditions and disciplines have pursued the same timeless truth.
+            Their methods differ, but their destination remains one.
+
+        </p>
+
+        <a href="universal-journey.html" class="hero-btn">
+
+            BEGIN THE JOURNEY →
+
+        </a>
+
+        <p class="hero-footer">
+
+            Ancient Wisdom • Biological Reset • Modern Science • Meditative Practices
+
+        </p>
+
+    </div>
 
 </section>
 
