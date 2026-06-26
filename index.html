@@ -1,7 +1,9 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,13 +13,27 @@
 
 <style>
 
-/*====================================
-HERO
-====================================*/
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-.hero{
+html{
+scroll-behavior:smooth;
+}
 
-min-height:100vh;
+body{
+
+font-family:'Inter',sans-serif;
+
+background:
+radial-gradient(circle at top,
+#3b2818 0%,
+#1b140f 45%,
+#090807 100%);
+
+color:#f5f2ea;
 
 display:flex;
 
@@ -25,21 +41,26 @@ justify-content:center;
 
 align-items:center;
 
+min-height:100vh;
+
 padding:30px;
 
-background:
-radial-gradient(circle at top,
-#342316 0%,
-#18120d 45%,
-#090807 100%);
+overflow:hidden;
 
 }
 
-.hero-content{
+/*========================
+HERO
+========================*/
 
-max-width:900px;
+.hero{
+
+width:100%;
+max-width:950px;
 
 text-align:center;
+
+animation:fadeIn 1.2s ease;
 
 }
 
@@ -47,19 +68,21 @@ text-align:center;
 
 display:inline-block;
 
-padding:8px 22px;
+padding:8px 24px;
 
-border:1px solid rgba(212,175,55,.3);
+border:1px solid rgba(212,175,55,.35);
 
-border-radius:40px;
+border-radius:50px;
+
+color:#d4af37;
 
 font-size:.85rem;
 
 letter-spacing:3px;
 
-color:#d4af37;
+margin-bottom:35px;
 
-margin-bottom:30px;
+text-transform:uppercase;
 
 }
 
@@ -67,9 +90,9 @@ margin-bottom:30px;
 
 font-family:'Cinzel',serif;
 
-font-size:clamp(3.2rem,8vw,6rem);
+font-size:clamp(3rem,8vw,6rem);
 
-line-height:1.08;
+line-height:1.05;
 
 letter-spacing:5px;
 
@@ -78,35 +101,39 @@ color:#d4af37;
 margin-bottom:35px;
 
 text-shadow:
-0 0 18px rgba(212,175,55,.25);
+0 0 20px rgba(212,175,55,.25);
 
 }
 
-.hero-text{
+.hero p{
 
-max-width:720px;
+max-width:760px;
 
 margin:auto;
 
-font-size:1.2rem;
+font-size:clamp(1.05rem,2vw,1.3rem);
 
 line-height:2;
 
-color:#ddd2bd;
+color:#d9cfbb;
 
 margin-bottom:55px;
 
 }
 
+/*========================
+BUTTON
+========================*/
+
 .hero-btn{
 
 display:inline-block;
 
-padding:18px 55px;
+padding:18px 60px;
 
-background:linear-gradient(180deg,#d4af37,#b8892f);
+background:linear-gradient(180deg,#e2c067,#c59535);
 
-color:#111;
+border-radius:12px;
 
 text-decoration:none;
 
@@ -114,14 +141,16 @@ font-family:'Cinzel',serif;
 
 font-weight:700;
 
+font-size:1rem;
+
 letter-spacing:3px;
 
-border-radius:10px;
+color:#111;
 
 transition:.35s;
 
 box-shadow:
-0 0 25px rgba(212,175,55,.35);
+0 0 30px rgba(212,175,55,.35);
 
 }
 
@@ -130,9 +159,13 @@ box-shadow:
 transform:translateY(-5px);
 
 box-shadow:
-0 0 40px rgba(212,175,55,.6);
+0 0 45px rgba(212,175,55,.6);
 
 }
+
+/*========================
+FOOTER
+========================*/
 
 .hero-footer{
 
@@ -142,17 +175,47 @@ font-size:.9rem;
 
 letter-spacing:3px;
 
-color:#8e8576;
-
 text-transform:uppercase;
+
+color:#8d8475;
+
+line-height:2;
 
 }
 
+/*========================
+ANIMATION
+========================*/
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/*========================
+MOBILE
+========================*/
+
 @media(max-width:768px){
 
-.hero{
+body{
 
 padding:25px;
+
+overflow:auto;
 
 }
 
@@ -170,13 +233,17 @@ font-size:3rem;
 
 letter-spacing:2px;
 
+margin-bottom:25px;
+
 }
 
-.hero-text{
+.hero p{
 
-font-size:1.05rem;
+font-size:1rem;
 
 line-height:1.8;
+
+margin-bottom:40px;
 
 }
 
@@ -196,18 +263,27 @@ margin-top:45px;
 
 font-size:.75rem;
 
+letter-spacing:2px;
+
 line-height:1.8;
 
 }
 
 }
-  </styles>
+
+</style>
 
 </head>
 
 <body>
 
 <section class="hero">
+
+<div class="hero-label">
+
+The Beginning
+
+</div>
 
 <h1>
 
@@ -219,59 +295,32 @@ ILLUSION
 
 </h1>
 
-<p class="subtitle">
+<p>
 
-Throughout history, seekers from different paths pointed toward the same timeless truth.
-Their methods differ, but their destination is one.
+Throughout history, seekers from different civilizations,
+traditions and disciplines have pursued the same timeless truth.
+
+Their methods differ,
+but their destination remains one.
+
+Begin your journey into ancient wisdom,
+modern science,
+biological optimization,
+and meditative practices.
 
 </p>
 
-<a class="enter" href="ancient-wisdom.html">
+<a href="universal-journey.html" class="hero-btn">
 
-ENTER THE ARCHIVE
+BEGIN THE JOURNEY →
 
 </a>
 
-</section>
-  <!--====================================
-HERO
-=====================================-->
+<div class="hero-footer">
 
-<section class="hero">
+Ancient Wisdom • Biological Reset • Modern Science • Meditative Practices
 
-    <div class="hero-content">
-
-        <span class="hero-label">
-            A JOURNEY OF SELF-DISCOVERY
-        </span>
-
-        <h1>
-            MIRROR<br>
-            AND<br>
-            ILLUSION
-        </h1>
-
-        <p class="hero-text">
-
-            Throughout history, seekers from different cultures,
-            traditions and disciplines have pursued the same timeless truth.
-            Their methods differ, but their destination remains one.
-
-        </p>
-
-        <a href="universal-journey.html" class="hero-btn">
-
-            BEGIN THE JOURNEY →
-
-        </a>
-
-        <p class="hero-footer">
-
-            Ancient Wisdom • Biological Reset • Modern Science • Meditative Practices
-
-        </p>
-
-    </div>
+</div>
 
 </section>
 
