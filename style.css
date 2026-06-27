@@ -2175,18 +2175,20 @@ body{
 
 font-family:'Inter',sans-serif;
 
-background:
-radial-gradient(circle at top,
-#2f2118 0%,
-#17110d 45%,
-#090807 100%);
+background:#101010;
 
-color:#f5f2ea;
+color:#f4efe4;
 
-line-height:1.8;
+min-height:100vh;
 
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px 20px;
 }
-
 /*==========================================
 HERO
 ==========================================*/
