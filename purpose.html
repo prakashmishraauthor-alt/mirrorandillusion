@@ -1,296 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Finding the purpose of life | Mirror & Illusion</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding the Purpose of Life | Mirror & Illusion</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS -->
+    <style>
+        /*=========================================
+        MIRROR & ILLUSION ARTICLE STYLE
+        =========================================*/
+        
+        body {
+            background: #0f0e0d;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .post-content {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 0 20px;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #e7dcc8;
+        }
+        
+        .post-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        
+        .post-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            color: #f2d98b;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .post-content p {
+            margin-bottom: 22px;
+        }
+        
+        .post-content strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .post-content hr {
+            border: none;
+            height: 1px;
+            background: rgba(212, 175, 55, 0.18);
+            margin: 60px 0;
+        }
+        
+        /*=========================
+        BLOCKQUOTE
+        =========================*/
+        
+        .post-content blockquote {
+            margin: 45px 0;
+            padding: 28px 35px;
+            background: linear-gradient(135deg, #1b1b1b, #242424);
+            border-left: 5px solid #d4af37;
+            border-radius: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: #f5e4aa;
+            line-height: 1.8;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        /*=========================
+        LISTS
+        =========================*/
+        
+        .post-content ul,
+        .post-content ol {
+            margin: 25px 0 35px 35px;
+        }
+        
+        .post-content li {
+            margin-bottom: 15px;
+            color: #ddd3bf;
+        }
+        
+        /*=========================
+        SPECIAL QUOTE
+        =========================*/
+        
+        .mi-reflection {
+            margin-top: 70px;
+            padding: 45px;
+            text-align: center;
+            background: linear-gradient(180deg, #1d1b18, #111);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 18px;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.08);
+        }
+        
+        .mi-reflection h2 {
+            border: none;
+            margin-top: 0;
+        }
+        
+        .mi-reflection p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #f2dfaa;
+            line-height: 2;
+        }
+        
+        /*=========================
+        ARTICLE END
+        =========================*/
+        
+        .mi-ending {
+            margin-top: 80px;
+            padding: 45px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 18px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        
+        .mi-ending h2 {
+            border: none;
+            margin-top: 0;
+        }
+        
+        .mi-ending p {
+            max-width: 650px;
+            margin: auto;
+            margin-bottom: 35px;
+        }
+        
+        .pillar-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+        
+        .pillar-links a {
+            display: block;
+            padding: 18px;
+            text-decoration: none;
+            color: #f2e6c8;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            transition: 0.35s;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .pillar-links a:hover {
+            background: #d4af37;
+            color: #111;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+        }
+        
+        /*=========================
+        MOBILE
+        =========================*/
+        
+        @media (max-width: 768px) {
+            .post-content {
+                font-size: 1rem;
+                margin: 30px auto;
+            }
+            
+            .post-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .post-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .post-content blockquote {
+                padding: 22px;
+                font-size: 1.1rem;
+            }
+            
+            .pillar-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .mi-ending {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<div class="post-content">
-
-<h2>When the World Gives You Many Directions but No Destination</h2>
-
-<blockquote>
-"The greatest tragedy is not dying without success. It is living without knowing why you lived."
-</blockquote>
-
-<p>
-At some point in life, almost everyone hears a quiet question arise from within:
-<strong>"Why am I here?"</strong>
-</p>
-
-<p>
-This question rarely appears during failure. More often, it arrives after we have achieved what we once believed would make us happy.
-</p>
-
-<p>
-A career. A relationship. Recognition. Financial security.
-Yet something still feels incomplete.
-</p>
-
-<p>
-Modern society tells us that purpose is something we must discover somewhere outside ourselves.
-Mirror & Illusion suggests something different.
-</p>
-
-<p>
-<strong>Perhaps purpose is not something to find. Perhaps it is something to remember.</strong>
-</p>
-
-<hr>
-
-<h2>The Modern Illusion</h2>
-
-<p>
-Every generation lives inside an illusion.
-</p>
-
-<p>
-Our generation's illusion is simple:
-</p>
-
-<blockquote>
-"I'll finally be happy when I become successful."
-</blockquote>
-
-<p>
-So we chase:
-</p>
-
-<ul>
-<li>Success</li>
-<li>Money</li>
-<li>Status</li>
-<li>Followers</li>
-<li>Recognition</li>
-<li>The perfect relationship</li>
-</ul>
-
-<p>
-Every achievement brings excitement.
-Then the excitement fades.
-Soon another goal appears.
-The destination keeps moving.
-</p>
-
-<p>
-The problem isn't ambition.
-The problem is believing that lasting fulfilment lives in temporary achievements.
-</p>
-
-<hr>
-
-<h2>What Ancient Wisdom Says</h2>
-
-<h3>Lord Krishna</h3>
-
-<p>
-Krishna reminds us to give our best effort without attaching our happiness to the outcome.
-Purpose comes from the quality of action, not the certainty of reward.
-</p>
-
-<h3>The Buddha</h3>
-
-<p>
-The Buddha taught that suffering begins when we cling to things that constantly change.
-Status changes.
-Relationships change.
-Even our identities evolve.
-Clinging to the temporary creates lasting dissatisfaction.
-</p>
-
-<h3>Lao Tzu</h3>
-
-<p>
-Lao Tzu teaches that purpose cannot be forced.
-When we stop struggling against life and begin flowing with reality, clarity naturally appears.
-</p>
-
-<h3>Marcus Aurelius</h3>
-
-<p>
-Marcus Aurelius reminds us that the measure of a meaningful life is not applause but character.
-Purpose is discovered through virtue, not popularity.
-</p>
-
-<p>
-Different civilizations.
-Different languages.
-The same destination.
-</p>
-
-<hr>
-
-<h2>What Modern Science Says</h2>
-
-<p>
-Modern psychology has reached a remarkably similar conclusion.
-</p>
-
-<p>
-People who pursue intrinsic goals—growth, contribution, learning and meaningful relationships—experience greater long-term wellbeing than those driven primarily by status, fame or wealth.
-</p>
-
-<p>
-Neuroscience explains why.
-</p>
-
-<p>
-Every promotion.
-Every purchase.
-Every compliment.
-Every social media notification.
-Every achievement.
-</p>
-
-<p>
-Triggers dopamine.
-</p>
-
-<p>
-Dopamine motivates us to chase the next reward.
-It does not create lasting fulfilment.
-</p>
-
-<p>
-The Buddha called this <strong>craving.</strong><br>
-Modern science calls it the <strong>reward system.</strong>
-</p>
-
-<p>
-Different language.<br>
-Same truth.
-</p>
-
-<hr>
-
-<h2>The Mirror</h2>
-
-<p>
-Purpose is not hidden somewhere outside you.
-</p>
-
-<p>
-Purpose reflects what you value most deeply.
-</p>
-
-<p>
-As your awareness grows,
-your purpose grows.
-</p>
-
-<p>
-As your values mature,
-your direction becomes clearer.
-</p>
-
-<p>
-Purpose is less about finding the perfect destination and more about becoming the right traveller.
-</p>
-
-<hr>
-
-<h2>Biological Reset</h2>
-
-<p>
-Sometimes we believe we've lost our purpose.
-</p>
-
-<p>
-Often we've simply exhausted our brain.
-</p>
-
-<ul>
-
-<li>Poor sleep</li>
-
-<li>Constant screen time</li>
-
-<li>No morning sunlight</li>
-
-<li>Little movement</li>
-
-<li>Poor nutrition</li>
-
-<li>Continuous stress</li>
-
-</ul>
-
-<p>
-An exhausted nervous system cannot see clearly.
-</p>
-
-<p>
-Sometimes the first step toward purpose isn't changing your life.
-It's restoring the biology that allows you to think clearly.
-</p>
-
-<hr>
-
-<h2>A Simple Practice</h2>
-
-<p>
-For the next seven days, answer these three questions every evening:
-</p>
-
-<ol>
-
-<li>What gave me energy today?</li>
-
-<li>What drained my energy today?</li>
-
-<li>When did I feel most alive?</li>
-
-</ol>
-
-<p>
-Don't search for answers.
-Search for patterns.
-Purpose rarely arrives as a lightning bolt.
-It quietly reveals itself through repeated moments of meaning.
-</p>
-
-<hr>
-
-<h2>Mirror &amp; Illusion Reflection</h2>
-
-<blockquote>
-
-The world asks,
-
-<strong>"What do you want to become?"</strong>
-
-<br><br>
-
-Mirror &amp; Illusion asks,
-
-<strong>"Who were you before the world taught you who to become?"</strong>
-
-</blockquote>
-
-<p>
-
-Perhaps purpose is not waiting somewhere in the future.
-
-</p>
-
-<p>
-
-Perhaps it has been patiently waiting beneath the layers of expectation all along.
-
-</p>
-
-</div>
-
-
-</body>
-</html>
+    <article class="post-content">
+        
+        <h2>When the World Gives You Many Directions but No Destination</h2>
+        
+        <blockquote>
+            "The greatest tragedy is not dying without success. It is living without knowing why you lived."
+        </blockquote>
+        
+        <p>
+            At some point in life, almost everyone hears a quiet question arise from within:
+            <strong>"Why am I here?"</strong>
+        </p>
+        
+        <p>
+            This question rarely appears during failure. More often, it arrives after we have achieved what we once believed would make us happy.
+        </p>
+        
+        <p>
+            A career. A relationship. Recognition. Financial security.
+            Yet something still feels incomplete.
+        </p>
+        
+        <p>
+            Modern society tells us that purpose is something we must discover somewhere outside ourselves.
+            Mirror & Illusion suggests something different.
+        </p>
+        
+        <p>
+            <strong>Perhaps purpose is not something to find. Perhaps it is something to remember.</strong>
+        </p>
+        
+        <hr>
+        
+        <h2>The Modern Illusion</h2>
+        
+        <p>Every generation lives inside an illusion.</p>
+        
+        <p>Our generation's illusion is simple:</p>
+        
+        <blockquote>
+            "I'll finally be happy when I become successful."
+        </blockquote>
+        
+        <p>So we chase:</p>
+        
+        <ul>
+            <li>Success</li>
+            <li>Money</li>
+            <li>Status</li>
+            <li>Followers</li>
+            <li>Recognition</li>
+            <li>The perfect relationship</li>
+        </ul>
+        
+        <p>
+            Every achievement brings excitement.
+            Then the excitement fades.
+            Soon another goal appears.
+            The destination keeps moving.
+        </p>
+        
+        <p>
+            The problem isn't ambition.
+            The problem is believing that lasting fulfilment lives in temporary achievements.
+        </p>
+        
+        <hr>
+        
+        <h2>What Ancient Wisdom Says</h2>
+        
+        <h3>Lord Krishna</h3>
+        <p>
+            Krishna reminds us to give our best effort without attaching our happiness to the outcome.
+            Purpose comes from the quality of action, not the certainty of reward.
+        </p>
+        
+        <h3>The Buddha</h3>
+        <p>
+            The Buddha taught that suffering begins when we cling to things that constantly change.
+            Status changes. Relationships change. Even our identities evolve.
+            Clinging to the temporary creates lasting dissatisfaction.
+        </p>
+        
+        <h3>Lao Tzu</h3>
+        <p>
+            Lao Tzu teaches that purpose cannot be forced.
+            When we stop struggling against life and begin flowing with reality, clarity naturally appears.
+        </p>
+        
+        <h3>Marcus Aurelius</h3>
+        <p>
+            Marcus Aurelius reminds us that the measure of a meaningful life is not applause but character.
+            Purpose is discovered through virtue, not popularity.
+        </p>
+        
+        <p>Different civilizations. Different languages. The same destination.</p>
+        
+        <hr>
+        
+        <h2>What Modern Science Says</h2>
+        
+        <p>Modern psychology has reached a remarkably similar conclusion.</p>
+        
+        <p>
+            People who pursue intrinsic goals—growth, contribution, learning and meaningful relationships—experience greater long-term wellbeing than those driven primarily by status, fame or wealth.
+        </p>
+        
+        <p>Neuroscience explains why.</p>
+        
+        <p>
+            Every promotion. Every purchase. Every compliment. Every social media notification. Every achievement.
+        </p>
+        
+        <p>Triggers dopamine.</p>
+        
+        <p>
+            Dopamine motivates us to chase the next reward.
+            It does not create lasting fulfilment.
+        </p>
+        
+        <p>
+            The Buddha called this <strong>craving.</strong><br>
+            Modern science calls it the <strong>reward system.</strong>
+        </p>
+        
+        <p
