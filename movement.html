@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The daily human movement blueprint | Mirror & Illusion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:
+radial-gradient(circle at center,
+rgba(255,180,70,0.08),
+transparent 60%),
+#0d0a07;
+color:#e8dcc2;
+font-family:'Cormorant Garamond',serif;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle,
+rgba(255,180,70,.12),
+transparent 70%);
+pointer-events:none;
+}
+
+.hero-content{
+max-width:900px;
+z-index:2;
+}
+
+.hero-title{
+font-family:'Cinzel',serif;
+font-size:4rem;
+color:#f4d18f;
+letter-spacing:3px;
+text-shadow:
+0 0 20px rgba(255,200,100,.4),
+0 0 40px rgba(255,200,100,.2);
+margin-bottom:30px;
+}
+
+.hero-question{
+font-size:2rem;
+font-style:italic;
+color:#fff2d6;
+margin-bottom:40px;
+}
+
+.hero-intro{
+font-size:1.4rem;
+max-width:750px;
+margin:auto;
+color:#d8ccb4;
+}
+
+.scroll-down{
+margin-top:60px;
+font-size:2rem;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(10px);
+}
+}
+
+/* ================= SECTION ================= */
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:100px 30px;
+}
+
+.section-title{
+font-family:'Cinzel',serif;
+font-size:2.3rem;
+color:#f0c97d;
+margin-bottom:35px;
+text-align:center;
+}
+
+.section-text{
+font-size:1.35rem;
+color:#ddd0b6;
+}
+
+/* ================= SCROLL BOX ================= */
+
+.scroll-box{
+background:
+linear-gradient(
+135deg,
+rgba(255,220,160,.05),
+rgba(255,220,160,.02)
+);
+border:1px solid rgba(255,210,120,.2);
+padding:40px;
+border-radius:18px;
+margin-top:40px;
+backdrop-filter:blur(8px);
+}
+
+/* ================= BRIDGE ================= */
+
+.bridge{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+gap:20px;
+align-items:center;
+margin-top:50px;
+text-align:center;
+}
+
+.bridge-card{
+padding:30px;
+border:1px solid rgba(255,210,120,.2);
+border-radius:18px;
+background:rgba(255,255,255,.03);
+}
+
+.plus{
+font-size:3rem;
+color:#f0c97d;
+}
+
+/* ================= PROTOCOL ================= */
+
+.protocol{
+margin-top:40px;
+display:grid;
+gap:20px;
+}
+
+.step{
+background:rgba(255,255,255,.03);
+border-left:4px solid #d9ab54;
+padding:20px;
+font-size:1.25rem;
+}
+
+/* ================= QUOTE ================= */
+
+.quote{
+max-width:900px;
+margin:120px auto;
+text-align:center;
+font-size:2rem;
+font-style:italic;
+color:#fff0cc;
+padding:0 30px;
+}
+
+/* ================= NEXT ================= */
+
+.next{
+text-align:center;
+padding:100px 20px;
+}
+
+.next h2{
+font-family:'Cinzel',serif;
+color:#f0c97d;
+margin-bottom:40px;
+}
+
+.next-links{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.next-links a{
+text-decoration:none;
+color:#f6d28e;
+border:1px solid rgba(255,210,120,.25);
+padding:14px 25px;
+border-radius:40px;
+transition:.4s;
+}
+
+.next-links a:hover{
+background:rgba(255,210,120,.08);
+transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:2.5rem;
+}
+
+.hero-question{
+font-size:1.5rem;
+}
+
+.bridge{
+grid-template-columns:1fr;
+}
+
+.plus{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 class="hero-title">
+MOVEMENT
+</h1>
+
+<div class="hero-question">
+"What if the secret to feeling truly alive isn't found in doing more... but simply moving more?"
+</div>
+
+<p class="hero-intro">
+
+Movement is life.
+
+Every heartbeat, every breath, every blink, every step reminds us of a profound truth:
+
+Life exists only where there is movement.
+
+Our ancestors didn't exercise.
+
+They simply lived.
+
+They walked, climbed, carried, stretched, squatted, worked and played.
+
+Movement wasn't a workout.
+
+It was the natural expression of being alive.
+
+</p>
+
+<div class="scroll-down">
+
+▼
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Why Modern Bodies Suffer
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+The greatest health challenge of modern civilization is not a lack of exercise.
+
+It is a lack of movement.
+
+Many people spend most of their day sitting—in cars, at desks and in front of screens.
+
+Hours of inactivity slow circulation, weaken muscles, stiffen joints, reduce insulin sensitivity and contribute to poor posture.
+
+Even the brain receives less oxygen-rich blood.
+
+Over time, the body begins to forget what it was designed to do.
+
+Exercise helps.
+
+But the human body was never designed to move for only one hour and remain still for the other twenty-three.
+
+It was designed to move throughout the day.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+What The Ancients Practiced
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Long before gyms existed, movement was woven naturally into everyday life.
+
+Yoga cultivated flexibility, balance and awareness.
+
+Martial arts developed strength, coordination and discipline.
+
+Farmers lifted, carried and walked for miles.
+
+Pilgrims travelled on foot.
+
+Children climbed trees, ran freely and explored the world through movement.
+
+Movement was never punishment.
+
+It was celebration.
+
+The body was respected as the instrument through which life itself could be experienced.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+What Science Reveals
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Modern science confirms that movement benefits nearly every system of the body.
+
+Regular physical activity strengthens the heart, improves circulation, enhances insulin sensitivity, increases bone density and maintains healthy joints.
+
+Movement also stimulates the release of endorphins, dopamine and brain-derived neurotrophic factor (BDNF), a protein that supports learning, memory and the growth of new neural connections.
+
+Few habits improve both physical and mental health as profoundly as daily movement.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+The Human Movement Blueprint
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+A healthy human body was designed for variety—not repetition.
+
+Every week your body should experience different forms of movement.
+
+Walk to strengthen the heart.
+
+Stretch to maintain mobility.
+
+Practice strength training to preserve muscle and bone.
+
+Balance to protect yourself from injury.
+
+Breathe deeply to nourish every cell.
+
+Occasionally run, climb, squat, rotate, carry and play.
+
+Movement is not one exercise.
+
+It is a language your body understands.
+
+The more fluently you speak that language, the more alive you become.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Where Wisdom Meets Science
+
+</h2>
+
+<div class="bridge">
+
+<div class="bridge-card">
+
+<h3>Ancient Insight</h3>
+
+<p>
+
+The body is the temple through which consciousness experiences life.
+
+Care for it through joyful movement.
+
+</p>
+
+</div>
+
+<div class="plus">
+
++
+
+</div>
+
+<div class="bridge-card">
+
+<h3>Modern Science</h3>
+
+<p>
+
+Movement strengthens the brain, heart, muscles, hormones, metabolism and nervous system simultaneously.
+
+It is one of the most powerful forms of preventive medicine.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+The Daily Human Movement Blueprint
+
+</h2>
+
+<div class="protocol">
+
+<div class="step">
+
+✓ Walk 8,000–10,000 steps every day whenever possible.
+
+</div>
+
+<div class="step">
+
+✓ Spend 10–15 minutes stretching your entire body.
+
+</div>
+
+<div class="step">
+
+✓ Perform strength training 2–4 times each week to preserve muscle and bone.
+
+</div>
+
+<div class="step">
+
+✓ Practice deep diaphragmatic breathing for 5–10 minutes daily.
+
+</div>
+
+<div class="step">
+
+✓ Include balance exercises such as standing on one leg or simple yoga poses.
+
+</div>
+
+<div class="step">
+
+✓ Avoid sitting continuously for more than 45 minutes. Stand, stretch or walk briefly.
+
+</div>
+
+<div class="step">
+
+✓ Spend time outdoors whenever possible. Walking in nature benefits both body and mind.
+
+</div>
+
+<div class="step">
+
+✓ Find one activity you genuinely enjoy—dance, swim, cycle, hike, play a sport or simply walk.
+
+Consistency is far more important than perfection.
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+The Mirror Within
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Ask yourself one simple question:
+
+When was the last time your body felt truly alive?
+
+Movement is not about chasing the perfect physique.
+
+It is about reclaiming vitality.
+
+A flexible body supports a resilient mind.
+
+A strong body supports confident action.
+
+A moving body reminds us that life itself is still flowing through us.
+
+</p>
+
+</div>
+
+</section>
+
+<div class="quote">
+
+"Movement is the language through which life expresses itself."
+
+</div>
+
+<section class="next">
+
+<h2>
+
+Continue Your Journey
+
+</h2>
+
+<div class="next-links">
+
+<a href="morning-sunlight.html">
+
+Morning Sunlight
+
+</a>
+
+<a href="nutrition.html">
+
+Nutrition
+
+</a>
+
+<a href="deep-sleep.html">
+
+Deep Sleep
+
+</a>
+
+</div>
+
+</section>
+
+</body>
+</html>
