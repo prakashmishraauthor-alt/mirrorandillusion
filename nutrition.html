@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nutrition | Mirror & Illusion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:
+radial-gradient(circle at center,
+rgba(255,180,70,0.08),
+transparent 60%),
+#0d0a07;
+color:#e8dcc2;
+font-family:'Cormorant Garamond',serif;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle,
+rgba(255,180,70,.12),
+transparent 70%);
+pointer-events:none;
+}
+
+.hero-content{
+max-width:900px;
+z-index:2;
+}
+
+.hero-title{
+font-family:'Cinzel',serif;
+font-size:4rem;
+color:#f4d18f;
+letter-spacing:3px;
+text-shadow:
+0 0 20px rgba(255,200,100,.4),
+0 0 40px rgba(255,200,100,.2);
+margin-bottom:30px;
+}
+
+.hero-question{
+font-size:2rem;
+font-style:italic;
+color:#fff2d6;
+margin-bottom:40px;
+}
+
+.hero-intro{
+font-size:1.4rem;
+max-width:750px;
+margin:auto;
+color:#d8ccb4;
+}
+
+.scroll-down{
+margin-top:60px;
+font-size:2rem;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(10px);
+}
+}
+
+/* ================= SECTION ================= */
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:100px 30px;
+}
+
+.section-title{
+font-family:'Cinzel',serif;
+font-size:2.3rem;
+color:#f0c97d;
+margin-bottom:35px;
+text-align:center;
+}
+
+.section-text{
+font-size:1.35rem;
+color:#ddd0b6;
+}
+
+/* ================= SCROLL BOX ================= */
+
+.scroll-box{
+background:
+linear-gradient(
+135deg,
+rgba(255,220,160,.05),
+rgba(255,220,160,.02)
+);
+border:1px solid rgba(255,210,120,.2);
+padding:40px;
+border-radius:18px;
+margin-top:40px;
+backdrop-filter:blur(8px);
+}
+
+/* ================= BRIDGE ================= */
+
+.bridge{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+gap:20px;
+align-items:center;
+margin-top:50px;
+text-align:center;
+}
+
+.bridge-card{
+padding:30px;
+border:1px solid rgba(255,210,120,.2);
+border-radius:18px;
+background:rgba(255,255,255,.03);
+}
+
+.plus{
+font-size:3rem;
+color:#f0c97d;
+}
+
+/* ================= PROTOCOL ================= */
+
+.protocol{
+margin-top:40px;
+display:grid;
+gap:20px;
+}
+
+.step{
+background:rgba(255,255,255,.03);
+border-left:4px solid #d9ab54;
+padding:20px;
+font-size:1.25rem;
+}
+
+/* ================= QUOTE ================= */
+
+.quote{
+max-width:900px;
+margin:120px auto;
+text-align:center;
+font-size:2rem;
+font-style:italic;
+color:#fff0cc;
+padding:0 30px;
+}
+
+/* ================= NEXT ================= */
+
+.next{
+text-align:center;
+padding:100px 20px;
+}
+
+.next h2{
+font-family:'Cinzel',serif;
+color:#f0c97d;
+margin-bottom:40px;
+}
+
+.next-links{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.next-links a{
+text-decoration:none;
+color:#f6d28e;
+border:1px solid rgba(255,210,120,.25);
+padding:14px 25px;
+border-radius:40px;
+transition:.4s;
+}
+
+.next-links a:hover{
+background:rgba(255,210,120,.08);
+transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:2.5rem;
+}
+
+.hero-question{
+font-size:1.5rem;
+}
+
+.bridge{
+grid-template-columns:1fr;
+}
+
+.plus{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+<body><section class="hero">
+
+<div class="hero-content">
+
+<h1 class="hero-title">
+NUTRITION
+</h1>
+
+<div class="hero-question">
+"What if every meal was either building your future... or borrowing from it?"
+</div>
+
+<p class="hero-intro">
+
+Modern nutrition is often reduced to calories, diets and food trends.
+
+Yet every bite you eat becomes part of your body, your brain and even your thoughts.
+
+Food is not merely fuel.
+
+It is information that communicates with every cell, influences hormones, shapes the gut microbiome and affects how you think, feel and live.
+
+</p>
+
+<div class="scroll-down">
+
+▼
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Why Modern Diets Fail
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Never before has food been so abundant, yet lifestyle diseases have become so common.
+
+Highly processed foods, excessive sugar, refined oils and constant snacking overload the body's natural systems.
+
+Instead of nourishing us, many modern diets create inflammation, unstable blood sugar, fatigue and nutritional deficiencies.
+
+The body survives—but it struggles to thrive.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+What The Ancients Knew
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Across civilizations, food was considered sacred.
+
+Ayurveda described food as medicine.
+
+Traditional Chinese Medicine emphasized balance and seasonal eating.
+
+Many spiritual traditions encouraged gratitude before meals, mindful eating and moderation.
+
+Their wisdom was simple:
+
+Eat natural foods.
+Eat with awareness.
+Eat only what truly nourishes.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+What Science Reveals
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Modern nutrition science confirms that whole foods rich in vitamins, minerals, protein, healthy fats and fibre support nearly every system of the body.
+
+Stable blood sugar improves focus and emotional regulation.
+
+Quality nutrition reduces inflammation, supports immunity and lowers the risk of chronic diseases including diabetes, cardiovascular disease and cognitive decline.
+
+Food doesn't simply provide energy.
+
+It changes biology.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+The Forgotten Organ: Your Gut Microbiome
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Inside your digestive system live trillions of beneficial microorganisms collectively known as the gut microbiome.
+
+These microbes help digest food, produce essential vitamins, regulate immunity and communicate directly with the brain through the gut-brain axis.
+
+A diet rich in whole foods, fruits, vegetables and fibre supports these beneficial bacteria.
+
+Highly processed foods and excessive sugar can disturb this delicate ecosystem.
+
+In many ways, every meal is not only feeding you—it is feeding the invisible community that influences your health, mood and even your cravings.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Where Wisdom Meets Science
+</h2>
+
+<div class="bridge">
+
+<div class="bridge-card">
+
+<h3>Ancient Insight</h3>
+
+<p>
+
+Food is medicine.
+
+Treat every meal as an act of self-respect.
+
+</p>
+
+</div>
+
+<div class="plus">
+
++
+
+</div>
+
+<div class="bridge-card">
+
+<h3>Modern Science</h3>
+
+<p>
+
+Whole, minimally processed foods regulate hormones, reduce inflammation and nourish both the body and the brain.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+The Mirror Within
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Before eating, pause for a moment.
+
+Ask yourself:
+
+Am I truly hungry?
+
+Or am I eating because of stress, boredom, loneliness or habit?
+
+Awareness transforms nutrition from a routine into a conscious practice.
+
+The quality of your life is often reflected in the quality of your daily choices.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+The Nutrition Protocol
+</h2>
+
+<div class="protocol">
+
+<div class="step">
+
+✓ Fill half your plate with colourful vegetables and fruits.
+
+</div>
+
+<div class="step">
+
+✓ Include quality protein and healthy fats in every meal.
+
+</div>
+
+<div class="step">
+
+✓ Choose whole foods over ultra-processed foods whenever possible.
+
+</div>
+
+<div class="step">
+
+✓ Drink enough water throughout the day.
+
+</div>
+
+<div class="step">
+
+✓ Eat slowly, chew thoroughly and avoid unnecessary distractions.
+
+</div>
+
+<div class="step">
+
+✓ Finish eating before you feel completely full.
+
+</div>
+
+</div>
+
+</section>
+
+<div class="quote">
+
+"Every meal is a conversation between you and your future self."
+
+</div>
+
+<section class="next">
+
+<h2>
+
+Continue Your Journey
+
+</h2>
+
+<div class="next-links">
+
+<a href="morning-sunlight.html">
+Morning Sunlight
+</a>
+
+<a href="movement.html">
+Movement
+</a>
+
+<a href="deep-sleep.html">
+Deep Sleep
+</a>
+
+</div>
+
+</section>
+</body>
+</html>
