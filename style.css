@@ -2175,7 +2175,13 @@ body{
 
 font-family:'Inter',sans-serif;
 
-background:#101010;
+background:
+radial-gradient(
+    circle at top,
+    #4a311a 0%,
+    #221710 40%,
+    #0b0908 100%
+);
 
 color:#f4efe4;
 
@@ -2188,7 +2194,6 @@ justify-content:center;
 align-items:center;
 
 padding:40px 20px;
-}
 /*==========================================
 HERO
 ==========================================*/
