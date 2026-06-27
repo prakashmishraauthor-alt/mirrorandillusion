@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deep Sleep Protocol | Mirror & Illusion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:
+radial-gradient(circle at center,
+rgba(255,180,70,0.08),
+transparent 60%),
+#0d0a07;
+color:#e8dcc2;
+font-family:'Cormorant Garamond',serif;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle,
+rgba(255,180,70,.12),
+transparent 70%);
+pointer-events:none;
+}
+
+.hero-content{
+max-width:900px;
+z-index:2;
+}
+
+.hero-title{
+font-family:'Cinzel',serif;
+font-size:4rem;
+color:#f4d18f;
+letter-spacing:3px;
+text-shadow:
+0 0 20px rgba(255,200,100,.4),
+0 0 40px rgba(255,200,100,.2);
+margin-bottom:30px;
+}
+
+.hero-question{
+font-size:2rem;
+font-style:italic;
+color:#fff2d6;
+margin-bottom:40px;
+}
+
+.hero-intro{
+font-size:1.4rem;
+max-width:750px;
+margin:auto;
+color:#d8ccb4;
+}
+
+.scroll-down{
+margin-top:60px;
+font-size:2rem;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(10px);
+}
+}
+
+/* ================= SECTION ================= */
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:100px 30px;
+}
+
+.section-title{
+font-family:'Cinzel',serif;
+font-size:2.3rem;
+color:#f0c97d;
+margin-bottom:35px;
+text-align:center;
+}
+
+.section-text{
+font-size:1.35rem;
+color:#ddd0b6;
+}
+
+/* ================= SCROLL BOX ================= */
+
+.scroll-box{
+background:
+linear-gradient(
+135deg,
+rgba(255,220,160,.05),
+rgba(255,220,160,.02)
+);
+border:1px solid rgba(255,210,120,.2);
+padding:40px;
+border-radius:18px;
+margin-top:40px;
+backdrop-filter:blur(8px);
+}
+
+/* ================= BRIDGE ================= */
+
+.bridge{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+gap:20px;
+align-items:center;
+margin-top:50px;
+text-align:center;
+}
+
+.bridge-card{
+padding:30px;
+border:1px solid rgba(255,210,120,.2);
+border-radius:18px;
+background:rgba(255,255,255,.03);
+}
+
+.plus{
+font-size:3rem;
+color:#f0c97d;
+}
+
+/* ================= PROTOCOL ================= */
+
+.protocol{
+margin-top:40px;
+display:grid;
+gap:20px;
+}
+
+.step{
+background:rgba(255,255,255,.03);
+border-left:4px solid #d9ab54;
+padding:20px;
+font-size:1.25rem;
+}
+
+/* ================= QUOTE ================= */
+
+.quote{
+max-width:900px;
+margin:120px auto;
+text-align:center;
+font-size:2rem;
+font-style:italic;
+color:#fff0cc;
+padding:0 30px;
+}
+
+/* ================= NEXT ================= */
+
+.next{
+text-align:center;
+padding:100px 20px;
+}
+
+.next h2{
+font-family:'Cinzel',serif;
+color:#f0c97d;
+margin-bottom:40px;
+}
+
+.next-links{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.next-links a{
+text-decoration:none;
+color:#f6d28e;
+border:1px solid rgba(255,210,120,.25);
+padding:14px 25px;
+border-radius:40px;
+transition:.4s;
+}
+
+.next-links a:hover{
+background:rgba(255,210,120,.08);
+transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:2.5rem;
+}
+
+.hero-question{
+font-size:1.5rem;
+}
+
+.bridge{
+grid-template-columns:1fr;
+}
+
+.plus{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 class="hero-title">
+DEEP SLEEP
+</h1>
+
+<div class="hero-question">
+"What if the most productive thing you could do tonight... is simply sleep deeply?"
+</div>
+
+<p class="hero-intro">
+
+Every night your body begins a remarkable process of renewal.
+
+Cells repair themselves.
+
+The brain organizes memories.
+
+Hormones rebalance.
+
+The immune system strengthens.
+
+Sleep is not time lost.
+
+It is the foundation upon which tomorrow is built.
+
+</p>
+
+<div class="scroll-down">
+
+▼
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Why Modern People Can't Sleep
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Modern life keeps the brain constantly alert.
+
+Artificial lighting, endless scrolling, late-night work, stress, caffeine and irregular schedules confuse the body's internal clock.
+
+Instead of preparing for rest, the brain continues believing that it is daytime.
+
+The result is difficulty falling asleep, frequent waking, poor recovery, low energy and reduced mental clarity.
+
+Sleep is not disappearing because we need less of it.
+
+It is disappearing because our environment no longer supports it.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+What The Ancients Knew
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Ancient civilizations naturally aligned their lives with the rhythm of sunrise and sunset.
+
+Without artificial lighting, evenings became quieter, slower and more peaceful.
+
+Many traditions encouraged prayer, meditation or silence before sleep, allowing the mind to settle before entering the night.
+
+Rest was never viewed as laziness.
+
+It was considered essential for maintaining harmony between body, mind and spirit.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+What Science Reveals
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Modern neuroscience shows that deep sleep is one of the most important biological processes for human health.
+
+During deep sleep the brain removes metabolic waste through the glymphatic system, strengthens learning and memory, regulates emotions and restores the nervous system.
+
+Growth hormone is released to repair muscles and tissues.
+
+The immune system becomes more effective.
+
+Consistent deep sleep is associated with better concentration, emotional resilience, healthier metabolism and a lower risk of chronic disease.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+The Hidden Cost of Sleep Deprivation
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Missing a few hours of sleep affects far more than energy.
+
+Reaction time slows.
+
+Decision-making becomes poorer.
+
+Memory weakens.
+
+Cravings for unhealthy food increase.
+
+Stress hormones rise.
+
+Over weeks and months, chronic sleep deprivation can contribute to obesity, diabetes, cardiovascular disease, depression and cognitive decline.
+
+Sleep is not a luxury.
+
+It is one of the pillars of long-term health.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Where Wisdom Meets Science
+
+</h2>
+
+<div class="bridge">
+
+<div class="bridge-card">
+
+<h3>Ancient Insight</h3>
+
+<p>
+
+Live in harmony with nature's rhythm.
+
+Allow the day to end with stillness.
+
+</p>
+
+</div>
+
+<div class="plus">
+
++
+
+</div>
+
+<div class="bridge-card">
+
+<h3>Modern Science</h3>
+
+<p>
+
+Consistent sleep schedules, darkness and healthy circadian rhythms improve brain function, recovery and longevity.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+The Deep Sleep Blueprint
+
+</h2>
+
+<div class="protocol">
+
+<div class="step">
+
+✓ Wake up and sleep at nearly the same time every day.
+
+</div>
+
+<div class="step">
+
+✓ Receive 10–20 minutes of morning sunlight soon after waking.
+
+</div>
+
+<div class="step">
+
+✓ Avoid bright screens and intense artificial light during the last hour before bed.
+
+</div>
+
+<div class="step">
+
+✓ Keep your bedroom cool, quiet and completely dark.
+
+</div>
+
+<div class="step">
+
+✓ Avoid heavy meals, alcohol and excessive caffeine close to bedtime.
+
+</div>
+
+<div class="step">
+
+✓ Practice slow breathing, meditation or gentle reading before sleep.
+
+</div>
+
+<div class="step">
+
+✓ Aim for 7–9 hours of quality sleep each night.
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+The Mirror Within
+
+</h2>
+
+<div class="scroll-box">
+
+<p class="section-text">
+
+Many people try to solve fatigue with more caffeine.
+
+Few ask why the body is exhausted in the first place.
+
+Deep sleep reminds us that restoration cannot be forced.
+
+It can only be allowed.
+
+Sometimes the greatest act of self-care is simply giving your body permission to rest.
+
+</p>
+
+</div>
+
+</section>
+
+<div class="quote">
+
+"Sleep is the silent architect rebuilding the person you become tomorrow."
+
+</div>
+
+<section class="next">
+
+<h2>
+
+Continue Your Journey
+
+</h2>
+
+<div class="next-links">
+
+<a href="morning-sunlight.html">
+
+Morning Sunlight
+
+</a>
+
+<a href="movement.html">
+
+Movement
+
+</a>
+
+<a href="nutrition.html">
+
+Nutrition
+
+</a>
+
+</div>
+
+</section>
+
+</body>
+</html>
